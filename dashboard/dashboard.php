@@ -44,7 +44,7 @@ include('prcd/conn.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>Dashboard | Proveedores</title>
+    <title>Dashboard | PEJ 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -250,8 +250,8 @@ include('prcd/conn.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">BIENVENIDO AL PADRÓN DE PROVEEDORES</h1>
-          <p class="lead">INJUVENTUD</p>
+          <h1 class="h1">BIENVENIDO AL SISTEMA DE POSTULACIÓN</h1>
+          <p class="lead">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
           <!-- <p>Cargar documentos</p>
           <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->

@@ -6,7 +6,7 @@
     ?>
   
 
-  <title>Padrón de proveedores</title>
+  <title>PREMIO ESTATAL DE LA JUVENTUD 2021</title>
   <link rel="icon" type="image/png" href="img/icon.ico"/>
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +70,7 @@ background-size: cover;">
 <!-- <form class="form-signin" action="dashboard.html" method="POST" name="envio"> -->
 <form class="form-signin" action="dashboard/prcd/proceso_validacion.php" name="envio" method="POST">
   <img class="mb-4" src="img/logo.png" alt="" width="180px" height="180px">
-  <h3>Padrón de proveedores</h3>
+  <h3>PREMIO ESTATAL DE LA JUVENTUD 2021</h3>
   <hr>
   <h1 class="h4 mb-3 font-weight-normal">Ingresar</h1>
   <label for="inputEmail" class="sr-only">Usuario</label>
@@ -104,7 +104,7 @@ background-size: cover;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus"></i> Registro de proveedores</h5>
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-user-plus"></i> Registro de postulados</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

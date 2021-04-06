@@ -1,7 +1,7 @@
 <?php
 
 $servername="localhost";
-$database="proveedores"; //solo se quitó para conexión remota
+$database="PEJ21"; //solo se quitó para conexión remota
 $username="root";
 $password="";
 
