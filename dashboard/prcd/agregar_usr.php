@@ -1,3 +1,13 @@
+<?php
+
+ini_set('display_errors', 1);
+
+ini_set('display_startup_errors', 1);
+
+error_reporting(E_ALL);
+
+?>
+
 <html>
 <header>
         <link rel="shortcut icon" href="../../../img/mini_logo_cigo.ico" />  
@@ -21,7 +31,7 @@ $perfil = 1;
 $sql="INSERT INTO usr(nombre,usuario,pwd,perfil) 
 VALUES('$nombre','$usuario','$hash_pwd','$perfil')";
 $resultado= $conn->query($sql);
-
+echo $resultado;
 if($resultado){
 
     echo "<script type=\"text/javascript\">Swal.fire(

@@ -166,58 +166,10 @@ include('prcd/conn.php');
               <i class="fas fa-file-alt"></i> Cédula proveedores
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="seccion1_tipo.php">
-               
-              <i class="fas fa-file-alt"></i> Datos
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="direccion.php">
-               
-              <i class="fas fa-file-alt"></i> Dirección
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="datos_bancarios.php">
-               
-              <i class="fas fa-file-alt"></i> Datos bancarios
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentos.php">
-               
-              <i class="fas fa-file-alt"></i> Documentos
-            </a>
-          </li> -->
          
           
         </ul>
 
-        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Ajustes</span>
-          <a class="d-flex align-items-center text-muted" href="#" aria-label="Add a new report">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="agregar_trabajador.php">
-              <i class="fas fa-user-plus"></i> Agregar Trabajador
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="agregar_cliente.php">
-              <i class="fas fa-building"></i> Agregar Empresa
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="agregar_usuarios.php">
-              <i class="fas fa-user-plus"></i> Agregar Usuario
-            </a>
-          </li>
-        </ul>
-      </div> -->
     
     </nav>
 
@@ -234,14 +186,14 @@ include('prcd/conn.php');
         </div>
       </div>
 
-      <h4 class="text-primary" style="margin-top:-27px"> <?php
+      <h5 class="text-secondary" style="margin-top:-27px"> <?php
                   date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
                   echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
-              ?></h4>
+              ?></h5>
 
       <!-- <hr style="color: dimgrey;"> -->
       <h2></h2>
@@ -251,7 +203,7 @@ include('prcd/conn.php');
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA DE POSTULACIÓN</h1>
-          <p class="lead">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
           <!-- <p>Cargar documentos</p>
           <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
@@ -270,12 +222,12 @@ include('prcd/conn.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-4">
-          <div class="col mb-3">
+        <div class="row row-cols-1 row-cols-md-3">
+          <div class="col mb-4">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
-                <h5 class="card-title text-primary">Datos</h5>
+                <h5 class="card-title text-primary"><i class="bi bi-credit-card-2-front-fill"></i> DATOS PERSONALES</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                 <p class="card-text">Agregar datos de su empresa</p>
                 
@@ -311,94 +263,17 @@ include('prcd/conn.php');
             </div>
           </div>
           
-          <div class="col mb-3">
+          
+
+          
+
+          <div class="col mb-4">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
-                <h5 class="card-title text-primary">Dirección</h5>
+                <h5 class="card-title text-primary"><i class="bi bi-file-earmark-plus-fill"></i> DOCUMENTOS</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Dirección de su empresa</p>
-                
-                <?php
-                  if($b == 0){
-                    echo '<a href="seccion2.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
-                  }
-                  elseif($b > 0){
-                    echo '<a href="" ></a>';
-                  }
-                  
-                ?>
-                
-                
-                <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
-                <hr>
-                <p class="card-text h4 text-center">Estatus</p>
-
-                <?php
-                  if($b == 0){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i></p>';
-                  }
-                  elseif($b==1){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></p>';
-                  }
-                  if($b == 2){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>';
-                  }
-                ?>
-                <!-- <p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p> -->
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-3">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary">Datos bancarios</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Agregar datos de su empresa</p>
-                <?php
-                  if($c == 0){
-                    echo '<a href="seccion3_grid.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
-                  }
-                  elseif($c > 0){
-                    echo '<a href="" ></a>';
-                  }
-                  
-                ?>
-
-                
-
-                <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
-                <hr>
-                <p class="card-text h4 text-center">Estatus</p>
-
-                <?php
-                  if($c == 0){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i></p>';
-                  }
-                  elseif($c==1){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></p>';
-                  }
-                  if($c == 2){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>';
-                  }
-                ?>
-
-                <!-- <p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-3">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary">Documentos</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Agregar datos de su empresa</p>
+                <p class="card-text">Agregar documentos de postulación</p>
                 
                 <?php
                   if($x < 8){
@@ -447,7 +322,7 @@ include('prcd/conn.php');
               <!-- <div class="card-header">Tabla 1</div> -->
               <div class="card-body"><br>
                 <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> DICTAMEN</h1>
-                <p class="card-text">El siguiente dictamen para pertenecer al padrón de proveedores del Instituto de la Juventud del Estado de Zacatecas es el siguiente:</p>
+                <p class="card-text">El siguiente dictamen para pertenecer por medio de Comité Calificador del Premio Estatal de la Juventud 2021 es el siguiente:</p>
 
                 <p class="card-text h4 text-center">Estatus</p>
                 <p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-smile-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-neutral-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-frown-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>

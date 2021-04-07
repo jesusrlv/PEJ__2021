@@ -27,6 +27,17 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
   <script type="text/javascript">
+    function edad() {
+    var dato = document.getElementById("username").value;
+    var variable_dia = dato.substring(4,6);
+    var variable_mes = dato.substring(6,8);
+    var variable_annio = dato.substring(8,10);
+    document.getElementById("result-dato").innerHTML = variable_dia, ' ',variable_mes;
+    // document.querySelector("#result-dato").textContent = variable;
+    }
+  </script>
+
+  <script type="text/javascript">
   $(document).ready(function() {	
       $('#username').on('blur', function() {
           $('#result-username').html('<img src="dashboard/img/loader.gif" />').fadeOut(1000);
@@ -119,14 +130,18 @@ background-size: cover;">
             <small id="emailHelp" class="form-text text-muted">Se generará un usuario para ingresar a la plataforma</small>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail2">Correo electrónico</label>
+            <label for="exampleInputEmail2">CURP</label>
             <!-- <input type="text" class="form-control" id="username" name="username" placeholder="Correo electrónico" required> -->
-            <input type="email" class="form-control" id="username" name="username" placeholder="Introduce tu correo electrónico..." required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Introduce tu CURP..." onkeyup="javascript:this.value=this.value.toUpperCase(); edad();" required>
             <small class="form-text text-muted">Este será el usuario para acceder a la plataforma y se enviará un correo con tus datos.</small>
           
           <!-- div de usuario repetido -->
             <p><div id="result-username"></div></p>
           <!-- div de usuario repetido -->
+          
+          <!-- div de dato edad -->
+            <p><div class="result-dato alert alert-primary" role="alert" value="">Tu edad es: <span id="result-dato"></span></div></p>
+          <!-- div de dato edad -->
           
           </div>
 
@@ -160,3 +175,4 @@ background-size: cover;">
 </div>
 
 <!--MODAL-->
+

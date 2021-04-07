@@ -1,0 +1,9 @@
+--- ANOTACIONES PEJ 2021 ---
+
+- Un solo lugar para subir datos personales
+- Listado de las categorías del premio, agregarlas en el mismo campo de datos personales
+- Hacer el cálculo de la edad para dejar pasar o no al postulante
+- Envío de correo al postulante con sus datos
+- Revisores, crear interfaz
+- Agregar a CURP un ícono de llave en formulario de registro
+- Acomodo de BD para PEJ totalmente
