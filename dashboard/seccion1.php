@@ -411,4 +411,8 @@ function curpValida(curp) {
 https://startbootstrap.com/theme/sb-admin-pro-angular
 
 https://startbootstrap.com/themes/admin-dashboard
+
+
+Para validación de CURP
+https://jsfiddle.net/marianom/rddbnhcc/3/
  -->
