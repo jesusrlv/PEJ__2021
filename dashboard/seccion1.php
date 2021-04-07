@@ -208,7 +208,7 @@ include('prcd/conn.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">SECCIÓN 1</h1>
+          <h1 class="h1">SECCIÓN</h1>
           <p class="lead">Datos</p>
           <hr class="my-4">
           <!-- <p>Cargar documentos</p>
@@ -218,9 +218,33 @@ include('prcd/conn.php');
         <!-- interno -->
         <div class="row">
                 <div class="col-md-12 order-md-1">
-            <h4 class="mb-3">Personas físicas</h4>
+            <h4 class="mb-3">Datos de postulación</h4>
             <form action="prcd/proceso_seccion_1.php" class="needs-validation" method="POST">
                 <div class="row">
+
+                <div class="col-md-12 mb-3 validate-input" data-validate="Selecciona una temática">
+                <label for="tematica">Temática</label>
+                  <select name="tematica" id="tematica" class="form-control" required>
+                      <option value="">Seleccionar...</option>
+                      
+                      <optgroup label="Por trayectoria">
+                      <option value="1">Logro académico</option>
+                      <option value="2">Discapacidad e integración</option>
+                      <option value="3">Ingenio emprendedor</option>
+                      <option value="4">Responsabilidad social</option>
+                      <option value="5">Mérito migrante</option>
+                      <option value="6">Mérito campesino</option>
+                      </optgroup>
+                      <optgroup label="Talento joven">
+                      <option value="7">Literatura</option>
+                      <option value="8">Artes plásticas, visuales y populares</option>
+                      <option value="9">Arte urbano</option>
+                      <option value="10">Ciencia y tecnología</option>
+                      </optgroup>
+                      
+                  </select>
+						
+					</div>
                 <div class="col-md-6 mb-3">
                     <label for="firstName">Apellido(s)</label>
                     <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required>
@@ -236,15 +260,29 @@ include('prcd/conn.php');
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
+                    <label for="lastName">Teléfono</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                    Valid last name is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">Correo electrónico</label>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required>
+                    <div class="invalid-feedback">
+                    Valid last name is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
                     <label for="firstName">CURP</label>
-                    <input type="text" class="form-control" id="curp" name="curp" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="curp" name="curp" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this)" required>
                     <div class="invalid-feedback">
                     Valid first name is required.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">RFC</label>
-                    <input type="text" class="form-control" id="rfc" name="rfc" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="rfc" name="rfc" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="ValidaRfc(this.value)" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
@@ -254,7 +292,16 @@ include('prcd/conn.php');
 
                 
                 <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Sección 1 <i class="bi bi-skip-forward-fill"></i></button>
+
+                <!-- div de usuario repetido -->
+                <p><div id="result-username"></div></p>
+                <!-- div de usuario repetido -->
+
+                <!-- div de RFC validez -->
+                <p><div id="result-rfc"></div></p>
+                <!-- div de u RFC validez -->
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button>
                 <a type="button" class="btn btn-danger btn-lg btn-block" href="seccion1_tipo.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
             </form>
             </div>
@@ -285,6 +332,79 @@ include('prcd/conn.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="css/dashboard.js"></script></body>
 </html>
+
+
+<script language="JavaScript">
+
+function ValidaRfc(rfcStr) {
+	var strCorrecta;
+	strCorrecta = rfcStr;	
+	if (rfcStr.length == 12){
+	var valid = '^(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))';
+	}else{
+	var valid = '^(([A-Z]|[a-z]|\s){1})(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))';
+	}
+	var validRfc=new RegExp(valid);
+	var matchArray=strCorrecta.match(validRfc);
+	if (matchArray==null) {
+		// alert('Cadena incorrectas');
+    // $('#result-rfc')
+    document.getElementById('result-rfc').innerHTML='<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena RFC incorrecta.</div><style>#boton_submit{display:none;}</style>';
+
+		return false;
+	}
+	else
+	{
+		// alert('Cadena correcta:' + strCorrecta);
+    document.getElementById('result-rfc').innerHTML='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena RFC correcta.</div>';
+		return true;
+	}
+	
+}
+
+function validarInput(input) {
+	var curp = input.value.toUpperCase(),
+    	resultado = document.getElementById("result-username"),
+        valido = "No válido";
+        
+    if (curpValida(curp)) {
+    	valido = "Válido";
+        // resultado.classList.add("ok");
+        resultado.innerHTML ='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
+    } else {
+        resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
+    }
+        
+    // resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
+}
+
+function curpValida(curp) {
+	var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
+    	validado = curp.match(re);
+	
+    if (!validado)  //Coincide con el formato general?
+    	return false;
+    
+    //Validar que coincida el dígito verificador
+    function digitoVerificador(curp17) {
+        //Fuente https://consultas.curp.gob.mx/CurpSP/
+        var diccionario  = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+            lngSuma      = 0.0,
+            lngDigito    = 0.0;
+        for(var i=0; i<17; i++)
+            lngSuma= lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
+        lngDigito = 10 - lngSuma % 10;
+        if(lngDigito == 10)
+            return 0;
+        return lngDigito;
+    }
+    if (validado[2] != digitoVerificador(validado[1])) 
+    	return false;
+        
+	return true; //Validado
+}
+
+</script>
 
 <!-- 
 

@@ -45,7 +45,7 @@ include('prcd/qwery.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>Dashboard | Proveedores</title>
+    <title>Dashboard | Premio Estatal de la Juventud 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -209,14 +209,13 @@ include('prcd/qwery.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">SECCIÓN 4</h1>
+          <h1 class="h1">SECCIÓN </h1>
           <p class="lead">Documentos</p>
           <hr class="my-4">
           
-            <div class="alert alert-secondary" role="alert">
+            <!-- <div class="alert alert-secondary" role="alert">
                 <a href=""><i class="bi bi-file-binary-fill"></i> Descargar Formato RCB-1</a>
-            </div>
-        <hr class="my-4">
+            </div> -->
 
         <!-- ROW -->
         <div class="row">
@@ -245,7 +244,7 @@ include('prcd/qwery.php');
                 </thead>
                 <tr>
                   <td>1</td>
-                  <td>RCB-1</td>
+                  <td>Carta Propuesta</td>
                  
                  <script type="text/javascript">
                 
@@ -298,7 +297,7 @@ function abortHandler(event) {
   <?php
           if (!$row) {
             
-            echo '<input type="file" name="file1" id="file1" onchange="uploadFile()"><br>
+            echo '<input type="file" name="file1" id="file1" onchange="uploadFile()" accept="application/pdf"><br>
   <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
   <h4 id="status"></h4>
   <p id="loaded_n_total"></p>';
@@ -328,7 +327,7 @@ function abortHandler(event) {
                 
                 <tr>
                   <td>2</td>
-                  <td>Cédula de proveedores</td>
+                  <td>Currículum vitae</td>
                   
 
                   <script type="text/javascript">
@@ -384,7 +383,7 @@ function abortHandler2(event) {
 // Carga de archivos 2
           if (!$row2) {
             
-            echo '<input type="file" name="file2" id="file2" onchange="uploadFile2()"><br>
+            echo '<input type="file" name="file2" id="file2" onchange="uploadFile2()" accept="application/pdf"><br>
   <progress id="progressBar2" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status2"></h3>
   <p id="loaded_n_total2"></p>';
@@ -418,7 +417,7 @@ function abortHandler2(event) {
                 </tr>
                 <tr>
                   <td>3</td>
-                  <td>Constancia fiscal</td>
+                  <td>Semblanza de trayectoria</td>
                   <script type="text/javascript">
                 
                      function _(el3) {
@@ -471,7 +470,7 @@ function abortHandler3(event) {
         <?php
              
         if (!$row3) {            
-            echo '<input type="file" name="file3" id="file3" onchange="uploadFile3()"><br>
+            echo '<input type="file" name="file3" id="file3" onchange="uploadFile3()" accept="application/pdf"><br>
   <progress id="progressBar3" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status3"></h3>
   <p id="loaded_n_total3"></p>';
@@ -500,7 +499,7 @@ function abortHandler3(event) {
                 </tr>
                 <tr>
                   <td>4</td>
-                  <td>Comprobante de domicilio</td>
+                  <td>Acta de nacimiento</td>
                   <script type="text/javascript">
                 
                      function _(el4) {
@@ -554,7 +553,7 @@ function abortHandler4(event) {
         
      if (!$row4) {
             
-            echo '<input type="file" name="file4" id="file4" onchange="uploadFile4()"><br>
+            echo '<input type="file" name="file4" id="file4" onchange="uploadFile4()" accept="application/pdf"><br>
   <progress id="progressBar4" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status4"></h3>
   <p id="loaded_n_total4"></p>';
@@ -577,11 +576,11 @@ function abortHandler4(event) {
             // }
     
                     ?> 
-                  <td>Copia o duplicado de materiales bibliográficos, audiovisuales, gráficos y otros que demuestren los motivos por los cuales se considera que él o la candidata (a) puede merecer el premio.</td>
+                  <td>Documento digitalizado.</td>
                 </tr>
                 <tr>
                   <td>5</td>
-                  <td>Carátula de estado de cuenta bancaria</td>
+                  <td>Credencial de elector</td>
                   <script type="text/javascript">
                 
                      function _(el5) {
@@ -633,7 +632,7 @@ function abortHandler5(event) {
         
         if (!$row5) {
             
-            echo '<input type="file" name="file5" id="file5" onchange="uploadFile5()"><br>
+            echo '<input type="file" name="file5" id="file5" onchange="uploadFile5()" accept="application/pdf"><br>
   <progress id="progressBar5" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status5"></h3>
   <p id="loaded_n_total5"></p>';
@@ -658,11 +657,11 @@ function abortHandler5(event) {
     
                     ?> 
                     
-                  <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de youtube o un video de no más de 70 MB.</td>
+                  <td>Documento digitalizado.</td>
                 </tr>
                 <tr>
                   <td>6</td>
-                  <td>INE</td>
+                  <td>Comprobante de domicilio</td>
                   <script type="text/javascript">
                 
                      function _(el6) {
@@ -714,7 +713,7 @@ function abortHandler6(event) {
        
         
        if (!$row6) {            
-            echo '<input type="file" name="file6" id="file6" onchange="uploadFile6()"><br>
+            echo '<input type="file" name="file6" id="file6" onchange="uploadFile6()" accept="application/pdf"><br>
   <progress id="progressBar6" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status6"></h3>
   <p id="loaded_n_total6"></p>';
@@ -739,13 +738,13 @@ function abortHandler6(event) {
     
                     ?> 
                     
-                  <td>Documento escaneado (PDF) o imagen (JPG).</td>
+                  <td>Documento escaneado (PDF) no mayor a 3 meses.</td>
                 </tr>
                 
                 
                 <tr>
                   <td>7</td>
-                  <td>Formato D-32</td>
+                  <td>CURP</td>
                   <script type="text/javascript">
                 
                      function _(el7) {
@@ -797,7 +796,7 @@ function abortHandler7(event) {
         
         if (!$row7) {
             
-            echo '<input type="file" name="file7" id="file7" onchange="uploadFile7()"><br>
+            echo '<input type="file" name="file7" id="file7" onchange="uploadFile7()" accept="application/pdf"><br>
   <progress id="progressBar7" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status7"></h3>
   <p id="loaded_n_total7"></p>';
@@ -821,12 +820,12 @@ function abortHandler7(event) {
             // }
     
                     ?> 
-                  <td>Documento escaneado (PDF) o imagen (JPG).</td>
+                  <td>Documento escaneado (PDF).</td>
                 </tr>
                 
                 <tr>
                   <td>8</td>
-                  <td>Opinión fiscal estatal</td>
+                  <td>Material bibliográfico</td>
                   <script type="text/javascript">
                 
                      function _(el8) {
@@ -878,7 +877,7 @@ function abortHandler8(event) {
 
         
           if (!$row8) {            
-            echo '<input type="file" name="file8" id="file8" onchange="uploadFile8()"><br>
+            echo '<input type="file" name="file8" id="file8" onchange="uploadFile8()" accept="application/pdf"><br>
   <progress id="progressBar8" value="0" max="100" style="width:300px;"></progress>
   <h3 id="status8"></h3>
   <p id="loaded_n_total8"></p>';
@@ -903,7 +902,88 @@ function abortHandler8(event) {
             // }
     
                     ?> 
-                  <td>Documento escaneado (PDF) o imagen (JPG).</td>
+                  <td>Copia o duplicado de materiales bibliográficos, audiovisuales, gráficos y otros que demuestren los motivos por los cuales se considera que él o la candidata (a) puede merecer el premio.</td>
+                </tr>               
+                <tr>
+                  <td>9</td>
+                  <td>Video</td>
+                  <script type="text/javascript">
+                
+                     function _(el9) {
+  return document.getElementById(el9);
+}
+
+function uploadFile9() {
+  var file = _("file9").files[0];
+  // alert(file.name+" | "+file.size+" | "+file.type);
+  var formdata = new FormData();
+  formdata.append("file9", file);
+  var ajax = new XMLHttpRequest();
+  ajax.upload.addEventListener("progress", progressHandler9, false);
+  ajax.addEventListener("load", completeHandler9, false);
+  ajax.addEventListener("error", errorHandler9, false);
+  ajax.addEventListener("abort", abortHandler9, false);
+  ajax.open("POST", "prcd/subir_archivo9.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  //use file_upload_parser.php from above url
+  //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
+  ajax.send(formdata);
+}
+
+function progressHandler9(event) {
+  _("loaded_n_total9").innerHTML = "Subido " + event.loaded + " bytes de " + event.total;
+  var percent = (event.loaded / event.total) * 100;
+  _("progressBar9").value = Math.round(percent);
+  _("status9").innerHTML = Math.round(percent) + "% subido... espere un momento";
+}
+
+function completeHandler9(event) {
+  _("status9").innerHTML = event.target.responseText;
+  _("progressBar9").value = 0; //wil clear progress bar after successful upload
+    _("file9").style.display='none';
+    _("progressBar9").style.display='none';
+}
+
+function errorHandler9(event) {
+  _("status9").innerHTML = "Fallo en la subida";
+}
+
+function abortHandler9(event) {
+  _("status9").innerHTML = "Fallo en la subida";
+}
+                    
+                </script>
+                 
+                  <td><form id="upload_form9" enctype="multipart/form-data" method="post">
+<?php
+
+        
+          if (!$row9) {            
+            echo '<input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
+  <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
+  <h3 id="status9"></h3>
+  <p id="loaded_n_total9"></p>';
+        }
+        else{
+          echo '<div class="alert alert-secondary h3" role="alert">
+          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+        </div>';
+        }
+    
+    ?>
+ 
+ 
+</form>
+</td>
+                  <?php           
+            // if(empty($variable9)){
+            // echo '<td><span class="label label-warning">No Cargado</span></td>';
+            // }
+            // else{
+            // echo '<td><span class="label label-success">Cargado</span></td>';
+            // }
+    
+                    ?> 
+                  <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
                 </tr>               
                 
                 

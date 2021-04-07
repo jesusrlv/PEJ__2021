@@ -34,5 +34,9 @@ $id = $_SESSION['id'];
     $query8="SELECT * FROM docs WHERE id_ext='$id' AND tipo_doc = 8";
     $resultado8= $conn->query($query8);
     $row8=$resultado8->fetch_assoc();
+     
+    $query9="SELECT * FROM docs WHERE id_ext='$id' AND tipo_doc = 9";
+    $resultado9= $conn->query($query9);
+    $row9=$resultado9->fetch_assoc();
 
     ?>

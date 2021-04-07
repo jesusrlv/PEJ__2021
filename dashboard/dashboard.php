@@ -222,8 +222,8 @@ include('prcd/conn.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-3">
-          <div class="col mb-4">
+        <div class="row row-cols-1 row-cols-md-2">
+          <div class="col mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
@@ -233,7 +233,7 @@ include('prcd/conn.php');
                 
                 <?php
                   if($a == 0){
-                    echo '<a href="seccion1_tipo.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
+                    echo '<a href="seccion1.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
                   }
                   elseif($a > 0){
                     echo '<a href="" ></a>';
@@ -267,7 +267,7 @@ include('prcd/conn.php');
 
           
 
-          <div class="col mb-4">
+          <div class="col mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
@@ -276,10 +276,10 @@ include('prcd/conn.php');
                 <p class="card-text">Agregar documentos de postulación</p>
                 
                 <?php
-                  if($x < 8){
+                  if($x < 9){
                     echo '<a href="seccion4.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
                   }
-                  elseif($x >= 8){
+                  elseif($x >= 9){
                     echo '<a href="" ></a>';
                   }
                   
