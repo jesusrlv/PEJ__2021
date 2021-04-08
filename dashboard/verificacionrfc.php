@@ -9,13 +9,13 @@ if (isset($_POST)) {
     );
  
     if ($result->num_rows > 0) {
-        echo '<div class="alert alert-danger"><strong>Oh no!</strong> Nombre de usuario no disponible.</div>
+        echo '<div class="alert alert-danger"><strong>ERROR.</strong> Nombre de usuario no disponible.</div>
         
         <style>
             #boton_submit{display:none;}
         </style>
         ';
     } else {
-        echo '<div class="alert alert-success"><strong>Enhorabuena!</strong> Usuario disponible.</div>';
+        echo '<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO.</strong> Usuario disponible.</div>';
     }
 }

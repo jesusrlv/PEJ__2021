@@ -20,22 +20,13 @@
 
   <!-- script validate -->
   <script src="dashboard/prcd/validacion_pwd.js"></script>
+  <script src="dashboard/prcd/validacion.js"></script>
   <link href="dashboard/css/CheckPassword.css" rel="stylesheet" />
 
   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 
-  <script type="text/javascript">
-    function edad() {
-    var dato = document.getElementById("username").value;
-    var variable_dia = dato.substring(4,6);
-    var variable_mes = dato.substring(6,8);
-    var variable_annio = dato.substring(8,10);
-    document.getElementById("result-dato").innerHTML = variable_dia, ' ',variable_mes;
-    // document.querySelector("#result-dato").textContent = variable;
-    }
-  </script>
 
   <script type="text/javascript">
   $(document).ready(function() {	
@@ -132,12 +123,15 @@ background-size: cover;">
           <div class="form-group">
             <label for="exampleInputEmail2">CURP</label>
             <!-- <input type="text" class="form-control" id="username" name="username" placeholder="Correo electrónico" required> -->
-            <input type="text" class="form-control" id="username" name="username" placeholder="Introduce tu CURP..." onkeyup="javascript:this.value=this.value.toUpperCase(); edad();" required>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Introduce tu CURP..." onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);" required>
             <small class="form-text text-muted">Este será el usuario para acceder a la plataforma y se enviará un correo con tus datos.</small>
           
           <!-- div de usuario repetido -->
             <p><div id="result-username"></div></p>
           <!-- div de usuario repetido -->
+
+          <!-- div para validar CURP -->
+          <p><div id="result-username2"></div></p>
           
           <!-- div de dato edad -->
             <p><div class="result-dato alert alert-primary" role="alert" value="">Tu edad es: <span id="result-dato"></span></div></p>
@@ -159,6 +153,8 @@ background-size: cover;">
 
           <!-- mensaje del Js para confirmar -->
           <div id="strengthMessage"></div>
+
+          
           
           <button type="submit" class="btn btn-primary" id="boton_submit"><i class="bi bi-person-plus-fill"></i> Registrar</button>
         </form>
