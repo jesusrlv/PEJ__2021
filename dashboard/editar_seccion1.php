@@ -206,10 +206,17 @@ include('prcd/conn.php');
     <div class="container-fluid ">
 
 
+            <?php
+                $query="SELECT * FROM datos WHERE id_ext='$id'";
+                $resultado= $conn->query($query);
+                $row=$resultado->fetch_assoc();
+                    // $a = $row['validacion'];
+            ?>
+
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
           <h1 class="h1">SECCIÓN</h1>
-          <p class="lead">Datos</p>
+          <p class="lead">Editar Datos</p>
           <hr class="my-4">
           <!-- <p>Cargar documentos</p>
           <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
@@ -219,12 +226,12 @@ include('prcd/conn.php');
         <div class="row">
                 <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Datos de postulación</h4>
-            <form action="prcd/proceso_seccion_1.php" class="needs-validation" method="POST">
+            <form action="prcd/proceso_editar_seccion_1.php" class="needs-validation" method="POST">
                 <div class="row">
-
+                <!--
                 <div class="col-md-12 mb-3 validate-input" data-validate="Selecciona una temática">
                 <label for="tematica">Temática</label>
-                  <select name="tematica" id="tematica" class="form-control" required>
+                   <select name="tematica" id="tematica" class="form-control" required>
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Por trayectoria">
@@ -242,34 +249,43 @@ include('prcd/conn.php');
                       <option value="10">Ciencia y tecnología</option>
                       </optgroup>
                       
-                  </select>
+                  </select> 
                   <hr>	
 					</div>
-          
+                -->
+
                 <div class="col-md-6 mb-3">
                     <label for="firstName">Apellido(s)</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="<?php echo $row['apellido'] ?>" required>
                     <div class="invalid-feedback">
                     Valid first name is required.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Nombre(s)</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="<?php echo $row['nombre'] ?>" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="<?php echo $row['telefono'] ?>" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="lastName">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo" placeholder="" value="" required>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="" value="<?php echo $row['email'] ?>" required>
+                    <div class="invalid-feedback">
+                    Valid last name is required.
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">CURP</label>
+                    <input type="email" class="form-control" id="curp" name="curp" placeholder="" value="<?php echo $row['curp'] ?>" readonly>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
@@ -308,7 +324,7 @@ include('prcd/conn.php');
                 <!-- div de u RFC validez -->
 
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button>
-                <a type="button" class="btn btn-danger btn-lg btn-block" href="seccion1_tipo.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
+                <a type="button" class="btn btn-danger btn-lg btn-block" href="dashboard.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
             </form>
             </div>
 

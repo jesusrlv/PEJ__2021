@@ -211,12 +211,11 @@ include('prcd/conn.php');
           
         <!-- interno -->
 
+
         <!-- consulta de validación -->
         
         <?php
-        
         include('prcd/qwery_validacion_dashboard.php');
-        // echo $x;
         ?>
         <!-- consulta de validación -->
 
@@ -240,10 +239,8 @@ include('prcd/conn.php');
                   }
                   
                 ?>
-
                 
-                
-                <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
+                <a href="editar_seccion1.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
                 <hr>
                 <p class="card-text h4 text-center">Estatus</p>
 

@@ -12,25 +12,21 @@
 session_start();
 include('conn.php');
 
-$curp = $_SESSION['usr'];
-$tematica = $_POST['tematica'];
 $apellido = $_POST['apellido'];
 $nombre = $_POST['nombre'];
 $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $id_ext = $_SESSION['id'];
-$tipo_usr = 1;
-$validacion = 1;
 
-$sql="INSERT INTO datos(tematica,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion) 
-VALUES('$tematica','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion')";
+$sql="UPDATE datos SET apellido='$apellido',nombre='$nombre',telefono='$telefono',email='$correo' WHERE id_ext='$id_ext'";
+
 $resultado= $conn->query($sql);
 
 if($resultado){
 
     echo "<script type=\"text/javascript\">Swal.fire(
         'Proceso exitoso',
-        'Datos agregados',
+        'Datos actualizados',
         'success'
       ).then(function(){location.href='../dashboard.php';}
     
@@ -42,7 +38,7 @@ if($resultado){
 else{
     echo "<script type=\"text/javascript\">Swal.fire(
         'Advertencia',
-        'No agregado',
+        'No actualizados',
         'warning'
       ).then(function(){window.location=history.go(-1);}
     

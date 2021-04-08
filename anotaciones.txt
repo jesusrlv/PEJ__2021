@@ -7,3 +7,6 @@
 - Revisores, crear interfaz
 - Agregar a CURP un ícono de llave en formulario de registro
 - Acomodo de BD para PEJ totalmente
+
+
+- en el archivo qwery_validacion_dashboard.php se va a cambiar la validación hacia la tabla de validaciones en la BD
