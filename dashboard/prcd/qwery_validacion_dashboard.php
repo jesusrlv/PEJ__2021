@@ -11,7 +11,15 @@
     $row=$resultado->fetch_assoc();
         // $datos = $row['id_ext'];
         $a = $row['validacion'];
+    
+    
+    // $query="SELECT * FROM validacion WHERE id_ext='$id'";
+    // $resultado= $conn->query($query);
+    // $row=$resultado->fetch_assoc();
+    //     // $datos = $row['id_ext'];
+    //     $a = $row['tipo_validacion'];
      
+    
     // $query2="SELECT * FROM direccion WHERE id_ext='$id'";
     // $resultado2= $conn->query($query2);
     // $row2=$resultado2->fetch_assoc();
@@ -37,5 +45,46 @@
         }
      
     
+        
+$query="SELECT * FROM docs WHERE id_ext='$id'";
+$resultado= $conn->query($query);
+$row=$resultado->fetch_assoc();
+
+
+$row_cnt = $resultado->num_rows;
+
+    printf("Result set has %d rows.\n", $row_cnt);
+
+// $row_cnt = mysqli_num_rows($resultado);
+
+//     printf("Result set has %d rows.\n", $row_cnt);
+
+
+// $v1=0;
+
+//     if(!empty($row['link1'])){
+//    ++$v1; }
+//      if(!empty($row['link2'])){
+//    ++$v1; }
+//      if(!empty($row['link3'])){
+//    ++$v1; }
+//      if(!empty($row['link4'])){
+//    ++$v1; }
+//      if(!empty($row['link5'])){
+//    ++$v1; }
+//      if(!empty($row['link6'])){
+//    ++$v1; }
+//      if(!empty($row['link7'])){
+//    ++$v1; }
+//      if(!empty($row['link8'])){
+//    ++$v1; }
+//      if(!empty($row['link9'])){
+//    ++$v1; 
+//      }
+//      $v9 = 9;
+//      $v2 = $v9 - $v1;
+
+
+
 
     ?>

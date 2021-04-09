@@ -308,7 +308,7 @@ include('prcd/conn.php');
                 <!-- div de u RFC validez -->
 
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button>
-                <a type="button" class="btn btn-danger btn-lg btn-block" href="seccion1_tipo.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
+                <a type="button" class="btn btn-danger btn-lg btn-block" href="dashboard.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
             </form>
             </div>
 

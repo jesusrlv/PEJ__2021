@@ -303,7 +303,7 @@ function abortHandler(event) {
   <p id="loaded_n_total"></p>';
         }
         else{
-            echo '<div class="alert alert-secondary h3" role="alert">
+            echo '<div class="alert alert-secondary h5" role="alert">
             <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
           </div>';
         }
@@ -389,7 +389,7 @@ function abortHandler2(event) {
   <p id="loaded_n_total2"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -476,7 +476,7 @@ function abortHandler3(event) {
   <p id="loaded_n_total3"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -559,7 +559,7 @@ function abortHandler4(event) {
   <p id="loaded_n_total4"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -638,7 +638,7 @@ function abortHandler5(event) {
   <p id="loaded_n_total5"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -719,7 +719,7 @@ function abortHandler6(event) {
   <p id="loaded_n_total6"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -802,7 +802,7 @@ function abortHandler7(event) {
   <p id="loaded_n_total7"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -883,7 +883,7 @@ function abortHandler8(event) {
   <p id="loaded_n_total8"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }
@@ -964,7 +964,7 @@ function abortHandler9(event) {
   <p id="loaded_n_total9"></p>';
         }
         else{
-          echo '<div class="alert alert-secondary h3" role="alert">
+          echo '<div class="alert alert-secondary h5" role="alert">
           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
         </div>';
         }

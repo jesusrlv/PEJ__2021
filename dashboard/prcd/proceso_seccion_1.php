@@ -20,7 +20,7 @@ $telefono = $_POST['telefono'];
 $correo = $_POST['correo'];
 $id_ext = $_SESSION['id'];
 $tipo_usr = 1;
-$validacion = 1;
+$validacion = 2;
 
 $sql="INSERT INTO datos(tematica,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion) 
 VALUES('$tematica','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion')";

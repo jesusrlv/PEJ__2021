@@ -56,6 +56,20 @@ include('prcd/conn.php');
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
+    <!-- Gráfico -->
+
+
+<!-- FLOT CHARTS -->
+<script src="/bower_components/Flot/jquery.flot.js"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
+<!-- Page script -->
+    <!-- <script src="prcd/grafico.js"></script> -->
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -205,6 +219,21 @@ include('prcd/conn.php');
           <h1 class="h1">BIENVENIDO AL SISTEMA DE POSTULACIÓN</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
+
+          <!-- Donut chart -->
+              <i class="fa fa-bar-chart-o"></i> <h3 class="box-title">Avance de carga de archivos</h3>
+
+               
+             
+            
+              <div id="donut-chart"></div>
+           
+            <!-- /.box-body-->
+          <!-- /.box -->
+       
+     
+   
+    <!-- /.content -->
           <!-- <p>Cargar documentos</p>
           <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
 
@@ -228,7 +257,7 @@ include('prcd/conn.php');
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-credit-card-2-front-fill"></i> DATOS PERSONALES</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Agregar datos de su empresa</p>
+                <p class="card-text">Agregar datos del postulante</p>
                 
                 <?php
                   if($a == 0){
@@ -246,14 +275,16 @@ include('prcd/conn.php');
 
                 <?php
                   if($a == 0){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i></p>';
+                    echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 2rem; "></i> Sin datos personales</p></div>';
                   }
                   elseif($a==1){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></p>';
+                    echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 2rem;"></i> En revisión</p></div>';
                   }
                   if($a == 2){
-                    echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>';
+                    echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 2rem; color: cornflowerblue;"></i> Datos personales completos</p></div>';
                   }
+
+
                 ?>
 
               </div>
@@ -270,7 +301,7 @@ include('prcd/conn.php');
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-file-earmark-plus-fill"></i> DOCUMENTOS</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Agregar documentos de postulación</p>
+                <p class="card-text">Agregar documentos de postulación <b>(<?php printf("Se cargaron %d documentos.\n", $row_cnt);?>)</b></p>
                 
                 <?php
                   if($x < 9){
@@ -292,13 +323,13 @@ include('prcd/conn.php');
                 
                 <?php
                 if($x==0){
-                echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i></p>';
+                echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 2rem; "></i> Sin documentgos</p></div>';
                 }
                 elseif($x > 0 AND $x <= 8){
-                echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></p>';
+                echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 2em;"></i> Expediente incompleto</p></div>';
                 }
                 if($x > 8){
-                echo '<p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>';
+                echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 2rem; color: cornflowerblue;"></i> Expediente completo</p></div>';
 
                 }
                 ?>
@@ -310,8 +341,27 @@ include('prcd/conn.php');
           
         </div>
       </div> <!-- container -->
+      
       <hr>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-1">
+          <div class="col mb-12">
+            <div class="card text-white bg-primary mb-12" style="width: 100%; ">
+              <!-- <div class="card-header">Tabla 1</div> -->
+              <div class="card-body"><br>
+                <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> VALIDACIÓN DE EXPEDIENTE</h1>
+                <p class="card-text">La siguiente validación se realiza por parte del personal del Instituto de la Juventud para validar el expediente, el cual es el siguiente:</p>
 
+                <p class="card-text h4 text-center">Estatus</p>
+                <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p>
+                <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+
+      <hr>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-1">
           <div class="col mb-12">
@@ -322,7 +372,7 @@ include('prcd/conn.php');
                 <p class="card-text">El siguiente dictamen para pertenecer por medio de Comité Calificador del Premio Estatal de la Juventud 2021 es el siguiente:</p>
 
                 <p class="card-text h4 text-center">Estatus</p>
-                <p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-smile-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-neutral-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-emoji-frown-fill" style="font-size: 3rem; color: cornflowerblue;"></i></p>
+                <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p>
                 <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
               </div>
             </div>
@@ -360,3 +410,187 @@ https://startbootstrap.com/theme/sb-admin-pro-angular
 
 https://startbootstrap.com/themes/admin-dashboard
  -->
+
+<?php
+ $v1 = $row_cnt;
+ echo "Subidos ".$v1;
+    $v9 = 9;
+    $v2 = $v9 - $v1;
+    
+    echo " Penientes ".$v2;
+?>
+ <script>
+  $(function () {
+    
+     /* LINE CHART
+     * ----------
+     */
+    //LINE randomly generated data
+
+    var sin = [], cos = []
+    for (var i = 0; i < 14; i += 0.5) {
+      sin.push([i, Math.sin(i)])
+      cos.push([i, Math.cos(i)])
+    }
+    var line_data1 = {
+      data : sin,
+      color: '#3c8dbc'
+    }
+    var line_data2 = {
+      data : cos,
+      color: '#00c0ef'
+    }
+    $.plot('#line-chart', [line_data1, line_data2], {
+      grid  : {
+        hoverable  : true,
+        borderColor: '#f3f3f3',
+        borderWidth: 1,
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        shadowSize: 0,
+        lines     : {
+          show: true
+        },
+        points    : {
+          show: true
+        }
+      },
+      lines : {
+        fill : false,
+        color: ['#3c8dbc', '#f56954']
+      },
+      yaxis : {
+        show: true
+      },
+      xaxis : {
+        show: true
+      }
+    })
+    //Initialize tooltip on hover
+    $('<div class="tooltip-inner" id="line-chart-tooltip"></div>').css({
+      position: 'absolute',
+      display : 'none',
+      opacity : 0.8
+    }).appendTo('body')
+    $('#line-chart').bind('plothover', function (event, pos, item) {
+
+      if (item) {
+        var x = item.datapoint[0].toFixed(2),
+            y = item.datapoint[1].toFixed(2)
+
+        $('#line-chart-tooltip').html(item.series.label + ' of ' + x + ' = ' + y)
+          .css({ top: item.pageY + 5, left: item.pageX + 5 })
+          .fadeIn(200)
+      } else {
+        $('#line-chart-tooltip').hide()
+      }
+
+    })
+    /* END LINE CHART */
+
+    /*
+     * FULL WIDTH STATIC AREA CHART
+     * -----------------
+     */
+    var areaData = [[2, 88.0], [3, 93.3], [4, 102.0], [5, 108.5], [6, 115.7], [7, 115.6],
+      [8, 124.6], [9, 130.3], [10, 134.3], [11, 141.4], [12, 146.5], [13, 151.7], [14, 159.9],
+      [15, 165.4], [16, 167.8], [17, 168.7], [18, 169.5], [19, 168.0]]
+    $.plot('#area-chart', [areaData], {
+      grid  : {
+        borderWidth: 0
+      },
+      series: {
+        shadowSize: 0, // Drawing is faster without shadows
+        color     : '#00c0ef'
+      },
+      lines : {
+        fill: true //Converts the line chart to area chart
+      },
+      yaxis : {
+        show: false
+      },
+      xaxis : {
+        show: false
+      }
+    })
+
+    /* END AREA CHART */
+
+    /*
+     * BAR CHART
+     * ---------
+     */
+
+    var bar_data = {
+      data : [['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9]],
+      color: '#3c8dbc'
+    }
+    $.plot('#bar-chart', [bar_data], {
+      grid  : {
+        borderWidth: 1,
+        borderColor: '#f3f3f3',
+        tickColor  : '#f3f3f3'
+      },
+      series: {
+        bars: {
+          show    : true,
+          barWidth: 0.5,
+          align   : 'center'
+        }
+      },
+      xaxis : {
+        mode      : 'categories',
+        tickLength: 0
+      }
+    })
+    /* END BAR CHART */
+
+    /*
+     * DONUT CHART -------------------------------------------
+     * -----------
+     */
+      var v1 = '<?php echo $v1; ?>'
+      var v2 = '<?php echo $v2; ?>'
+      
+    var donutData = [
+      { label: 'Subido', data: v1, color: '#1A8F5E' },
+      { label: 'Pendientes', data: v2, color: '#FFBA59' }
+//      { label: 'Series4', data: 50, color: '#00c0ef' }
+    ]
+    $.plot('#donut-chart', donutData, {
+      series: {
+        pie: {
+          show       : true,
+          radius     : 1,
+          innerRadius: 0.5,
+          label      : {
+            show     : true,
+            radius   : 2 / 3,
+            formatter: labelFormatter,
+            threshold: 0.1
+          }
+
+        }
+      },
+      legend: {
+        show: false
+      }
+    })
+    /*
+     * END DONUT CHART
+     */
+
+  })
+
+  /*
+   * Custom Label formatter
+   * ----------------------
+   */
+  function labelFormatter(label, series) {
+    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
+      + label
+      + '<br>'
+      + Math.round(series.percent) + '%</div>'
+  }
+</script>
