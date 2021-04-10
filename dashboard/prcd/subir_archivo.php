@@ -1,5 +1,7 @@
 <?php    
     session_start();
+    include('conn2.php');
+
     date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
     
@@ -27,9 +29,8 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
     echo "$fileName carga completa";
     
     $ruta = "../archivos/". $link .'_'. $id .'.'.$extension;
-    include('conn.php');
     // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
-    $sqlinsert= "INSERT INTO docs(id_ext,ruta,tipo_doc,fecha_agregado,validacion) 
+    $sqlinsert= "INSERT INTO docs (id_ext,ruta,tipo_doc,fecha_agregado,validacion) 
     VALUES('$id','$ruta','$tipo_doc','$fecha_sistema','$validacion')";
     $resultado2= $conn->query($sqlinsert);
     
