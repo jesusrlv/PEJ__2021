@@ -101,7 +101,7 @@ include('prcd/qwery.php');
       
         
        
-        <a class="btn btn-outline-secondary" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+        <a class="btn btn-outline-secondary btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
         
       </li>
   </ul>
@@ -152,25 +152,25 @@ include('prcd/qwery.php');
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Formato RCB-1
+              <i class="fas fa-file-alt"></i> Link 1
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> SAT
+              <i class="fas fa-file-alt"></i> Link 2
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> FINANZAS
+              <i class="fas fa-file-alt"></i> Link 3
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Cédula proveedores
+              <i class="fas fa-file-alt"></i> Link 4
             </a>
           </li>
          
