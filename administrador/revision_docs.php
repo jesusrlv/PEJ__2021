@@ -238,7 +238,7 @@ include('../dashboard/prcd/conn.php');
 
             <table class="table table-hover text-center table-striped table-responsive ">
 
-            <thead class="table-warning">
+            <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Apellido</th>
