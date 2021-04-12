@@ -150,7 +150,7 @@ include('prcd/conn.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Requisitos</span>
+            <span>Links adicionales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
@@ -159,25 +159,25 @@ include('prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Formato RCB-1
+              <i class="fas fa-file-alt"></i> Link 1
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> SAT
+              <i class="fas fa-file-alt"></i> Link 2
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> FINANZAS
+              <i class="fas fa-file-alt"></i> Link 3
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Cédula proveedores
+              <i class="fas fa-file-alt"></i> Link 4
             </a>
           </li>
          
@@ -217,7 +217,7 @@ include('prcd/conn.php');
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA DE POSTULACIÓN</h1>
-          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | <strong>INJUVENTUD</strong></p>
           <hr class="my-4">
 
           <!-- Donut chart -->

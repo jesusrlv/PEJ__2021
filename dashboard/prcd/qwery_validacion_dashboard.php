@@ -55,34 +55,6 @@ $row_cnt = $resultado->num_rows;
 
     printf("Result set has %d rows.\n", $row_cnt);
 
-// $row_cnt = mysqli_num_rows($resultado);
-
-//     printf("Result set has %d rows.\n", $row_cnt);
-
-
-// $v1=0;
-
-//     if(!empty($row['link1'])){
-//    ++$v1; }
-//      if(!empty($row['link2'])){
-//    ++$v1; }
-//      if(!empty($row['link3'])){
-//    ++$v1; }
-//      if(!empty($row['link4'])){
-//    ++$v1; }
-//      if(!empty($row['link5'])){
-//    ++$v1; }
-//      if(!empty($row['link6'])){
-//    ++$v1; }
-//      if(!empty($row['link7'])){
-//    ++$v1; }
-//      if(!empty($row['link8'])){
-//    ++$v1; }
-//      if(!empty($row['link9'])){
-//    ++$v1; 
-//      }
-//      $v9 = 9;
-//      $v2 = $v9 - $v1;
 
 
 

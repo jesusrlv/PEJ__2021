@@ -10,3 +10,4 @@
 
 
 - en el archivo qwery_validacion_dashboard.php se va a cambiar la validación hacia la tabla de validaciones en la BD
+- 

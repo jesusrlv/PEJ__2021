@@ -25,7 +25,7 @@ session_start();
     // die();
 // }
 
-include('prcd/conn.php');
+include('../dashboard/prcd/conn.php');
 
 // variables de sesión
 
@@ -84,6 +84,8 @@ include('prcd/conn.php');
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+
+        body{background-color:gray;}
       }
     </style>
     <!-- Custom styles for this template -->
@@ -227,7 +229,7 @@ include('prcd/conn.php');
 
         
         <?php
-        include('prcd/qwery_validacion_dashboard.php');
+        include('../dashboard/prcd/qwery_validacion_dashboard.php');
         ?>
         <!-- consulta de validación -->
 

@@ -217,88 +217,56 @@ include('../dashboard/prcd/conn.php');
     <div class="container-fluid ">
 
 
-      <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
+      <div class="jumbotron jumbotron-fluid" style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
         
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
-
-        <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-2">
-          
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de usuarios</p>
-                <hr>
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes</a>
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-plus-fill"></i> ALTA DE REVISORES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de los documentos de los postulantes</p>
-                <hr>
-                <a href="alta_revisores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de revisores</a>
-                <a href="alta_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de administradores</a>
-              </div>
-            </div>
+        <!-- búsqueda -->
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Búsqueda de usuario" aria-label="Búsqueda de usuario" aria-describedby="button-addon2">
+            <button class="btn btn-outline-primary" type="button" id="button-addon2"><i class="bi bi-search"></i> Buscar</button>
         </div>
-        
 
-        <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-dash-fill"></i> ELIMINAR USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de los documentos de los postulantes</p>
+        <div class="container">
+           
+            <table class="table table-hover text-center table-striped ">
+
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Perfil</th>
+                    <th scope="col">Acción</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Usuario 1</td>
+                    <td>Usr1</td>
+                    <td>Administrador</td>
+                    <td><i class="bi bi-trash-fill"></i></td>
+                    
+                </tr>
+                
+            </tbody>
                 <hr>
-                <a href="eliminar_usr.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios</a>
-                <!-- <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Administradores</a>
-                <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Revisores</a> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-trash-fill"></i> ELIMINAR DOCUMENTOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de los documentos de los postulantes</p>
-                <hr>
-                <a href="eliminar_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-trash-fill"></i> ELIMINAR</a>
-              </div>
-            </div>
-          </div>
-
+            </table>
+        </div>
+        <hr>
       </div> <!-- container -->
       
-      <hr>
+      
       
 
       
 
-      </div>
+      <!-- </div> -->
 
 
     </main>
