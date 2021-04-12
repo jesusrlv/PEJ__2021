@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-04-2021 a las 22:30:05
+-- Tiempo de generación: 12-04-2021 a las 23:05:52
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -51,7 +51,7 @@ INSERT INTO `datos` (`id`, `id_ext`, `apellido`, `nombre`, `curp`, `tematica`, `
 (3, 0, '', '', '', 0, 0, '', 1, 0),
 (4, 0, 'LeaÃ±os', 'Villegas', 'LEVJ810924HZSXLS04', 0, 0, '', 1, 0),
 (20, 12, '', '', '', 0, 0, '', 2, 1),
-(21, 15, 'LeaÃ±os V', 'Rodolfo', 'LEVJ810924HZSXLS04', 1, 2147483647, 'jesusrlv_rojo@hotmail.com', 1, 1);
+(21, 15, 'LeaÃ±os V', 'Rodolfo', 'LEVJ810924HZSXLS04', 1, 2147483647, 'jesusrlv_rojo@hotmail.com', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -115,9 +115,9 @@ INSERT INTO `docs` (`id`, `id_ext`, `ruta`, `tipo_doc`, `validacion`, `observaci
 (36, 15, '../archivos/archivo4_15.pdf', 4, 1, '', '2021-04-08 11:54:18', '0000-00-00 00:00:00'),
 (37, 15, '../archivos/archivo5_15.pdf', 5, 1, '', '2021-04-08 11:54:23', '0000-00-00 00:00:00'),
 (38, 15, '../archivos/archivo6_15.pdf', 6, 1, '', '2021-04-08 11:54:27', '0000-00-00 00:00:00'),
-(39, 15, '../archivos/archivo7_15.pdf', 7, 1, '', '2021-04-08 11:54:30', '0000-00-00 00:00:00'),
 (40, 15, '../archivos/archivo8_15.pdf', 8, 1, '', '2021-04-08 11:54:33', '0000-00-00 00:00:00'),
-(41, 15, '../archivos/archivo9_15.pdf', 9, 1, '', '2021-04-08 11:54:36', '0000-00-00 00:00:00');
+(41, 15, '../archivos/archivo9_15.pdf', 9, 1, '', '2021-04-08 11:54:36', '0000-00-00 00:00:00'),
+(43, 15, '../archivos/archivo7_15.pdf', 7, 1, '', '2021-04-09 13:10:36', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -143,20 +143,21 @@ CREATE TABLE `usr` (
   `nombre` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
   `usuario` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `pwd` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `perfil` int(11) NOT NULL
+  `perfil` int(11) NOT NULL,
+  `categoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `usr`
 --
 
-INSERT INTO `usr` (`id`, `nombre`, `usuario`, `pwd`, `perfil`) VALUES
-(1, 'uno', 'jesusrlv@correo.com', '123456789', 1),
-(2, 'Rodolfo LeaÃ±os', '', 'd41d8cd98f00b204e9800998ecf8427e', 1),
-(6, 'Rodolfo LeaÃ±os', 'jesusrl@gmail.com.mx', '9a0c3013dbacdda1873e4a153346dc5c', 1),
-(12, 'JesusRLV', 'jesusr@gmail.com', '18a9f76e9e5f5d1237a02a27a3246a1c', 1),
-(14, 'Rodolfo LeaÃ±os', 'LEVJ8109248K3', 'edeb8297f1a049cf8a4e38a14c021f45', 1),
-(15, 'Rodolfo LeaÃ±os', 'LEVJ810924HZSXLS04', 'edeb8297f1a049cf8a4e38a14c021f45', 1);
+INSERT INTO `usr` (`id`, `nombre`, `usuario`, `pwd`, `perfil`, `categoria`) VALUES
+(1, 'uno', 'jesusrlv@correo.com', '123456789', 1, 0),
+(2, 'Rodolfo LeaÃ±os', '', 'd41d8cd98f00b204e9800998ecf8427e', 1, 0),
+(6, 'Rodolfo LeaÃ±os', 'jesusrl@gmail.com.mx', '9a0c3013dbacdda1873e4a153346dc5c', 1, 0),
+(12, 'JesusRLV', 'jesusr@gmail.com', '18a9f76e9e5f5d1237a02a27a3246a1c', 1, 0),
+(14, 'Rodolfo LeaÃ±os', 'LEVJ8109248K3', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0),
+(15, 'Rodolfo LeaÃ±os', 'LEVJ810924HZSXLS04', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -167,8 +168,7 @@ INSERT INTO `usr` (`id`, `nombre`, `usuario`, `pwd`, `perfil`) VALUES
 CREATE TABLE `validacion` (
   `id` int(11) NOT NULL,
   `id_ext` int(11) NOT NULL,
-  `datos` int(11) NOT NULL,
-  `documentos` int(11) NOT NULL,
+  `tipo_validacion` int(11) NOT NULL COMMENT '1 para datos, 2 para docs, 3 para general',
   `observaciones` varchar(700) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -232,7 +232,7 @@ ALTER TABLE `direccion`
 -- AUTO_INCREMENT de la tabla `docs`
 --
 ALTER TABLE `docs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT de la tabla `menu`
