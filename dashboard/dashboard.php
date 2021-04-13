@@ -323,7 +323,7 @@ include('prcd/conn.php');
                 
                 <?php
                 if($x==0){
-                echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 2rem; "></i> Sin documentgos</p></div>';
+                echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-x-circle-fill text-danger" style="font-size: 2rem; "></i> Sin documentos</p></div>';
                 }
                 elseif($x > 0 AND $x <= 8){
                 echo '<div class="alert alert-light" role="alert"><p class="card-text h4 text-center" style="aligment-item:center;"><i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 2em;"></i> Expediente incompleto</p></div>';
