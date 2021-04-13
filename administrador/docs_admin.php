@@ -26,6 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
+// include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -110,7 +111,7 @@ include('../dashboard/prcd/conn.php');
       
         
        
-        <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+    <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>      
         
       </li>
   </ul>
@@ -223,73 +224,165 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-        
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
-
         <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-2">
-          
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de usuarios</p>
-                <hr>
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes</a>
-                <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
-                <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
-              </div>
-            </div>
-          </div>
+        <div class="row row-cols-1 row-cols-md-1">
 
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-plus-fill"></i> ALTA DE REVISORES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Dar de alta a revisores o administradores nuevos.</p>
-                <hr>
-                <a href="alta_revisores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de revisores</a>
-                <a href="alta_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de administradores</a>
-              </div>
-            </div>
-        </div>
+        <?php 
+            $id_consulta = $_REQUEST['id'];
+            $sql_qwery = "SELECT * FROM docs WHERE id_ext = '$id_consulta'";
+            $resultado_consulta= $conn->query($sql_qwery);
+        ?>
+
+        <div class="col mb-12">
+        <p class=" h4">CATEGORIA: <?php 
+            $id_busqueda = $_REQUEST['id_cat'];
+            if($id_busqueda==1){
+                echo 'LOGRO ACADÉMICO';
+            }
+            elseif($id_busqueda==2){
+                echo 'DISCAPACIDAD E INTEGRACIÓN';
+            }
+            elseif($id_busqueda==3){
+                echo 'INGENIO EMPRENDEDOR';
+            }
+            elseif($id_busqueda==4){
+                echo 'RESPONSABILIDAD SOCIAL';
+            }
+            elseif($id_busqueda==5){
+                echo 'MÉRITO MIGRANTE';
+            }
+            elseif($id_busqueda==6){
+                echo 'MÉRITO CAMPESINO';
+            }
+            elseif($id_busqueda==7){
+                echo 'LITERATURA';
+            }
+            elseif($id_busqueda==8){
+                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            }
+            elseif($id_busqueda==9){
+                echo 'ARTE URBANO';
+            }
+            elseif($id_busqueda==10){
+                echo 'CIENCIA Y TECNOLOGÍA';
+            }
         
+        ?></p>
 
-        <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-dash-fill"></i> ELIMINAR USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Elimina postulantes, administradores y/o jurado.</p>
-                <hr>
-                <a href="eliminar_usr.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios</a>
-                <!-- <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Administradores</a>
-                <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Revisores</a> -->
-              </div>
-            </div>
-          </div>
+            <table class="table table-hover text-center table-striped ">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Archivo</th>
+              </tr>
+            </thead>
+            <tbody>
 
-          <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-trash-fill"></i> ELIMINAR DOCUMENTOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Elimina documentos de un postulante.</p>
-                <hr>
-                <a href="eliminar_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
-              </div>
-            </div>
-          </div>
+            <?php
+            // $y = 0;
+            //     while($resultado_consulta = $conn->query($sql_qwery)){
+            //       $y++;  
+            //         echo '<tr>';
+            //         echo '<th scope="row">'.$y.'</th>';
+            //         echo '<td>'.$resultado_consulta['tipo_doc'].'</td>';
+                    // echo '<td><a href="../dashboard/'.$resultado_consulta['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+            //         echo '</tr>';
+                  
+            //     } 
+            
+            $y=0;
+           while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+             $y++;
+             echo '<tr>';
+             echo '<td>'.$y.'</td>';
+             
+             if($resultado_qwery['tipo_doc']==1){
+              echo '<td>Carta Propuesta</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==2){
+              echo '<td>Currículum vitae</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==3){
+              echo '<td>Semblanza de trayectoria</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==4){
+              echo '<td>Acta de nacimiento</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==5){
+              echo '<td>Credencial de elector</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==6){
+              echo '<td>Comprobante de domicilio</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==7){
+              echo '<td>CURP</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==8){
+              echo '<td>Material bibliográfico</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==9){
+              echo '<td>Video</td>';
+          }
+          
+            //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
+             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+             echo '</tr>';
+           }
+           
+            ?>
+
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Carta Propuesta</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Currículum vitae</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Semblanza de trayectoria</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Acta de nacimiento</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Credencial de elector</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Comprobante de domicilio</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>CURP</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Material bibliográfico</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Video</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr> -->
+              
+            </tbody>
+              <hr>
+          </table>
+        
+</div>
 
       </div> <!-- container -->
       

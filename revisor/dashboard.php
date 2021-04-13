@@ -33,6 +33,7 @@ include('../dashboard/prcd/conn.php');
     $id = $_SESSION['id'];
     $perfil = $_SESSION['perfil'];
     $nombre = $_SESSION['nombre'];
+    $categoria = $_SESSION['categoria'];
 
 ?>
 
@@ -224,12 +225,48 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-          <p class="lead"> CATEGORÍA: YYYYYYYYY</p>
+          <p class="lead"> CATEGORÍA: <?php 
+          
+          if($categoria==1){
+            echo '<strong>LOGRO ACADÉMICO</strong>';
+        }
+        elseif($categoria==2){
+            echo '<strong>DISCAPACIDAD E INTEGRACIÓN</strong>';
+        }
+        elseif($categoria==3){
+            echo '<strong>INGENIO EMPRENDEDOR</strong>';
+        }
+        elseif($categoria==4){
+            echo '<strong>RESPONSABILIDAD SOCIAL</strong>';
+        }
+        elseif($categoria==5){
+            echo '<strong>MÉRITO MIGRANTE</strong>';
+        }
+        elseif($categoria==6){
+            echo '<strong>MÉRITO CAMPESINO</strong>';
+        }
+        elseif($categoria==7){
+            echo '<strong>LITERATURA</strong>';
+        }
+        elseif($categoria==8){
+            echo '<strong>ARTES PLÁSTICAS, VISUALES Y POPULARES</strong>';
+        }
+        elseif($categoria==9){
+            echo '<strong>ARTE URBANO</strong>';
+        }
+        elseif($categoria==10){
+            echo '<strong>CIENCIA Y TECNOLOGÍA</strong>';
+        }
+          
+          ?></p>
 
 
         
         <?php
-        include('../dashboard/prcd/qwery_validacion_dashboard.php');
+        // include('../dashboard/prcd/qwery_validacion_dashboard.php');
+
+        $query_usr="SELECT * FROM datos WHERE tematica = $categoria";
+        $resultado_usr= $conn->query($query_usr);
         ?>
         <!-- consulta de validación -->
 
@@ -239,62 +276,38 @@ include('../dashboard/prcd/conn.php');
           
           <div class="col mb-12">
 
-          <table class="table table-hover text-center table-striped">
-  
-            <thead class="table-info">
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Acción</th>
-              </tr>
+          <table class="table table-hover text-center table-striped ">
+
+            <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Apellido</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Acción</th>
+                  
+                  <!-- <th scope="col">Acción</th> -->
+                </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="card-link"><i class="bi bi-record-circle"></i> Revisar</a></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td> <a href="" class="card-link text-danger"><i class="bi bi-check-circle-fill"></i> Calificado</a></td>    
-                </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td> <a href="" class="card-link"><i class="bi bi-record-circle"></i> Revisar</a></td>    
-                </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td> <a href="" class="card-link text-danger"><i class="bi bi-check-circle-fill"></i> Calificado</a></td>    
-                </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td> <a href="" class="card-link"><i class="bi bi-record-circle"></i> Revisar</a></td>    
-                </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td> <a href="" class="card-link"><i class="bi bi-record-circle"></i> Revisar</a></td>    
-                </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td> <a href="" class="card-link"><i class="bi bi-record-circle"></i> Revisar</a></td>    
-                </tr>
+           
+              <?php
+               $x=0;
+              while($row_usr = $resultado_usr->fetch_assoc()){
+                $x++;
+                echo '<tr>';
+                echo '<td>'.$x.'</td>';
+                echo '<td>'.$row_usr['apellido'].'</td>';
+                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '</tr>';
+              }
+              ?>
             </tbody>
+                <hr>
+            </table>
+            
 
-          </table>
+          
           </div>
 
           

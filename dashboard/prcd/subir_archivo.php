@@ -28,7 +28,7 @@ $extension = pathinfo($archivo_ext, PATHINFO_EXTENSION);
     if(move_uploaded_file($_FILES["file1"]["tmp_name"],"../archivos/". $link .'_'. $id .'.'.$extension)){
     echo "$fileName carga completa";
     
-    $ruta = "../archivos/". $link .'_'. $id .'.'.$extension;
+    $ruta = "archivos/". $link .'_'. $id .'.'.$extension;
     // $sqlinsert= "UPDATE documentos SET link4='$ruta_pptx' WHERE id_usr='$curp'";
     $sqlinsert= "INSERT INTO docs (id_ext,ruta,tipo_doc,fecha_agregado,validacion) 
     VALUES('$id','$ruta','$tipo_doc','$fecha_sistema','$validacion')";

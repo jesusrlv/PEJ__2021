@@ -228,11 +228,11 @@ include('../dashboard/prcd/conn.php');
           
         <!-- FORM -->
 
-        <form action="">
+        <form action="prcd_admin/agregar_admin.php" method="POST">
         
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Nombre</span>
-            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="Nombre" id="nombre" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="nombre" id="nombre" aria-describedby="basic-addon1">
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Usuario</span>
@@ -245,7 +245,7 @@ include('../dashboard/prcd/conn.php');
         
         
 
-        <button type="button" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill"></i> Registrar</button>
+        <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill"></i> Registrar</button>
         
 
         </form>

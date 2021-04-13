@@ -26,7 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin.php');
+include('../dashboard/prcd/qwery_admin3.php');
 
 // variables de sesión
 
@@ -242,11 +242,9 @@ include('../dashboard/prcd/qwery_admin.php');
             <thead class="thead-dark">
                 <tr>
                   <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -257,11 +255,9 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td>'.$row_usr['curp'].'</td>';
-                echo '<td>'.$row_usr['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td>'.$row_usr['usuario'].'</td>';
+                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -275,11 +271,9 @@ include('../dashboard/prcd/qwery_admin.php');
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -289,11 +283,9 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr2['apellido'].'</td>';
                 echo '<td>'.$row_usr2['nombre'].'</td>';
-                echo '<td>'.$row_usr2['curp'].'</td>';
-                echo '<td>'.$row_usr2['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td>'.$row_usr2['usuario'].'</td>';
+                // echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -308,11 +300,10 @@ include('../dashboard/prcd/qwery_admin.php');
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
+                <th scope="col">#</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -322,11 +313,9 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr3['apellido'].'</td>';
                 echo '<td>'.$row_usr3['nombre'].'</td>';
-                echo '<td>'.$row_usr3['curp'].'</td>';
-                echo '<td>'.$row_usr3['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td>'.$row_usr3['usuario'].'</td>';
+                // echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -341,11 +330,10 @@ include('../dashboard/prcd/qwery_admin.php');
           <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -355,11 +343,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr4['apellido'].'</td>';
               echo '<td>'.$row_usr4['nombre'].'</td>';
-              echo '<td>'.$row_usr4['curp'].'</td>';
-              echo '<td>'.$row_usr4['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr4['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -374,11 +360,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -388,11 +373,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr5['apellido'].'</td>';
               echo '<td>'.$row_usr5['nombre'].'</td>';
-              echo '<td>'.$row_usr5['curp'].'</td>';
-              echo '<td>'.$row_usr5['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr5['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -406,11 +389,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -420,11 +402,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr6['apellido'].'</td>';
               echo '<td>'.$row_usr6['nombre'].'</td>';
-              echo '<td>'.$row_usr6['curp'].'</td>';
-              echo '<td>'.$row_usr6['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr6['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -438,11 +418,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -452,11 +431,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr7['apellido'].'</td>';
               echo '<td>'.$row_usr7['nombre'].'</td>';
-              echo '<td>'.$row_usr7['curp'].'</td>';
-              echo '<td>'.$row_usr7['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr7['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -470,11 +447,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -484,11 +460,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr8['apellido'].'</td>';
               echo '<td>'.$row_usr8['nombre'].'</td>';
-              echo '<td>'.$row_usr8['curp'].'</td>';
-              echo '<td>'.$row_usr8['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr8['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -502,11 +476,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -516,11 +489,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr9['apellido'].'</td>';
               echo '<td>'.$row_usr9['nombre'].'</td>';
-              echo '<td>'.$row_usr9['curp'].'</td>';
-              echo '<td>'.$row_usr9['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr9['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -534,11 +505,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
               </tr>
           </thead>
           <tbody>
@@ -548,11 +518,9 @@ include('../dashboard/prcd/qwery_admin.php');
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr10['apellido'].'</td>';
               echo '<td>'.$row_usr10['nombre'].'</td>';
-              echo '<td>'.$row_usr10['curp'].'</td>';
-              echo '<td>'.$row_usr10['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td>'.$row_usr10['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>

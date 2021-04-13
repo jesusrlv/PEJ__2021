@@ -33,6 +33,7 @@ include('../dashboard/prcd/conn.php');
     $id = $_SESSION['id'];
     $perfil = $_SESSION['perfil'];
     $nombre = $_SESSION['nombre'];
+    $categoria = $_SESSION['categoria'];
 
 ?>
 
@@ -224,7 +225,40 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-          <p class="lead"> CATEGORÍA: YYYYYYYYY</p>
+          <p class="lead"> CATEGORÍA: <?php
+          if($categoria==1){
+            echo '<strong>LOGRO ACADÉMICO</strong>';
+        }
+        elseif($categoria==2){
+            echo '<strong>DISCAPACIDAD E INTEGRACIÓN</strong>';
+        }
+        elseif($categoria==3){
+            echo '<strong>INGENIO EMPRENDEDOR</strong>';
+        }
+        elseif($categoria==4){
+            echo '<strong>RESPONSABILIDAD SOCIAL</strong>';
+        }
+        elseif($categoria==5){
+            echo '<strong>MÉRITO MIGRANTE</strong>';
+        }
+        elseif($categoria==6){
+            echo '<strong>MÉRITO CAMPESINO</strong>';
+        }
+        elseif($categoria==7){
+            echo '<strong>LITERATURA</strong>';
+        }
+        elseif($categoria==8){
+            echo '<strong>ARTES PLÁSTICAS, VISUALES Y POPULARES</strong>';
+        }
+        elseif($categoria==9){
+            echo '<strong>ARTE URBANO</strong>';
+        }
+        elseif($categoria==10){
+            echo '<strong>CIENCIA Y TECNOLOGÍA</strong>';
+        }
+          
+          ?>
+          </p>
 
 
         

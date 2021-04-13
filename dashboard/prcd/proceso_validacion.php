@@ -33,6 +33,7 @@ if ($resultado=mysqli_fetch_array($proceso)){
     $_SESSION['id']=$resultado['id'];
     $_SESSION['perfil']=$resultado['perfil'];
     $_SESSION['nombre']=$resultado['nombre'];
+    $_SESSION['categoria']=$resultado['categoria'];
      
     
 
@@ -43,18 +44,18 @@ if ($resultado=mysqli_fetch_array($proceso)){
     
     elseif($resultado['perfil']==2){
 
-        echo "<script type=\"text/javascript\">location.href='../perfiles/usr/dashboard.php';</script>";
+        echo "<script type=\"text/javascript\">location.href='../../administrador/dashboard.php';</script>";
         
     }
 
     elseif($resultado['perfil']==3){
 
-        echo "<script type=\"text/javascript\">location.href='../perfiles/cliente/dashboard.php';</script>";
+        echo "<script type=\"text/javascript\">location.href='../../revisor/dashboard.php';</script>";
     }
     
     elseif($resultado['perfil']==4){
 
-        echo "<script type=\"text/javascript\">location.href='../perfiles/trabajador/dashboard.php';</script>";
+        echo "<script type=\"text/javascript\">location.href='../../notario/dashboard.php';</script>";
     }
 
 }
