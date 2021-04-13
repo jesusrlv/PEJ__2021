@@ -300,7 +300,6 @@ include('../dashboard/prcd/qwery_admin3.php');
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
-                <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
                   <!-- <th scope="col">Acción</th> -->
@@ -329,7 +328,6 @@ include('../dashboard/prcd/qwery_admin3.php');
 
           <thead class="thead-dark">
               <tr>
-              <th scope="col">#</th>
               <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
@@ -360,7 +358,6 @@ include('../dashboard/prcd/qwery_admin3.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-              <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
                   <!-- <th scope="col">Acción</th> -->
@@ -388,7 +385,6 @@ include('../dashboard/prcd/qwery_admin3.php');
 
         <thead class="thead-dark">
               <tr>
-              <th scope="col">#</th>
               <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
@@ -418,7 +414,6 @@ include('../dashboard/prcd/qwery_admin3.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-              <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
                   <!-- <th scope="col">Acción</th> -->
@@ -446,7 +441,6 @@ include('../dashboard/prcd/qwery_admin3.php');
         
         <thead class="thead-dark">
               <tr>
-              <th scope="col">#</th>
               <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
@@ -476,7 +470,6 @@ include('../dashboard/prcd/qwery_admin3.php');
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
-              <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
                   <!-- <th scope="col">Acción</th> -->
@@ -504,7 +497,6 @@ include('../dashboard/prcd/qwery_admin3.php');
 
         <thead class="thead-dark">
               <tr>
-              <th scope="col">#</th>
               <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
