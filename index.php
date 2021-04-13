@@ -134,7 +134,7 @@ background-size: cover;">
           <p><div id="result-username2"></div></p>
           
           <!-- div de dato edad -->
-            <p><div class="result-dato alert alert-primary" role="alert" value="">Tu edad es: <span id="result-dato"></span></div></p>
+            <p><div class="result-dato alert alert-primary" role="alert" value="" hidden>Tu edad es: <span id="result-dato"></span></div></p>
           <!-- div de dato edad -->
           
           </div>
