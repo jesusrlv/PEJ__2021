@@ -143,7 +143,7 @@ include('prcd/qwery.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Requisitos</span>
+            <span><i class="bi bi-camera-reels-fill"></i> Tutoriales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
@@ -256,7 +256,7 @@ function uploadFile() {
   ajax.addEventListener("load", completeHandler, false);
   ajax.addEventListener("error", errorHandler, false);
   ajax.addEventListener("abort", abortHandler, false);
-  ajax.open("POST", "prcd/subir_archivo.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -287,20 +287,25 @@ function abortHandler(event) {
                 </script>
                  
                   <td><form id="upload_form" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file1" id="file1" onchange="uploadFile()" accept="application/pdf"><br>
+                    <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+                    <h4 id="status"></h4>
+                    <p id="loaded_n_total"></p>
+  
   
   <?php
-          if (!$row) {
+//           if (!$row) {
             
-            echo '<input type="file" name="file1" id="file1" onchange="uploadFile()" accept="application/pdf"><br>
-  <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
-  <h4 id="status"></h4>
-  <p id="loaded_n_total"></p>';
-        }
-        else{
-            echo '<div class="alert alert-secondary h5" role="alert">
-            <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-          </div>';
-        }
+//             echo '<input type="file" name="file1" id="file1" onchange="uploadFile()" accept="application/pdf"><br>
+//   <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+//   <h4 id="status"></h4>
+//   <p id="loaded_n_total"></p>';
+//         }
+//         else{
+//             echo '<div class="alert alert-secondary h5" role="alert">
+//             <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//           </div>';
+//         }
     
     ?>
 
@@ -340,7 +345,7 @@ function uploadFile2() {
   ajax.addEventListener("load", completeHandler2, false);
   ajax.addEventListener("error", errorHandler2, false);
   ajax.addEventListener("abort", abortHandler2, false);
-  ajax.open("POST", "prcd/subir_archivo2.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo2.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -371,22 +376,26 @@ function abortHandler2(event) {
                 </script>
                  
                   <td><form id="upload_form2" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file2" id="file2" onchange="uploadFile2()" accept="application/pdf"><br>
+                    <progress id="progressBar2" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status2"></h3>
+                    <p id="loaded_n_total2"></p>
                   
                   <?php
 
 // Carga de archivos 2
-          if (!$row2) {
+//           if (!$row2) {
             
-            echo '<input type="file" name="file2" id="file2" onchange="uploadFile2()" accept="application/pdf"><br>
-  <progress id="progressBar2" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status2"></h3>
-  <p id="loaded_n_total2"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//             echo '<input type="file" name="file2" id="file2" onchange="uploadFile2()" accept="application/pdf"><br>
+//   <progress id="progressBar2" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status2"></h3>
+//   <p id="loaded_n_total2"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
                   
@@ -428,7 +437,7 @@ function uploadFile3() {
   ajax.addEventListener("load", completeHandler3, false);
   ajax.addEventListener("error", errorHandler3, false);
   ajax.addEventListener("abort", abortHandler3, false);
-  ajax.open("POST", "prcd/subir_archivo3.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo3.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -458,22 +467,25 @@ function abortHandler3(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form3" enctype="multipart/form-data" method="post">
-                  
+                    <td><form id="upload_form3" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file3" id="file3" onchange="uploadFile3()" accept="application/pdf"><br>
+                    <progress id="progressBar3" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status3"></h3>
+                    <p id="loaded_n_total3"></p>
                   
         <?php
              
-        if (!$row3) {            
-            echo '<input type="file" name="file3" id="file3" onchange="uploadFile3()" accept="application/pdf"><br>
-  <progress id="progressBar3" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status3"></h3>
-  <p id="loaded_n_total3"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//         if (!$row3) {            
+//             echo '<input type="file" name="file3" id="file3" onchange="uploadFile3()" accept="application/pdf"><br>
+//   <progress id="progressBar3" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status3"></h3>
+//   <p id="loaded_n_total3"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
 
@@ -510,7 +522,7 @@ function uploadFile4() {
   ajax.addEventListener("load", completeHandler4, false);
   ajax.addEventListener("error", errorHandler4, false);
   ajax.addEventListener("abort", abortHandler4, false);
-  ajax.open("POST", "prcd/subir_archivo4.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo4.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -540,23 +552,27 @@ function abortHandler4(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form4" enctype="multipart/form-data" method="post">
+                    <td><form id="upload_form4" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file4" id="file4" onchange="uploadFile4()" accept="application/pdf"><br>
+                    <progress id="progressBar4" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status4"></h3>
+                    <p id="loaded_n_total4"></p>
                   
 <?php
 
         
-     if (!$row4) {
+//      if (!$row4) {
             
-            echo '<input type="file" name="file4" id="file4" onchange="uploadFile4()" accept="application/pdf"><br>
-  <progress id="progressBar4" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status4"></h3>
-  <p id="loaded_n_total4"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//             echo '<input type="file" name="file4" id="file4" onchange="uploadFile4()" accept="application/pdf"><br>
+//   <progress id="progressBar4" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status4"></h3>
+//   <p id="loaded_n_total4"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
 
@@ -591,7 +607,7 @@ function uploadFile5() {
   ajax.addEventListener("load", completeHandler5, false);
   ajax.addEventListener("error", errorHandler5, false);
   ajax.addEventListener("abort", abortHandler5, false);
-  ajax.open("POST", "prcd/subir_archivo5.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo5.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -621,21 +637,25 @@ function abortHandler5(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form5" enctype="multipart/form-data" method="post">
+                    <td><form id="upload_form5" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file5" id="file5" onchange="uploadFile5()" accept="application/pdf"><br>
+                    <progress id="progressBar5" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status5"></h3>
+                    <p id="loaded_n_total5"></p>
 <?php           
         
-        if (!$row5) {
+//         if (!$row5) {
             
-            echo '<input type="file" name="file5" id="file5" onchange="uploadFile5()" accept="application/pdf"><br>
-  <progress id="progressBar5" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status5"></h3>
-  <p id="loaded_n_total5"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//             echo '<input type="file" name="file5" id="file5" onchange="uploadFile5()" accept="application/pdf"><br>
+//   <progress id="progressBar5" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status5"></h3>
+//   <p id="loaded_n_total5"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
  
@@ -672,7 +692,7 @@ function uploadFile6() {
   ajax.addEventListener("load", completeHandler6, false);
   ajax.addEventListener("error", errorHandler6, false);
   ajax.addEventListener("abort", abortHandler6, false);
-  ajax.open("POST", "prcd/subir_archivo6.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo6.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -702,21 +722,25 @@ function abortHandler6(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form6" enctype="multipart/form-data" method="post">
+                    <td><form id="upload_form6" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file6" id="file6" onchange="uploadFile6()" accept="application/pdf"><br>
+                    <progress id="progressBar6" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status6"></h3>
+                    <p id="loaded_n_total6"></p>
 <?php
        
         
-       if (!$row6) {            
-            echo '<input type="file" name="file6" id="file6" onchange="uploadFile6()" accept="application/pdf"><br>
-  <progress id="progressBar6" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status6"></h3>
-  <p id="loaded_n_total6"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//        if (!$row6) {            
+//             echo '<input type="file" name="file6" id="file6" onchange="uploadFile6()" accept="application/pdf"><br>
+//   <progress id="progressBar6" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status6"></h3>
+//   <p id="loaded_n_total6"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
 
@@ -755,7 +779,7 @@ function uploadFile7() {
   ajax.addEventListener("load", completeHandler7, false);
   ajax.addEventListener("error", errorHandler7, false);
   ajax.addEventListener("abort", abortHandler7, false);
-  ajax.open("POST", "prcd/subir_archivo7.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo7.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -785,21 +809,25 @@ function abortHandler7(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form7" enctype="multipart/form-data" method="post">
+                    <td><form id="upload_form7" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file7" id="file7" onchange="uploadFile7()" accept="application/pdf"><br>
+                    <progress id="progressBar7" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status7"></h3>
+                    <p id="loaded_n_total7"></p>
 <?php     
         
-        if (!$row7) {
+//         if (!$row7) {
             
-            echo '<input type="file" name="file7" id="file7" onchange="uploadFile7()" accept="application/pdf"><br>
-  <progress id="progressBar7" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status7"></h3>
-  <p id="loaded_n_total7"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//             echo '<input type="file" name="file7" id="file7" onchange="uploadFile7()" accept="application/pdf"><br>
+//   <progress id="progressBar7" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status7"></h3>
+//   <p id="loaded_n_total7"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
  
@@ -836,7 +864,7 @@ function uploadFile8() {
   ajax.addEventListener("load", completeHandler8, false);
   ajax.addEventListener("error", errorHandler8, false);
   ajax.addEventListener("abort", abortHandler8, false);
-  ajax.open("POST", "prcd/subir_archivo8.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo8.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -866,21 +894,25 @@ function abortHandler8(event) {
                     
                 </script>
                  
-                  <td><form id="upload_form8" enctype="multipart/form-data" method="post">
+                    <td><form id="upload_form8" enctype="multipart/form-data" method="post">
+                    <input type="file" name="file8" id="file8" onchange="uploadFile8()" accept="application/pdf"><br>
+                    <progress id="progressBar8" value="0" max="100" style="width:300px;"></progress>
+                    <h3 id="status8"></h3>
+                    <p id="loaded_n_total8"></p>
 <?php
 
         
-          if (!$row8) {            
-            echo '<input type="file" name="file8" id="file8" onchange="uploadFile8()" accept="application/pdf"><br>
-  <progress id="progressBar8" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status8"></h3>
-  <p id="loaded_n_total8"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//           if (!$row8) {            
+//             echo '<input type="file" name="file8" id="file8" onchange="uploadFile8()" accept="application/pdf"><br>
+//   <progress id="progressBar8" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status8"></h3>
+//   <p id="loaded_n_total8"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
  
@@ -917,7 +949,7 @@ function uploadFile9() {
   ajax.addEventListener("load", completeHandler9, false);
   ajax.addEventListener("error", errorHandler9, false);
   ajax.addEventListener("abort", abortHandler9, false);
-  ajax.open("POST", "prcd/subir_archivo9.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
+  ajax.open("POST", "prcd/editar_docs/editar_archivo9.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
   //use file_upload_parser.php from above url
   //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
   ajax.send(formdata);
@@ -948,20 +980,25 @@ function abortHandler9(event) {
                 </script>
                  
                   <td><form id="upload_form9" enctype="multipart/form-data" method="post">
+                <input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
+                <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
+                <h3 id="status9"></h3>
+                <p id="loaded_n_total9"></p>
+
 <?php
 
         
-          if (!$row9) {            
-            echo '<input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
-  <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status9"></h3>
-  <p id="loaded_n_total9"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
+//           if (!$row9) {            
+//             echo '<input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
+//   <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
+//   <h3 id="status9"></h3>
+//   <p id="loaded_n_total9"></p>';
+//         }
+//         else{
+//           echo '<div class="alert alert-secondary h5" role="alert">
+//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
+//         </div>';
+//         }
     
     ?>
  

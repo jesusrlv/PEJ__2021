@@ -26,6 +26,7 @@ session_start();
 // }
 
 include('prcd/conn.php');
+include('prcd/qwery.php');
 
 // variables de sesión
 
@@ -44,7 +45,7 @@ include('prcd/conn.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>Dashboard | Proveedores</title>
+    <title>Dashboard | Premio Estatal de la Juventud 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -142,7 +143,7 @@ include('prcd/conn.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Requisitos</span>
+            <span><i class="bi bi-camera-reels-fill"></i> Tutoriales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
@@ -202,107 +203,149 @@ include('prcd/conn.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">SECCIÓN</h1>
-          <p class="lead">Datos</p>
+          <h1 class="h1">SECCIÓN </h1>
+          <p class="lead">Documentos</p>
           <hr class="my-4">
-          <!-- <p>Cargar documentos</p>
-          <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
-
           
-        <!-- interno -->
+            <!-- <div class="alert alert-secondary" role="alert">
+                <a href=""><i class="bi bi-file-binary-fill"></i> Descargar Formato RCB-1</a>
+            </div> -->
+
+        <!-- ROW -->
         <div class="row">
-                <div class="col-md-12 order-md-1">
-            <h4 class="mb-3">Datos de postulación</h4>
-            <form action="prcd/proceso_seccion_1.php" class="needs-validation" method="POST">
-                <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><i class="bi bi-folder-fill"></i> Lista de archivos para actualizar</h3>
 
-                <div class="col-md-12 mb-3 validate-input" data-validate="Selecciona una temática">
-                <label for="tematica">Temática</label>
-                  <select name="tematica" id="tematica" class="form-control" required>
-                      <option value="">Seleccionar...</option>
-                      
-                      <optgroup label="Por trayectoria">
-                      <option value="1">Logro académico</option>
-                      <option value="2">Discapacidad e integración</option>
-                      <option value="3">Ingenio emprendedor</option>
-                      <option value="4">Responsabilidad social</option>
-                      <option value="5">Mérito migrante</option>
-                      <option value="6">Mérito campesino</option>
-                      </optgroup>
-                      <optgroup label="Talento joven">
-                      <option value="7">Literatura</option>
-                      <option value="8">Artes plásticas, visuales y populares</option>
-                      <option value="9">Arte urbano</option>
-                      <option value="10">Ciencia y tecnología</option>
-                      </optgroup>
-                      
-                  </select>
-                  <hr>	
-					</div>
-          
-                <div class="col-md-6 mb-3">
-                    <label for="firstName">Apellido(s)</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                    Valid first name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Nombre(s)</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo" placeholder="" value="" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
 
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
-
-                <!-- <div class="col-md-6 mb-3">
-                    <label for="firstName">CURP</label>
-                    <input type="text" class="form-control" id="curp" name="curp" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this)" required>
-                    <div class="invalid-feedback">
-                    Valid first name is required.
-                    </div>
+                  <div class="input-group-btn">
+                  </div>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">RFC</label>
-                    <input type="text" class="form-control" id="rfc" name="rfc" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="ValidaRfc(this.value)" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div> -->
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
 
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
+              <table class="table table-hover table-striped table-bordered align-middle">
+                <thead class="text-center align-middle">
+                  <tr class="bg-dark text-light border-0">
+                    <th class="border border-secondary">#</th>
+                    <th class="border border-secondary">Nombre</th>
+                    <th class="border border-secondary">Archivo</th>
+                    <th class="border border-secondary">Descripción del archivo</th>
+                  </tr>
+                </thead>
 
-                </div>
+                <tbody class="align-middle">
+                <tr>
+                  <td class="align-middle text-center">1</td>
+                  <td class="align-middle text-center">Carta Propuesta</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Emitida en el presente año en papel membretado por alguna institución, organismo, dependencia, agrupación, o bien proponerse a sí mismo. En ella se enumerarán los méritos del candidato(a) y deberá ser dirigida a él o la titular del Instituto de la Juventud del Estado de Zacatecas, precisando la modalidad y categoría en la que solicita su registro. Formato libre.</td>
+                </tr>
+                
+                <tr>
+                  <td class="align-middle text-center">2</td>
+                  <td class="align-middle text-center">Currículum vitae</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row2['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Documento actualizado, incluyendo datos generales (nombre completo, dirección, teléfono(s), correo electrónico, ocupación).</td>
+                </tr>
+
+                <tr>
+                  <td class="align-middle text-center">3</td>
+                  <td class="align-middle text-center">Semblanza de trayectoria</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row3['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td class="align-middle">Documento con un máximo de una cuartilla.</td>
+                </tr>
+                <tr>
+                  <td class="align-middle text-center">4</td>
+                  <td class="align-middle text-center">Acta de nacimiento</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row4['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                 
+                  <td>Documento digitalizado.</td>
+                </tr>
+                <tr>
+                  <td class="align-middle text-center">5</td>
+                  <td class="align-middle text-center">Credencial de elector</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row5['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Documento digitalizado.</td>
+                </tr>
+
+                <tr>
+                  <td class="align-middle text-center">6</td>
+                  <td class="align-middle text-center">Comprobante de domicilio</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row6['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Documento escaneado (PDF) no mayor a 3 meses.</td>
+                </tr>
+                
+                <tr>
+                  <td class="align-middle text-center">7</td>
+                  <td class="align-middle text-center">CURP</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row7['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Documento escaneado (PDF).</td>
+                </tr>
+                
+                <tr>
+                  <td class="align-middle text-center">8</td>
+                  <td class="align-middle text-center">Material bibliográfico</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row8['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Copia o duplicado de materiales bibliográficos, audiovisuales, gráficos y otros que demuestren los motivos por los cuales se considera que él o la candidata (a) puede merecer el premio.</td>
+                </tr>               
+                <tr>
+                  <td class="align-middle text-center">9</td>
+                  <td class="align-middle text-center">Video</td>
+                  <td class="text-center h1 text-primary  align-middle"><a href="<?php echo $row9['ruta']?>"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>
+                  <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
+                </tr>               
+                </tbody>
+                
+              </table>
+              
+              <div class="modal fade" id="modal-default">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Cargar archivo</h4>
+              </div>
+              <div class="modal-body">
+                <p><label for="exampleInputFile">Seleeciona el documento</label>
+                  <input type="file" id="exampleInputFile">
+
+                  <p class="help-block">No tiene que exceder los 60Mb</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Guardar</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+            
+          </div>
+          <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+        <!-- ROW -->
+
+
+        
+        
+            
 
                 
                 <hr class="mb-4">
-
-                <!-- div de usuario repetido -->
-                <p><div id="result-username"></div></p>
-                <!-- div de usuario repetido -->
-
-                <!-- div de RFC validez -->
-                <p><div id="result-rfc"></div></p>
-                <!-- div de u RFC validez -->
-
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button>
-                <a type="button" class="btn btn-danger btn-lg btn-block" href="dashboard.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
+                <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Sección 4 <i class="bi bi-skip-forward-fill"></i></button> -->
+                <a type="button" class="btn btn-primary btn-lg btn-block" href="dashboard.php"><i class="bi bi-backspace-fill"></i> Regresar</a>
             </form>
             </div>
 
@@ -322,7 +365,11 @@ include('prcd/conn.php');
 
       </div>
 
+      <!-- ROW -->
 
+
+
+      <!-- ROW -->
     </main>
   </div>
 </div>
@@ -333,86 +380,14 @@ include('prcd/conn.php');
         <script src="css/dashboard.js"></script></body>
 </html>
 
-
-<script language="JavaScript">
-
-function ValidaRfc(rfcStr) {
-	var strCorrecta;
-	strCorrecta = rfcStr;	
-	if (rfcStr.length == 12){
-	var valid = '^(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))';
-	}else{
-	var valid = '^(([A-Z]|[a-z]|\s){1})(([A-Z]|[a-z]){3})([0-9]{6})((([A-Z]|[a-z]|[0-9]){3}))';
-	}
-	var validRfc=new RegExp(valid);
-	var matchArray=strCorrecta.match(validRfc);
-	if (matchArray==null) {
-		// alert('Cadena incorrectas');
-    // $('#result-rfc')
-    document.getElementById('result-rfc').innerHTML='<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena RFC incorrecta.</div><style>#boton_submit{display:none;}</style>';
-
-		return false;
-	}
-	else
-	{
-		// alert('Cadena correcta:' + strCorrecta);
-    document.getElementById('result-rfc').innerHTML='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena RFC correcta.</div>';
-		return true;
-	}
-	
-}
-
-function validarInput(input) {
-	var curp = input.value.toUpperCase(),
-    	resultado = document.getElementById("result-username"),
-        valido = "No válido";
-        
-    if (curpValida(curp)) {
-    	valido = "Válido";
-        // resultado.classList.add("ok");
-        resultado.innerHTML ='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
-    } else {
-        resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
-    }
-        
-    // resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
-}
-
-function curpValida(curp) {
-	var re = /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0\d|1[0-2])(?:[0-2]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/,
-    	validado = curp.match(re);
-	
-    if (!validado)  //Coincide con el formato general?
-    	return false;
-    
-    //Validar que coincida el dígito verificador
-    function digitoVerificador(curp17) {
-        //Fuente https://consultas.curp.gob.mx/CurpSP/
-        var diccionario  = "0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
-            lngSuma      = 0.0,
-            lngDigito    = 0.0;
-        for(var i=0; i<17; i++)
-            lngSuma= lngSuma + diccionario.indexOf(curp17.charAt(i)) * (18 - i);
-        lngDigito = 10 - lngSuma % 10;
-        if(lngDigito == 10)
-            return 0;
-        return lngDigito;
-    }
-    if (validado[2] != digitoVerificador(validado[1])) 
-    	return false;
-        
-	return true; //Validado
-}
-
-</script>
-
 <!-- 
 
 https://startbootstrap.com/theme/sb-admin-pro-angular
 
 https://startbootstrap.com/themes/admin-dashboard
-
-
-Para validación de CURP
-https://jsfiddle.net/marianom/rddbnhcc/3/
  -->
+
+
+<!-- aquiiiiiii -->
+<!-- CODIGO -->
+

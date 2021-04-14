@@ -150,7 +150,7 @@ include('prcd/conn.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Links adicionales</span>
+            <span><i class="bi bi-camera-reels-fill"></i> Tutoriales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
@@ -159,27 +159,22 @@ include('prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 1
+            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 2
+            <i class="bi bi-play-circle-fill"></i> Subir documentos 
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 3
+            <i class="bi bi-play-circle-fill"></i> Observaciones
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-              <i class="fas fa-file-alt"></i> Link 4
-            </a>
-          </li>
+          
          
           
         </ul>
@@ -264,12 +259,13 @@ include('prcd/conn.php');
                     echo '<a href="seccion1.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
                   }
                   elseif($a > 0){
-                    echo '<a href="" ></a>';
+                    echo '<a href="" ></a>
+                    <a href="editar_seccion1.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>';
                   }
                   
                 ?>
                 
-                <a href="editar_seccion1.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
+                <!-- <a href="editar_seccion1.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a> -->
                 <hr>
                 <p class="card-text h4 text-center">Estatus</p>
 
@@ -297,18 +293,19 @@ include('prcd/conn.php');
 
           <div class="col mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-file-earmark-plus-fill"></i> DOCUMENTOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Agregar documentos de postulación <b>(<?php printf("Se cargaron %d documentos.\n", $row_cnt);?>)</b></p>
+                <p class="card-text">Agregar documentos de postulación <b>(<?php printf("Se cargaron %d documentos\n", $row_cnt);?>)</b></p>
                 
                 <?php
                   if($x < 9){
                     echo '<a href="seccion4.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
                   }
                   elseif($x >= 9){
-                    echo '<a href="" ></a>';
+                    echo '<a href="" ></a>
+                    <a href="seccion4_editar.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
+                    <a href="seccion4_visualizar.php" class="card-link"><i class="bi bi-cloud-arrow-down-fill"></i> Visualizar</a>
+                    ';
                   }
                   
                 ?>
@@ -317,7 +314,7 @@ include('prcd/conn.php');
                 
                 
                 
-                <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
+                <!-- <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a> -->
                 <hr>
                 <p class="card-text h4 text-center">Estatus</p>
                 
@@ -342,24 +339,22 @@ include('prcd/conn.php');
         </div>
       </div> <!-- container -->
       
-      <hr>
+      <!-- <hr>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-1">
           <div class="col mb-12">
             <div class="card text-white bg-primary mb-12" style="width: 100%; ">
-              <!-- <div class="card-header">Tabla 1</div> -->
               <div class="card-body"><br>
                 <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> VALIDACIÓN DE EXPEDIENTE</h1>
                 <p class="card-text">La siguiente validación se realiza por parte del personal del Instituto de la Juventud para validar el expediente, el cual es el siguiente:</p>
 
                 <p class="card-text h4 text-center">Estatus</p>
                 <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p>
-                <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
               </div>
             </div>
           </div>
           </div>
-          </div>
+          </div> -->
 
       <hr>
       <div class="container">
@@ -368,11 +363,12 @@ include('prcd/conn.php');
             <div class="card text-white bg-primary mb-12" style="width: 100%; ">
               <!-- <div class="card-header">Tabla 1</div> -->
               <div class="card-body"><br>
-                <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> DICTAMEN</h1>
-                <p class="card-text">El siguiente dictamen para pertenecer por medio de Comité Calificador del Premio Estatal de la Juventud 2021 es el siguiente:</p>
+                <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> OBSERVACIONES</h1>
+                <p class="card-text">Las siguientes observaciones son sobre el expediente que se subió para participar en el Premio Estatal de la Juventud 2021 es el siguiente:</p>
 
-                <p class="card-text h4 text-center">Estatus</p>
-                <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p>
+                <!-- <p class="card-text h4 text-center">Estatus</p> -->
+                <!-- <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p> -->
+                <p class="card-text"><div class="alert alert-primary" role="alert">Texto de prueba previo a observaciones</div></p>
                 <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
               </div>
             </div>

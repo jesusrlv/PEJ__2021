@@ -151,25 +151,19 @@ include('prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 1
+            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 2
+            <i class="bi bi-play-circle-fill"></i> Subir documentos 
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
                
-              <i class="fas fa-file-alt"></i> Link 3
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-              <i class="fas fa-file-alt"></i> Link 4
+            <i class="bi bi-play-circle-fill"></i> Observaciones
             </a>
           </li>
          
