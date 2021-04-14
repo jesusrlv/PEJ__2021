@@ -216,7 +216,7 @@ include('prcd/qwery.php');
         <div class="col-md-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Lista de archivos a cargar</h3>
+              <h3 class="box-title"><i class="bi bi-folder-plus"></i> Lista de archivos a editar</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
@@ -227,14 +227,16 @@ include('prcd/qwery.php');
               </div>
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+            <div class="box-body table-responsive no-padding align-middle">
+            <table class="table table-hover table-striped table-bordered align-middle">
                 <thead>
+                <tr class="bg-dark text-light border-0">
                   <th>#</th>
                   <th>Nombre</th>
                   <th>Cargar archivo</th>
                   <!-- <th>Status</th> -->
                   <th>Descripción del archivo</th>
+                  </tr>
                 </thead>
                 <tr>
                   <td>1</td>

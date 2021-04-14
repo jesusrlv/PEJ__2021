@@ -55,18 +55,10 @@ include('prcd/conn.php');
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Gráfico -->
-
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
+ 
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+   
 <!-- Page script -->
     <!-- <script src="prcd/grafico.js"></script> -->
 
@@ -86,8 +78,7 @@ include('prcd/conn.php');
         }
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+   
   </head>
   <body>
     <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
@@ -216,12 +207,13 @@ include('prcd/conn.php');
           <hr class="my-4">
 
           <!-- Donut chart -->
-              <i class="fa fa-bar-chart-o"></i> <h3 class="box-title">Avance de carga de archivos</h3>
+            <h3 class="box-title"><i class="bi bi-pie-chart-fill"></i> Avance de carga de archivos</h3>
 
                
              
             
-              <div id="donut-chart"></div>
+              <canvas id="myChart" width="400" height="150"></canvas>
+              <hr>
            
             <!-- /.box-body-->
           <!-- /.box -->
@@ -248,10 +240,8 @@ include('prcd/conn.php');
         <div class="row row-cols-1 row-cols-md-2">
           <div class="col mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-credit-card-2-front-fill"></i> DATOS PERSONALES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                 <p class="card-text">Agregar datos del postulante</p>
                 
                 <?php
@@ -265,7 +255,6 @@ include('prcd/conn.php');
                   
                 ?>
                 
-                <!-- <a href="editar_seccion1.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a> -->
                 <hr>
                 <p class="card-text h4 text-center">Estatus</p>
 
@@ -309,12 +298,7 @@ include('prcd/conn.php');
                   }
                   
                 ?>
-                
-                
-                
-                
-                
-                <!-- <a href="#" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a> -->
+
                 <hr>
                 <p class="card-text h4 text-center">Estatus</p>
                 
@@ -396,7 +380,10 @@ include('prcd/conn.php');
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha512-OD9Gn6cAUQezuljS6411uRFr84pkrCtw23Hl5TYzmGyD0YcunJIPSBDzrV8EeCiFxGWWvtJOfVo5pOgB++Jsag==" crossorigin="anonymous"></script>
+
         <script src="css/dashboard.js"></script></body>
 </html>
 
@@ -409,184 +396,37 @@ https://startbootstrap.com/themes/admin-dashboard
 
 <?php
  $v1 = $row_cnt;
- echo "Subidos ".$v1;
+//  echo "Subidos ".$v1;
     $v9 = 9;
     $v2 = $v9 - $v1;
     
-    echo " Penientes ".$v2;
+    // echo " Penientes ".$v2;
 ?>
  <script>
-  $(function () {
-    
-     /* LINE CHART
-     * ----------
-     */
-    //LINE randomly generated data
+  var ctx = document.getElementById("myChart").getContext("2d");
+  var myChart = new Chart(ctx,{
+    type:'doughnut',
+    data:{
+      labels:['Cargados','No cargados'],
+      datasets:[{
+        label:'Num datos',
+        data:[<?php echo $v1?>,<?php echo $v2?>],
+        backgroundColor:[
+          '#6C94D9',
+          '#DB3536'
 
-    var sin = [], cos = []
-    for (var i = 0; i < 14; i += 0.5) {
-      sin.push([i, Math.sin(i)])
-      cos.push([i, Math.cos(i)])
+        ]
+      }]
+    },
+    options:{
+      // scales:{
+        // yAxes:[{
+        //   ticks:{
+        //     BeginAtZero:true
+        //   }
+        // }]
+      // }
     }
-    var line_data1 = {
-      data : sin,
-      color: '#3c8dbc'
-    }
-    var line_data2 = {
-      data : cos,
-      color: '#00c0ef'
-    }
-    $.plot('#line-chart', [line_data1, line_data2], {
-      grid  : {
-        hoverable  : true,
-        borderColor: '#f3f3f3',
-        borderWidth: 1,
-        tickColor  : '#f3f3f3'
-      },
-      series: {
-        shadowSize: 0,
-        lines     : {
-          show: true
-        },
-        points    : {
-          show: true
-        }
-      },
-      lines : {
-        fill : false,
-        color: ['#3c8dbc', '#f56954']
-      },
-      yaxis : {
-        show: true
-      },
-      xaxis : {
-        show: true
-      }
-    })
-    //Initialize tooltip on hover
-    $('<div class="tooltip-inner" id="line-chart-tooltip"></div>').css({
-      position: 'absolute',
-      display : 'none',
-      opacity : 0.8
-    }).appendTo('body')
-    $('#line-chart').bind('plothover', function (event, pos, item) {
-
-      if (item) {
-        var x = item.datapoint[0].toFixed(2),
-            y = item.datapoint[1].toFixed(2)
-
-        $('#line-chart-tooltip').html(item.series.label + ' of ' + x + ' = ' + y)
-          .css({ top: item.pageY + 5, left: item.pageX + 5 })
-          .fadeIn(200)
-      } else {
-        $('#line-chart-tooltip').hide()
-      }
-
-    })
-    /* END LINE CHART */
-
-    /*
-     * FULL WIDTH STATIC AREA CHART
-     * -----------------
-     */
-    var areaData = [[2, 88.0], [3, 93.3], [4, 102.0], [5, 108.5], [6, 115.7], [7, 115.6],
-      [8, 124.6], [9, 130.3], [10, 134.3], [11, 141.4], [12, 146.5], [13, 151.7], [14, 159.9],
-      [15, 165.4], [16, 167.8], [17, 168.7], [18, 169.5], [19, 168.0]]
-    $.plot('#area-chart', [areaData], {
-      grid  : {
-        borderWidth: 0
-      },
-      series: {
-        shadowSize: 0, // Drawing is faster without shadows
-        color     : '#00c0ef'
-      },
-      lines : {
-        fill: true //Converts the line chart to area chart
-      },
-      yaxis : {
-        show: false
-      },
-      xaxis : {
-        show: false
-      }
-    })
-
-    /* END AREA CHART */
-
-    /*
-     * BAR CHART
-     * ---------
-     */
-
-    var bar_data = {
-      data : [['January', 10], ['February', 8], ['March', 4], ['April', 13], ['May', 17], ['June', 9]],
-      color: '#3c8dbc'
-    }
-    $.plot('#bar-chart', [bar_data], {
-      grid  : {
-        borderWidth: 1,
-        borderColor: '#f3f3f3',
-        tickColor  : '#f3f3f3'
-      },
-      series: {
-        bars: {
-          show    : true,
-          barWidth: 0.5,
-          align   : 'center'
-        }
-      },
-      xaxis : {
-        mode      : 'categories',
-        tickLength: 0
-      }
-    })
-    /* END BAR CHART */
-
-    /*
-     * DONUT CHART -------------------------------------------
-     * -----------
-     */
-      var v1 = '<?php echo $v1; ?>'
-      var v2 = '<?php echo $v2; ?>'
-      
-    var donutData = [
-      { label: 'Subido', data: v1, color: '#1A8F5E' },
-      { label: 'Pendientes', data: v2, color: '#FFBA59' }
-//      { label: 'Series4', data: 50, color: '#00c0ef' }
-    ]
-    $.plot('#donut-chart', donutData, {
-      series: {
-        pie: {
-          show       : true,
-          radius     : 1,
-          innerRadius: 0.5,
-          label      : {
-            show     : true,
-            radius   : 2 / 3,
-            formatter: labelFormatter,
-            threshold: 0.1
-          }
-
-        }
-      },
-      legend: {
-        show: false
-      }
-    })
-    /*
-     * END DONUT CHART
-     */
-
-  })
-
-  /*
-   * Custom Label formatter
-   * ----------------------
-   */
-  function labelFormatter(label, series) {
-    return '<div style="font-size:13px; text-align:center; padding:2px; color: #fff; font-weight: 600;">'
-      + label
-      + '<br>'
-      + Math.round(series.percent) + '%</div>'
   }
+  );
 </script>
