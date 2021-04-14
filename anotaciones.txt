@@ -11,3 +11,33 @@
 
 - en el archivo qwery_validacion_dashboard.php se va a cambiar la validación hacia la tabla de validaciones en la BD
 - 
+
+13/03/2021
+
+- En campo de datos, sean: nombre, edad, municipio, grado escolar y teléfono.
+- Son 13 categorías del premio.
+- Un aviso SWAL antes de registrar la categoría.
+- Capacidad de documentos ilimitada.
+- Video, que sea en YouTube.
+- Tutoriales de uso del sistema en todos los perfiles.
+- Infografías de uso de los perfiles.
+- Correo de recordatorio cada 15 días después de crear el perfil sobre el expediente
+- En las notas del video, agregar que sea de un minuto máximo.
+- Poder editar documentos, pero cuando se cierre la convocatoria, ya no pueda realizarlo.
+- Cuando se termine de realizar la validación, enviar un correo con un código de respaldo.
+- Validar solo los expedientes completos que se muestre a los jurados.
+- NO VALIDACIÖN POR ADMIN.
+- NO ELIMINAR USR POR ADMIN.
+- En el ADMIN y en JUR se vean las calificaciones: por documentos, promedio por participante y listado de todos los participantes.
+
+Para el perfil de notario.
+
+- Todas las calificaciones de los jurados.
+- Ver las calificaciones de los documentos.
+- Similar a la vista de jurado pero con todas las categorías (NOMBRE DEL PARTICIPANTE, CALIFICACIÓN Y QUIÉN LO CALIFICÓ.
+
+Reportes.
+
+- Se genera en excel.
+- Reporte postulante: con los campos que llenó y la lista de documentos cargados.
+
