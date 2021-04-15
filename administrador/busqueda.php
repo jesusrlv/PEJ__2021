@@ -59,16 +59,10 @@ include('../dashboard/prcd/conn.php');
     <!-- Gráfico -->
 
 
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 
     <style>
       .bd-placeholder-img {
@@ -227,10 +221,10 @@ include('../dashboard/prcd/conn.php');
         <!-- búsqueda -->
         <?php
         
-          $busqueda = $_POST['busqueda'];
-          $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
-          $resultado_busqueda= $conn->query($sql_busqueda);
-          $row_search=$resultado_busqueda->fetch_assoc();
+          // $busqueda = $_POST['busqueda'];
+          // $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
+          // $resultado_busqueda= $conn->query($sql_busqueda);
+          // $row_search=$resultado_busqueda->fetch_assoc();
         
         ?>
         
@@ -258,16 +252,35 @@ include('../dashboard/prcd/conn.php');
             <tbody>
                 
                 <?php
-                if (isset($busqueda)) {
-                  
-                  echo '<tr>';
-                  echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
-                  echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
-                  echo '<td scope="row" class="align-middle">'.$row_search['nombre'].'</td>';
-                  echo '<td class="h3 text-primary align-middle"><a href="resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                  echo '</tr>';
+                if (isset($_POST['busqueda'])) {
+                  $busqueda="";
+                  $busqueda=$_POST['busqueda'];
+                  $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
+                  $resultado_busqueda= $conn->query($sql_busqueda);
+                  $row_search=$resultado_busqueda->fetch_assoc();
+                    if ($row_search){
+                      echo '<tr>';
+                      echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
+                      echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
+                      echo '<td scope="row" class="align-middle">'.$row_search['nombre'].'</td>';
+                      echo '<td class="h3 text-primary align-middle"><a href="resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                      echo '</tr>';
+                    }
+                    else{
+                      echo "<script type=\"text/javascript\">Swal.fire(
+                        'No se encontraron resultados',
+                        'Sin resultados',
+                        'warning'
+                      ).then(function(){location.href='busqueda.php';}
+                    
+                      
+                    
+                    );</script>";
+                    }
 
                 }
+
+                else{}
 
                   ?>
                                     

@@ -935,87 +935,12 @@ function abortHandler8(event) {
                 <tr>
                   <td>9</td>
                   <td>Video</td>
-                  <script type="text/javascript">
-                
-                     function _(el9) {
-  return document.getElementById(el9);
-}
-
-function uploadFile9() {
-  var file = _("file9").files[0];
-  // alert(file.name+" | "+file.size+" | "+file.type);
-  var formdata = new FormData();
-  formdata.append("file9", file);
-  var ajax = new XMLHttpRequest();
-  ajax.upload.addEventListener("progress", progressHandler9, false);
-  ajax.addEventListener("load", completeHandler9, false);
-  ajax.addEventListener("error", errorHandler9, false);
-  ajax.addEventListener("abort", abortHandler9, false);
-  ajax.open("POST", "prcd/editar_docs/editar_archivo9.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
-  //use file_upload_parser.php from above url
-  //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
-  ajax.send(formdata);
-}
-
-function progressHandler9(event) {
-  _("loaded_n_total9").innerHTML = "Subido " + event.loaded + " bytes de " + event.total;
-  var percent = (event.loaded / event.total) * 100;
-  _("progressBar9").value = Math.round(percent);
-  _("status9").innerHTML = Math.round(percent) + "% subido... espere un momento";
-}
-
-function completeHandler9(event) {
-  _("status9").innerHTML = event.target.responseText;
-  _("progressBar9").value = 0; //wil clear progress bar after successful upload
-    _("file9").style.display='none';
-    _("progressBar9").style.display='none';
-}
-
-function errorHandler9(event) {
-  _("status9").innerHTML = "Fallo en la subida";
-}
-
-function abortHandler9(event) {
-  _("status9").innerHTML = "Fallo en la subida";
-}
-                    
-                </script>
+                  
+                  
                  
-                  <td><form id="upload_form9" enctype="multipart/form-data" method="post">
-                <input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
-                <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
-                <h3 id="status9"></h3>
-                <p id="loaded_n_total9"></p>
-
-<?php
-
-        
-//           if (!$row9) {            
-//             echo '<input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
-//   <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
-//   <h3 id="status9"></h3>
-//   <p id="loaded_n_total9"></p>';
-//         }
-//         else{
-//           echo '<div class="alert alert-secondary h5" role="alert">
-//           <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-//         </div>';
-//         }
-    
-    ?>
- 
- 
-</form>
-</td>
-                  <?php           
-            // if(empty($variable9)){
-            // echo '<td><span class="label label-warning">No Cargado</span></td>';
-            // }
-            // else{
-            // echo '<td><span class="label label-success">Cargado</span></td>';
-            // }
-    
-                    ?> 
+                  <td><div class="input-group mb-3">
+                              <button class="btn btn-primary" id="btnguardar" width="100" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cloud-arrow-up-fill"></i> Subir video</button></div></td>
+                  
                   <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
                 </tr>               
                 

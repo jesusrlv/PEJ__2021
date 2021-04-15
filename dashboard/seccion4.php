@@ -901,82 +901,52 @@ function abortHandler8(event) {
                 <tr>
                   <td>9</td>
                   <td>Video</td>
-                  <script type="text/javascript">
-                
-                     function _(el9) {
-  return document.getElementById(el9);
-}
+                  <td>
+                      <?php
+                            if (!$row9) {            
+                              echo '<div class="input-group mb-3">
+                              <button class="btn btn-primary" id="btnguardar" width="100" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cloud-arrow-up-fill"></i> Subir video</button></div>';
+                            }
+                          
+                          else{
+                            echo '<div class="alert alert-secondary h5" role="alert">
+                            <i class="bi bi-file-earmark-check-fill"></i> Link cargado en tu sistema
+                          </div>';
+                          }
+                    ?>
+                      <!-- </form> -->
 
-function uploadFile9() {
-  var file = _("file9").files[0];
-  // alert(file.name+" | "+file.size+" | "+file.type);
-  var formdata = new FormData();
-  formdata.append("file9", file);
-  var ajax = new XMLHttpRequest();
-  ajax.upload.addEventListener("progress", progressHandler9, false);
-  ajax.addEventListener("load", completeHandler9, false);
-  ajax.addEventListener("error", errorHandler9, false);
-  ajax.addEventListener("abort", abortHandler9, false);
-  ajax.open("POST", "prcd/subir_archivo9.php"); // http://www.developphp.com/video/JavaScript/File-Upload-Progress-Bar-Meter-Tutorial-Ajax-PHP
-  //use file_upload_parser.php from above url
-  //ARCHIVO CON EL PROCEDIMIENTO PARA MOVER EL DOCUMENTO AL SERVIDOR
-  ajax.send(formdata);
-}
+                      <!-- modal -->
 
-function progressHandler9(event) {
-  _("loaded_n_total9").innerHTML = "Subido " + event.loaded + " bytes de " + event.total;
-  var percent = (event.loaded / event.total) * 100;
-  _("progressBar9").value = Math.round(percent);
-  _("status9").innerHTML = Math.round(percent) + "% subido... espere un momento";
-}
+                      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Video</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <p>Se debe cargar la liga de YouTube de tu video para poder continuar con el proceso de postulación.</p>
+                            <p><strong>NOTA:</strong> Se recomienda termiar con la carga de los otros documentos y finalizar con el proceso del video.</p>
+                            <p><form action="prcd/subir_archivo9.php" method="POST">
+                            <p>
+                            <div class="input-group flex-nowrap">
+                              <span class="input-group-text" id="addon-wrapping"><i class="bi bi-play-btn-fill"></i></span>
+                              <input type="text" name="file9" class="form-control" placeholder="Link de YouTube" aria-label="Link de YouTube" aria-describedby="addon-wrapping" required>
+                          </div>
+                          </p>
+                          <p class="text-right"><button type="submit" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill"></i> Guardar</button> <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Cerrar</button></p>
+                            
+                            </form></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-function completeHandler9(event) {
-  _("status9").innerHTML = event.target.responseText;
-  _("progressBar9").value = 0; //wil clear progress bar after successful upload
-    _("file9").style.display='none';
-    _("progressBar9").style.display='none';
-}
+                      <!-- modal -->
 
-function errorHandler9(event) {
-  _("status9").innerHTML = "Fallo en la subida";
-}
-
-function abortHandler9(event) {
-  _("status9").innerHTML = "Fallo en la subida";
-}
-                    
-                </script>
-                 
-                  <td><form id="upload_form9" enctype="multipart/form-data" method="post">
-<?php
-
-        
-          if (!$row9) {            
-            echo '<input type="file" name="file9" id="file9" onchange="uploadFile9()"><br>
-  <progress id="progressBar9" value="0" max="100" style="width:300px;"></progress>
-  <h3 id="status9"></h3>
-  <p id="loaded_n_total9"></p>';
-        }
-        else{
-          echo '<div class="alert alert-secondary h5" role="alert">
-          <i class="bi bi-file-earmark-check-fill"></i> Archivo cargado en tu sistema
-        </div>';
-        }
-    
-    ?>
- 
- 
-</form>
-</td>
-                  <?php           
-            // if(empty($variable9)){
-            // echo '<td><span class="label label-warning">No Cargado</span></td>';
-            // }
-            // else{
-            // echo '<td><span class="label label-success">Cargado</span></td>';
-            // }
-    
-                    ?> 
+                    </td>
+                  
                   <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
                 </tr>               
                 
@@ -1062,6 +1032,9 @@ function abortHandler9(event) {
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
         <script src="css/dashboard.js"></script></body>
 </html>
 
