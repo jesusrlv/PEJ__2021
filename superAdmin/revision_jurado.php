@@ -26,7 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin2.php');
+include('../dashboard/prcd/qwery_admin3.php');
 
 // variables de sesión
 
@@ -154,38 +154,38 @@ include('../dashboard/prcd/qwery_admin2.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
+            <span class="text-light">ENLACES</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+              <i class="fas fa-file-alt"></i> LINK 1
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-person-fill"></i> Administradores
+              <i class="fas fa-file-alt"></i> LINK 2
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-people-fill"></i> Jurado
+              <i class="fas fa-file-alt"></i> LINK 3
             </a>
           </li>
-          <hr>
           <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-search"></i> Búsqueda de usuario
+              <i class="fas fa-file-alt"></i> LINK 4
             </a>
           </li>
          
+          
         </ul>
 
     
@@ -235,7 +235,7 @@ include('../dashboard/prcd/qwery_admin2.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: ADMINISTRADORES</p>
+        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -244,6 +244,7 @@ include('../dashboard/prcd/qwery_admin2.php');
                   <th scope="col">#</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -263,7 +264,258 @@ include('../dashboard/prcd/qwery_admin2.php');
             </tbody>
                 <hr>
             </table>
+        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
+
+            <table class="table table-hover text-center table-striped">
+
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+               $x=0;
+              while($row_usr2 = $resultado_usr2->fetch_assoc()){
+                $x++;
+                echo '<tr>';
+                echo '<td>'.$x.'</td>';
+                echo '<td>'.$row_usr2['nombre'].'</td>';
+                echo '<td>'.$row_usr2['usuario'].'</td>';
+                // echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '</tr>';
+              }
+              ?>
+               
+            </tbody>
+                <hr>
+            </table>
+        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
+
+            <table class="table table-hover text-center table-striped">
+
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+               $x=0;
+              while($row_usr3 = $resultado_usr3->fetch_assoc()){
+                $x++;
+                echo '<tr>';
+                echo '<td>'.$x.'</td>';
+                echo '<td>'.$row_usr3['nombre'].'</td>';
+                echo '<td>'.$row_usr3['usuario'].'</td>';
+                // echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '</tr>';
+              }
+              ?>
+               
+            </tbody>
+                <hr>
+            </table>
+        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
+
+        <table class="table table-hover text-center table-striped">
+
+          <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr4 = $resultado_usr4->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr4['nombre'].'</td>';
+              echo '<td>'.$row_usr4['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
         
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr5 = $resultado_usr5->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr5['nombre'].'</td>';
+              echo '<td>'.$row_usr5['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr6 = $resultado_usr6->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr6['nombre'].'</td>';
+              echo '<td>'.$row_usr6['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORIA: LITERATURA</p>
+        <table class="table table-hover text-center table-striped">
+        
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr7 = $resultado_usr7->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr7['nombre'].'</td>';
+              echo '<td>'.$row_usr7['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
+        <table class="table table-hover text-center table-striped">
+        
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr8 = $resultado_usr8->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr8['nombre'].'</td>';
+              echo '<td>'.$row_usr8['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORÍA: ARTE URBANO</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr9 = $resultado_usr9->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr9['nombre'].'</td>';
+              echo '<td>'.$row_usr9['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Usuario</th>
+                  <!-- <th scope="col">Acción</th> -->
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr10 = $resultado_usr10->fetch_assoc()){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr10['nombre'].'</td>';
+              echo '<td>'.$row_usr10['usuario'].'</td>';
+              // echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+            }
+            ?>
             
           </tbody>
               <hr>

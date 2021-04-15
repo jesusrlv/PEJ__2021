@@ -26,7 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin2.php');
+// include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -224,48 +224,162 @@ include('../dashboard/prcd/qwery_admin2.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-        
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
-
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-1">
-          
+
+        <?php 
+            $id_consulta = $_REQUEST['id'];
+            $sql_qwery = "SELECT * FROM docs WHERE id_ext = '$id_consulta'";
+            $resultado_consulta= $conn->query($sql_qwery);
+
+        ?>
+
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: ADMINISTRADORES</p>
+        <p class=" h4">CATEGORIA: <?php 
+            $id_busqueda = $_REQUEST['id2'];
+            if($id_busqueda==1){
+                echo 'LOGRO ACADÉMICO';
+            }
+            elseif($id_busqueda==2){
+                echo 'DISCAPACIDAD E INTEGRACIÓN';
+            }
+            elseif($id_busqueda==3){
+                echo 'INGENIO EMPRENDEDOR';
+            }
+            elseif($id_busqueda==4){
+                echo 'RESPONSABILIDAD SOCIAL';
+            }
+            elseif($id_busqueda==5){
+                echo 'MÉRITO MIGRANTE';
+            }
+            elseif($id_busqueda==6){
+                echo 'MÉRITO CAMPESINO';
+            }
+            elseif($id_busqueda==7){
+                echo 'LITERATURA';
+            }
+            elseif($id_busqueda==8){
+                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            }
+            elseif($id_busqueda==9){
+                echo 'ARTE URBANO';
+            }
+            elseif($id_busqueda==10){
+                echo 'CIENCIA Y TECNOLOGÍA';
+            }
+        
+        ?></p>
 
             <table class="table table-hover text-center table-striped ">
-
-            <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                </tr>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Archivo</th>
+              </tr>
             </thead>
             <tbody>
-           
-              <?php
-               $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td>'.$row_usr['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
-            </tbody>
-                <hr>
-            </table>
-        
+
+            <?php
+            // $y = 0;
+            //     while($resultado_consulta = $conn->query($sql_qwery)){
+            //       $y++;  
+            //         echo '<tr>';
+            //         echo '<th scope="row">'.$y.'</th>';
+            //         echo '<td>'.$resultado_consulta['tipo_doc'].'</td>';
+                    // echo '<td><a href="../dashboard/'.$resultado_consulta['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+            //         echo '</tr>';
+                  
+            //     } 
             
-          </tbody>
+            $y=0;
+           while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+             $y++;
+             echo '<tr>';
+             echo '<td>'.$y.'</td>';
+             
+             if($resultado_qwery['tipo_doc']==1){
+              echo '<td>Carta Propuesta</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==2){
+              echo '<td>Currículum vitae</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==3){
+              echo '<td>Semblanza de trayectoria</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==4){
+              echo '<td>Acta de nacimiento</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==5){
+              echo '<td>Credencial de elector</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==6){
+              echo '<td>Comprobante de domicilio</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==7){
+              echo '<td>CURP</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==8){
+              echo '<td>Material bibliográfico</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==9){
+              echo '<td>Video</td>';
+          }
+          
+            //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
+             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+             echo '</tr>';
+           }
+           
+            ?>
+
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Carta Propuesta</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Currículum vitae</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Semblanza de trayectoria</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Acta de nacimiento</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Credencial de elector</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Comprobante de domicilio</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>CURP</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Material bibliográfico</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Video</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr> -->
+              
+            </tbody>
               <hr>
           </table>
         

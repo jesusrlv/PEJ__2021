@@ -154,38 +154,38 @@ include('../dashboard/prcd/qwery_admin.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">ENLACES</span>
+            <span class="text-light">REVISIÓN</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_docs.php">
                
-              <i class="fas fa-file-alt"></i> LINK 1
+            <i class="bi bi-person-bounding-box"></i> Postulantes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_administradores.php">
                
-              <i class="fas fa-file-alt"></i> LINK 2
+            <i class="bi bi-person-fill"></i> Administradores
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_jurado.php">
                
-              <i class="fas fa-file-alt"></i> LINK 3
+            <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
+          <hr>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="busqueda.php">
                
-              <i class="fas fa-file-alt"></i> LINK 4
+            <i class="bi bi-search"></i> Búsqueda de usuario
             </a>
           </li>
          
-          
         </ul>
 
     

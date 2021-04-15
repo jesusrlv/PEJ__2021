@@ -26,7 +26,6 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin2.php');
 
 // variables de sesión
 
@@ -218,67 +217,73 @@ include('../dashboard/prcd/qwery_admin2.php');
     <div class="container-fluid ">
 
 
-      <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
+      <div class="jumbotron jumbotron-fluid" style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
-          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | <strong>INJUVENTUD</strong></p>
           <hr class="my-4">
 
         
+        <!-- búsqueda -->
         <?php
-        // include('prcd/qwery_validacion_dashboard.php');
+        
+          $busqueda = $_POST['busqueda'];
+          $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
+          $resultado_busqueda= $conn->query($sql_busqueda);
+          $row_search=$resultado_busqueda->fetch_assoc();
+        
         ?>
-        <!-- consulta de validación -->
+        
+        <form action="busqueda.php" method="POST">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Búsqueda de usuario" aria-label="Búsqueda de usuario" aria-describedby="button-addon2" name="busqueda">
+              <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i> Buscar</button>
+          </div>
+        </form>
 
+        <div class="container">
+           
+            <table class="table table-hover text-center table-striped table-bordered align-middle">
 
-        <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-1">
-          
-        <div class="col mb-12">
-        <p class=" h4">CATEGORIA: ADMINISTRADORES</p>
-
-            <table class="table table-hover text-center table-striped ">
-
-            <thead class="thead-dark">
+            <thead class="thead-dark align-middle">
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
+                <th scope="col">ID</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Archivos</th>
+                
                 </tr>
             </thead>
+
             <tbody>
-           
-              <?php
-               $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td>'.$row_usr['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
+                
+                <?php
+                if (isset($busqueda)) {
+                  
+                  echo '<tr>';
+                  echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
+                  echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
+                  echo '<td scope="row" class="align-middle">'.$row_search['nombre'].'</td>';
+                  echo '<td class="h3 text-primary align-middle"><a href="resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                  echo '</tr>';
+
+                }
+
+                  ?>
+                                    
             </tbody>
                 <hr>
             </table>
-        
-            
-          </tbody>
-              <hr>
-          </table>
-        
-</div>
-
+        </div>
+        <hr>
       </div> <!-- container -->
       
-      <hr>
+      
       
 
       
 
-      </div>
+      <!-- </div> -->
 
 
     </main>

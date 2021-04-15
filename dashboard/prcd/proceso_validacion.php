@@ -58,6 +58,11 @@ if ($resultado=mysqli_fetch_array($proceso)){
         echo "<script type=\"text/javascript\">location.href='../../notario/dashboard.php';</script>";
     }
 
+    elseif($resultado['perfil']==5){
+
+        echo "<script type=\"text/javascript\">location.href='../../superAdmin/dashboard.php';</script>";
+    }
+
 }
     
 

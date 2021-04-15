@@ -26,7 +26,6 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin2.php');
 
 // variables de sesión
 
@@ -111,7 +110,7 @@ include('../dashboard/prcd/qwery_admin2.php');
       
         
        
-    <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>      
+        <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
         
       </li>
   </ul>
@@ -154,38 +153,38 @@ include('../dashboard/prcd/qwery_admin2.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
+            <span class="text-light">ENLACES</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+              <i class="fas fa-file-alt"></i> LINK 1
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-person-fill"></i> Administradores
+              <i class="fas fa-file-alt"></i> LINK 2
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-people-fill"></i> Jurado
+              <i class="fas fa-file-alt"></i> LINK 3
             </a>
           </li>
-          <hr>
           <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
+            <a class="nav-link text-light" href="#">
                
-            <i class="bi bi-search"></i> Búsqueda de usuario
+              <i class="fas fa-file-alt"></i> LINK 4
             </a>
           </li>
          
+          
         </ul>
 
     
@@ -232,44 +231,65 @@ include('../dashboard/prcd/qwery_admin2.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-1">
+        <div class="row row-cols-1 row-cols-md-2">
           
-        <div class="col mb-12">
-        <p class=" h4">CATEGORIA: ADMINISTRADORES</p>
-
-            <table class="table table-hover text-center table-striped ">
-
-            <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                </tr>
-            </thead>
-            <tbody>
-           
-              <?php
-               $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td>'.$row_usr['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
-            </tbody>
+          <div class="col mb-6">
+            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Revisión de usuarios</p>
                 <hr>
-            </table>
+                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes</a>
+                <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
+                <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-6">
+            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-person-plus-fill"></i> ALTA DE REVISORES</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Dar de alta a revisores o administradores nuevos.</p>
+                <hr>
+                <a href="alta_revisores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de revisores</a>
+                <a href="alta_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de administradores</a>
+              </div>
+            </div>
+        </div>
         
-            
-          </tbody>
-              <hr>
-          </table>
-        
-</div>
+
+        <div class="col mb-6" style="margin-top:9px">
+            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-person-dash-fill"></i> ELIMINAR USUARIOS</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Elimina postulantes, administradores y/o jurado.</p>
+                <hr>
+                <a href="eliminar_usr.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios</a>
+                <!-- <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Administradores</a>
+                <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Revisores</a> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col mb-6" style="margin-top:9px">
+            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-trash-fill"></i> ELIMINAR DOCUMENTOS</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Elimina documentos de un postulante.</p>
+                <hr>
+                <a href="eliminar_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
+              </div>
+            </div>
+          </div>
 
       </div> <!-- container -->
       

@@ -153,40 +153,39 @@ include('../dashboard/prcd/conn.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">ENLACES</span>
+            <span class="text-light">REVISIÓN</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_docs.php">
                
-              <i class="fas fa-file-alt"></i> LINK 1
+            <i class="bi bi-person-bounding-box"></i> Postulantes
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_administradores.php">
                
-              <i class="fas fa-file-alt"></i> LINK 2
+            <i class="bi bi-person-fill"></i> Administradores
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="revision_jurado.php">
                
-              <i class="fas fa-file-alt"></i> LINK 3
+            <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
+          <hr>
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
+            <a class="nav-link text-light" href="busqueda.php">
                
-              <i class="fas fa-file-alt"></i> LINK 4
+            <i class="bi bi-search"></i> Búsqueda de usuario
             </a>
           </li>
          
-          
         </ul>
-
     
     </nav>
 
@@ -231,10 +230,10 @@ include('../dashboard/prcd/conn.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-2">
+        <div class="row row-cols-2 row-cols-md-1">
           
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+          <div class="col mb-12">
+            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
@@ -248,45 +247,16 @@ include('../dashboard/prcd/conn.php');
             </div>
           </div>
 
-          <div class="col mb-6">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-plus-fill"></i> ALTA DE REVISORES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Dar de alta a revisores o administradores nuevos.</p>
-                <hr>
-                <a href="alta_revisores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de revisores</a>
-                <a href="alta_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-plus-fill"></i> Alta de administradores</a>
-              </div>
-            </div>
-        </div>
-        
 
-        <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
+          <div class="col mb-12" style="margin-top:9px">
+            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
               <!-- <div class="card-header">Enero-Marzo 2020</div> -->
               <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-person-dash-fill"></i> ELIMINAR USUARIOS</h5>
+                <h5 class="card-title text-primary"><i class="bi bi-search"></i> BÚSQUEDA DE USUARIOS</h5>
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Elimina postulantes, administradores y/o jurado.</p>
+                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
                 <hr>
-                <a href="eliminar_usr.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-dash-fill"></i> Eliminar usuarios</a>
-                <!-- <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Administradores</a>
-                <a href="editar_seccion1.php" class="card-link btn btn-outline-primary"><i class="bi bi-check-circle-fill"></i> Revisores</a> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col mb-6" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-6" style="max-width: 36rem; box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-trash-fill"></i> ELIMINAR DOCUMENTOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Elimina documentos de un postulante.</p>
-                <hr>
-                <a href="eliminar_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
+                <a href="busqueda.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
               </div>
             </div>
           </div>
