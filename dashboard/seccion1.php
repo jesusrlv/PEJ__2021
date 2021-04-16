@@ -228,12 +228,14 @@ include('prcd/conn.php');
                       <option value="4">Responsabilidad social</option>
                       <option value="5">Mérito migrante</option>
                       <option value="6">Mérito campesino</option>
+                      <option value="7"> Cultura Cívica, Política y/o Democracia</option>
                       </optgroup>
                       <optgroup label="Talento joven">
                       <option value="7">Literatura</option>
-                      <option value="8">Artes plásticas, visuales y populares</option>
-                      <option value="9">Arte urbano</option>
-                      <option value="10">Ciencia y tecnología</option>
+                      <option value="8">Artes Escénicas</option>
+                      <option value="9">Artes Plásticas, Visuales y Populares</option>
+                      <option value="10"> Arte Urbano </option>
+                      <option value="11">Ciencia y tecnología</option>
                       </optgroup>
                       
                   </select>
