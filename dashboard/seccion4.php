@@ -922,12 +922,12 @@ function abortHandler8(event) {
                         <div class="modal-dialog modal-dialog-centered">
                           <div class="modal-content">
                             <div class="modal-header">
-                              <h5 class="modal-title" id="exampleModalLabel">Video</h5>
+                              <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Video</h5>
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                             <p>Se debe cargar la liga de YouTube de tu video para poder continuar con el proceso de postulación.</p>
-                            <p><strong>NOTA:</strong> Se recomienda termiar con la carga de los otros documentos y finalizar con el proceso del video.</p>
+                            <p><strong>NOTA:</strong> Se recomienda terminar con la carga de los otros documentos y finalizar con el proceso del video.</p>
                             <p><form action="prcd/subir_archivo9.php" method="POST">
                             <p>
                             <div class="input-group flex-nowrap">

@@ -293,8 +293,7 @@ include('prcd/conn.php');
                   elseif($x >= 9){
                     echo '<a href="" ></a>
                     <a href="seccion4_editar.php" class="card-link"><i class="bi bi-pencil-square"></i> Editar</a>
-                    <a href="seccion4_visualizar.php" class="card-link"><i class="bi bi-cloud-arrow-down-fill"></i> Visualizar</a>
-                    ';
+                    <a href="seccion4_visualizar.php" class="card-link"><i class="bi bi-cloud-arrow-down-fill"></i> Visualizar</a>';
                   }
                   
                 ?>

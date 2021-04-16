@@ -2,7 +2,7 @@
 /.DS_Store
 .DS_Store
 dashboard/archivos
-/conn.php
+conn.php
 /dashboard/conn.php
 /dashboard/conn2.php
-/conn2.php
+conn2.php
