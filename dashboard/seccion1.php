@@ -238,7 +238,7 @@ include('prcd/conn.php');
                       
                   </select>
                   <hr>	
-					</div>
+					    </div>
           
                 <div class="col-md-6 mb-3">
                     <label for="firstName">Apellido(s)</label>
@@ -268,6 +268,42 @@ include('prcd/conn.php');
                     Valid last name is required.
                     </div>
                 </div>
+                <div class="col-md-6 mb-3 validate-input" data-validate="Selecciona una temática">
+                <label for="tematica">Municipio</label>
+                  <select name="municipio" id="municipio" class="form-control" required>
+                      <option value="">Seleccionar...</option>
+                      
+                      <optgroup label="Municipios">
+                      <option value="1">Zacatecas</option>
+                      <option value="2">Guadalupe</option>
+                      <option value="3">Sombrerete</option>
+                      <option value="4">Villanueva</option>
+                      <option value="5">Teúl de G.O.</option>
+                      <option value="6">Otro</option>
+                      
+                      </optgroup>
+                      
+                  </select>
+                  <hr>	
+					    </div>
+                <div class="col-md-6 mb-3 validate-input" data-validate="Selecciona una temática">
+                <label for="tematica">Grado escolar</label>
+                  <select name="grado" id="grado" class="form-control" required>
+                      <option value="">Seleccionar...</option>
+                      
+                      <optgroup label="Escolaridad">
+                      <option value="1">Secundaria</option>
+                      <option value="2">Preparatoria</option>
+                      <option value="3">Universidad</option>
+                      <option value="4">Maestría</option>
+                      <option value="5">Doctorado</option>
+                      <option value="6">Otro</option>
+                      
+                      </optgroup>
+                      
+                  </select>
+                  <hr>	
+					    </div>
 
                 <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
 

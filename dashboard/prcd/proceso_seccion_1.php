@@ -1,6 +1,15 @@
+<?php
+
+ini_set('display_errors', 1);
+
+ini_set('display_startup_errors', 1);
+
+error_reporting(E_ALL);
+
+?>
+
 <html>
 <header>
-        <link rel="shortcut icon" href="../../../img/mini_logo_cigo.ico" />  
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <script src="sweetalert2.all.min.js"></script>
@@ -21,9 +30,11 @@ $correo = $_POST['correo'];
 $id_ext = $_SESSION['id'];
 $tipo_usr = 1;
 $validacion = 2;
+$municipio = $_POST['municipio'];
+$grado = $_POST['grado'];
 
-$sql="INSERT INTO datos(tematica,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion) 
-VALUES('$tematica','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion')";
+$sql="INSERT INTO datos(tematica,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion,municipio,grado) 
+VALUES('$tematica','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion','$municipio','$grado')";
 $resultado= $conn->query($sql);
 
 if($resultado){
@@ -40,6 +51,7 @@ if($resultado){
 }
 
 else{
+  // echo $conn->error;
     echo "<script type=\"text/javascript\">Swal.fire(
         'Advertencia',
         'No agregado',

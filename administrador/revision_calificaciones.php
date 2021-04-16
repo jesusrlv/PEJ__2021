@@ -251,8 +251,8 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -270,14 +270,43 @@ include('../dashboard/prcd/qwery_admin.php');
 
                 if($row_cnt == 9){
 
+                    // calificaciones
+                    // $id_calificacion = $row_usr['id_ext'];
+                    $query_calificacion = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion'";
+                    $resultado_calificacion= $conn->query($query_calificacion);
+
+                        $num = 0;
+                        $doc1 = 0;
+                        $doc2 = 0;
+                        $doc3 = 0;
+                        $doc4 = 0;
+
+                    while($row_calificacion = $resultado_calificacion->fetch_assoc()){
+                        $num++;
+                        $doc1 = ($doc1) + ($row_calificacion['doc1']);
+                        $doc2 = ($doc2) + ($row_calificacion['doc2']);
+                        $doc3 = ($doc3) + ($row_calificacion['doc3']);
+                        $doc4 = ($doc4) + ($row_calificacion['doc4']);
+
+                        $prom1 = $doc1 / $num;
+                        $prom2 = $doc2 / $num;
+                        $prom3 = $doc3 / $num;
+                        $prom4 = $doc4 / $num;
+
+                        $promedio_final = ($prom1 + $prom2 + $prom3 + $prom4) / 4;
+                    }
+
+
+
+
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
                 echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
-                echo '<td>'.$row_usr['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td>'.$promedio_final.'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 

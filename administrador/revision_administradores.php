@@ -185,6 +185,12 @@ include('../dashboard/prcd/qwery_admin2.php');
             <i class="bi bi-search"></i> Búsqueda de usuario
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_calificaciones.php">
+               
+            <i class="bi bi-card-checklist"></i> Calificaciones
+            </a>
+          </li>
          
         </ul>
 

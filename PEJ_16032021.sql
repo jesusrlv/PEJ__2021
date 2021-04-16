@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:8889
--- Tiempo de generación: 16-04-2021 a las 06:09:27
+-- Tiempo de generación: 16-04-2021 a las 08:25:31
 -- Versión del servidor: 5.7.32
 -- Versión de PHP: 7.4.12
 
@@ -42,7 +42,8 @@ INSERT INTO `calificacion` (`id`, `id_ext1`, `id_ext2`, `doc1`, `doc2`, `doc3`, 
 (3, 17, 25, 1, 2, 3, 2, '1111', '2021-04-16 00:50:00'),
 (4, 15, 23, 10, 9, 9, 8, 'Texto', '2021-04-16 00:50:46'),
 (5, 17, 23, 10, 2, 3, 6, 'nada', '2021-04-16 00:51:25'),
-(7, 16, 23, 10, 10, 10, 9, 'Calificación', '2021-04-16 01:03:09');
+(7, 16, 23, 10, 10, 10, 9, 'Calificación', '2021-04-16 01:03:09'),
+(8, 26, 27, 10, 10, 9, 10, 'Sin comentarios', '2021-04-16 03:21:23');
 
 -- --------------------------------------------------------
 
@@ -57,8 +58,10 @@ CREATE TABLE `datos` (
   `nombre` varchar(70) COLLATE utf8_unicode_ci NOT NULL,
   `curp` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `tematica` int(11) NOT NULL,
-  `telefono` int(11) NOT NULL,
+  `telefono` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(72) COLLATE utf8_unicode_ci NOT NULL,
+  `municipio` int(11) NOT NULL,
+  `grado` int(11) NOT NULL,
   `tipo_usr` int(11) NOT NULL,
   `validacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -67,14 +70,15 @@ CREATE TABLE `datos` (
 -- Volcado de datos para la tabla `datos`
 --
 
-INSERT INTO `datos` (`id`, `id_ext`, `apellido`, `nombre`, `curp`, `tematica`, `telefono`, `email`, `tipo_usr`, `validacion`) VALUES
-(1, 1, 'leañso', 'jesus', 'LEVJ810924', 0, 0, '', 1, 0),
-(2, 0, '', '', '', 0, 0, '', 1, 0),
-(3, 0, '', '', '', 0, 0, '', 1, 0),
-(20, 12, '', '', '', 0, 0, '', 2, 1),
-(21, 15, 'LeaÃ±os V', 'Rodolfo', 'LEVJ810924HZSXLS04', 1, 2147483647, 'jesusrlv_rojo@hotmail.com', 1, 1),
-(22, 16, 'Leaños', 'claus', 'LEVC860629MZSXLL06', 1, 999999, 'jesusr@fjfjf.cncnc', 1, 2),
-(23, 17, 'Rodolfo Ingenio emprendedor', 'Jesus', 'Levj810924', 1, 9999999, 'hesus@htoma.con', 1, 2);
+INSERT INTO `datos` (`id`, `id_ext`, `apellido`, `nombre`, `curp`, `tematica`, `telefono`, `email`, `municipio`, `grado`, `tipo_usr`, `validacion`) VALUES
+(1, 1, 'leañso', 'jesus', 'LEVJ810924', 0, '0', '', 0, 0, 1, 0),
+(2, 0, '', '', '', 0, '0', '', 0, 0, 1, 0),
+(3, 0, '', '', '', 0, '0', '', 0, 0, 1, 0),
+(20, 12, '', '', '', 0, '0', '', 0, 0, 2, 1),
+(21, 15, 'LeaÃ±os V', 'Rodolfo', 'LEVJ810924HZSXLS03', 1, '2147483647', 'jesusrlv_rojo@hotmail.com', 0, 0, 1, 1),
+(22, 16, 'Leaños', 'claus', 'LEVC860629MZSXLL06', 1, '999999', 'jesusr@fjfjf.cncnc', 0, 0, 1, 2),
+(23, 17, 'Rodolfo Ingenio emprendedor', 'Jesus', 'Levj810924', 1, '9999999', 'hesus@htoma.con', 0, 0, 1, 2),
+(24, 26, 'Leaños Villegas', 'Jesus Rodolfo', 'LEVJ810924HZSXLS04', 10, '4927951930', 'jesusrlv_rojo@hotmail.com', 2, 1, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -158,7 +162,16 @@ INSERT INTO `docs` (`id`, `id_ext`, `ruta`, `tipo_doc`, `validacion`, `observaci
 (56, 16, 'archivos/archivo6_16.pdf', 6, 1, NULL, '2021-04-15 19:07:36', NULL),
 (57, 16, 'archivos/archivo2_16.pdf', 2, 1, NULL, '2021-04-15 19:07:43', NULL),
 (58, 16, 'archivos/archivo3_16.pdf', 3, 1, NULL, '2021-04-15 19:07:47', NULL),
-(59, 16, 'archivos/archivo7_16.pdf', 7, 1, NULL, '2021-04-15 19:07:53', NULL);
+(59, 16, 'archivos/archivo7_16.pdf', 7, 1, NULL, '2021-04-15 19:07:53', NULL),
+(60, 26, 'archivos/archivo1_26.pdf', 1, 1, NULL, '2021-04-16 03:19:34', NULL),
+(61, 26, 'archivos/archivo2_26.pdf', 2, 1, NULL, '2021-04-16 03:19:39', NULL),
+(62, 26, 'archivos/archivo3_26.pdf', 3, 1, NULL, '2021-04-16 03:19:44', NULL),
+(63, 26, 'archivos/archivo4_26.pdf', 4, 1, NULL, '2021-04-16 03:19:46', NULL),
+(64, 26, 'archivos/archivo5_26.pdf', 5, 1, NULL, '2021-04-16 03:19:50', NULL),
+(65, 26, 'archivos/archivo6_26.pdf', 6, 1, NULL, '2021-04-16 03:19:53', NULL),
+(66, 26, 'archivos/archivo7_26.pdf', 7, 1, NULL, '2021-04-16 03:19:56', NULL),
+(67, 26, 'archivos/archivo8_26.pdf', 8, 1, NULL, '2021-04-16 03:20:03', NULL),
+(68, 26, 'https://www.youtube.com/watch?v=p-Es099SUGk', 9, 1, NULL, '2021-04-16 03:20:31', NULL);
 
 -- --------------------------------------------------------
 
@@ -194,11 +207,11 @@ CREATE TABLE `usr` (
 
 INSERT INTO `usr` (`id`, `nombre`, `usuario`, `pwd`, `perfil`, `categoria`) VALUES
 (1, 'uno', 'jesusrlv@correo.com', '123456789', 1, 0),
-(2, 'Rodolfo LeaÃ±os', '', 'd41d8cd98f00b204e9800998ecf8427e', 1, 0),
+(2, 'Rodolfo LeaÃ±os', 'jesusrlv_rojo@hotmail.com', '25f9e794323b453885f5181f1b624d0b', 1, 0),
 (6, 'Rodolfo LeaÃ±os', 'jesusrl@gmail.com.mx', '9a0c3013dbacdda1873e4a153346dc5c', 1, 0),
 (12, 'JesusRLV', 'jesusr@gmail.com', '18a9f76e9e5f5d1237a02a27a3246a1c', 1, 9),
 (14, 'Rodolfo LeaÃ±os', 'LEVJ8109248K3', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0),
-(15, 'Rodolfo LeaÃ±os', 'LEVJ810924HZSXLS04', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0),
+(15, 'Rodolfo LeaÃ±os', 'LEVJ810924HZSXLS03', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0),
 (16, 'Claus Leaños', 'LEVC860629MZSXLL06', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 0),
 (17, 'Rodolfo 2', 'LEVJ810924', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 9),
 (18, 'jesusrlvrojo', 'jesusrlv', 'edeb8297f1a049cf8a4e38a14c021f45', 1, 9),
@@ -208,7 +221,9 @@ INSERT INTO `usr` (`id`, `nombre`, `usuario`, `pwd`, `perfil`, `categoria`) VALU
 (22, 'Jesus', 'rodo', '25f9e794323b453885f5181f1b624d0b', 3, 1),
 (23, 'wwww', 'wwww', '25f9e794323b453885f5181f1b624d0b', 3, 1),
 (24, 'Jesus Rodolfo', 'usr1', '25f9e794323b453885f5181f1b624d0b', 2, NULL),
-(25, 'jesusrlvrojo', 'revisor1', '25f9e794323b453885f5181f1b624d0b', 3, 1);
+(25, 'jesusrlvrojo', 'revisor1', '25f9e794323b453885f5181f1b624d0b', 3, 1),
+(26, 'Jesus Rodolfo Leaños Villegas', 'LEVJ810924HZSXLS04', 'edeb8297f1a049cf8a4e38a14c021f45', 1, NULL),
+(27, 'Revisor 3', 'CyT', '25f9e794323b453885f5181f1b624d0b', 3, 10);
 
 -- --------------------------------------------------------
 
@@ -278,13 +293,13 @@ ALTER TABLE `validacion`
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT de la tabla `direccion`
@@ -296,7 +311,7 @@ ALTER TABLE `direccion`
 -- AUTO_INCREMENT de la tabla `docs`
 --
 ALTER TABLE `docs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT de la tabla `menu`
@@ -308,11 +323,10 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT de la tabla `validacion`
 --
 ALTER TABLE `validacion`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-

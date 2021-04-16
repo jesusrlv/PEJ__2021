@@ -140,7 +140,8 @@ include('../dashboard/prcd/conn.php');
             ?>
           </span>
         </h6>
-<hr>
+        <hr style="color: dimgrey;">
+
         <ul class="nav flex-column">
  
            <li class="nav-item">
@@ -151,7 +152,7 @@ include('../dashboard/prcd/conn.php');
             </a>
           </li>
           <hr style="color: dimgrey;">
-          
+
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span class="text-light">REVISIÓN</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
@@ -177,11 +178,19 @@ include('../dashboard/prcd/conn.php');
             <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
-          <hr>
+
+          <hr style="color: dimgrey;">
+
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
                
             <i class="bi bi-search"></i> Búsqueda de usuario
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_calificaciones.php">
+               
+            <i class="bi bi-card-checklist"></i> Calificaciones
             </a>
           </li>
          
@@ -243,6 +252,20 @@ include('../dashboard/prcd/conn.php');
                 <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes</a>
                 <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
                 <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col mb-12" style="margin-top:9px">
+            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
+              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
+              <div class="card-body">
+                <h5 class="card-title text-primary"><i class="bi bi-list-ol"></i> CALIFICACIONES</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
+                <hr>
+                <a href="revision_calificaciones.php" class="card-link btn btn-outline-primary"><i class="bi bi-card-checklist"></i> Visualizar</a>
               </div>
             </div>
           </div>
