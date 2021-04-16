@@ -308,7 +308,33 @@ include('../dashboard/prcd/conn.php');
                 echo '<td>'.$x.'</td>';
                 echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                // echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                
+                $id_user=$row_usr['id_ext'];
+
+                $query_docs = "SELECT * FROM calificacion WHERE id_ext2='$id' AND id_ext1='$id_user'";
+                $resultado_docs= $conn->query($query_docs);
+                $row_docs=$resultado_docs->fetch_assoc();
+
+                if ($row_docs){
+                  $doc1 = $row_docs['doc1'];
+                  $doc2 = $row_docs['doc2'];
+                  $doc3 = $row_docs['doc3'];
+                  $doc4 = $row_docs['doc4'];
+
+                  $promedio = ($doc1+$doc2+$doc3+$doc4)/4;
+                  echo '<td>
+                  <span class="badge bg-primary text-light"><i class="bi bi-check2-all"></i> Calificación: <strong>'.$promedio.'</strong></span>
+                  </td>';
+
+
+                }
+                else{
+          
+                  echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+
+                }
+                
                 echo '</tr>';
                 }
               }

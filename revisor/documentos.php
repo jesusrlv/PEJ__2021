@@ -37,6 +37,9 @@ include('../dashboard/prcd/conn.php');
     // esta es la temática para filtrar 
     $categoria = $_SESSION['categoria'];
 
+    // postulante
+    $postulante = $_REQUEST['id'];
+
 ?>
 
 <!doctype html>
@@ -274,7 +277,12 @@ include('../dashboard/prcd/conn.php');
         <div class="row row-cols-1 row-cols-md-1">
           
           <div class="col mb-12">
+
         <form action="prcd/calificar.php" method="POST">
+        
+        <input type="text" value="<?php echo $postulante ?>" name="postulante" hidden>
+        <input type="text" value="<?php echo $id ?>" name="revisor" hidden>
+
           <table class="table table-hover text-center table-striped">
   
             <thead class="thead-dark">
@@ -292,17 +300,22 @@ include('../dashboard/prcd/conn.php');
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
               </tr> -->
+              
+              <?php
+              include('prcd/consultas.php');
+              ?>
+
               <tr>
                 <th scope="row">1</th>
                 <td>Currículum vitae</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row1['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="curriculum" required></td>
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td>Semblanza de trayectoria</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row2['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="semblanza" required></td>
               </tr>
               <!-- <tr>
                 <th scope="row">4</th>
@@ -331,19 +344,34 @@ include('../dashboard/prcd/conn.php');
               <tr>
                 <th scope="row">3</th>
                 <td>Material bibliográfico</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row3['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="mbibliografico" required></td>
               </tr>
               <tr>
                 <th scope="row">4</th>
                 <td>Video</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
+                <td><span class="h4 text-primary"><a href="<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="video" required></td>
               </tr>
               
             </tbody>
 
           </table>
+
+          <!-- <div class="alert alert-secondary" role="alert"> -->
+          <p>
+              <!-- <div class="input-group">
+                <span class="input-group-text">Comentarios</span>
+              <textarea type="text" name="comentarios" class="form-control" aria-label="With textarea" placeholder="COMENTARIOS..." aria-label="COMENTARIOS..."></textarea>
+            </div> -->
+            <div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Comentarios</span>
+  <input type="text" name="comentarios" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+</div>
+          </p>
+          <!-- </div> -->
+
+          
 
           <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Calificar</button>
           <a href="dashboard.php" type="button" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
