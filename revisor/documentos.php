@@ -33,6 +33,8 @@ include('../dashboard/prcd/conn.php');
     $id = $_SESSION['id'];
     $perfil = $_SESSION['perfil'];
     $nombre = $_SESSION['nombre'];
+
+    // esta es la temática para filtrar
     $categoria = $_SESSION['categoria'];
 
 ?>

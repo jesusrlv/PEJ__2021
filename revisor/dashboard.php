@@ -293,6 +293,16 @@ include('../dashboard/prcd/conn.php');
               <?php
                $x=0;
               while($row_usr = $resultado_usr->fetch_assoc()){
+
+                // validacion de 9 docs
+                $id_validacion = $row_usr['id_ext'];
+                $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+                $resultado= $conn->query($query);
+                $row=$resultado->fetch_assoc();
+                $row_cnt = $resultado->num_rows;
+
+                if($row_cnt == 9){
+
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
@@ -300,6 +310,7 @@ include('../dashboard/prcd/conn.php');
                 echo '<td>'.$row_usr['nombre'].'</td>';
                 echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
+                }
               }
               ?>
             </tbody>
