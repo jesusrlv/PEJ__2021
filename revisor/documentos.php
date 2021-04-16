@@ -34,7 +34,7 @@ include('../dashboard/prcd/conn.php');
     $perfil = $_SESSION['perfil'];
     $nombre = $_SESSION['nombre'];
 
-    // esta es la temática para filtrar
+    // esta es la temática para filtrar 
     $categoria = $_SESSION['categoria'];
 
 ?>
@@ -274,7 +274,7 @@ include('../dashboard/prcd/conn.php');
         <div class="row row-cols-1 row-cols-md-1">
           
           <div class="col mb-12">
-        <form action="">
+        <form action="prcd/calificar.php" method="POST">
           <table class="table table-hover text-center table-striped">
   
             <thead class="thead-dark">
@@ -286,56 +286,56 @@ include('../dashboard/prcd/conn.php');
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <!-- <tr>
                 <th scope="row">1</th>
                 <td>Carta Propuesta</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr>
+              </tr> -->
               <tr>
-                <th scope="row">2</th>
+                <th scope="row">1</th>
                 <td>Currículum vitae</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
               </tr>
               <tr>
-                <th scope="row">3</th>
+                <th scope="row">2</th>
                 <td>Semblanza de trayectoria</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <th scope="row">4</th>
                 <td>Acta de nacimiento</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">5</th>
                 <td>Credencial de elector</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">6</th>
                 <td>Comprobante de domicilio</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr>
-              <tr>
+              </tr> -->
+              <!-- <tr>
                 <th scope="row">7</th>
                 <td>CURP</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr>
+              </tr> -->
               <tr>
-                <th scope="row">8</th>
+                <th scope="row">3</th>
                 <td>Material bibliográfico</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
               </tr>
               <tr>
-                <th scope="row">9</th>
+                <th scope="row">4</th>
                 <td>Video</td>
                 <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
                 <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
@@ -346,6 +346,7 @@ include('../dashboard/prcd/conn.php');
           </table>
 
           <button type="submit" class="btn btn-primary"><i class="bi bi-check-circle-fill"></i> Calificar</button>
+          <a href="dashboard.php" type="button" class="btn btn-danger"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
           </form>
           </div>
 
