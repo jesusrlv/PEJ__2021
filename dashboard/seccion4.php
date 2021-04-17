@@ -316,7 +316,7 @@ function abortHandler(event) {
     
                     ?>
                   
-                  <td>Emitida en el presente año en papel membretado por alguna institución, organismo, dependencia, agrupación, o bien proponerse a sí mismo. En ella se enumerarán los méritos del candidato(a) y deberá ser dirigida a él o la titular del Instituto de la Juventud del Estado de Zacatecas, precisando la modalidad y categoría en la que solicita su registro. Formato libre.</td>
+                  <td><strong>Documento en PDF.</strong> Emitida en el presente año en papel membretado por alguna institución, organismo, dependencia, agrupación, o bien proponerse a sí mismo. En ella se enumerarán los méritos del candidato(a) y deberá ser dirigida a él o la titular del Instituto de la Juventud del Estado de Zacatecas, precisando la modalidad y categoría en la que solicita su registro. Formato libre.</td>
                 </tr>
                 
                 <tr>
@@ -407,7 +407,7 @@ function abortHandler2(event) {
                                               
 <!--                  <td><span class="label label-warning">Pending</span></td>-->
                   
-                  <td>Documento actualizado, incluyendo datos generales (nombre completo, dirección, teléfono(s), correo electrónico, ocupación).</td>
+                  <td><strong>Documento en PDF.</strong> Documento actualizado, incluyendo datos generales (nombre completo, dirección, teléfono(s), correo electrónico, ocupación).</td>
                 </tr>
                 <tr>
                   <td>3</td>
@@ -489,7 +489,7 @@ function abortHandler3(event) {
     
                     ?>
                      
-                  <td>Documento con un máximo de una cuartilla.</td>
+                  <td><strong>Documento en PDF.</strong> con un máximo de una cuartilla.</td>
                 </tr>
                 <tr>
                   <td>4</td>
@@ -570,7 +570,7 @@ function abortHandler4(event) {
             // }
     
                     ?> 
-                  <td>Documento digitalizado.</td>
+                  <td><strong>Documento en PDF.</strong> Documento digitalizado.</td>
                 </tr>
                 <tr>
                   <td>5</td>
@@ -651,7 +651,7 @@ function abortHandler5(event) {
     
                     ?> 
                     
-                  <td>Documento digitalizado.</td>
+                  <td><strong>Documento en PDF.</strong> Documento digitalizado.</td>
                 </tr>
                 <tr>
                   <td>6</td>
@@ -732,7 +732,7 @@ function abortHandler6(event) {
     
                     ?> 
                     
-                  <td>Documento escaneado (PDF) no mayor a 3 meses.</td>
+                  <td><strong>Documento en PDF.</strong> No debe ser mayor a 3 meses.</td>
                 </tr>
                 
                 
@@ -814,7 +814,7 @@ function abortHandler7(event) {
             // }
     
                     ?> 
-                  <td>Documento escaneado (PDF).</td>
+                  <td><strong>Documento en PDF.</strong> Documento digitalizado.</td>
                 </tr>
                 
                 <tr>
@@ -896,7 +896,7 @@ function abortHandler8(event) {
             // }
     
                     ?> 
-                  <td>Copia o duplicado de materiales bibliográficos, audiovisuales, gráficos y otros que demuestren los motivos por los cuales se considera que él o la candidata (a) puede merecer el premio.</td>
+                  <td><strong>Documento en PDF.</strong> Copia o duplicado de materiales bibliográficos, audiovisuales, gráficos y otros que demuestren los motivos por los cuales se considera que él o la candidata (a) puede merecer el premio.</td>
                 </tr>               
                 <tr>
                   <td>9</td>
@@ -928,7 +928,7 @@ function abortHandler8(event) {
                             <div class="modal-body">
                             <p>Se debe cargar la liga de YouTube de tu video para poder continuar con el proceso de postulación.</p>
                             <p><strong>NOTA:</strong> Se recomienda terminar con la carga de los otros documentos y finalizar con el proceso del video.</p>
-                            <p><form action="prcd/subir_archivo9.php" method="POST">
+                            <form action="prcd/subir_archivo9.php" method="POST">
                             <p>
                             <div class="input-group flex-nowrap">
                               <span class="input-group-text" id="addon-wrapping"><i class="bi bi-play-btn-fill"></i></span>
@@ -947,7 +947,7 @@ function abortHandler8(event) {
 
                     </td>
                   
-                  <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
+                  <td><strong>Liga de YouTube.</strong> Se deberán presentar una cápsula de 1 minuto como máximo, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. El video se subirá a la plataforma <strong><a href="http://www.youtube.com" target="_blank">YouTube</a></strong> y deberá tener acceso públco para poder ser visualizado por el jurado.</td>
                 </tr>               
                 
                 

@@ -23,6 +23,7 @@ include('conn.php');
 
 $curp = $_SESSION['usr'];
 $tematica = $_POST['tematica'];
+$edad = $_POST['edad'];
 $apellido = $_POST['apellido'];
 $nombre = $_POST['nombre'];
 $telefono = $_POST['telefono'];
@@ -33,8 +34,8 @@ $validacion = 2;
 $municipio = $_POST['municipio'];
 $grado = $_POST['grado'];
 
-$sql="INSERT INTO datos(tematica,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion,municipio,grado) 
-VALUES('$tematica','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion','$municipio','$grado')";
+$sql="INSERT INTO datos(tematica,edad,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion,municipio,grado) 
+VALUES('$tematica','$edad','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion','$municipio','$grado')";
 $resultado= $conn->query($sql);
 
 if($resultado){

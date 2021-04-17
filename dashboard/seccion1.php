@@ -218,7 +218,7 @@ include('prcd/conn.php');
 
                 <div class="col-md-12 mb-3 validate-input" data-validate="Selecciona una temática">
                 <label for="tematica">Temática</label>
-                  <select name="tematica" id="tematica" class="form-control" required>
+                  <select name="tematica" id="tematica" class="form-control" onchange="myFunction()" required>
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Por trayectoria">
@@ -243,6 +243,12 @@ include('prcd/conn.php');
                       </optgroup>
                       
                   </select>
+
+                  <script>
+                    var valor = document.getElementById("tematica").value;
+                  </script>
+
+
                   <hr>	
 					    </div>
                 <div class="col-md-4 mb-3 validate-input" data-validate="Selecciona una temática">
@@ -310,12 +316,64 @@ include('prcd/conn.php');
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Municipios">
-                      <option value="1">Zacatecas</option>
-                      <option value="2">Guadalupe</option>
-                      <option value="3">Sombrerete</option>
-                      <option value="4">Villanueva</option>
-                      <option value="5">Teúl de G.O.</option>
-                      <option value="6">Otro</option>
+                      <option value="1">Apozol</option>
+                      <option value="2">Apulco</option>
+                      <option value="3">Atolinga</option>
+                      <option value="4">Benito Juárez</option>
+                      <option value="5">Calera</option>
+                      <option value="6">Cañitas de Felipe Pescador</option>
+                      <option value="7">Concepción del Oro</option>
+                      <option value="8">Cuauhtémoc</option>
+                      <option value="9">Chalchihuites</option>
+                      <option value="10">Fresnillo</option>
+                      <option value="11">Trinidad García de la Cadena</option>
+                      <option value="12">Genaro Codina</option>
+                      <option value="13">General Enrique Estrada</option>
+                      <option value="14">General Francisco R. Murguía</option>
+                      <option value="15">El Plateado de Joaquín Amaro</option>
+                      <option value="16">General Pánfilo Natera</option>
+                      <option value="17">Guadalupe</option>
+                      <option value="18">Huanusco</option>
+                      <option value="19">Jalpa</option>
+                      <option value="20">Jerez</option>
+                      <option value="21">Jiménez del Teul</option>
+                      <option value="22">Juan Aldama</option>
+                      <option value="23">Juchipila</option>
+                      <option value="24">Loreto</option>
+                      <option value="25">Luis Moya</option>
+                      <option value="26">Mazapil</option>
+                      <option value="27">Melchor Ocampo</option>
+                      <option value="28">Mezquital del Oro</option>
+                      <option value="29">Miguel Auza</option>
+                      <option value="30">Momax</option>
+                      <option value="31">Monte Escobedo</option>
+                      <option value="32">Morelos</option>
+                      <option value="33">Moyahua de Estrada</option>
+                      <option value="34">Nochistlán de Mejía</option>
+                      <option value="35">Noria de Ángeles</option>
+                      <option value="36">Ojocaliente</option>
+                      <option value="37">Pánuco</option>
+                      <option value="38">Pinos</option>
+                      <option value="39">Río Grande</option>
+                      <option value="40">Sain Alto</option>
+                      <option value="41">El Salvador</option>
+                      <option value="42">Sombrerete</option>
+                      <option value="43">Susticacán</option>
+                      <option value="44">Tabasco</option>
+                      <option value="45">Tepechitlán</option>
+                      <option value="46">Tepetongo</option>
+                      <option value="47">Teúl de González Ortega</option>
+                      <option value="48">Tlaltenango de Sánchez Román</option>
+                      <option value="49">Valparaíso</option>
+                      <option value="50">Vetagrande</option>
+                      <option value="51">Villa de Cos</option>
+                      <option value="52">Villa García</option>
+                      <option value="53">Villa González Ortega</option>
+                      <option value="54">Villa Hidalgo</option>
+                      <option value="55">Villanueva</option>
+                      <option value="56">Zacatecas</option>
+                      <option value="57">Trancoso</option>
+                      <option value="58">Santa María de la Paz</option>
                       
                       </optgroup>
                       
@@ -328,12 +386,13 @@ include('prcd/conn.php');
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Escolaridad">
-                      <option value="1">Secundaria</option>
-                      <option value="2">Preparatoria</option>
-                      <option value="3">Universidad</option>
-                      <option value="4">Maestría</option>
-                      <option value="5">Doctorado</option>
-                      <option value="6">Otro</option>
+                      <option value="1">Primaria</option>
+                      <option value="2">Secundaria</option>
+                      <option value="3">Preparatoria</option>
+                      <option value="4">Universidad</option>
+                      <option value="5">Maestría</option>
+                      <option value="6">Doctorado</option>
+                      <option value="7">Otro</option>
                       
                       </optgroup>
                       
@@ -375,8 +434,15 @@ include('prcd/conn.php');
                     <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
                   </div>
                   <div class="modal-body">
-                    Has seleccionado la categoría de XXX. Una vez guardado este proceso no podrás cambiar de categoría.
+                    <p class="h4">Has seleccionado la categoría de <strong><output type="text" id="valor" size="20"></strong>.</p> <p class="h4">Una vez guardado este proceso no podrás cambiar de categoría.</p>
                   </div>
+                  <script>
+                    function myFunction() {
+                      var mylist = document.getElementById("tematica");
+                      document.getElementById("valor").value = mylist.options[mylist.selectedIndex].text;
+                    }
+                    </script>
+
                   <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Continuar</button>

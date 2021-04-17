@@ -348,10 +348,15 @@ include('prcd/conn.php');
               <div class="card-body"><br>
                 <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> OBSERVACIONES</h1>
                 <p class="card-text">Las siguientes observaciones son sobre el expediente que se subió para participar en el Premio Estatal de la Juventud 2021 es el siguiente:</p>
-
-                <!-- <p class="card-text h4 text-center">Estatus</p> -->
-                <!-- <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p> -->
-                <p class="card-text"><div class="alert alert-primary" role="alert">Texto de prueba previo a observaciones</div></p>
+                <p class="card-text"><div class="alert alert-primary" role="alert">
+                <?php
+                  $observaciones = "SELECT * FROM calificacion WHERE id_ext1 ='$id'";
+                  $resultado= $conn->query($observaciones);
+                  while ($row=$resultado->fetch_assoc()){
+                    echo $row['observaciones'].'<br>';
+                  }
+                ?>
+                <!-- <p class="card-text"><div class="alert alert-primary" role="alert"></div></p> -->
                 <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
               </div>
             </div>

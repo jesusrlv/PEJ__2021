@@ -939,8 +939,37 @@ function abortHandler8(event) {
                   
                  
                   <td><div class="input-group mb-3">
-                              <button class="btn btn-primary" id="btnguardar" width="100" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cloud-arrow-up-fill"></i> Subir video</button></div></td>
+                  <button class="btn btn-primary" id="btnguardar" width="100" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-cloud-arrow-up-fill"></i> Subir video</button></div></td>
                   
+                  <!-- modal -->
+
+                  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Video</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                            <p>Se debe cargar la liga de YouTube de tu video para poder continuar con el proceso de postulación.</p>
+                            <p><strong>NOTA:</strong> Se recomienda terminar con la carga de los otros documentos y finalizar con el proceso del video.</p>
+                            <form action="prcd/editar_docs/editar_archivo9.php" method="POST">
+                            <p>
+                            <div class="input-group flex-nowrap">
+                              <span class="input-group-text" id="addon-wrapping"><i class="bi bi-play-btn-fill"></i></span>
+                              <input type="text" name="file9" class="form-control" placeholder="Link de YouTube" aria-label="Link de YouTube" aria-describedby="addon-wrapping" required>
+                          </div>
+                          </p>
+                          <p class="text-right"><button type="submit" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill"></i> Guardar</button> <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle"></i> Cerrar</button></p>
+                            
+                            </form></p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- modal -->
+
                   <td>Deberán presentar una cápsula de 30 segundos como máximo, en digital, donde se explique brevemente por qué se considera acreedor del Premio Estatal de la Juventud. Se subirá por medio de Yyoutube o un video de no más de 70 MB..</td>
                 </tr>               
                 
@@ -954,7 +983,7 @@ function abortHandler8(event) {
 -->
               
               <div class="modal fade" id="modal-default">
-          <div class="modal-dialog">
+          <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -1026,6 +1055,9 @@ function abortHandler8(event) {
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
         <script src="css/dashboard.js"></script></body>
 </html>
 

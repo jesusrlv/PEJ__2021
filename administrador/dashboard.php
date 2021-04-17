@@ -163,7 +163,13 @@ include('../dashboard/prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link text-light" href="revision_docs.php">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+            <i class="bi bi-person-bounding-box"></i> Postulantes completados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_vista_completa.php">
+               
+            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
             </a>
           </li>
           <li class="nav-item">
@@ -249,7 +255,8 @@ include('../dashboard/prcd/conn.php');
                 <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
                 <p class="card-text">Revisión de usuarios</p>
                 <hr>
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes</a>
+                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Postulantes completados</a>
+                <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Completados y No completados</a>
                 <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
                 <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
               </div>
