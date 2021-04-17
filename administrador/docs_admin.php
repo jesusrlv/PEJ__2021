@@ -163,7 +163,13 @@ include('../dashboard/prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link text-light" href="revision_docs.php">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+            <i class="bi bi-person-bounding-box"></i> Postulantes completados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_vista_completa.php">
+               
+            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
             </a>
           </li>
           <li class="nav-item">
@@ -178,7 +184,9 @@ include('../dashboard/prcd/conn.php');
             <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
-          <hr>
+
+          <hr style="color: dimgrey;">
+
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
                
@@ -235,12 +243,14 @@ include('../dashboard/prcd/conn.php');
 
         <?php 
             $id_consulta = $_REQUEST['id'];
-            $sql_qwery = "SELECT * FROM docs WHERE id_ext = '$id_consulta'";
+
+            $sql_qwery = "SELECT * FROM calificacion WHERE id_ext1 = '$id_consulta'";
             $resultado_consulta= $conn->query($sql_qwery);
+            // $row=$resultado_consulta->fetch_assoc();
         ?>
 
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: <?php 
+        <p class="h5">CATEGORIA: <?php 
             $id_busqueda = $_REQUEST['id_cat'];
             if($id_busqueda==1){
                 echo 'LOGRO ACADÉMICO';
@@ -275,114 +285,62 @@ include('../dashboard/prcd/conn.php');
         
         ?></p>
 
+
+        <?php
+          
+          $sql_usr = "SELECT * FROM datos WHERE id_ext = '$id_consulta'";
+          $resultado_usr = $conn->query($sql_usr);
+          $row_usr = $resultado_usr->fetch_assoc();
+        ?>
+        <p><strong>NOMBRE:</strong> <?php echo $row_usr['apellido'].', '; echo $row_usr['nombre']; ?></p>
+
             <table class="table table-hover text-center table-striped ">
-            <thead>
+            <thead class="bg-dark text-light">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Documento</th>
-                <th scope="col">Archivo</th>
+                <th scope="col">Jurado</th>
+                <th scope="col">Currículum<br>Vitae</th>
+                <th scope="col">Semblanza<br>de trayectoria</th>
+                <th scope="col">Material<br>bibliográfico</th>
+                <th scope="col">Video</th>
+                <th scope="col">Promedio</th>
               </tr>
             </thead>
             <tbody>
 
             <?php
-            // $y = 0;
-            //     while($resultado_consulta = $conn->query($sql_qwery)){
-            //       $y++;  
-            //         echo '<tr>';
-            //         echo '<th scope="row">'.$y.'</th>';
-            //         echo '<td>'.$resultado_consulta['tipo_doc'].'</td>';
-                    // echo '<td><a href="../dashboard/'.$resultado_consulta['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-            //         echo '</tr>';
-                  
-            //     } 
             
             $y=0;
-           while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+          //  while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+           while($row=$resultado_consulta->fetch_assoc()){
              $y++;
              echo '<tr>';
              echo '<td>'.$y.'</td>';
+                $id_revisor = $row['id_ext2'];
+                $sql_revisor = "SELECT * FROM usr WHERE id = '$id_revisor' AND perfil = 3";
+                $resultado_revisor= $conn->query($sql_revisor);
+                $row_revisor=$resultado_revisor->fetch_assoc();
+              
+            echo '<td>'.$row_revisor['usuario'].'</td>';
              
-             if($resultado_qwery['tipo_doc']==1){
-              echo '<td>Carta Propuesta</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==2){
-              echo '<td>Currículum vitae</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==3){
-              echo '<td>Semblanza de trayectoria</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==4){
-              echo '<td>Acta de nacimiento</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==5){
-              echo '<td>Credencial de elector</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==6){
-              echo '<td>Comprobante de domicilio</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==7){
-              echo '<td>CURP</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==8){
-              echo '<td>Material bibliográfico</td>';
-          }
-          elseif($resultado_qwery['tipo_doc']==9){
-              echo '<td>Video</td>';
-          }
-          
-            //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
-             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+             echo '<td>'.$row['doc1'].'</td>';
+             echo '<td>'.$row['doc2'].'</td>';
+             echo '<td>'.$row['doc3'].'</td>';
+             echo '<td>'.$row['doc4'].'</td>';
+             
+             $doc1 = $row['doc1'];
+             $doc2 = $row['doc2'];
+             $doc3 = $row['doc3'];
+             $doc4 = $row['doc4'];
+             $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
+
+             echo '<td>'.$promedio.'</td>';
+             
              echo '</tr>';
            }
            
             ?>
 
-              <!-- <tr>
-                <th scope="row">1</th>
-                <td>Carta Propuesta</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Currículum vitae</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Semblanza de trayectoria</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Acta de nacimiento</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">5</th>
-                <td>Credencial de elector</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">6</th>
-                <td>Comprobante de domicilio</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">7</th>
-                <td>CURP</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">8</th>
-                <td>Material bibliográfico</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr>
-              <tr>
-                <th scope="row">9</th>
-                <td>Video</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-              </tr> -->
               
             </tbody>
               <hr>

@@ -26,7 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
-include('../dashboard/prcd/qwery_admin3.php');
+// include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -238,300 +238,161 @@ include('../dashboard/prcd/qwery_admin3.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-        
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
-
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-1">
-          
+
+        <?php 
+            $id_consulta = $_REQUEST['id'];
+            $sql_qwery = "SELECT * FROM docs WHERE id_ext = '$id_consulta'";
+            $resultado_consulta= $conn->query($sql_qwery);
+        ?>
+
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO</p>
+        <p class=" h4">CATEGORIA: <?php 
+            $id_busqueda = $_REQUEST['id_cat'];
+            if($id_busqueda==1){
+                echo 'LOGRO ACADÉMICO';
+            }
+            elseif($id_busqueda==2){
+                echo 'DISCAPACIDAD E INTEGRACIÓN';
+            }
+            elseif($id_busqueda==3){
+                echo 'INGENIO EMPRENDEDOR';
+            }
+            elseif($id_busqueda==4){
+                echo 'RESPONSABILIDAD SOCIAL';
+            }
+            elseif($id_busqueda==5){
+                echo 'MÉRITO MIGRANTE';
+            }
+            elseif($id_busqueda==6){
+                echo 'MÉRITO CAMPESINO';
+            }
+            elseif($id_busqueda==7){
+                echo 'LITERATURA';
+            }
+            elseif($id_busqueda==8){
+                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            }
+            elseif($id_busqueda==9){
+                echo 'ARTE URBANO';
+            }
+            elseif($id_busqueda==10){
+                echo 'CIENCIA Y TECNOLOGÍA';
+            }
+        
+        ?></p>
 
             <table class="table table-hover text-center table-striped ">
-
-            <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-                </tr>
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Archivo</th>
+              </tr>
             </thead>
             <tbody>
+
+            <?php
+            // $y = 0;
+            //     while($resultado_consulta = $conn->query($sql_qwery)){
+            //       $y++;  
+            //         echo '<tr>';
+            //         echo '<th scope="row">'.$y.'</th>';
+            //         echo '<td>'.$resultado_consulta['tipo_doc'].'</td>';
+                    // echo '<td><a href="../dashboard/'.$resultado_consulta['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+            //         echo '</tr>';
+                  
+            //     } 
+            
+            $y=0;
+           while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+             $y++;
+             echo '<tr>';
+             echo '<td>'.$y.'</td>';
+             
+             if($resultado_qwery['tipo_doc']==1){
+              echo '<td>Carta Propuesta</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==2){
+              echo '<td>Currículum vitae</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==3){
+              echo '<td>Semblanza de trayectoria</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==4){
+              echo '<td>Acta de nacimiento</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==5){
+              echo '<td>Credencial de elector</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==6){
+              echo '<td>Comprobante de domicilio</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==7){
+              echo '<td>CURP</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==8){
+              echo '<td>Material bibliográfico</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==9){
+              echo '<td>Video</td>';
+          }
+          
+            //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
+             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+             echo '</tr>';
+           }
            
-              <?php
-               $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
-                echo '<td>'.$row_usr['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
+            ?>
+
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Carta Propuesta</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Currículum vitae</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Semblanza de trayectoria</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Acta de nacimiento</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Credencial de elector</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Comprobante de domicilio</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>CURP</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Material bibliográfico</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Video</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr> -->
+              
             </tbody>
-                <hr>
-            </table>
-        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
-
-            <table class="table table-hover text-center table-striped">
-
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-               $x=0;
-              while($row_usr2 = $resultado_usr2->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr2['nombre'].'</td>';
-                echo '<td>'.$row_usr2['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
-               
-            </tbody>
-                <hr>
-            </table>
-        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
-
-            <table class="table table-hover text-center table-striped">
-
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-               $x=0;
-              while($row_usr3 = $resultado_usr3->fetch_assoc()){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr3['nombre'].'</td>';
-                echo '<td>'.$row_usr3['usuario'].'</td>';
-                // echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-              }
-              ?>
-               
-            </tbody>
-                <hr>
-            </table>
-        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
-
-        <table class="table table-hover text-center table-striped">
-
-          <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr4 = $resultado_usr4->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr4['nombre'].'</td>';
-              echo '<td>'.$row_usr4['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
-        
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr5 = $resultado_usr5->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr5['nombre'].'</td>';
-              echo '<td>'.$row_usr5['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr6 = $resultado_usr6->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr6['nombre'].'</td>';
-              echo '<td>'.$row_usr6['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: LITERATURA</p>
-        <table class="table table-hover text-center table-striped">
-        
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr7 = $resultado_usr7->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr7['nombre'].'</td>';
-              echo '<td>'.$row_usr7['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
-        <table class="table table-hover text-center table-striped">
-        
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr8 = $resultado_usr8->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr8['nombre'].'</td>';
-              echo '<td>'.$row_usr8['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORÍA: ARTE URBANO</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr9 = $resultado_usr9->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr9['nombre'].'</td>';
-              echo '<td>'.$row_usr9['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">Usuario</th>
-                  <!-- <th scope="col">Acción</th> -->
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr10 = $resultado_usr10->fetch_assoc()){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr10['nombre'].'</td>';
-              echo '<td>'.$row_usr10['usuario'].'</td>';
-              // echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-            }
-            ?>
-            
-          </tbody>
               <hr>
           </table>
         

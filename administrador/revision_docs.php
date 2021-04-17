@@ -130,57 +130,65 @@ include('../dashboard/prcd/qwery_admin.php');
           </span>
         </h6>
 <hr>
-        <ul class="nav flex-column">
+<ul class="nav flex-column">
  
-           <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
-              <!-- <span data-feather="home"></span> -->
-              <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <hr style="color: dimgrey;">
-          
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
-            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
+ <li class="nav-item">
+  <a class="nav-link active text-light" href="dashboard.php">
+    <!-- <span data-feather="home"></span> -->
+    <i class="fas fa-laptop-house"></i> 
+    Dashboard <span class="sr-only">(current)</span>
+  </a>
+</li>
+<hr style="color: dimgrey;">
 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
-               
-            <i class="bi bi-person-bounding-box"></i> Postulantes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
-               
-            <i class="bi bi-person-fill"></i> Administradores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
-               
-            <i class="bi bi-people-fill"></i> Jurado
-            </a>
-          </li>
-          <hr>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
-               
-            <i class="bi bi-search"></i> Búsqueda de usuario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_calificaciones.php">
-               
-            <i class="bi bi-card-checklist"></i> Calificaciones
-            </a>
-          </li>
-         
-        </ul>
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+  <span class="text-light">REVISIÓN</span>
+  <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
+    <span data-feather="plus-circle"></span>
+  </a>
+</h6>
+
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_docs.php">
+     
+  <i class="bi bi-person-bounding-box"></i> Postulantes completados
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_vista_completa.php">
+     
+  <i class="bi bi-person-bounding-box"></i>  Completados y No completados
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_administradores.php">
+     
+  <i class="bi bi-person-fill"></i> Administradores
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_jurado.php">
+     
+  <i class="bi bi-people-fill"></i> Jurado
+  </a>
+</li>
+
+<hr style="color: dimgrey;">
+
+<li class="nav-item">
+  <a class="nav-link text-light" href="busqueda.php">
+     
+  <i class="bi bi-search"></i> Búsqueda de usuario
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_calificaciones.php">
+     
+  <i class="bi bi-card-checklist"></i> Calificaciones
+  </a>
+</li>
+
+</ul>
 
     
     </nav>
@@ -229,7 +237,7 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO</p>
+        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -274,7 +282,7 @@ include('../dashboard/prcd/qwery_admin.php');
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
+        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20 - 29 AÑOS)</p>
 
             <table class="table table-hover text-center table-striped">
 
@@ -292,6 +300,15 @@ include('../dashboard/prcd/qwery_admin.php');
             <?php
                $x=0;
               while($row_usr2 = $resultado_usr2->fetch_assoc()){
+
+                // validacion de 9 docs
+                $id_validacion2 = $row_usr2['id_ext'];
+                $query2 = "SELECT * FROM docs WHERE id_ext='$id_validacion2'";
+                $resultado2= $conn->query($query2);
+                $row2=$resultado2->fetch_assoc();
+                $row_cnt2 = $resultado2->num_rows;
+
+                if($row_cnt2 == 9){
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
@@ -301,13 +318,14 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr2['email'].'</td>';
                 echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
+                }
               }
               ?>
                
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
+        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
 
             <table class="table table-hover text-center table-striped">
 
@@ -325,6 +343,14 @@ include('../dashboard/prcd/qwery_admin.php');
             <?php
                $x=0;
               while($row_usr3 = $resultado_usr3->fetch_assoc()){
+                // validacion de 9 docs
+                $id_validacion3 = $row_usr3['id_ext'];
+                $query3 = "SELECT * FROM docs WHERE id_ext='$id_validacion3'";
+                $resultado3= $conn->query($query3);
+                $row3=$resultado3->fetch_assoc();
+                $row_cnt3 = $resultado3->num_rows;
+
+                if($row_cnt3 == 9){
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
@@ -334,13 +360,14 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr3['email'].'</td>';
                 echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
+                }
               }
               ?>
                
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
+        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
 
         <table class="table table-hover text-center table-striped">
 
@@ -358,6 +385,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr4 = $resultado_usr4->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion4 = $row_usr4['id_ext'];
+              $query4 = "SELECT * FROM docs WHERE id_ext='$id_validacion4'";
+              $resultado4= $conn->query($query4);
+              $row4=$resultado4->fetch_assoc();
+              $row_cnt4 = $resultado4->num_rows;
+
+              if($row_cnt4 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -367,13 +402,14 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr4['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
+        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
         
         <table class="table table-hover text-center table-striped">
 
@@ -391,6 +427,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr5 = $resultado_usr5->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion5 = $row_usr5['id_ext'];
+              $query5 = "SELECT * FROM docs WHERE id_ext='$id_validacion5'";
+              $resultado5= $conn->query($query5);
+              $row5=$resultado5->fetch_assoc();
+              $row_cnt5 = $resultado5->num_rows;
+
+              if($row_cnt5 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -400,13 +444,14 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr5['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
+        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
         <table class="table table-hover text-center table-striped">
 
         <thead class="thead-dark">
@@ -423,6 +468,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr6 = $resultado_usr6->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion6 = $row_usr6['id_ext'];
+              $query6 = "SELECT * FROM docs WHERE id_ext='$id_validacion6'";
+              $resultado6= $conn->query($query6);
+              $row6=$resultado6->fetch_assoc();
+              $row_cnt6 = $resultado6->num_rows;
+
+              if($row_cnt6 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -432,13 +485,14 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr6['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: LITERATURA</p>
+        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
         <table class="table table-hover text-center table-striped">
         
         <thead class="thead-dark">
@@ -455,6 +509,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr7 = $resultado_usr7->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion7 = $row_usr7['id_ext'];
+              $query7 = "SELECT * FROM docs WHERE id_ext='$id_validacion7'";
+              $resultado7= $conn->query($query7);
+              $row7=$resultado7->fetch_assoc();
+              $row_cnt7 = $resultado7->num_rows;
+
+              if($row_cnt7 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -464,13 +526,14 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr7['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
+        <p class=" h4">CATEGORIA: PROTECCIÓN AL MEDIO AMBIENTE</p>
         <table class="table table-hover text-center table-striped">
         
         <thead class="thead-dark">
@@ -487,6 +550,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr8 = $resultado_usr8->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion8 = $row_usr8['id_ext'];
+              $query8 = "SELECT * FROM docs WHERE id_ext='$id_validacion8'";
+              $resultado8= $conn->query($query8);
+              $row8=$resultado8->fetch_assoc();
+              $row_cnt8 = $resultado8->num_rows;
+
+              if($row_cnt8 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -496,13 +567,14 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr8['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORÍA: ARTE URBANO</p>
+        <p class=" h4">CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p>
         <table class="table table-hover text-center table-striped">
 
         <thead class="thead-dark">
@@ -519,6 +591,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr9 = $resultado_usr9->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion9 = $row_usr9['id_ext'];
+              $query9 = "SELECT * FROM docs WHERE id_ext='$id_validacion9'";
+              $resultado9= $conn->query($query9);
+              $row9=$resultado9->fetch_assoc();
+              $row_cnt9 = $resultado9->num_rows;
+
+              if($row_cnt9 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -528,13 +608,15 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr9['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
+          
+        <p class=" h4">CATEGORIA: LITERATURA</p>
         <table class="table table-hover text-center table-striped">
 
         <thead class="thead-dark">
@@ -551,6 +633,14 @@ include('../dashboard/prcd/qwery_admin.php');
           <?php
             $x=0;
             while($row_usr10 = $resultado_usr10->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion10 = $row_usr10['id_ext'];
+              $query10 = "SELECT * FROM docs WHERE id_ext='$id_validacion10'";
+              $resultado10= $conn->query($query10);
+              $row10=$resultado10->fetch_assoc();
+              $row_cnt10 = $resultado10->num_rows;
+
+              if($row_cnt10 == 9){
               $x++;
               echo '<tr>';
               echo '<td>'.$x.'</td>';
@@ -560,12 +650,266 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr10['email'].'</td>';
               echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
+              }
             }
             ?>
             
           </tbody>
               <hr>
           </table>
+
+        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (MÚSICA)</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr11 = $resultado_usr11->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion11 = $row_usr11['id_ext'];
+              $query11 = "SELECT * FROM docs WHERE id_ext='$id_validacion11'";
+              $resultado11= $conn->query($query11);
+              $row11=$resultado11->fetch_assoc();
+              $row_cnt11 = $resultado11->num_rows;
+
+              if($row_cnt11 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr11['apellido'].'</td>';
+              echo '<td>'.$row_usr11['nombre'].'</td>';
+              echo '<td>'.$row_usr11['curp'].'</td>';
+              echo '<td>'.$row_usr11['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
+        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (TEATRO)</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr12 = $resultado_usr12->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion12 = $row_usr12['id_ext'];
+              $query12 = "SELECT * FROM docs WHERE id_ext='$id_validacion12'";
+              $resultado12= $conn->query($query12);
+              $row12=$resultado12->fetch_assoc();
+              $row_cnt12 = $resultado12->num_rows;
+
+              if($row_cnt12 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr12['apellido'].'</td>';
+              echo '<td>'.$row_usr12['nombre'].'</td>';
+              echo '<td>'.$row_usr12['curp'].'</td>';
+              echo '<td>'.$row_usr12['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
+        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (DANZA)</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr13 = $resultado_usr13->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion13 = $row_usr13['id_ext'];
+              $query13 = "SELECT * FROM docs WHERE id_ext='$id_validacion13'";
+              $resultado13= $conn->query($query13);
+              $row13=$resultado13->fetch_assoc();
+              $row_cnt13 = $resultado13->num_rows;
+
+              if($row_cnt13 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr13['apellido'].'</td>';
+              echo '<td>'.$row_usr13['nombre'].'</td>';
+              echo '<td>'.$row_usr13['curp'].'</td>';
+              echo '<td>'.$row_usr13['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
+        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr14 = $resultado_usr14->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion14 = $row_usr14['id_ext'];
+              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
+              $resultado14= $conn->query($query14);
+              $row14=$resultado14->fetch_assoc();
+              $row_cnt14 = $resultado14->num_rows;
+
+              if($row_cnt14 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr14['apellido'].'</td>';
+              echo '<td>'.$row_usr14['nombre'].'</td>';
+              echo '<td>'.$row_usr14['curp'].'</td>';
+              echo '<td>'.$row_usr14['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
+        <p class=" h4">CATEGORIA: ARTE URBANO</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr15 = $resultado_usr15->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion15 = $row_usr15['id_ext'];
+              $query15= "SELECT * FROM docs WHERE id_ext='$id_validacion15'";
+              $resultado15= $conn->query($query15);
+              $row15=$resultado15->fetch_assoc();
+              $row_cnt15 = $resultado15->num_rows;
+
+              if($row_cnt15 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr15['apellido'].'</td>';
+              echo '<td>'.$row_usr15['nombre'].'</td>';
+              echo '<td>'.$row_usr15['curp'].'</td>';
+              echo '<td>'.$row_usr15['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
+        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
+        <table class="table table-hover text-center table-striped">
+
+        <thead class="thead-dark">
+              <tr>
+              <th scope="col">#</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Correo electrónico</th>
+                <th scope="col">Acción</th>
+              </tr>
+          </thead>
+          <tbody>
+          <?php
+            $x=0;
+            while($row_usr16 = $resultado_usr16->fetch_assoc()){
+              // validacion de 9 docs
+              $id_validacion16 = $row_usr16['id_ext'];
+              $query16 = "SELECT * FROM docs WHERE id_ext='$id_validacion16'";
+              $resultado16= $conn->query($query16);
+              $row16=$resultado16->fetch_assoc();
+              $row_cnt16 = $resultado16->num_rows;
+
+              if($row_cnt16 == 9){
+              $x++;
+              echo '<tr>';
+              echo '<td>'.$x.'</td>';
+              echo '<td>'.$row_usr16['apellido'].'</td>';
+              echo '<td>'.$row_usr16['nombre'].'</td>';
+              echo '<td>'.$row_usr16['curp'].'</td>';
+              echo '<td>'.$row_usr16['email'].'</td>';
+              echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '</tr>';
+              }
+            }
+            ?>
+            
+          </tbody>
+              <hr>
+          </table>
+
         
 </div>
 

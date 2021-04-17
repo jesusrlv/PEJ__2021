@@ -163,7 +163,13 @@ include('../dashboard/prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link text-light" href="revision_docs.php">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+            <i class="bi bi-person-bounding-box"></i> Postulantes completados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_vista_completa.php">
+               
+            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
             </a>
           </li>
           <li class="nav-item">
@@ -178,7 +184,9 @@ include('../dashboard/prcd/conn.php');
             <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
-          <hr>
+
+          <hr style="color: dimgrey;">
+
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
                

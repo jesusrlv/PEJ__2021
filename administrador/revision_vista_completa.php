@@ -151,7 +151,13 @@ include('../dashboard/prcd/qwery_admin.php');
           <li class="nav-item">
             <a class="nav-link text-light" href="revision_docs.php">
                
-            <i class="bi bi-person-bounding-box"></i> Postulantes
+            <i class="bi bi-person-bounding-box"></i> Postulantes completados
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_vista_completa.php">
+               
+            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
             </a>
           </li>
           <li class="nav-item">
@@ -166,7 +172,9 @@ include('../dashboard/prcd/qwery_admin.php');
             <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
-          <hr>
+
+          <hr style="color: dimgrey;">
+
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
                
@@ -809,7 +817,7 @@ include('../dashboard/prcd/qwery_admin.php');
               // validacion de 9 docs
               $id_validacion13 = $row_usr13['id_ext'];
               $query13 = "SELECT * FROM docs WHERE id_ext='$id_validacion13'";
-              $resultado= $conn->query($query);
+              $resultado13= $conn->query($query13);
               $row13=$resultado13->fetch_assoc();
               $row_cnt13 = $resultado13->num_rows;
               if($row_cnt13 == 9){
@@ -826,6 +834,7 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
+
         <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
         <table class="table table-hover text-center table-striped">
 
@@ -853,7 +862,7 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr14['email'].'</td>';
               // validacion de 9 docs
               $id_validacion14 = $row_usr14['id_ext'];
-              $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
               $resultado14= $conn->query($query14);
               $row14=$resultado14->fetch_assoc();
               $row_cnt14 = $resultado14->num_rows;
