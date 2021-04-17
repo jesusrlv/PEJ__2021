@@ -222,34 +222,68 @@ include('prcd/conn.php');
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Por trayectoria">
-                      <option value="1">Logro académico</option>
-                      <option value="2">Discapacidad e integración</option>
-                      <option value="3">Ingenio emprendedor</option>
-                      <option value="4">Responsabilidad social</option>
-                      <option value="5">Mérito migrante</option>
-                      <option value="6">Mérito campesino</option>
-                      <option value="7"> Cultura Cívica, Política y/o Democracia</option>
+                      <option value="1">Logro académico(12-19 años)</option>
+                      <option value="2">Logro académico(20-29 años)</option>
+                      <option value="3">Discapacidad e integración</option>
+                      <option value="4">Ingenio emprendedor</option>
+                      <option value="5">Responsabilidad social</option>
+                      <option value="6">Mérito migrante</option>
+                      <option value="7">Mérito campesino</option>
+                      <option value="8"> Protección al medio ambiente</option>
+                      <option value="9"> Cultura Cívica, Política y/o Democracia</option>
                       </optgroup>
                       <optgroup label="Talento joven">
-                      <option value="7">Literatura</option>
-                      <option value="8">Artes Escénicas</option>
-                      <option value="9">Artes Plásticas, Visuales y Populares</option>
-                      <option value="10"> Arte Urbano </option>
-                      <option value="11">Ciencia y tecnología</option>
+                      <option value="10">Literatura</option>
+                      <option value="11">Artes Escénicas (Música)</option>
+                      <option value="12">Artes Escénicas (Teatro)</option>
+                      <option value="13">Artes Escénicas (Danza)</option>
+                      <option value="14">Artes Plásticas, Visuales y Populares</option>
+                      <option value="15">Arte Urbano (Grafiti) </option>
+                      <option value="16">Ciencia y tecnología</option>
                       </optgroup>
                       
                   </select>
                   <hr>	
 					    </div>
+                <div class="col-md-4 mb-3 validate-input" data-validate="Selecciona una temática">
+                <label for="tematica">Edad</label>
+                  <select name="edad" id="edad" class="form-control" required>
+                      <option value="">Seleccionar...</option>
+                      
+                      <!-- <optgroup label="Por trayectoria"> -->
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                      <option value="21">21</option>
+                      <option value="22">22</option>
+                      <option value="23">23</option>
+                      <option value="24">24</option>
+                      <option value="25">25</option>
+                      <option value="26">26</option>
+                      <option value="27">27</option>
+                      <option value="28">28</option>
+                      <option value="29">29</option>
+                  
+                  </select>
+                
+					    </div>
           
-                <div class="col-md-6 mb-3">
+                <div class="col-md-4 mb-3">
                     <label for="firstName">Apellido(s)</label>
                     <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required>
                     <div class="invalid-feedback">
                     Valid first name is required.
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <div class="col-md-4 mb-3">
                     <label for="lastName">Nombre(s)</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
                     <div class="invalid-feedback">
@@ -307,24 +341,7 @@ include('prcd/conn.php');
                   <hr>	
 					    </div>
 
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
-
-                <!-- <div class="col-md-6 mb-3">
-                    <label for="firstName">CURP</label>
-                    <input type="text" class="form-control" id="curp" name="curp" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this)" required>
-                    <div class="invalid-feedback">
-                    Valid first name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">RFC</label>
-                    <input type="text" class="form-control" id="rfc" name="rfc" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="ValidaRfc(this.value)" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div> -->
-
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
+                
 
                 </div>
 
@@ -339,8 +356,36 @@ include('prcd/conn.php');
                 <p><div id="result-rfc"></div></p>
                 <!-- div de u RFC validez -->
 
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button>
+                
+                <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Terminar Datos <i class="bi bi-skip-forward-fill"></i></button> -->
+                <button type="button" class="btn btn-primary btn-lg btn-block" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Terminar Datos <i class="bi bi-skip-forward-fill"></i>
+                </button>
                 <a type="button" class="btn btn-danger btn-lg btn-block" href="dashboard.php"><i class="bi bi-x-circle-fill"></i> Cancelar</a>
+            
+            <!-- Modal -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+            
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title text-center text-danger" id="exampleModalLabel"><strong><i class="bi bi-exclamation-circle-fill"></i> ¡ADVERTENCIA!</strong></h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                  </div>
+                  <div class="modal-body">
+                    Has seleccionado la categoría de XXX. Una vez guardado este proceso no podrás cambiar de categoría.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Continuar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Modal --> 
+
             </form>
             </div>
 
