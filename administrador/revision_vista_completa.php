@@ -281,7 +281,7 @@ include('../dashboard/prcd/qwery_admin.php');
                     echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
                 }
 
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
                 
                 // } 
@@ -328,7 +328,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 else{
                     echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
                 }
-                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -374,7 +374,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 else{
                     echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
                 }
-                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -420,7 +420,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -466,7 +466,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -511,7 +511,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -556,7 +556,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -601,7 +601,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -646,7 +646,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -691,7 +691,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -736,7 +736,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr11['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -781,7 +781,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr12['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -826,7 +826,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr13['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -872,7 +872,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr14['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -917,7 +917,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr15['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -962,7 +962,7 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+              echo '<td><a href="documentos_generales.php?id='.$row_usr16['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>

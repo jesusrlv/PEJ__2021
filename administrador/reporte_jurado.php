@@ -26,6 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
+// include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -84,7 +85,9 @@ include('../dashboard/prcd/conn.php');
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-        body{background-color:gray;}
+        body{background-color:gray;
+        
+        }
       }
     </style>
     <!-- Custom styles for this template -->
@@ -110,7 +113,7 @@ include('../dashboard/prcd/conn.php');
       
         
        
-        <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+    <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>      
         
       </li>
   </ul>
@@ -140,8 +143,7 @@ include('../dashboard/prcd/conn.php');
             ?>
           </span>
         </h6>
-        <hr style="color: dimgrey;">
-
+<hr>
         <ul class="nav flex-column">
  
            <li class="nav-item">
@@ -152,7 +154,7 @@ include('../dashboard/prcd/conn.php');
             </a>
           </li>
           <hr style="color: dimgrey;">
-
+          
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span class="text-light">REVISIÓN</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
@@ -201,10 +203,11 @@ include('../dashboard/prcd/conn.php');
           </li>
          
         </ul>
+
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style=" height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
         <h1 class="h1 text-light">DASHBOARD</h1>
         
@@ -237,84 +240,153 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-        
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
-
         <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-md-1">
+        <div class="row row-cols-1 row-cols-md-1">
+
+        <?php 
+            $id_consulta = $_REQUEST['id'];
+
+            $sql_qwery = "SELECT * FROM calificacion WHERE id_ext1 = '$id_consulta'";
+            $resultado_consulta= $conn->query($sql_qwery);
+            // $row=$resultado_consulta->fetch_assoc();
+        ?>
+
+        <div class="col mb-12">
+         <?php 
+            // $id_busqueda = $_REQUEST['id_cat'];
+            // if($id_busqueda==1){
+            //     echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
+            // }
+            // elseif($id_busqueda==2){
+            //     echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
+            // }
+            // elseif($id_busqueda==3){
+            //     echo 'DISCAPACIDAD E INTEGRACIÓN';
+            // }
+            // elseif($id_busqueda==4){
+            //     echo 'INGENIO EMPRENDEDOR';
+            // }
+            // elseif($id_busqueda==5){
+            //     echo 'RESPONSABILIDAD SOCIAL';
+            // }
+            // elseif($id_busqueda==6){
+            //     echo 'MÉRITO MIGRANTE';
+            // }
+            // elseif($id_busqueda==7){
+            //     echo 'MÉRITO CAMPESINO';
+            // }
+            // elseif($id_busqueda==8){
+            //     echo 'PROTECCIÓN AL MEDIO AMBIENTE';
+            // }
+            // elseif($id_busqueda==9){
+            //     echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
+            // }
+            // elseif($id_busqueda==10){
+            //     echo 'LITERATURA';
+            // }
+            // elseif($id_busqueda==11){
+            //     echo 'ARTES ESCÉNICAS (MÚSICA)';
+            // }
+            // elseif($id_busqueda==12){
+            //     echo 'ARTES ESCÉNICAS (TEATRO)';
+            // }
+            // elseif($id_busqueda==13){
+            //     echo 'ARTES ESCÉNICAS (DANZA)';
+            // }
+            // elseif($id_busqueda==14){
+            //     echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            // }
+            // elseif($id_busqueda==15){
+            //     echo 'ARTE URBANO';
+            // }
+            // elseif($id_busqueda==16){
+            //     echo 'CIENCIA Y TECNOLOGÍA';
+            // }
+        
+        ?></p>
+
+
+        <?php
           
-          <div class="col mb-12">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de información del PEJ</p>
-                <hr>
-                <!-- 1 completo -->
-                <p>
-                <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Completados y No completados</a>
+        //   $sql_usr = "SELECT * FROM datos WHERE id_ext = '$id_consulta'";
+          
+        // $sql_usr = "SELECT * FROM calificacion INNER JOIN usr ON calificacion.id_ext2 = usr.id WHERE usr.perfil = 3  ORDER BY usr.categoria ASC";
+        $sql_usr = "SELECT * FROM usr WHERE perfil = 3  ORDER BY categoria ASC";
 
-                <a href="busqueda.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Reporte por jurado</a>
-                
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i>Por categoría</a>
-                </p>
-                <p>
-                <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Nombre + Categoría + Calificación</a>
-                
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i>Datos generales</a>
-                </p>
-                </div>
-            </div>
-          </div>
+          $resultado_usr = $conn->query($sql_usr);
+        //   $row_usr = $resultado_usr->fetch_assoc();
+          while($row_usr = $resultado_usr->fetch_assoc()){
 
+          
+        ?>
+        <p class="h5">CATEGORIA: <?php echo $row_usr['categoria']?></p>
+        <p><strong>NOMBRE:</strong> <?php echo $row_usr['usuario']?></p>
 
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-list-ol"></i> CALIFICACIONES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
-                <hr>
-                <a href="revision_calificaciones.php" class="card-link btn btn-outline-primary"><i class="bi bi-card-checklist"></i> Visualizar</a>
-              </div>
-            </div>
-          </div>
+            <table class="table table-hover text-center table-striped ">
+            <thead class="bg-dark text-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Currículum<br>Vitae</th>
+                <th scope="col">Semblanza<br>de trayectoria</th>
+                <th scope="col">Material<br>bibliográfico</th>
+                <th scope="col">Video</th>
+                <th scope="col">Promedio</th>
+                <th scope="col">Observaciones</th>
+              </tr>
+            </thead>
+            <tbody>
 
 
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-search"></i> USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Reportes del sistema del PEJ.</p>
-                <hr>
-                <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
-                <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
+
+            <?php
+            
+            $y=0;
+            $id_ext2 = $row_usr['id'];
+                $tabla = "SELECT * FROM calificacion WHERE id_ext2 ='$id_ext2'";
+                $resultado_tabla= $conn->query($tabla);
+
+          //  while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+           while($row_tabla=$resultado_tabla->fetch_assoc()){
+             $y++;
+             echo '<tr>';
+             echo '<td>'.$y.'</td>';
+                // $id_revisor = $row['id_ext2'];
+                // $sql_revisor = "SELECT * FROM usr WHERE id = '$id_revisor' AND perfil = 3";
+                // $resultado_revisor= $conn->query($sql_revisor);
+                // $row_revisor=$resultado_revisor->fetch_assoc();
               
-              </div>
-            </div>
-          </div>
-          
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-search"></i> BÚSQUEDA DE USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
-                <hr>
-                <a href="busqueda.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
-                
-              </div>
-            </div>
-          </div>
+            echo '<td>'.$row_tabla['id_ext1'].'</td>';
+             
+             echo '<td>'.$row_tabla['doc1'].'</td>';
+             echo '<td>'.$row_tabla['doc2'].'</td>';
+             echo '<td>'.$row_tabla['doc3'].'</td>';
+             echo '<td>'.$row_tabla['doc4'].'</td>';
+             
+             $doc1 = $row_tabla['doc1'];
+             $doc2 = $row_tabla['doc2'];
+             $doc3 = $row_tabla['doc3'];
+             $doc4 = $row_tabla['doc4'];
+             $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
+
+             echo '<td><strong>'.$promedio.'</strong></td>';
+             echo '<td>'.$row_tabla['observaciones'].'</td>';
+
+             echo '</tr>';
+           }
+
+        // while
+            }
+        // while
+           
+            ?>
+
+              
+            </tbody>
+              <hr>
+          </table>
+        
+</div>
 
       </div> <!-- container -->
       
