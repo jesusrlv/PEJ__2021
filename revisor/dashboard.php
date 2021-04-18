@@ -57,19 +57,10 @@ include('../dashboard/prcd/conn.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Gráfico -->
+    <!-- script para modal -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
 
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
 
     <style>
       .bd-placeholder-img {
@@ -110,9 +101,8 @@ include('../dashboard/prcd/conn.php');
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       
-        
-       
-        <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i> VIDEO TUTORIALES</button>
+    <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
         
       </li>
   </ul>
@@ -367,6 +357,29 @@ include('../dashboard/prcd/conn.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="css/dashboard.js"></script></body>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Listado de video tutoriales</h5>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <li>Video #1</li>
+                  <li>Video #2</li>
+                  <li>Video #3</li>
+                  <li>Video #4</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 </html>
 
 <!-- 

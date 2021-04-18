@@ -85,7 +85,9 @@ include('../dashboard/prcd/conn.php');
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-        body{background-color:gray;}
+        body{background-color:gray;
+        
+        }
       }
     </style>
     <!-- Custom styles for this template -->
@@ -205,7 +207,7 @@ include('../dashboard/prcd/conn.php');
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style=" height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
         <h1 class="h1 text-light">DASHBOARD</h1>
         

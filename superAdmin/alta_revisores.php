@@ -248,26 +248,31 @@ include('../dashboard/prcd/conn.php');
                       <option value="">Seleccionar...</option>
                       
                       <optgroup label="Por trayectoria">
-                      <option value="1">Logro académico</option>
-                      <option value="2">Discapacidad e integración</option>
-                      <option value="3">Ingenio emprendedor</option>
-                      <option value="4">Responsabilidad social</option>
-                      <option value="5">Mérito migrante</option>
-                      <option value="6">Mérito campesino</option>
-                      <option value="7"> Cultura Cívica, Política y/o Democracia</option>
+                      <option value="1">Logro académico(12-19 años)</option>
+                      <option value="2">Logro académico(20-29 años)</option>
+                      <option value="3">Discapacidad e integración</option>
+                      <option value="4">Ingenio emprendedor</option>
+                      <option value="5">Responsabilidad social</option>
+                      <option value="6">Mérito migrante</option>
+                      <option value="7">Mérito campesino</option>
+                      <option value="8"> Protección al medio ambiente</option>
+                      <option value="9"> Cultura Cívica, Política y/o Democracia</option>
                       </optgroup>
                       <optgroup label="Talento joven">
-                      <option value="7">Literatura</option>
-                      <option value="8">Artes Escénicas</option>
-                      <option value="9">Artes Plásticas, Visuales y Populares</option>
-                      <option value="10"> Arte Urbano </option>
-                      <option value="11">Ciencia y tecnología</option>
+                      <option value="10">Literatura</option>
+                      <option value="11">Artes Escénicas (Música)</option>
+                      <option value="12">Artes Escénicas (Teatro)</option>
+                      <option value="13">Artes Escénicas (Danza)</option>
+                      <option value="14">Artes Plásticas, Visuales y Populares</option>
+                      <option value="15">Arte Urbano (Grafiti) </option>
+                      <option value="16">Ciencia y tecnología</option>
                       </optgroup>
                       
                   </select>
         </div>
 
         <button type="submit" class="btn btn-primary"><i class="bi bi-cloud-arrow-up-fill"></i> Registrar</button>
+        <a href="dashboard.php" class="btn btn-danger">Cancelar</a>
         
 
         </form>

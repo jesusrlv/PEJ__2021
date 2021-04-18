@@ -50,6 +50,10 @@ include('prcd/conn.php');
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
     <script src="https://kit.fontawesome.com/4d63b5ef28.js" crossorigin="anonymous"></script>
 
+    <!-- script para modal -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
     <!-- íconos Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
@@ -59,8 +63,6 @@ include('prcd/conn.php');
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
    
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
 
     <style>
       .bd-placeholder-img {
@@ -98,8 +100,8 @@ include('prcd/conn.php');
     <li class="nav-item text-nowrap">
       
         
-       
-        <a class="btn btn-outline-secondary btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+      <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-film"></i> VIDEO TUTORIALES</button>
+      <a class="btn btn-outline-secondary btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
         
       </li>
   </ul>
@@ -322,23 +324,7 @@ include('prcd/conn.php');
         </div>
       </div> <!-- container -->
       
-      <!-- <hr>
-      <div class="container">
-        <div class="row row-cols-1 row-cols-md-1">
-          <div class="col mb-12">
-            <div class="card text-white bg-primary mb-12" style="width: 100%; ">
-              <div class="card-body"><br>
-                <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> VALIDACIÓN DE EXPEDIENTE</h1>
-                <p class="card-text">La siguiente validación se realiza por parte del personal del Instituto de la Juventud para validar el expediente, el cual es el siguiente:</p>
-
-                <p class="card-text h4 text-center">Estatus</p>
-                <p class="card-text h4 text-center" style="aligment-item:center;"><div class="alert alert-primary text-center" role="alert"><i class="bi bi-check-circle-fill" style="font-size: 3rem; color: cornflowerblue;"></i> <i class="bi bi-x-circle-fill text-danger" style="font-size: 3rem; "></i> <i class="bi bi-exclamation-circle-fill text-warning" style="font-size: 3rem;"></i></div></p>
-              </div>
-            </div>
-          </div>
-          </div>
-          </div> -->
-
+      
       <hr>
       <div class="container">
         <div class="row row-cols-1 row-cols-md-1">
@@ -356,8 +342,7 @@ include('prcd/conn.php');
                     echo $row['observaciones'].'<br>';
                   }
                 ?>
-                <!-- <p class="card-text"><div class="alert alert-primary" role="alert"></div></p> -->
-                <!-- <p><a href="trimestre1.php" type="button" class="btn btn-warning"><i class="fas fa-edit"></i> Editar...</a></p> -->
+               
               </div>
             </div>
           </div>
@@ -369,12 +354,7 @@ include('prcd/conn.php');
         </div>
       </div>
 
-      <!-- card -->
-      
-      <!-- card -->
-
-      
-
+     
       </div>
 
 
@@ -389,6 +369,30 @@ include('prcd/conn.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha512-OD9Gn6cAUQezuljS6411uRFr84pkrCtw23Hl5TYzmGyD0YcunJIPSBDzrV8EeCiFxGWWvtJOfVo5pOgB++Jsag==" crossorigin="anonymous"></script>
 
         <script src="css/dashboard.js"></script></body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Listado de video tutoriales</h5>
+              </div>
+              <div class="modal-body">
+                <ul>
+                  <li>Video #1</li>
+                  <li>Video #2</li>
+                  <li>Video #3</li>
+                  <li>Video #4</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 </html>
 
 <!-- 

@@ -62,20 +62,7 @@ include('../dashboard/prcd/conn.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Gráfico -->
-
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
-
+    
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -294,12 +281,7 @@ include('../dashboard/prcd/conn.php');
               </tr>
             </thead>
             <tbody>
-              <!-- <tr>
-                <th scope="row">1</th>
-                <td>Carta Propuesta</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr> -->
+              
               
               <?php
               include('prcd/consultas.php');
@@ -309,49 +291,149 @@ include('../dashboard/prcd/conn.php');
                 <th scope="row">1</th>
                 <td>Currículum vitae</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row1['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="curriculum" required></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="curriculum" required></td> -->
+                <td>
+                  <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
+                    <select name="curriculum" id="curriculum" class="form-control text-center" required>
+                        <option value="">Calificar...</option>
+                        
+                        <!-- <optgroup label="Por trayectoria"> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    
+                    </select>
+                
+					        </div>
+                </td>
+              
               </tr>
               <tr>
                 <th scope="row">2</th>
                 <td>Semblanza de trayectoria</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row2['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="semblanza" required></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="semblanza" required></td> -->
+                <td>
+                  <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
+                    <select name="semblanza" id="semblanza" class="form-control text-center" required>
+                        <option value="">Calificar...</option>
+                        
+                        <!-- <optgroup label="Por trayectoria"> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    
+                    </select>
+                
+					        </div>
+                </td>
               </tr>
-              <!-- <tr>
-                <th scope="row">4</th>
-                <td>Acta de nacimiento</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr> -->
-              <!-- <tr>
-                <th scope="row">5</th>
-                <td>Credencial de elector</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr> -->
-              <!-- <tr>
-                <th scope="row">6</th>
-                <td>Comprobante de domicilio</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr> -->
-              <!-- <tr>
-                <th scope="row">7</th>
-                <td>CURP</td>
-                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td>
-              </tr> -->
+              
               <tr>
                 <th scope="row">3</th>
                 <td>Material bibliográfico</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row3['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="mbibliografico" required></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="mbibliografico" required></td> -->
+                <td>
+                  <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
+                    <select name="mbibliografico" id="mbibliografico" class="form-control text-center" required>
+                        <option value="">Calificar...</option>
+                        
+                        <!-- <optgroup label="Por trayectoria"> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    
+                    </select>
+                
+					        </div>
+                </td>
               </tr>
               <tr>
                 <th scope="row">4</th>
                 <td>Video</td>
                 <td><span class="h4 text-primary"><a href="<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
-                <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="video" required></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="video" required></td> -->
+                <td>
+                  <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
+                    <select name="video" id="video" class="form-control text-center" required>
+                        <option value="">Calificar...</option>
+                        
+                        <!-- <optgroup label="Por trayectoria"> -->
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    
+                    </select>
+                
+					        </div>
+                </td>
+              </tr>
+
+              
+
+              <tr>
+                <th scope="row">5</th>
+                <td>Credencial de elector</td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row5['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Comprobante de domicilio</td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row8['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>Acta de nacimiento</td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>CURP</td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row9['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Carta propuesta</td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row6['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
+                <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
               
             </tbody>
