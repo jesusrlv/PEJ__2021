@@ -39,6 +39,7 @@ include('../dashboard/prcd/conn.php');
 
     // postulante
     $postulante = $_REQUEST['id'];
+    $revisor = $_REQUEST['id_rev'];
 
 ?>
 
@@ -206,37 +207,87 @@ include('../dashboard/prcd/conn.php');
           <hr class="my-4">
 
           <p class="lead"> CATEGORÍA: <?php
-          if($categoria==1){
-            echo '<strong>LOGRO ACADÉMICO</strong>';
-        }
-        elseif($categoria==2){
-            echo '<strong>DISCAPACIDAD E INTEGRACIÓN</strong>';
-        }
-        elseif($categoria==3){
-            echo '<strong>INGENIO EMPRENDEDOR</strong>';
-        }
-        elseif($categoria==4){
-            echo '<strong>RESPONSABILIDAD SOCIAL</strong>';
-        }
-        elseif($categoria==5){
-            echo '<strong>MÉRITO MIGRANTE</strong>';
-        }
-        elseif($categoria==6){
-            echo '<strong>MÉRITO CAMPESINO</strong>';
-        }
-        elseif($categoria==7){
-            echo '<strong>LITERATURA</strong>';
-        }
-        elseif($categoria==8){
-            echo '<strong>ARTES PLÁSTICAS, VISUALES Y POPULARES</strong>';
-        }
-        elseif($categoria==9){
-            echo '<strong>ARTE URBANO</strong>';
-        }
-        elseif($categoria==10){
-            echo '<strong>CIENCIA Y TECNOLOGÍA</strong>';
-        }
+        //   if($categoria==1){
+        //     echo '<strong>LOGRO ACADÉMICO</strong>';
+        // }
+        // elseif($categoria==2){
+        //     echo '<strong>DISCAPACIDAD E INTEGRACIÓN</strong>';
+        // }
+        // elseif($categoria==3){
+        //     echo '<strong>INGENIO EMPRENDEDOR</strong>';
+        // }
+        // elseif($categoria==4){
+        //     echo '<strong>RESPONSABILIDAD SOCIAL</strong>';
+        // }
+        // elseif($categoria==5){
+        //     echo '<strong>MÉRITO MIGRANTE</strong>';
+        // }
+        // elseif($categoria==6){
+        //     echo '<strong>MÉRITO CAMPESINO</strong>';
+        // }
+        // elseif($categoria==7){
+        //     echo '<strong>LITERATURA</strong>';
+        // }
+        // elseif($categoria==8){
+        //     echo '<strong>ARTES PLÁSTICAS, VISUALES Y POPULARES</strong>';
+        // }
+        // elseif($categoria==9){
+        //     echo '<strong>ARTE URBANO</strong>';
+        // }
+        // elseif($categoria==10){
+        //     echo '<strong>CIENCIA Y TECNOLOGÍA</strong>';
+        // }
           
+
+        if($categoria==1){
+          echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
+      }
+      elseif($categoria==2){
+          echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
+      }
+      elseif($categoria==3){
+          echo 'DISCAPACIDAD E INTEGRACIÓN';
+      }
+      elseif($categoria==4){
+          echo 'INGENIO EMPRENDEDOR';
+      }
+      elseif($categoria==5){
+          echo 'RESPONSABILIDAD SOCIAL';
+      }
+      elseif($categoria==6){
+          echo 'MÉRITO MIGRANTE';
+      }
+      elseif($categoria==7){
+          echo 'MÉRITO CAMPESINO';
+      }
+      elseif($categoria==8){
+          echo 'PROTECCIÓN AL MEDIO AMBIENTE';
+      }
+      elseif($categoria==9){
+          echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
+      }
+      elseif($categoria==10){
+          echo 'LITERATURA';
+      }
+      elseif($categoria==11){
+          echo 'ARTES ESCÉNICAS (MÚSICA)';
+      }
+      elseif($categoria==12){
+          echo 'ARTES ESCÉNICAS (TEATRO)';
+      }
+      elseif($categoria==13){
+          echo 'ARTES ESCÉNICAS (DANZA)';
+      }
+      elseif($categoria==14){
+          echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+      }
+      elseif($categoria==15){
+          echo 'ARTE URBANO';
+      }
+      elseif($categoria==16){
+          echo 'CIENCIA Y TECNOLOGÍA';
+      }
+
           ?>
           </p>
 
@@ -244,6 +295,7 @@ include('../dashboard/prcd/conn.php');
         
         <?php
         // include('../dashboard/prcd/qwery_validacion_dashboard.php');
+        include('prcd/consultas.php');
         ?>
         <!-- consulta de validación -->
 
@@ -253,7 +305,7 @@ include('../dashboard/prcd/conn.php');
           
           <div class="col mb-12">
 
-        <form action="prcd/calificar.php" method="POST">
+        <form action="prcd/editar_calificar.php" method="POST">
         
         <input type="text" value="<?php echo $postulante ?>" name="postulante" hidden>
         <input type="text" value="<?php echo $id ?>" name="revisor" hidden>
@@ -266,19 +318,21 @@ include('../dashboard/prcd/conn.php');
                 <th scope="col">Documento</th>
                 <th scope="col">Archivo</th>
                 <th scope="col">Calificación</th>
+                <th scope="col">Calificar</th>
               </tr>
             </thead>
             <tbody>
               
               
               <?php
-              include('prcd/consultas.php');
+            //   include('prcd/consultas.php');
               ?>
 
               <tr>
                 <th scope="row">1</th>
                 <td>Currículum vitae</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row1['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><span class="lead"><?php echo $row_consulta['doc1']?></span></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="curriculum" required></td> -->
                 <td>
                   <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
@@ -307,6 +361,7 @@ include('../dashboard/prcd/conn.php');
                 <th scope="row">2</th>
                 <td>Semblanza de trayectoria</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row2['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><span class="lead"><?php echo $row_consulta['doc2']?></span></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="semblanza" required></td> -->
                 <td>
                   <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
@@ -335,6 +390,7 @@ include('../dashboard/prcd/conn.php');
                 <th scope="row">3</th>
                 <td>Material bibliográfico</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row3['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><span class="lead"><?php echo $row_consulta['doc3']?></span></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="mbibliografico" required></td> -->
                 <td>
                   <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
@@ -362,10 +418,12 @@ include('../dashboard/prcd/conn.php');
                 <th scope="row">4</th>
                 <td>Video</td>
                 <td><span class="h4 text-primary"><a href="<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><span class="lead"><?php echo $row_consulta['doc4']?></span></td>
+
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" name="video" required></td> -->
                 <td>
                   <div class="col-md-12 mb-3 validate-input text-center" data-validate="Calificar">
-                    <select name="video" id="video" class="form-control text-center" required>
+                    <select name="video" id="video" class="form-control text-center" value="<?php echo $row_consulta['doc4']?>" required>
                         <option value="">Calificar...</option>
                         
                         <!-- <optgroup label="Por trayectoria"> -->
@@ -393,12 +451,14 @@ include('../dashboard/prcd/conn.php');
                 <td>Credencial de elector</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row5['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
                 <td></td>
+                <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
               <tr>
                 <th scope="row">6</th>
                 <td>Comprobante de domicilio</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row8['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
                 <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
@@ -407,6 +467,7 @@ include('../dashboard/prcd/conn.php');
                 <td>Acta de nacimiento</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
                 <td></td>
+                <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
               <tr>
@@ -414,12 +475,14 @@ include('../dashboard/prcd/conn.php');
                 <td>CURP</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row9['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
                 <td></td>
+                <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
               <tr>
                 <th scope="row">9</th>
                 <td>Carta propuesta</td>
                 <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row6['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td></td>
                 <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
@@ -436,7 +499,7 @@ include('../dashboard/prcd/conn.php');
             </div> -->
             <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Comentarios</span>
-  <input type="text" name="comentarios" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+  <input type="text" name="comentarios" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1" value="<?php echo $row_consulta['observaciones']?>">
 </div>
           </p>
           <!-- </div> -->

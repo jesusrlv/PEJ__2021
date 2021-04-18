@@ -145,7 +145,7 @@ include('../dashboard/prcd/conn.php');
           <hr style="color: dimgrey;">
           
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">ENLACES</span>
+            <span class="text-light"><i class="bi bi-film"></i> Video Tutoriales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
@@ -154,27 +154,16 @@ include('../dashboard/prcd/conn.php');
           <li class="nav-item">
             <a class="nav-link text-light" href="#">
                
-              <i class="fas fa-file-alt"></i> LINK 1
+            <i class="bi bi-play-btn-fill"></i> Calificar
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-light" href="#">
                
-              <i class="fas fa-file-alt"></i> LINK 2
+            <i class="bi bi-play-btn-fill"></i> Editar
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">
-               
-              <i class="fas fa-file-alt"></i> LINK 3
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">
-               
-              <i class="fas fa-file-alt"></i> LINK 4
-            </a>
-          </li>
+          
          
           
         </ul>
@@ -218,34 +207,52 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"> CATEGORÍA: <?php 
           
           if($categoria==1){
-            echo '<strong>LOGRO ACADÉMICO</strong>';
+            echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
         }
         elseif($categoria==2){
-            echo '<strong>DISCAPACIDAD E INTEGRACIÓN</strong>';
+            echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
         }
         elseif($categoria==3){
-            echo '<strong>INGENIO EMPRENDEDOR</strong>';
+            echo 'DISCAPACIDAD E INTEGRACIÓN';
         }
         elseif($categoria==4){
-            echo '<strong>RESPONSABILIDAD SOCIAL</strong>';
+            echo 'INGENIO EMPRENDEDOR';
         }
         elseif($categoria==5){
-            echo '<strong>MÉRITO MIGRANTE</strong>';
+            echo 'RESPONSABILIDAD SOCIAL';
         }
         elseif($categoria==6){
-            echo '<strong>MÉRITO CAMPESINO</strong>';
+            echo 'MÉRITO MIGRANTE';
         }
         elseif($categoria==7){
-            echo '<strong>LITERATURA</strong>';
+            echo 'MÉRITO CAMPESINO';
         }
         elseif($categoria==8){
-            echo '<strong>ARTES PLÁSTICAS, VISUALES Y POPULARES</strong>';
+            echo 'PROTECCIÓN AL MEDIO AMBIENTE';
         }
         elseif($categoria==9){
-            echo '<strong>ARTE URBANO</strong>';
+            echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
         }
         elseif($categoria==10){
-            echo '<strong>CIENCIA Y TECNOLOGÍA</strong>';
+            echo 'LITERATURA';
+        }
+        elseif($categoria==11){
+            echo 'ARTES ESCÉNICAS (MÚSICA)';
+        }
+        elseif($categoria==12){
+            echo 'ARTES ESCÉNICAS (TEATRO)';
+        }
+        elseif($categoria==13){
+            echo 'ARTES ESCÉNICAS (DANZA)';
+        }
+        elseif($categoria==14){
+            echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+        }
+        elseif($categoria==15){
+            echo 'ARTE URBANO';
+        }
+        elseif($categoria==16){
+            echo 'CIENCIA Y TECNOLOGÍA';
         }
           
           ?></p>
@@ -315,6 +322,7 @@ include('../dashboard/prcd/conn.php');
                   $promedio = ($doc1+$doc2+$doc3+$doc4)/4;
                   echo '<td>
                   <span class="badge bg-primary text-light"><i class="bi bi-check2-all"></i> Calificación: <strong>'.$promedio.'</strong></span>
+                  <a href="documentos_editar.php?id='.$row_docs['id_ext1'].'&id_rev='.$row_docs['id_ext2'].'"><span class="badge bg-warning text-dark"><i class="bi bi-pencil-square"></i> Editar</span></a>
                   </td>';
 
 
@@ -367,10 +375,9 @@ include('../dashboard/prcd/conn.php');
               </div>
               <div class="modal-body">
                 <ul>
-                  <li>Video #1</li>
-                  <li>Video #2</li>
-                  <li>Video #3</li>
-                  <li>Video #4</li>
+                  <li>Calificar</li>
+                  <li>Editar</li>
+                  
                 </ul>
               </div>
               <div class="modal-footer">

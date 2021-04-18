@@ -761,7 +761,7 @@ include('../dashboard/prcd/qwery_admin.php');
            
               <?php
                $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
+              while($row_usr7 = $resultado_usr7->fetch_assoc()){
 
                 // validacion de 9 docs
                 $id_validacion7 = $row_usr7['id_ext'];

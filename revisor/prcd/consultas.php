@@ -45,4 +45,13 @@
     $documento9 = "SELECT * FROM docs WHERE id_ext = '$postulante' AND tipo_doc = 7";
     $resultado9= $conn->query($documento9);
     $row9=$resultado9->fetch_assoc();
+
+
+    // consulta de edicion
+
+    // todas 
+    $documento_consulta = "SELECT * FROM calificacion WHERE id_ext1 = '$postulante' AND id_ext2 = '$revisor'";
+    $resultado_consulta= $conn->query($documento_consulta);
+    $row_consulta=$resultado_consulta->fetch_assoc();
+
 ?>

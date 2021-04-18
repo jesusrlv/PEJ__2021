@@ -255,33 +255,51 @@ include('../dashboard/prcd/conn.php');
         <p class="h5">CATEGORIA: <?php 
             $id_busqueda = $_REQUEST['id_cat'];
             if($id_busqueda==1){
-                echo 'LOGRO ACADÉMICO';
+                echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
             }
             elseif($id_busqueda==2){
-                echo 'DISCAPACIDAD E INTEGRACIÓN';
+                echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
             }
             elseif($id_busqueda==3){
-                echo 'INGENIO EMPRENDEDOR';
+                echo 'DISCAPACIDAD E INTEGRACIÓN';
             }
             elseif($id_busqueda==4){
-                echo 'RESPONSABILIDAD SOCIAL';
+                echo 'INGENIO EMPRENDEDOR';
             }
             elseif($id_busqueda==5){
-                echo 'MÉRITO MIGRANTE';
+                echo 'RESPONSABILIDAD SOCIAL';
             }
             elseif($id_busqueda==6){
-                echo 'MÉRITO CAMPESINO';
+                echo 'MÉRITO MIGRANTE';
             }
             elseif($id_busqueda==7){
-                echo 'LITERATURA';
+                echo 'MÉRITO CAMPESINO';
             }
             elseif($id_busqueda==8){
-                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+                echo 'PROTECCIÓN AL MEDIO AMBIENTE';
             }
             elseif($id_busqueda==9){
-                echo 'ARTE URBANO';
+                echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
             }
             elseif($id_busqueda==10){
+                echo 'LITERATURA';
+            }
+            elseif($id_busqueda==11){
+                echo 'ARTES ESCÉNICAS (MÚSICA)';
+            }
+            elseif($id_busqueda==12){
+                echo 'ARTES ESCÉNICAS (TEATRO)';
+            }
+            elseif($id_busqueda==13){
+                echo 'ARTES ESCÉNICAS (DANZA)';
+            }
+            elseif($id_busqueda==14){
+                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            }
+            elseif($id_busqueda==15){
+                echo 'ARTE URBANO';
+            }
+            elseif($id_busqueda==16){
                 echo 'CIENCIA Y TECNOLOGÍA';
             }
         

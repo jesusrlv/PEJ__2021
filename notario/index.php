@@ -177,8 +177,11 @@ include('../dashboard/prcd/qwery_admin.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
-          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <h1 class="h1 text-center">BIENVENIDO AL SISTEMA NOTARIO</h1>
+          <p class="lead text-center">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="h1 text-center"><i class="bi bi-award"></i></p>
+
+          <p class="lead text-center"><strong>PERFIL DE NOTARIO PÚBLICO</strong></p>
           <hr class="my-4">
 
         
@@ -195,7 +198,7 @@ include('../dashboard/prcd/qwery_admin.php');
         
         <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12-19)</p>
 
-            <table class="table table-hover text-center table-striped ">
+            <table class="table table-hover text-center table-striped" id="mi-tabla">
 
             <thead class="thead-dark">
                 <tr>
@@ -223,7 +226,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                     // calificaciones
                     // $id_calificacion = $row_usr['id_ext'];
-                    $query_calificacion = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion'";
+                    $query_calificacion = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion' ORDER BY doc1 ASC, doc2 ASC,doc3 ASC,doc4 ASC";
                     $resultado_calificacion= $conn->query($query_calificacion);
 
                         $num = 0;
@@ -714,7 +717,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                         $promedio_final = 0;
 
-                    while($row_calificacion = $resultado_calificacion->fetch_assoc()){
+                    while($row_calificacion7 = $resultado_calificacion7->fetch_assoc()){
                         $num++;
                         $doc1 = ($doc1) + ($row_calificacion7['doc1']);
                         $doc2 = ($doc2) + ($row_calificacion7['doc2']);
@@ -923,7 +926,7 @@ include('../dashboard/prcd/qwery_admin.php');
            
               <?php
                $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
+              while($row_usr10 = $resultado_usr10->fetch_assoc()){
 
                 // validacion de 9 docs
                 $id_validacion10 = $row_usr10['id_ext'];
