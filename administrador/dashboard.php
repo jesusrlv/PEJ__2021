@@ -227,7 +227,7 @@ include('../dashboard/prcd/conn.php');
 
                 <a href="reporte_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Reporte por jurado</a>
                 
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Por categoría</a>
+                <!-- <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Por categoría</a> -->
                 </p>
                 <p>
                 <!-- <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Nombre + Categoría + Calificación</a> -->

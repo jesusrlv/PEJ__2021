@@ -199,6 +199,8 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="align-items-right text-right"><a href="excel_revision_docs.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
+
           <hr class="my-4">
 
         

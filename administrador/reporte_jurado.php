@@ -195,69 +195,19 @@ include('../dashboard/prcd/conn.php');
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <p class="lead text-center"><strong>Reporte de jurado calificador</strong></p>
+          <p class="align-items-right text-right"><a href="excel_reporte_jurado.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
+
 
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-1">
 
         <?php 
-            $id_consulta = $_REQUEST['id'];
-
-            $sql_qwery = "SELECT * FROM calificacion WHERE id_ext1 = '$id_consulta'";
-            $resultado_consulta= $conn->query($sql_qwery);
-            // $row=$resultado_consulta->fetch_assoc();
+          
         ?>
 
         <div class="col mb-12">
          <?php 
-            // $id_busqueda = $_REQUEST['id_cat'];
-            // if($id_busqueda==1){
-            //     echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
-            // }
-            // elseif($id_busqueda==2){
-            //     echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
-            // }
-            // elseif($id_busqueda==3){
-            //     echo 'DISCAPACIDAD E INTEGRACIÓN';
-            // }
-            // elseif($id_busqueda==4){
-            //     echo 'INGENIO EMPRENDEDOR';
-            // }
-            // elseif($id_busqueda==5){
-            //     echo 'RESPONSABILIDAD SOCIAL';
-            // }
-            // elseif($id_busqueda==6){
-            //     echo 'MÉRITO MIGRANTE';
-            // }
-            // elseif($id_busqueda==7){
-            //     echo 'MÉRITO CAMPESINO';
-            // }
-            // elseif($id_busqueda==8){
-            //     echo 'PROTECCIÓN AL MEDIO AMBIENTE';
-            // }
-            // elseif($id_busqueda==9){
-            //     echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
-            // }
-            // elseif($id_busqueda==10){
-            //     echo 'LITERATURA';
-            // }
-            // elseif($id_busqueda==11){
-            //     echo 'ARTES ESCÉNICAS (MÚSICA)';
-            // }
-            // elseif($id_busqueda==12){
-            //     echo 'ARTES ESCÉNICAS (TEATRO)';
-            // }
-            // elseif($id_busqueda==13){
-            //     echo 'ARTES ESCÉNICAS (DANZA)';
-            // }
-            // elseif($id_busqueda==14){
-            //     echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
-            // }
-            // elseif($id_busqueda==15){
-            //     echo 'ARTE URBANO';
-            // }
-            // elseif($id_busqueda==16){
-            //     echo 'CIENCIA Y TECNOLOGÍA';
-            // }
+            
         
         ?></p>
 
@@ -317,7 +267,7 @@ include('../dashboard/prcd/conn.php');
             $categoria = "SELECT categorias.id,categorias.nombre FROM categorias WHERE id ='$id_cat'";
             $resultado_categoria= $conn->query($categoria);
             $row_categoria=$resultado_categoria->fetch_assoc();
-             echo '<td>'.$row_categoria['nombre'].'</td>';
+             echo '<td>'.utf8_encode($row_categoria['nombre']).'</td>';
 
             
             //  echo '<td>'.$row_usr['categoria'].'</td>';
@@ -327,7 +277,7 @@ include('../dashboard/prcd/conn.php');
             $postulante = "SELECT datos.id_ext,datos.nombre,datos.apellido FROM datos WHERE id_ext ='$id_ext'";
             $resultado_postulante= $conn->query($postulante);
             $row_postulante=$resultado_postulante->fetch_assoc();
-             echo '<td>'.$row_postulante['apellido'].' '.$row_postulante['nombre'].'</td>';
+             echo '<td>'.utf8_encode($row_postulante['apellido']).' '.$row_postulante['nombre'].'</td>';
 
              echo '<td>'.$row_usr['doc1'].'</td>';
              echo '<td>'.$row_usr['doc2'].'</td>';
@@ -341,7 +291,7 @@ include('../dashboard/prcd/conn.php');
              $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
 
              echo '<td><strong>'.$promedio.'</strong></td>';
-             echo '<td>'.$row_usr['observaciones'].'</td>';
+             echo '<td>'.utf8_encode($row_usr['observaciones']).'</td>';
 
              echo '</tr>';
         //    }

@@ -56,7 +56,7 @@ if ($resultado=mysqli_fetch_array($proceso)){
     
     elseif($resultado['perfil']==4){
 
-        echo "<script type=\"text/javascript\">location.href='../../notario/dashboard.php';</script>";
+        echo "<script type=\"text/javascript\">location.href='../../notario/index.php';</script>";
     }
 
     elseif($resultado['perfil']==5){

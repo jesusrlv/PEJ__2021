@@ -189,6 +189,8 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="align-items-right text-right"><a href="excel_lista_ganadores.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
+
           <hr class="my-4">
 
         
@@ -239,8 +241,8 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['apellido'].'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.utf8_encode($row_usr['apellido']).'</td>';
+                echo '<td>'.utf8_encode($row_usr['nombre']).'</td>';
                 echo '<td>'.$row_usr['edad'].'</td>';
                 // echo '<td>'.$row_usr['grado'].'</td>';
 
@@ -248,7 +250,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $grado = "SELECT * FROM grado WHERE id ='$id_grado'";
                 $resultado_grado= $conn->query($grado);
                 $row_grado=$resultado_grado->fetch_assoc();
-                echo '<td>'.$row_grado['grado'].'</td>';
+                echo '<td>'.utf8_encode($row_grado['grado']).'</td>';
 
                 echo '<td>'.$row_usr['telefono'].'</td>';
                 // echo '<td>'.$row_usr['municipio'].'</td>';
@@ -256,7 +258,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $municipio = "SELECT * FROM municipio WHERE id ='$id_municipio'";
                 $resultado_municipio= $conn->query($municipio);
                 $row_municipio=$resultado_municipio->fetch_assoc();
-                echo '<td>'.$row_municipio['municipio'].'</td>';
+                echo '<td>'.utf8_encode($row_municipio['municipio']).'</td>';
 
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
@@ -265,7 +267,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $tematica = "SELECT * FROM categorias WHERE id ='$id_tematica'";
                 $resultado_tematica= $conn->query($tematica);
                 $row_tematica=$resultado_tematica->fetch_assoc();
-                echo '<td>'.$row_tematica['nombre'].'</td>';
+                echo '<td>'.utf8_encode($row_tematica['nombre']).'</td>';
 
                 // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
