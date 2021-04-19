@@ -81,7 +81,7 @@ include('../dashboard/prcd/qwery_admin.php');
   </head>
   <body>
     <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
-    <nav class="navbar navbar-info sticky-top flex-md-nowrap p-0 bg-info text-light">
+    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-info text-light">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">
     <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>PEJ 2021</b></h5>
@@ -133,12 +133,15 @@ include('../dashboard/prcd/qwery_admin.php');
         <ul class="nav flex-column align-items-center">
  
            <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
+            <a class="nav-link active text-light" href="index.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
               Dashboard<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
             </a>
           </li>
+
+          <li><a href="lista_ganadores.php" class="nav-link active text-light">
+          <i class="bi bi-list-stars"></i> Lista ganadores</a></li>
           <hr style="color: dimgrey;">
           
           

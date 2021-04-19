@@ -26,6 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
+include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -57,18 +58,6 @@ include('../dashboard/prcd/conn.php');
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
     <!-- Gráfico -->
-
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
 
     <style>
       .bd-placeholder-img {
@@ -110,7 +99,7 @@ include('../dashboard/prcd/conn.php');
       
         
        
-        <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>    
+    <a class="btn btn-outline-light btn-sm" href="prcd/sort.php" role="button"><i class="fas fa-sign-out-alt"></i> Salir</a>      
         
       </li>
   </ul>
@@ -140,67 +129,67 @@ include('../dashboard/prcd/conn.php');
             ?>
           </span>
         </h6>
-        <hr style="color: dimgrey;">
-
-        <ul class="nav flex-column">
+<hr>
+<ul class="nav flex-column">
  
-           <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
-              <!-- <span data-feather="home"></span> -->
-              <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <hr style="color: dimgrey;">
+ <li class="nav-item">
+  <a class="nav-link active text-light" href="dashboard.php">
+    <!-- <span data-feather="home"></span> -->
+    <i class="fas fa-laptop-house"></i> 
+    Dashboard <span class="sr-only">(current)</span>
+  </a>
+</li>
+<hr style="color: dimgrey;">
 
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
-            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
+<h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+  <span class="text-light">REVISIÓN</span>
+  <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
+    <span data-feather="plus-circle"></span>
+  </a>
+</h6>
 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
-               
-            <i class="bi bi-person-bounding-box"></i> Postulantes completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_vista_completa.php">
-               
-            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
-               
-            <i class="bi bi-person-fill"></i> Administradores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
-               
-            <i class="bi bi-people-fill"></i> Jurado
-            </a>
-          </li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_docs.php">
+     
+  <i class="bi bi-person-bounding-box"></i> Postulantes completados
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_vista_completa.php">
+     
+  <i class="bi bi-person-bounding-box"></i>  Completados y No completados
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_administradores.php">
+     
+  <i class="bi bi-person-fill"></i> Administradores
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_jurado.php">
+     
+  <i class="bi bi-people-fill"></i> Jurado
+  </a>
+</li>
 
-          <hr style="color: dimgrey;">
+<hr style="color: dimgrey;">
 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
-               
-            <i class="bi bi-search"></i> Búsqueda de usuario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_calificaciones.php">
-               
-            <i class="bi bi-card-checklist"></i> Calificaciones
-            </a>
-          </li>
-         
-        </ul>
+<li class="nav-item">
+  <a class="nav-link text-light" href="busqueda.php">
+     
+  <i class="bi bi-search"></i> Búsqueda de usuario
+  </a>
+</li>
+<li class="nav-item">
+  <a class="nav-link text-light" href="revision_calificaciones.php">
+     
+  <i class="bi bi-card-checklist"></i> Calificaciones
+  </a>
+</li>
+
+</ul>
+
     
     </nav>
 
@@ -245,77 +234,87 @@ include('../dashboard/prcd/conn.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-md-1">
+        <div class="row row-cols-1 row-cols-md-1">
           
-          <div class="col mb-12">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-clipboard-check"></i> REVISIÓN</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Revisión de información del PEJ</p>
-                <hr>
-                <!-- 1 completo -->
-                <p>
-                <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Completados y No completados</a>
+        <div class="col mb-12">
+        <p class=" h4"><i class="bi bi-star-fill"></i> GANADORES DEL PREMIO ESTATAL DE LA JUVENTU 2021</p>
 
-                <a href="reporte_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Reporte por jurado</a>
+            <table class="table table-hover text-center table-striped table-sm small">
+
+            <thead class="thead-dark">
+                <tr">
+                  <th scope="col" class="align-middle">#</th>
+                  <th scope="col" class="align-middle">Apellido</th>
+                  <th scope="col" class="align-middle">Nombre</th>
+                  <th scope="col" class="align-middle">Edad</th>
+                  <th scope="col" class="align-middle">Grado escolar</th>
+                  <th scope="col" class="align-middle">Teléfono</th>
+                  <th scope="col" class="align-middle">Municipio</th>
+                  <th scope="col" class="align-middle">CURP</th>
+                  <th scope="col" class="align-middle">Correo electrónico</th>
+                  <th scope="col" class="align-middle">Categoría</th>
+                  <!-- <th scope="col">Acción</th> -->
+                </tr>
+            </thead>
+            <tbody>
+           
+              <?php
+               $x=0;
+              while($row_usr = $resultado_ganadores->fetch_assoc()){
+
+                // validacion de 9 docs
+                // $id_validacion = $row_usr['id_ext'];
+                // $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+                // $resultado= $conn->query($query);
+                // $row=$resultado->fetch_assoc();
+                // $row_cnt = $resultado->num_rows;
+
+                // if($row_cnt == 9){
+
+                $x++;
+                echo '<tr>';
+                echo '<td>'.$x.'</td>';
+                echo '<td>'.$row_usr['apellido'].'</td>';
+                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.$row_usr['edad'].'</td>';
+                // echo '<td>'.$row_usr['grado'].'</td>';
+
+                $id_grado=$row_usr['grado'];
+                $grado = "SELECT * FROM grado WHERE id ='$id_grado'";
+                $resultado_grado= $conn->query($grado);
+                $row_grado=$resultado_grado->fetch_assoc();
+                echo '<td>'.$row_grado['grado'].'</td>';
+
+                echo '<td>'.$row_usr['telefono'].'</td>';
+                // echo '<td>'.$row_usr['municipio'].'</td>';
+                $id_municipio=$row_usr['municipio'];
+                $municipio = "SELECT * FROM municipio WHERE id ='$id_municipio'";
+                $resultado_municipio= $conn->query($municipio);
+                $row_municipio=$resultado_municipio->fetch_assoc();
+                echo '<td>'.$row_municipio['municipio'].'</td>';
+
+                echo '<td>'.$row_usr['curp'].'</td>';
+                echo '<td>'.$row_usr['email'].'</td>';
+                // echo '<td>'.$row_usr['tematica'].'</td>';
+                $id_tematica=$row_usr['tematica'];
+                $tematica = "SELECT * FROM categorias WHERE id ='$id_tematica'";
+                $resultado_tematica= $conn->query($tematica);
+                $row_tematica=$resultado_tematica->fetch_assoc();
+                echo '<td>'.$row_tematica['nombre'].'</td>';
+
+                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                echo '</tr>';
                 
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Por categoría</a>
-                </p>
-                <p>
-                <!-- <a href="revision_vista_completa.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Nombre + Categoría + Calificación</a> -->
-                
-                <a href="revision_docs.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-bounding-box"></i> Datos generales</a>
-                </p>
-                </div>
-            </div>
-          </div>
-
-
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-list-ol"></i> CALIFICACIONES</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
+                // } 
+              }
+              ?>
+            </tbody>
                 <hr>
-                <a href="revision_calificaciones.php" class="card-link btn btn-outline-primary"><i class="bi bi-card-checklist"></i> Visualizar</a>
-                <a href="lista_ganadores.php" class="card-link btn btn-outline-primary"><i class="bi bi-star"></i> Ganadores</a>
-              </div>
-            </div>
-          </div>
+            </table>
+        
 
-
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-search"></i> USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Reportes del sistema del PEJ.</p>
-                <hr>
-                <a href="revision_administradores.php" class="card-link btn btn-outline-primary"><i class="bi bi-person-fill"></i> Administradores</a>
-                <a href="revision_jurado.php" class="card-link btn btn-outline-primary"><i class="bi bi-people-fill"></i> Jurado</a>
-              
-              </div>
-            </div>
-          </div>
-          
-          <div class="col mb-12" style="margin-top:9px">
-            <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
-              <!-- <div class="card-header">Enero-Marzo 2020</div> -->
-              <div class="card-body">
-                <h5 class="card-title text-primary"><i class="bi bi-search"></i> BÚSQUEDA DE USUARIOS</h5>
-                <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-                <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
-                <hr>
-                <a href="busqueda.php" class="card-link btn btn-outline-primary"><i class="bi bi-search"></i> Buscar</a>
-                
-              </div>
-            </div>
-          </div>
+        
+</div>
 
       </div> <!-- container -->
       

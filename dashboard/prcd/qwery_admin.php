@@ -55,6 +55,10 @@
     $query_generales="SELECT * FROM datos WHERE tipo_usr = 1 ORDER BY tematica ASC";
     $resultado_generales= $conn->query($query_generales);
 
+    // ganadores
+    $query_ganadores="SELECT * FROM datos WHERE tipo_usr = 1 AND medal = 1 ORDER BY tematica ASC";
+    $resultado_ganadores= $conn->query($query_ganadores);
+
     
 
     ?>
