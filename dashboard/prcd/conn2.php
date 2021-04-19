@@ -10,7 +10,7 @@
 ?>
 
 <?php
-define('DB_SERVER', '10.110.33.106');
+define('DB_SERVER', 'localhost');
 define('DB_SERVER_USERNAME', 'c2cOnf_psic_0307');
 define('DB_SERVER_PASSWORD', 'ThmfMTk_G6');
 define('DB_DATABASE', 'c2PEJ21');
