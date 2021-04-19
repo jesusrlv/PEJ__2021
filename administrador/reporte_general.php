@@ -620,7 +620,7 @@ include('../dashboard/prcd/qwery_admin.php');
               // validacion de 9 docs
               $id_validacion13 = $row_usr13['id_ext'];
               $query13 = "SELECT * FROM docs WHERE id_ext='$id_validacion13'";
-              $resultado= $conn->query($query);
+              $resultado13= $conn->query($query);
               $row13=$resultado13->fetch_assoc();
               $row_cnt13 = $resultado13->num_rows;
               if($row_cnt13 == 9){
@@ -666,7 +666,7 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr14['email'].'</td>';
               // validacion de 9 docs
               $id_validacion14 = $row_usr14['id_ext'];
-              $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
               $resultado14= $conn->query($query14);
               $row14=$resultado14->fetch_assoc();
               $row_cnt14 = $resultado14->num_rows;
