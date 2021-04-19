@@ -26,10 +26,11 @@ $nombre = $_POST['nombre'];
 $usuario = $_POST['username'];
 $pwd = $_POST['password'];
 $hash_pwd = md5($pwd);
+$correo = $_POST['correo'];
 $perfil = 1;
 
-$sql="INSERT INTO usr(nombre,usuario,pwd,perfil) 
-VALUES('$nombre','$usuario','$hash_pwd','$perfil')";
+$sql="INSERT INTO usr(nombre,usuario,pwd,perfil,correo) 
+VALUES('$nombre','$usuario','$hash_pwd','$perfil','$correo')";
 $resultado= $conn->query($sql);
 echo $resultado;
 if($resultado){

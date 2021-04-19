@@ -34,6 +34,7 @@ if ($resultado=mysqli_fetch_array($proceso)){
     $_SESSION['perfil']=$resultado['perfil'];
     $_SESSION['nombre']=$resultado['nombre'];
     $_SESSION['categoria']=$resultado['categoria'];
+    $_SESSION['correo']=$resultado['correo'];
      
     
 

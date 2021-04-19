@@ -303,13 +303,13 @@ include('prcd/conn.php');
                     Valid last name is required.
                     </div>
                 </div>
-                <div class="col-md-6 mb-3">
+                <!-- <div class="col-md-6 mb-3">
                     <label for="lastName">Correo electrónico</label>
                     <input type="email" class="form-control" id="correo" name="correo" placeholder="" value="" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
-                </div>
+                </div> -->
                 <div class="col-md-6 mb-3 validate-input" data-validate="Selecciona una temática">
                 <label for="tematica">Municipio</label>
                   <select name="municipio" id="municipio" class="form-control" required>

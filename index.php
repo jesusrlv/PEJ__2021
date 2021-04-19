@@ -118,7 +118,12 @@ background-size: cover;">
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre completo</label>
             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" required>
-            <small id="emailHelp" class="form-text text-muted">Se generará un usuario para ingresar a la plataforma</small>
+            <!-- <small id="emailHelp" class="form-text text-muted">Se generará un usuario para ingresar a la plataforma</small> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Correo electrónico</label>
+            <input type="email" class="form-control" id="correo" name="correo" placeholder="Correo electrónico" required>
+            <small id="emailHelp" class="form-text text-muted">Correo de contacto</small>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail2">CURP</label>
