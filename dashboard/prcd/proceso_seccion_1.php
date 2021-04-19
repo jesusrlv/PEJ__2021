@@ -28,15 +28,15 @@ $apellido = $_POST['apellido'];
 $nombre = $_POST['nombre'];
 $telefono = $_POST['telefono'];
 // $correo = $_POST['correo'];
-$correo = $_SESSION['correo'];
+// $correo = $_SESSION['correo'];
 $id_ext = $_SESSION['id'];
 $tipo_usr = 1;
 $validacion = 2;
 $municipio = $_POST['municipio'];
 $grado = $_POST['grado'];
 
-$sql="INSERT INTO datos(tematica,edad,apellido,nombre,curp,telefono,email,id_ext,tipo_usr,validacion,municipio,grado) 
-VALUES('$tematica','$edad','$apellido','$nombre','$curp','$telefono','$correo','$id_ext','$tipo_usr','$validacion','$municipio','$grado')";
+$sql="INSERT INTO datos(tematica,edad,apellido,nombre,curp,telefono,id_ext,tipo_usr,validacion,municipio,grado) 
+VALUES('$tematica','$edad','$apellido','$nombre','$curp','$telefono','$id_ext','$tipo_usr','$validacion','$municipio','$grado')";
 $resultado= $conn->query($sql);
 
 if($resultado){
