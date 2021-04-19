@@ -1,6 +1,6 @@
 <?php
 
-$servername="localhost";
+$servername="10.110.33.106";
 $database="c2PEJ21"; //solo se quitó para conexión remota
 $username="c2cOnf_psic_0307";
 $password="ThmfMTk_G6";
