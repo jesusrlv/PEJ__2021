@@ -207,6 +207,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -268,6 +269,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr['nombre'].'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -288,6 +295,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -347,6 +355,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr2['nombre'].'</td>';
                 echo '<td>'.$row_usr2['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr2['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -367,6 +381,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -426,6 +441,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr3['nombre'].'</td>';
                 echo '<td>'.$row_usr3['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr3['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -446,6 +467,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -505,6 +527,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr4['nombre'].'</td>';
                 echo '<td>'.$row_usr4['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr4['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -525,6 +553,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -584,6 +613,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr5['nombre'].'</td>';
                 echo '<td>'.$row_usr5['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr5['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -604,6 +639,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -663,6 +699,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr6['nombre'].'</td>';
                 echo '<td>'.$row_usr6['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr6['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -683,6 +725,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -742,6 +785,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr7['nombre'].'</td>';
                 echo '<td>'.$row_usr7['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr7['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -762,6 +811,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -821,6 +871,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr8['nombre'].'</td>';
                 echo '<td>'.$row_usr8['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr8['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -841,6 +897,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -900,6 +957,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr9['nombre'].'</td>';
                 echo '<td>'.$row_usr9['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr9['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -920,6 +983,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -979,6 +1043,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr10['nombre'].'</td>';
                 echo '<td>'.$row_usr10['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr10['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -999,6 +1069,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -1058,6 +1129,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr11['nombre'].'</td>';
                 echo '<td>'.$row_usr11['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr11['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -1137,6 +1214,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr12['nombre'].'</td>';
                 echo '<td>'.$row_usr12['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr12['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -1157,6 +1240,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -1216,6 +1300,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr13['nombre'].'</td>';
                 echo '<td>'.$row_usr13['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr13['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -1236,6 +1326,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -1295,6 +1386,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr14['nombre'].'</td>';
                 echo '<td>'.$row_usr14['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr14['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -1315,6 +1412,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -1374,6 +1472,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr15['nombre'].'</td>';
                 echo '<td>'.$row_usr15['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr15['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 
@@ -1394,6 +1498,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
+                  <th scope="col">Ganador</th>
                 </tr>
             </thead>
             <tbody>
@@ -1453,6 +1558,12 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr16['nombre'].'</td>';
                 echo '<td>'.$row_usr16['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
+                if ($row_usr16['medal']==1){
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
+                }
+                else{
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
+                }
                 echo '</tr>';
                 
                 } 

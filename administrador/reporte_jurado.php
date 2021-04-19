@@ -238,7 +238,7 @@ include('../dashboard/prcd/conn.php');
         <div class="container-fluid">
           <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
-          <hr class="my-4">
+          <p class="lead text-center"><strong>Reporte de jurado calificador</strong></p>
 
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-1">
@@ -305,49 +305,46 @@ include('../dashboard/prcd/conn.php');
         
         ?></p>
 
-
+            <table class="table table-hover text-center table-striped table-reponsive">
+                        <thead class="bg-dark text-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Jurado</th>
+                            <th scope="col">Categoría</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Currículum<br>Vitae</th>
+                            <th scope="col">Semblanza<br>de trayectoria</th>
+                            <th scope="col">Material<br>bibliográfico</th>
+                            <th scope="col">Video</th>
+                            <th scope="col">Promedio</th>
+                            <th scope="col">Observaciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
         <?php
           
         //   $sql_usr = "SELECT * FROM datos WHERE id_ext = '$id_consulta'";
           
-        // $sql_usr = "SELECT * FROM calificacion INNER JOIN usr ON calificacion.id_ext2 = usr.id WHERE usr.perfil = 3  ORDER BY usr.categoria ASC";
-        $sql_usr = "SELECT * FROM usr WHERE perfil = 3  ORDER BY categoria ASC";
-
-          $resultado_usr = $conn->query($sql_usr);
+        $sql_usr = "SELECT * FROM calificacion INNER JOIN usr ON calificacion.id_ext2 = usr.id WHERE usr.perfil = 3  ORDER BY usr.categoria ASC, usr.nombre ASC";
+        // $sql_usr = "SELECT * FROM calificacion ORDER BY categoria ASC";
+        $resultado_usr = $conn->query($sql_usr);
         //   $row_usr = $resultado_usr->fetch_assoc();
+        $y=0;
           while($row_usr = $resultado_usr->fetch_assoc()){
 
           
         ?>
-        <p class="h5">CATEGORIA: <?php echo $row_usr['categoria']?></p>
-        <p><strong>NOMBRE:</strong> <?php echo $row_usr['usuario']?></p>
+        <!-- <p class="h5">CATEGORIA: <?php //echo $row_usr['categoria']?></p> -->
+        <!-- <p><strong>NOMBRE:</strong> <?php //echo $row_usr['usuario']?></p> -->
 
-            <table class="table table-hover text-center table-striped ">
-            <thead class="bg-dark text-light">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Currículum<br>Vitae</th>
-                <th scope="col">Semblanza<br>de trayectoria</th>
-                <th scope="col">Material<br>bibliográfico</th>
-                <th scope="col">Video</th>
-                <th scope="col">Promedio</th>
-                <th scope="col">Observaciones</th>
-              </tr>
-            </thead>
-            <tbody>
+            
 
 
 
             <?php
             
-            $y=0;
-            $id_ext2 = $row_usr['id'];
-                $tabla = "SELECT * FROM calificacion WHERE id_ext2 ='$id_ext2'";
-                $resultado_tabla= $conn->query($tabla);
-
-          //  while($resultado_qwery = $resultado_consulta->fetch_assoc()){
-           while($row_tabla=$resultado_tabla->fetch_assoc()){
+            
+            
              $y++;
              echo '<tr>';
              echo '<td>'.$y.'</td>';
@@ -356,24 +353,42 @@ include('../dashboard/prcd/conn.php');
                 // $resultado_revisor= $conn->query($sql_revisor);
                 // $row_revisor=$resultado_revisor->fetch_assoc();
               
-            echo '<td>'.$row_tabla['id_ext1'].'</td>';
+            echo '<td>'.$row_usr['usuario'].'</td>';
+
+            // $categoria = $row_usr['categoria'];
+
+            $id_cat=$row_usr['categoria'];
+            $categoria = "SELECT categorias.id,categorias.nombre FROM categorias WHERE id ='$id_cat'";
+            $resultado_categoria= $conn->query($categoria);
+            $row_categoria=$resultado_categoria->fetch_assoc();
+             echo '<td>'.$row_categoria['nombre'].'</td>';
+
+            
+            //  echo '<td>'.$row_usr['categoria'].'</td>';
+
+            // echo '<td>'.$row_usr['id_ext1'].'</td>';
+            $id_ext=$row_usr['id_ext1'];
+            $postulante = "SELECT datos.id_ext,datos.nombre,datos.apellido FROM datos WHERE id_ext ='$id_ext'";
+            $resultado_postulante= $conn->query($postulante);
+            $row_postulante=$resultado_postulante->fetch_assoc();
+             echo '<td>'.$row_postulante['apellido'].' '.$row_postulante['nombre'].'</td>';
+
+             echo '<td>'.$row_usr['doc1'].'</td>';
+             echo '<td>'.$row_usr['doc2'].'</td>';
+             echo '<td>'.$row_usr['doc3'].'</td>';
+             echo '<td>'.$row_usr['doc4'].'</td>';
              
-             echo '<td>'.$row_tabla['doc1'].'</td>';
-             echo '<td>'.$row_tabla['doc2'].'</td>';
-             echo '<td>'.$row_tabla['doc3'].'</td>';
-             echo '<td>'.$row_tabla['doc4'].'</td>';
-             
-             $doc1 = $row_tabla['doc1'];
-             $doc2 = $row_tabla['doc2'];
-             $doc3 = $row_tabla['doc3'];
-             $doc4 = $row_tabla['doc4'];
+             $doc1 = $row_usr['doc1'];
+             $doc2 = $row_usr['doc2'];
+             $doc3 = $row_usr['doc3'];
+             $doc4 = $row_usr['doc4'];
              $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
 
              echo '<td><strong>'.$promedio.'</strong></td>';
-             echo '<td>'.$row_tabla['observaciones'].'</td>';
+             echo '<td>'.$row_usr['observaciones'].'</td>';
 
              echo '</tr>';
-           }
+        //    }
 
         // while
             }

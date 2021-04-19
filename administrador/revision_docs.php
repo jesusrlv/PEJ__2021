@@ -237,678 +237,81 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)</p>
+        <p class=" h4">Datos generales</p>
 
-            <table class="table table-hover text-center table-striped ">
+            <table class="table table-hover text-center table-striped table-sm small">
 
             <thead class="thead-dark">
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
+                <tr">
+                  <th scope="col" class="align-middle">#</th>
+                  <th scope="col" class="align-middle">Apellido</th>
+                  <th scope="col" class="align-middle">Nombre</th>
+                  <th scope="col" class="align-middle">Edad</th>
+                  <th scope="col" class="align-middle">Grado escolar</th>
+                  <th scope="col" class="align-middle">Teléfono</th>
+                  <th scope="col" class="align-middle">Municipio</th>
+                  <th scope="col" class="align-middle">CURP</th>
+                  <th scope="col" class="align-middle">Correo electrónico</th>
+                  <th scope="col" class="align-middle">Categoría</th>
+                  <!-- <th scope="col">Acción</th> -->
                 </tr>
             </thead>
             <tbody>
            
               <?php
                $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
+              while($row_usr = $resultado_generales->fetch_assoc()){
 
                 // validacion de 9 docs
-                $id_validacion = $row_usr['id_ext'];
-                $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
-                $resultado= $conn->query($query);
-                $row=$resultado->fetch_assoc();
-                $row_cnt = $resultado->num_rows;
+                // $id_validacion = $row_usr['id_ext'];
+                // $query = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+                // $resultado= $conn->query($query);
+                // $row=$resultado->fetch_assoc();
+                // $row_cnt = $resultado->num_rows;
 
-                if($row_cnt == 9){
+                // if($row_cnt == 9){
 
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
                 echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.$row_usr['edad'].'</td>';
+                // echo '<td>'.$row_usr['grado'].'</td>';
+
+                $id_grado=$row_usr['grado'];
+                $grado = "SELECT * FROM grado WHERE id ='$id_grado'";
+                $resultado_grado= $conn->query($grado);
+                $row_grado=$resultado_grado->fetch_assoc();
+                echo '<td>'.$row_grado['grado'].'</td>';
+
+                echo '<td>'.$row_usr['telefono'].'</td>';
+                // echo '<td>'.$row_usr['municipio'].'</td>';
+                $id_municipio=$row_usr['municipio'];
+                $municipio = "SELECT * FROM municipio WHERE id ='$id_municipio'";
+                $resultado_municipio= $conn->query($municipio);
+                $row_municipio=$resultado_municipio->fetch_assoc();
+                echo '<td>'.$row_municipio['municipio'].'</td>';
+
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+                // echo '<td>'.$row_usr['tematica'].'</td>';
+                $id_tematica=$row_usr['tematica'];
+                $tematica = "SELECT * FROM categorias WHERE id ='$id_tematica'";
+                $resultado_tematica= $conn->query($tematica);
+                $row_tematica=$resultado_tematica->fetch_assoc();
+                echo '<td>'.$row_tematica['nombre'].'</td>';
+
+                // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
                 
-                } 
+                // } 
               }
               ?>
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20 - 29 AÑOS)</p>
-
-            <table class="table table-hover text-center table-striped">
-
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-               $x=0;
-              while($row_usr2 = $resultado_usr2->fetch_assoc()){
-
-                // validacion de 9 docs
-                $id_validacion2 = $row_usr2['id_ext'];
-                $query2 = "SELECT * FROM docs WHERE id_ext='$id_validacion2'";
-                $resultado2= $conn->query($query2);
-                $row2=$resultado2->fetch_assoc();
-                $row_cnt2 = $resultado2->num_rows;
-
-                if($row_cnt2 == 9){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr2['apellido'].'</td>';
-                echo '<td>'.$row_usr2['nombre'].'</td>';
-                echo '<td>'.$row_usr2['curp'].'</td>';
-                echo '<td>'.$row_usr2['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-                }
-              }
-              ?>
-               
-            </tbody>
-                <hr>
-            </table>
-        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
-
-            <table class="table table-hover text-center table-striped">
-
-            <thead class="thead-dark">
-                <tr>
-                <th scope="col">#</th>
-                  <th scope="col">Apellido</th>
-                  <th scope="col">Nombre</th>
-                  <th scope="col">CURP</th>
-                  <th scope="col">Correo electrónico</th>
-                  <th scope="col">Acción</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-               $x=0;
-              while($row_usr3 = $resultado_usr3->fetch_assoc()){
-                // validacion de 9 docs
-                $id_validacion3 = $row_usr3['id_ext'];
-                $query3 = "SELECT * FROM docs WHERE id_ext='$id_validacion3'";
-                $resultado3= $conn->query($query3);
-                $row3=$resultado3->fetch_assoc();
-                $row_cnt3 = $resultado3->num_rows;
-
-                if($row_cnt3 == 9){
-                $x++;
-                echo '<tr>';
-                echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr3['apellido'].'</td>';
-                echo '<td>'.$row_usr3['nombre'].'</td>';
-                echo '<td>'.$row_usr3['curp'].'</td>';
-                echo '<td>'.$row_usr3['email'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                echo '</tr>';
-                }
-              }
-              ?>
-               
-            </tbody>
-                <hr>
-            </table>
-        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
-
-        <table class="table table-hover text-center table-striped">
-
-          <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr4 = $resultado_usr4->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion4 = $row_usr4['id_ext'];
-              $query4 = "SELECT * FROM docs WHERE id_ext='$id_validacion4'";
-              $resultado4= $conn->query($query4);
-              $row4=$resultado4->fetch_assoc();
-              $row_cnt4 = $resultado4->num_rows;
-
-              if($row_cnt4 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr4['apellido'].'</td>';
-              echo '<td>'.$row_usr4['nombre'].'</td>';
-              echo '<td>'.$row_usr4['curp'].'</td>';
-              echo '<td>'.$row_usr4['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
         
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr5 = $resultado_usr5->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion5 = $row_usr5['id_ext'];
-              $query5 = "SELECT * FROM docs WHERE id_ext='$id_validacion5'";
-              $resultado5= $conn->query($query5);
-              $row5=$resultado5->fetch_assoc();
-              $row_cnt5 = $resultado5->num_rows;
-
-              if($row_cnt5 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr5['apellido'].'</td>';
-              echo '<td>'.$row_usr5['nombre'].'</td>';
-              echo '<td>'.$row_usr5['curp'].'</td>';
-              echo '<td>'.$row_usr5['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr6 = $resultado_usr6->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion6 = $row_usr6['id_ext'];
-              $query6 = "SELECT * FROM docs WHERE id_ext='$id_validacion6'";
-              $resultado6= $conn->query($query6);
-              $row6=$resultado6->fetch_assoc();
-              $row_cnt6 = $resultado6->num_rows;
-
-              if($row_cnt6 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr6['apellido'].'</td>';
-              echo '<td>'.$row_usr6['nombre'].'</td>';
-              echo '<td>'.$row_usr6['curp'].'</td>';
-              echo '<td>'.$row_usr6['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
-        <table class="table table-hover text-center table-striped">
-        
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr7 = $resultado_usr7->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion7 = $row_usr7['id_ext'];
-              $query7 = "SELECT * FROM docs WHERE id_ext='$id_validacion7'";
-              $resultado7= $conn->query($query7);
-              $row7=$resultado7->fetch_assoc();
-              $row_cnt7 = $resultado7->num_rows;
-
-              if($row_cnt7 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr7['apellido'].'</td>';
-              echo '<td>'.$row_usr7['nombre'].'</td>';
-              echo '<td>'.$row_usr7['curp'].'</td>';
-              echo '<td>'.$row_usr7['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORIA: PROTECCIÓN AL MEDIO AMBIENTE</p>
-        <table class="table table-hover text-center table-striped">
-        
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr8 = $resultado_usr8->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion8 = $row_usr8['id_ext'];
-              $query8 = "SELECT * FROM docs WHERE id_ext='$id_validacion8'";
-              $resultado8= $conn->query($query8);
-              $row8=$resultado8->fetch_assoc();
-              $row_cnt8 = $resultado8->num_rows;
-
-              if($row_cnt8 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr8['apellido'].'</td>';
-              echo '<td>'.$row_usr8['nombre'].'</td>';
-              echo '<td>'.$row_usr8['curp'].'</td>';
-              echo '<td>'.$row_usr8['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-        <p class=" h4">CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr9 = $resultado_usr9->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion9 = $row_usr9['id_ext'];
-              $query9 = "SELECT * FROM docs WHERE id_ext='$id_validacion9'";
-              $resultado9= $conn->query($query9);
-              $row9=$resultado9->fetch_assoc();
-              $row_cnt9 = $resultado9->num_rows;
-
-              if($row_cnt9 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr9['apellido'].'</td>';
-              echo '<td>'.$row_usr9['nombre'].'</td>';
-              echo '<td>'.$row_usr9['curp'].'</td>';
-              echo '<td>'.$row_usr9['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-          
-        <p class=" h4">CATEGORIA: LITERATURA</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr10 = $resultado_usr10->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion10 = $row_usr10['id_ext'];
-              $query10 = "SELECT * FROM docs WHERE id_ext='$id_validacion10'";
-              $resultado10= $conn->query($query10);
-              $row10=$resultado10->fetch_assoc();
-              $row_cnt10 = $resultado10->num_rows;
-
-              if($row_cnt10 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr10['apellido'].'</td>';
-              echo '<td>'.$row_usr10['nombre'].'</td>';
-              echo '<td>'.$row_usr10['curp'].'</td>';
-              echo '<td>'.$row_usr10['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (MÚSICA)</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr11 = $resultado_usr11->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion11 = $row_usr11['id_ext'];
-              $query11 = "SELECT * FROM docs WHERE id_ext='$id_validacion11'";
-              $resultado11= $conn->query($query11);
-              $row11=$resultado11->fetch_assoc();
-              $row_cnt11 = $resultado11->num_rows;
-
-              if($row_cnt11 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr11['apellido'].'</td>';
-              echo '<td>'.$row_usr11['nombre'].'</td>';
-              echo '<td>'.$row_usr11['curp'].'</td>';
-              echo '<td>'.$row_usr11['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (TEATRO)</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr12 = $resultado_usr12->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion12 = $row_usr12['id_ext'];
-              $query12 = "SELECT * FROM docs WHERE id_ext='$id_validacion12'";
-              $resultado12= $conn->query($query12);
-              $row12=$resultado12->fetch_assoc();
-              $row_cnt12 = $resultado12->num_rows;
-
-              if($row_cnt12 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr12['apellido'].'</td>';
-              echo '<td>'.$row_usr12['nombre'].'</td>';
-              echo '<td>'.$row_usr12['curp'].'</td>';
-              echo '<td>'.$row_usr12['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (DANZA)</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr13 = $resultado_usr13->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion13 = $row_usr13['id_ext'];
-              $query13 = "SELECT * FROM docs WHERE id_ext='$id_validacion13'";
-              $resultado13= $conn->query($query13);
-              $row13=$resultado13->fetch_assoc();
-              $row_cnt13 = $resultado13->num_rows;
-
-              if($row_cnt13 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr13['apellido'].'</td>';
-              echo '<td>'.$row_usr13['nombre'].'</td>';
-              echo '<td>'.$row_usr13['curp'].'</td>';
-              echo '<td>'.$row_usr13['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr14 = $resultado_usr14->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion14 = $row_usr14['id_ext'];
-              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
-              $resultado14= $conn->query($query14);
-              $row14=$resultado14->fetch_assoc();
-              $row_cnt14 = $resultado14->num_rows;
-
-              if($row_cnt14 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr14['apellido'].'</td>';
-              echo '<td>'.$row_usr14['nombre'].'</td>';
-              echo '<td>'.$row_usr14['curp'].'</td>';
-              echo '<td>'.$row_usr14['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: ARTE URBANO</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr15 = $resultado_usr15->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion15 = $row_usr15['id_ext'];
-              $query15= "SELECT * FROM docs WHERE id_ext='$id_validacion15'";
-              $resultado15= $conn->query($query15);
-              $row15=$resultado15->fetch_assoc();
-              $row_cnt15 = $resultado15->num_rows;
-
-              if($row_cnt15 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr15['apellido'].'</td>';
-              echo '<td>'.$row_usr15['nombre'].'</td>';
-              echo '<td>'.$row_usr15['curp'].'</td>';
-              echo '<td>'.$row_usr15['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
-
-        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
-        <table class="table table-hover text-center table-striped">
-
-        <thead class="thead-dark">
-              <tr>
-              <th scope="col">#</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">CURP</th>
-                <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
-              </tr>
-          </thead>
-          <tbody>
-          <?php
-            $x=0;
-            while($row_usr16 = $resultado_usr16->fetch_assoc()){
-              // validacion de 9 docs
-              $id_validacion16 = $row_usr16['id_ext'];
-              $query16 = "SELECT * FROM docs WHERE id_ext='$id_validacion16'";
-              $resultado16= $conn->query($query16);
-              $row16=$resultado16->fetch_assoc();
-              $row_cnt16 = $resultado16->num_rows;
-
-              if($row_cnt16 == 9){
-              $x++;
-              echo '<tr>';
-              echo '<td>'.$x.'</td>';
-              echo '<td>'.$row_usr16['apellido'].'</td>';
-              echo '<td>'.$row_usr16['nombre'].'</td>';
-              echo '<td>'.$row_usr16['curp'].'</td>';
-              echo '<td>'.$row_usr16['email'].'</td>';
-              echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-              echo '</tr>';
-              }
-            }
-            ?>
-            
-          </tbody>
-              <hr>
-          </table>
 
         
 </div>

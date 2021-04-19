@@ -50,4 +50,11 @@
     $query_usr16="SELECT * FROM datos WHERE tematica = 16 and tipo_usr = 1";
     $resultado_usr16= $conn->query($query_usr16);
 
+
+    // datos generales
+    $query_generales="SELECT * FROM datos WHERE tipo_usr = 1 ORDER BY tematica ASC";
+    $resultado_generales= $conn->query($query_generales);
+
+    
+
     ?>
