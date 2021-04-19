@@ -146,7 +146,7 @@ include('../dashboard/prcd/conn.php');
           </li>
           <hr style="color: dimgrey;">
           
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
             <span class="text-light">REVISIÓN</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
@@ -171,7 +171,7 @@ include('../dashboard/prcd/conn.php');
             <i class="bi bi-people-fill"></i> Jurado
             </a>
           </li>
-          <hr>
+          <hr> -->
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
                

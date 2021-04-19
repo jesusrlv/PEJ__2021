@@ -148,32 +148,7 @@ include('../dashboard/prcd/qwery_admin.php');
             </a>
           </h6>
 
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
-               
-            <i class="bi bi-person-bounding-box"></i> Postulantes completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_vista_completa.php">
-               
-            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
-               
-            <i class="bi bi-person-fill"></i> Administradores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
-               
-            <i class="bi bi-people-fill"></i> Jurado
-            </a>
-          </li>
-
-          <hr style="color: dimgrey;">
+          
 
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">

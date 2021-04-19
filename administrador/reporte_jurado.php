@@ -57,19 +57,7 @@ include('../dashboard/prcd/conn.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Gráfico -->
 
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
 
     <style>
       .bd-placeholder-img {
@@ -155,39 +143,7 @@ include('../dashboard/prcd/conn.php');
           </li>
           <hr style="color: dimgrey;">
           
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
-            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_docs.php">
-               
-            <i class="bi bi-person-bounding-box"></i> Postulantes completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_vista_completa.php">
-               
-            <i class="bi bi-person-bounding-box"></i>  Completados y No completados
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_administradores.php">
-               
-            <i class="bi bi-person-fill"></i> Administradores
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_jurado.php">
-               
-            <i class="bi bi-people-fill"></i> Jurado
-            </a>
-          </li>
-
-          <hr style="color: dimgrey;">
+          
 
           <li class="nav-item">
             <a class="nav-link text-light" href="busqueda.php">
