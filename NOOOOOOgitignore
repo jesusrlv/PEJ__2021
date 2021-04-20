@@ -1,0 +1,11 @@
+*.DS_Store
+/.DS_Store
+.DS_Store
+dashboard/archivos
+conn.php
+<<<<<<< HEAD:.gitignore
+dashboard/prcd/conn.php
+dashboard/prcd/conn2.php
+=======
+conn2.php
+>>>>>>> d3570795e16f63b565267b8c9602570f25955c6f:NOOOOOOgitignore

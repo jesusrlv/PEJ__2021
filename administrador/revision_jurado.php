@@ -223,7 +223,8 @@ include('../dashboard/prcd/qwery_admin2.php');
                 </tr>
             </thead>
             <tbody>
-           
+          
+          
               <?php
                $x=0;
               while($row_usr = $resultado_jur->fetch_assoc()){
@@ -236,7 +237,7 @@ include('../dashboard/prcd/qwery_admin2.php');
                 $categoria = "SELECT * FROM categorias WHERE id ='$id_categoria'";
                 $resultado_categoria= $conn->query($categoria);
                 $row_categoria = $resultado_categoria->fetch_assoc();
-                echo '<td>'.$row_categoria['nombre'].'</td>';
+                echo '<td>'.utf8_encode($row_categoria['nombre']).'</td>';
 
                 // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
