@@ -858,8 +858,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Promedio</th>
                   <th scope="col">Calificación final</th>
+
 
                 </tr>
             </thead>
@@ -964,8 +964,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
+                  <th scope="col">Calificación final</th>
 
                 </tr>
             </thead>
