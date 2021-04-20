@@ -223,7 +223,8 @@ include('../dashboard/prcd/qwery_admin2.php');
                 </tr>
             </thead>
             <tbody>
-           
+          
+          
               <?php
                $x=0;
               while($row_usr = $resultado_jur->fetch_assoc()){
