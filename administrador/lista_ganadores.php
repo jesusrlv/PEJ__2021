@@ -240,7 +240,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta1['municipio'].'</td>';
                 echo '<td>'.$row_consulta1['curp'].'</td>';
                 echo '<td>'.$row_consulta1['email'].'</td>';
-                echo '<td>'.$row_consulta1['tematica'].'</td>';
+                // echo '<td>'.$row_consulta1['tematica'].'</td>';
+                echo '<td>LOGRO ACADÉMICO (12 - 19 AÑOS)</td>';
                 echo '<td>'.$row_usr1['promedio'].'</td>';
                 echo '</tr>';
 
@@ -257,7 +258,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta2['municipio'].'</td>';
                 echo '<td>'.$row_consulta2['curp'].'</td>';
                 echo '<td>'.$row_consulta2['email'].'</td>';
-                echo '<td>'.$row_consulta2['tematica'].'</td>';
+                // echo '<td>'.$row_consulta2['tematica'].'</td>';
+                echo '<td>LOGRO ACADÉMICO (20 - 29 AÑOS)</td>';
                 echo '<td>'.$row_usr2['promedio'].'</td>';
                 echo '</tr>';
 
@@ -274,7 +276,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta3['municipio'].'</td>';
                 echo '<td>'.$row_consulta3['curp'].'</td>';
                 echo '<td>'.$row_consulta3['email'].'</td>';
-                echo '<td>'.$row_consulta3['tematica'].'</td>';
+                // echo '<td>'.$row_consulta3['tematica'].'</td>';
+                echo '<td>DISCAPACIDAD E INTEGRACIÓN</td>';
                 echo '<td>'.$row_usr3['promedio'].'</td>';
                 echo '</tr>';
         
@@ -291,7 +294,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta4['municipio'].'</td>';
                 echo '<td>'.$row_consulta4['curp'].'</td>';
                 echo '<td>'.$row_consulta4['email'].'</td>';
-                echo '<td>'.$row_consulta4['tematica'].'</td>';
+                // echo '<td>'.$row_consulta4['tematica'].'</td>';
+                echo '<td>INGENIO EMPRENDEDOR</td>';
                 echo '<td>'.$row_usr4['promedio'].'</td>';
                 echo '</tr>';
         
@@ -308,7 +312,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta5['municipio'].'</td>';
                 echo '<td>'.$row_consulta5['curp'].'</td>';
                 echo '<td>'.$row_consulta5['email'].'</td>';
-                echo '<td>'.$row_consulta5['tematica'].'</td>';
+                // echo '<td>'.$row_consulta5['tematica'].'</td>';
+                echo '<td>RESPONSABILIDAD SOCIAL</td>';
                 echo '<td>'.$row_usr5['promedio'].'</td>';
                 echo '</tr>';
         
@@ -325,7 +330,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta6['municipio'].'</td>';
                 echo '<td>'.$row_consulta6['curp'].'</td>';
                 echo '<td>'.$row_consulta6['email'].'</td>';
-                echo '<td>'.$row_consulta6['tematica'].'</td>';
+                // echo '<td>'.$row_consulta6['tematica'].'</td>';
+                echo '<td>MÉRITO MIGRANTE</td>';
                 echo '<td>'.$row_usr6['promedio'].'</td>';
                 echo '</tr>';
         
@@ -342,7 +348,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta7['municipio'].'</td>';
                 echo '<td>'.$row_consulta7['curp'].'</td>';
                 echo '<td>'.$row_consulta7['email'].'</td>';
-                echo '<td>'.$row_consulta7['tematica'].'</td>';
+                // echo '<td>'.$row_consulta7['tematica'].'</td>';
+                echo '<td>MÉRITO CAMPESINO</td>';
                 echo '<td>'.$row_usr7['promedio'].'</td>';
                 echo '</tr>';
         
@@ -359,7 +366,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta8['municipio'].'</td>';
                 echo '<td>'.$row_consulta8['curp'].'</td>';
                 echo '<td>'.$row_consulta8['email'].'</td>';
-                echo '<td>'.$row_consulta8['tematica'].'</td>';
+                // echo '<td>'.$row_consulta8['tematica'].'</td>';
+                echo '<td>PROTECCIÓN AL MEDIO AMBIENTE</td>';
                 echo '<td>'.$row_usr8['promedio'].'</td>';
                 echo '</tr>';
         
@@ -376,7 +384,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta9['municipio'].'</td>';
                 echo '<td>'.$row_consulta9['curp'].'</td>';
                 echo '<td>'.$row_consulta9['email'].'</td>';
-                echo '<td>'.$row_consulta9['tematica'].'</td>';
+                // echo '<td>'.$row_consulta9['tematica'].'</td>';
+                echo '<td>CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</td>';
                 echo '<td>'.$row_usr9['promedio'].'</td>';
                 echo '</tr>';
         
@@ -393,7 +402,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta10['municipio'].'</td>';
                 echo '<td>'.$row_consulta10['curp'].'</td>';
                 echo '<td>'.$row_consulta10['email'].'</td>';
-                echo '<td>'.$row_consulta10['tematica'].'</td>';
+                // echo '<td>'.$row_consulta10['tematica'].'</td>';
+                echo '<td>LITERATURA</td>';
                 echo '<td>'.$row_usr10['promedio'].'</td>';
                 echo '</tr>';
         
@@ -410,7 +420,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta11['municipio'].'</td>';
                 echo '<td>'.$row_consulta11['curp'].'</td>';
                 echo '<td>'.$row_consulta11['email'].'</td>';
-                echo '<td>'.$row_consulta11['tematica'].'</td>';
+                // echo '<td>'.$row_consulta11['tematica'].'</td>';
+                echo '<td>ARTES ESCÉNICAS (MÚSICA)</td>';
                 echo '<td>'.$row_usr11['promedio'].'</td>';
                 echo '</tr>';
         
@@ -427,7 +438,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta12['municipio'].'</td>';
                 echo '<td>'.$row_consulta12['curp'].'</td>';
                 echo '<td>'.$row_consulta12['email'].'</td>';
-                echo '<td>'.$row_consulta12['tematica'].'</td>';
+                // echo '<td>'.$row_consulta12['tematica'].'</td>';
+                echo '<td>ARTES ESCÉNICAS (TEATRO)</td>';
                 echo '<td>'.$row_usr12['promedio'].'</td>';
                 echo '</tr>';
         
@@ -444,7 +456,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta13['municipio'].'</td>';
                 echo '<td>'.$row_consulta13['curp'].'</td>';
                 echo '<td>'.$row_consulta13['email'].'</td>';
-                echo '<td>'.$row_consulta13['tematica'].'</td>';
+                // echo '<td>'.$row_consulta13['tematica'].'</td>';
+                echo '<td>ARTES ESCÉNICAS (DANZA)</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
                 echo '</tr>';
         
@@ -461,7 +474,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta14['municipio'].'</td>';
                 echo '<td>'.$row_consulta14['curp'].'</td>';
                 echo '<td>'.$row_consulta14['email'].'</td>';
-                echo '<td>'.$row_consulta14['tematica'].'</td>';
+                // echo '<td>'.$row_consulta14['tematica'].'</td>';
+                echo '<td>ARTES PLÁSTICAS, VISUALES Y POPULARES</td>';
                 echo '<td>'.$row_usr14['promedio'].'</td>';
                 echo '</tr>';
         
@@ -478,7 +492,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta15['municipio'].'</td>';
                 echo '<td>'.$row_consulta15['curp'].'</td>';
                 echo '<td>'.$row_consulta15['email'].'</td>';
-                echo '<td>'.$row_consulta15['tematica'].'</td>';
+                // echo '<td>'.$row_consulta15['tematica'].'</td>';
+                echo '<td>ARTE URBANO</td>';
                 echo '<td>'.$row_usr15['promedio'].'</td>';
                 echo '</tr>';
         
@@ -495,7 +510,8 @@ include('prcd/qwery_ganadores.php');
                 echo '<td>'.$row_consulta16['municipio'].'</td>';
                 echo '<td>'.$row_consulta16['curp'].'</td>';
                 echo '<td>'.$row_consulta16['email'].'</td>';
-                echo '<td>'.$row_consulta16['tematica'].'</td>';
+                // echo '<td>'.$row_consulta16['tematica'].'</td>';
+                echo '<td>CIENCIA Y TECNOLOGÍA</td>';
                 echo '<td>'.$row_usr16['promedio'].'</td>';
                 echo '</tr>';
         
