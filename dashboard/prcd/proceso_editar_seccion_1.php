@@ -15,10 +15,10 @@ include('conn.php');
 $apellido = $_POST['apellido'];
 $nombre = $_POST['nombre'];
 $telefono = $_POST['telefono'];
-$correo = $_POST['correo'];
+// $correo = $_POST['correo'];
 $id_ext = $_SESSION['id'];
 
-$sql="UPDATE datos SET apellido='$apellido',nombre='$nombre',telefono='$telefono',email='$correo' WHERE id_ext='$id_ext'";
+$sql="UPDATE datos SET apellido='$apellido',nombre='$nombre',telefono='$telefono' WHERE id_ext='$id_ext'";
 
 $resultado= $conn->query($sql);
 

@@ -405,7 +405,7 @@ include('../dashboard/prcd/conn.php');
               <tr>
                 <th scope="row">7</th>
                 <td>Acta de nacimiento</td>
-                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row4['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
+                <td><span class="h4 text-primary"><a href="../dashboard/<?php echo $row7['ruta']; ?>" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></span></td>
                 <td></td>
                 <!-- <td><input type="text" class="form-control text-center" placeholder="Calificar..." aria-label="Calificar..." aria-describedby="basic-addon1" required></td> -->
               </tr>
