@@ -23,7 +23,7 @@ $doc3 = $_POST['mbibliografico'];
 $doc4 = $_POST['video'];
 $comentarios = $_POST['comentarios'];
 
-$sql="UPDATE calificacion SET doc1='$doc1',doc2='$doc2',doc3='$doc3',doc3='$doc3',observaciones='$comentarios' WHERE id_ext1='$id_postulante' AND id_ext2='$id_revisor'";
+$sql="UPDATE calificacion SET doc1='$doc1',doc2='$doc2',doc3='$doc3',doc4='$doc4',observaciones='$comentarios' WHERE id_ext1='$id_postulante' AND id_ext2='$id_revisor'";
 
     $resultado= $conn->query($sql);
 

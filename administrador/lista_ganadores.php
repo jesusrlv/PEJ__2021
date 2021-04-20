@@ -204,7 +204,7 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
-        <p class=" h4"><i class="bi bi-star-fill"></i> GANADORES DEL PREMIO ESTATAL DE LA JUVENTU 2021</p>
+        <p class=" h4"><i class="bi bi-star-fill"></i> GANADORES DEL PREMIO ESTATAL DE LA JUVENTUD 2021</p>
 
             <table class="table table-hover text-center table-striped table-sm small">
 

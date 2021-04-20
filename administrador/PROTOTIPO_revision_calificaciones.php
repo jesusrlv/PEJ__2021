@@ -57,7 +57,6 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    
 
     <style>
       .bd-placeholder-img {
@@ -81,7 +80,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
   </head>
   <body>
     <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
-    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-info text-light">
+    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-dark text-light">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">
     <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>PEJ 2021</b></h5>
@@ -130,28 +129,45 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
           </span>
         </h6>
 <hr>
-        <ul class="nav flex-column align-items-center">
+        <ul class="nav flex-column">
  
            <li class="nav-item">
-            <a class="nav-link active text-light" href="index.php">
+            <a class="nav-link active text-light" href="dashboard.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
+              Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
-
-          <li><a href="lista_ganadores.php" class="nav-link active text-light">
-          <i class="bi bi-list-stars"></i> Lista ganadores</a></li>
           <hr style="color: dimgrey;">
           
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span class="text-light">REVISIÓN</span>
+            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+
           
+
+          <li class="nav-item">
+            <a class="nav-link text-light" href="busqueda.php">
+               
+            <i class="bi bi-search"></i> Búsqueda de usuario
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="revision_calificaciones.php">
+               
+            <i class="bi bi-card-checklist"></i> Calificaciones
+            </a>
+          </li>
          
         </ul>
 
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-info" style="background-color:; height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
         <h1 class="h1 text-light">DASHBOARD</h1>
         
@@ -180,12 +196,10 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1 text-center">BIENVENIDO AL SISTEMA NOTARIO</h1>
-          <p class="lead text-center">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
-          <p class="h1 text-center"><i class="bi bi-award"></i></p>
-
-          <p class="lead text-center"><strong>PERFIL DE NOTARIO PÚBLICO</strong></p>
-          <hr class="my-4">
+          <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
+          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="lead text-center"><strong>REPORTE CALIFICACIONES</strong></p>
+          <p class="align-items-right text-right"><a href="excel_revision_calificaciones.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
 
         
         <?php
@@ -198,7 +212,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
-        
+
         <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)</p>
 
             <table class="table table-hover text-center table-striped">
@@ -209,7 +223,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
                   <!-- <th scope="col">Ganador</th> -->
                 </tr>
             </thead>
@@ -241,6 +256,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta['nombre'].'</td>';
                 echo '<td>'.$row_consulta['curp'].'</td>';
                 echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -260,7 +276,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -317,6 +334,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta2['nombre'].'</td>';
                 echo '<td>'.$row_consulta2['curp'].'</td>';
                 echo '<td>'.$row_usr2['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -336,7 +354,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -370,6 +389,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta3['nombre'].'</td>';
                 echo '<td>'.$row_consulta3['curp'].'</td>';
                 echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -389,7 +409,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -442,7 +463,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -474,6 +496,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta5['nombre'].'</td>';
                 echo '<td>'.$row_consulta5['curp'].'</td>';
                 echo '<td>'.$row_usr5['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -493,7 +516,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -525,6 +549,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta6['nombre'].'</td>';
                 echo '<td>'.$row_consulta6['curp'].'</td>';
                 echo '<td>'.$row_usr6['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 } 
               }
@@ -543,7 +568,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -576,6 +602,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta7['nombre'].'</td>';
                 echo '<td>'.$row_consulta7['curp'].'</td>';
                 echo '<td>'.$row_usr7['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -595,7 +622,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -628,6 +656,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta8['nombre'].'</td>';
                 echo '<td>'.$row_consulta8['curp'].'</td>';
                 echo '<td>'.$row_usr8['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -647,7 +676,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -681,6 +711,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta9['nombre'].'</td>';
                 echo '<td>'.$row_consulta9['curp'].'</td>';
                 echo '<td>'.$row_usr9['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -700,7 +731,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -735,6 +767,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta10['nombre'].'</td>';
                 echo '<td>'.$row_consulta10['curp'].'</td>';
                 echo '<td>'.$row_usr10['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -754,7 +787,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -788,6 +822,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta['nombre'].'</td>';
                 echo '<td>'.$row_consulta['curp'].'</td>';
                 echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -807,7 +842,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -839,6 +875,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta12['nombre'].'</td>';
                 echo '<td>'.$row_consulta12['curp'].'</td>';
                 echo '<td>'.$row_usr12['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -859,7 +896,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Calificaciones</th>
+                  <th scope="col">Ganador</th>
 
                 </tr>
             </thead>
@@ -892,6 +930,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta13['nombre'].'</td>';
                 echo '<td>'.$row_consulta13['curp'].'</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -911,7 +950,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Calificación</th>
 
                 </tr>
             </thead>
@@ -936,7 +975,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
 
-                $id_consulta13=$row_usr14['id_ext1'];
+                $id_consulta14=$row_usr13['id_ext1'];
                 $consulta14 = "SELECT * FROM datos WHERE id_ext ='$id_consulta14'";
                 $resultado_consulta14= $conn->query($consulta14);
                 $row_consulta14=$resultado_consulta14->fetch_assoc();
@@ -944,7 +983,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta14['apellido'].'</td>';
                 echo '<td>'.$row_consulta14['nombre'].'</td>';
                 echo '<td>'.$row_consulta14['curp'].'</td>';
-                echo '<td>'.$row_usr14['promedio'].'</td>';
+                echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -997,6 +1037,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta15['nombre'].'</td>';
                 echo '<td>'.$row_consulta15['curp'].'</td>';
                 echo '<td>'.$row_usr15['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -1016,7 +1057,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
-                  <th scope="col">Calificación final</th>
+                  <th scope="col">Promedio</th>
+                  <th scope="col">Calificaciones</th>
 
                 </tr>
             </thead>
@@ -1049,6 +1091,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta16['nombre'].'</td>';
                 echo '<td>'.$row_consulta16['curp'].'</td>';
                 echo '<td>'.$row_usr16['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -1057,7 +1100,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
             </tbody>
                 <hr>
             </table>
-        
+       
         
 </div>
 
@@ -1074,6 +1117,8 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
     </main>
   </div>
 </div>
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>

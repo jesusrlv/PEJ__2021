@@ -291,7 +291,7 @@ include('../dashboard/prcd/conn.php');
                 <th scope="col">Semblanza<br>de trayectoria</th>
                 <th scope="col">Material<br>bibliográfico</th>
                 <th scope="col">Video</th>
-                <th scope="col">Promedio</th>
+                <th scope="col">Calificación</th>
               </tr>
             </thead>
             <tbody>

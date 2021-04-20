@@ -57,6 +57,7 @@ include('../dashboard/prcd/qwery_admin.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
+    
 
     <style>
       .bd-placeholder-img {
@@ -80,7 +81,7 @@ include('../dashboard/prcd/qwery_admin.php');
   </head>
   <body>
     <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
-    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-dark text-light">
+    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-info text-light">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">
     <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>PEJ 2021</b></h5>
@@ -129,45 +130,28 @@ include('../dashboard/prcd/qwery_admin.php');
           </span>
         </h6>
 <hr>
-        <ul class="nav flex-column">
+        <ul class="nav flex-column align-items-center">
  
            <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
+            <a class="nav-link active text-light" href="index.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
+              Dashboard<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
             </a>
           </li>
+
+          <li><a href="lista_ganadores.php" class="nav-link active text-light">
+          <i class="bi bi-list-stars"></i> Lista ganadores</a></li>
           <hr style="color: dimgrey;">
           
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span class="text-light">REVISIÓN</span>
-            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
-              <span data-feather="plus-circle"></span>
-            </a>
-          </h6>
-
           
-
-          <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
-               
-            <i class="bi bi-search"></i> Búsqueda de usuario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_calificaciones.php">
-               
-            <i class="bi bi-card-checklist"></i> Calificaciones
-            </a>
-          </li>
          
         </ul>
 
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-info" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
         <h1 class="h1 text-light">DASHBOARD</h1>
         
@@ -196,10 +180,12 @@ include('../dashboard/prcd/qwery_admin.php');
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
-          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
-          <p class="lead text-center"><strong>REPORTE CALIFICACIONES</strong></p>
-          <p class="align-items-right text-right"><a href="excel_revision_calificaciones.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
+          <h1 class="h1 text-center">BIENVENIDO AL SISTEMA NOTARIO</h1>
+          <p class="lead text-center">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="h1 text-center"><i class="bi bi-award"></i></p>
+
+          <p class="lead text-center"><strong>PERFIL DE NOTARIO PÚBLICO</strong></p>
+          <hr class="my-4">
 
         
         <?php
@@ -212,10 +198,10 @@ include('../dashboard/prcd/qwery_admin.php');
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
+        
+        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12-19)</p>
 
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)</p>
-
-            <table class="table table-hover text-center table-striped">
+            <table class="table table-hover text-center table-striped" id="mi-tabla">
 
             <thead class="thead-dark">
                 <tr>
@@ -224,7 +210,6 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
                 </tr>
             </thead>
@@ -245,7 +230,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                     // calificaciones
                     // $id_calificacion = $row_usr['id_ext'];
-                    $query_calificacion = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion'";
+                    $query_calificacion = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion' ORDER BY doc1 ASC, doc2 ASC,doc3 ASC,doc4 ASC";
                     $resultado_calificacion= $conn->query($query_calificacion);
 
                         $num = 0;
@@ -253,7 +238,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -273,6 +257,8 @@ include('../dashboard/prcd/qwery_admin.php');
                         $prom3 = $doc3 / $num;
                         $prom4 = $doc4 / $num;
 
+                        
+
                         $promedio_final = ($prom1 + $prom2 + $prom3 + $prom4) / 4;
                     }
 
@@ -281,18 +267,16 @@ include('../dashboard/prcd/qwery_admin.php');
 
                 $x++;
                 echo '<tr>';
-                // echo '<td>'.$x.'</td>';
+                echo '<td>'.$x.'</td>';
                 echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
-
                 if ($row_usr['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -303,7 +287,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 <hr>
             </table>
 
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20 - 29 AÑOS)</p>
+        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20-29)</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -314,9 +298,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -337,14 +319,13 @@ include('../dashboard/prcd/qwery_admin.php');
                     // calificaciones
                     // $id_calificacion = $row_usr['id_ext'];
                     $query_calificacion2 = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion2'";
-                    $resultado_calificacion2= $conn->query($query_calificacion);
+                    $resultado_calificacion2= $conn->query($query_calificacion2);
 
                         $num = 0;
                         $doc1 = 0;
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -377,12 +358,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr2['nombre'].'</td>';
                 echo '<td>'.$row_usr2['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr2['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr2['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr2['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -404,9 +384,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -417,7 +395,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                 // validacion de 9 docs
                 $id_validacion3 = $row_usr3['id_ext'];
-                $query3 = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
+                $query3 = "SELECT * FROM docs WHERE id_ext='$id_validacion3'";
                 $resultado3= $conn->query($query3);
                 $row3=$resultado3->fetch_assoc();
                 $row_cnt3 = $resultado3->num_rows;
@@ -434,7 +412,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -467,12 +444,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr3['nombre'].'</td>';
                 echo '<td>'.$row_usr3['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr3['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr3['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr3['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -494,16 +470,14 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
            
               <?php
                $x=0;
-              while($row_usr4 = $resultado_usr4->fetch_assoc()){
+              while($row_usr = $resultado_usr->fetch_assoc()){
 
                 // validacion de 9 docs
                 $id_validacion4 = $row_usr4['id_ext'];
@@ -524,7 +498,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -557,12 +530,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr4['nombre'].'</td>';
                 echo '<td>'.$row_usr4['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr4['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr4['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr4['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -584,9 +556,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -614,7 +584,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -647,12 +616,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr5['nombre'].'</td>';
                 echo '<td>'.$row_usr5['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr5['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr5['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr5['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -674,9 +642,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -704,7 +670,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -712,7 +677,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                         $promedio_final = 0;
 
-                    while($row_calificacion6 = $resultado_calificacion6->fetch_assoc()){
+                    while($row_calificacion = $resultado_calificacion->fetch_assoc()){
                         $num++;
                         $doc1 = ($doc1) + ($row_calificacion6['doc1']);
                         $doc2 = ($doc2) + ($row_calificacion6['doc2']);
@@ -737,12 +702,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr6['nombre'].'</td>';
                 echo '<td>'.$row_usr6['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr6['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr6['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr6['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -764,9 +728,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -786,7 +748,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                     // calificaciones
                     // $id_calificacion = $row_usr['id_ext'];
-                    $query_calificacion7= "SELECT * FROM calificacion WHERE id_ext1='$id_validacion7'";
+                    $query_calificacion7 = "SELECT * FROM calificacion WHERE id_ext1='$id_validacion7'";
                     $resultado_calificacion7= $conn->query($query_calificacion7);
 
                         $num = 0;
@@ -794,7 +756,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -827,12 +788,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr7['nombre'].'</td>';
                 echo '<td>'.$row_usr7['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr7['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr7['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr7['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -854,9 +814,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -884,7 +842,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -917,12 +874,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr8['nombre'].'</td>';
                 echo '<td>'.$row_usr8['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr8['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr8['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr8['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -933,7 +889,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 <hr>
             </table>
 
-        <p class=" h4">CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p>
+        <p class=" h4">CATEGORIA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -944,9 +900,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -974,7 +928,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1007,12 +960,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr9['nombre'].'</td>';
                 echo '<td>'.$row_usr9['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr9['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr9['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr9['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1034,9 +986,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -1064,7 +1014,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1097,12 +1046,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr10['nombre'].'</td>';
                 echo '<td>'.$row_usr10['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr10['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr10['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr10['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1124,9 +1072,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -1154,7 +1100,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1187,12 +1132,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr11['nombre'].'</td>';
                 echo '<td>'.$row_usr11['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext'].'&id_cat=11" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr11['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr11['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr11['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1214,16 +1158,13 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
-                  <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
            
               <?php
                $x=0;
-              while($row_usr12= $resultado_usr12->fetch_assoc()){
+              while($row_usr12 = $resultado_usr12->fetch_assoc()){
 
                 // validacion de 9 docs
                 $id_validacion12 = $row_usr12['id_ext'];
@@ -1244,7 +1185,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1277,12 +1217,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr12['nombre'].'</td>';
                 echo '<td>'.$row_usr12['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext'].'&id_cat=12" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr12['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr12['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr12['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1293,7 +1232,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 <hr>
             </table>
 
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (DANZA)</p>
+        <p class=" h4">CATEGORIA:ARTES ESCÉNICAS (DANZA)</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -1304,9 +1243,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -1322,7 +1259,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $row13=$resultado13->fetch_assoc();
                 $row_cnt13 = $resultado13->num_rows;
 
-                if($row_cnt13 == 9){
+                if($row_cnt13== 9){
 
                     // calificaciones
                     // $id_calificacion = $row_usr['id_ext'];
@@ -1334,7 +1271,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1367,12 +1303,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr13['nombre'].'</td>';
                 echo '<td>'.$row_usr13['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext'].'&id_cat=13" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr13['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr13['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr13['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1383,7 +1318,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 <hr>
             </table>
 
-        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
+        <p class=" h4">CATEGORIA: ARTES PLÁTICAS, VISUALES Y POPULARES</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -1394,9 +1329,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -1407,7 +1340,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
                 // validacion de 9 docs
                 $id_validacion14 = $row_usr14['id_ext'];
-                $query14= "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
+                $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
                 $resultado14= $conn->query($query14);
                 $row14=$resultado14->fetch_assoc();
                 $row_cnt14 = $resultado14->num_rows;
@@ -1424,7 +1357,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1457,12 +1389,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr14['nombre'].'</td>';
                 echo '<td>'.$row_usr14['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext'].'&id_cat=14" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr14['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr14['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr14['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1473,7 +1404,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 <hr>
             </table>
 
-        <p class=" h4">CATEGORIA: ARTE URBANO</p>
+        <p class=" h4">CATEGORIA: ARTE URBANO (GRAFITI)</p>
 
             <table class="table table-hover text-center table-striped ">
 
@@ -1484,9 +1415,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
@@ -1514,7 +1443,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1547,12 +1475,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr15['nombre'].'</td>';
                 echo '<td>'.$row_usr15['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext'].'&id_cat=15" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr15['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr15['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr15['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1574,16 +1501,14 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">Nombre</th>
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
-                  <th scope="col">Calificaciones</th>
                   <th scope="col">Ganador</th>
-
                 </tr>
             </thead>
             <tbody>
            
               <?php
                $x=0;
-              while($row_usr = $resultado_usr->fetch_assoc()){
+              while($row_usr16 = $resultado_usr16->fetch_assoc()){
 
                 // validacion de 9 docs
                 $id_validacion16 = $row_usr16['id_ext'];
@@ -1604,7 +1529,6 @@ include('../dashboard/prcd/qwery_admin.php');
                         $doc2 = 0;
                         $doc3 = 0;
                         $doc4 = 0;
-
                         $prom1 = 0;
                         $prom2 = 0;
                         $prom3 = 0;
@@ -1637,12 +1561,11 @@ include('../dashboard/prcd/qwery_admin.php');
                 echo '<td>'.$row_usr16['nombre'].'</td>';
                 echo '<td>'.$row_usr16['curp'].'</td>';
                 echo '<td>'.$promedio_final.'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext'].'&id_cat=16" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 if ($row_usr16['medal']==1){
-                  echo '<td class="text-warning"><a href="../dashboard/prcd/no_ganador.php?id='.$row_usr['id_ext'].'" style="text-decoration:none" class="text-warning"><i class="bi bi-star-fill"></i></a></td>';
+                  echo '<td class="text-warning h5"><i class="bi bi-star-fill"></i></td>';
                 }
                 else{
-                  echo '<td class="text-dark"><a href="../dashboard/prcd/ganador.php?id='.$row_usr17['id_ext'].'" class="text-dark"><i class="bi bi-star"></i></a></td>';
+                  echo '<td class="text-dark"><i class="bi bi-star"></i></td>';
                 }
                 echo '</tr>';
                 
@@ -1652,7 +1575,7 @@ include('../dashboard/prcd/qwery_admin.php');
             </tbody>
                 <hr>
             </table>
-       
+        
         
 </div>
 
@@ -1669,8 +1592,6 @@ include('../dashboard/prcd/qwery_admin.php');
     </main>
   </div>
 </div>
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
