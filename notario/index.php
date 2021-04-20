@@ -140,9 +140,9 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
             </a>
           </li>
 
-          <li><a href="lista_ganadores.php" class="nav-link active text-light">
+          <!-- <li><a href="lista_ganadores.php" class="nav-link active text-light">
           <i class="bi bi-list-stars"></i> Lista ganadores</a></li>
-          <hr style="color: dimgrey;">
+          <hr style="color: dimgrey;"> -->
           
           
          
