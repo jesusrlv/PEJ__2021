@@ -897,7 +897,6 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   <th scope="col">CURP</th>
                   <th scope="col">Promedio</th>
                   <th scope="col">Calificaciones</th>
-                  <th scope="col">Ganador</th>
 
                 </tr>
             </thead>
@@ -930,7 +929,6 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta13['nombre'].'</td>';
                 echo '<td>'.$row_consulta13['curp'].'</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
