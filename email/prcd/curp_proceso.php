@@ -57,10 +57,10 @@ else{
    
     $row=$validar->fetch_assoc();
     
-    $usuario=$row['curp'];
-    $pwd=$row['pass'];
+    $usuario=$row['usuario'];
+    $pwd=md5($row['pwd']);
     $nombre=$row['nombre'];
-    $email=$row['email'];
+    $email=$row['correo'];
 
 
 $mail = new PHPMailer(true);
