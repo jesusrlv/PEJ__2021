@@ -21,7 +21,7 @@
 <?php
 
     //validación
-    include('../dashboard/prcd/conn.php');
+    include('../../dashboard/prcd/conn.php');
     $curp= $_POST['usuario'];
     $validacion="SELECT * FROM usr WHERE curp='$curp'";
     $validar=$conn->query($validacion);
