@@ -59,10 +59,10 @@ else{
     // echo "<script type=\"text/javascript\">Swal.fire('Usuario ya registrado').then(function(){window.location='index.html';});</script>";
     
    
-    $row=$validar->fetch_assoc();
+    // $row=$validar->fetch_assoc();
     
     $usuario=$row['usuario'];
-    $pwd=md5($row['pwd']);
+    $pwd=$row['pwd'];
     $nombre=$row['nombre'];
     $email=$row['correo'];
 
@@ -73,11 +73,11 @@ try {
     //Server settings
     $mail->SMTPDebug = 0;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.correoexchange.com.mx';  // Specify main and backup SMTP servers
+    $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'jesusrlv@zacatecas.gob.mx';                     // SMTP username
-    $mail->Password   = 'DPeJ1Ax3Zc';                               // SMTP password
-    $mail->SMTPSecure = 'TLS';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Username   = 'premioestatalinjuventud2021';                     // SMTP username
+    $mail->Password   = 'premiozac2203';                               // SMTP password
+    $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
