@@ -23,8 +23,12 @@
     //validación
     include('../../dashboard/prcd/conn.php');
     $curp= $_POST['usuario'];
-    $validacion="SELECT * FROM usr WHERE curp='$curp'";
+    $validacion="SELECT * FROM usr WHERE usuario='$curp'";
     $validar=$conn->query($validacion);
+    $row=$validar->fetch_assoc();
+
+
+$row_cnt = $validar->num_rows;
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
@@ -42,14 +46,14 @@
 //validar
 
 // if($validar['curp']!==$curp){
-if(mysqli_num_rows($validar)==0){
+// if(mysqli_num_rows($validar)==0){
+if($row_cnt == 0){
     //codigo aleatorio
-     
     echo "<script type=\"text/javascript\">Swal.fire(
         'No existe este usuario',
         'Favor de registrarte en la plataforma',
         'warning'
-      ).then(function(){window.location='index.html';});</script>";
+      ).then(function(){window.location='../index.php';});</script>";
 }
 else{
     // echo "<script type=\"text/javascript\">Swal.fire('Usuario ya registrado').then(function(){window.location='index.html';});</script>";
@@ -69,19 +73,19 @@ try {
     //Server settings
     $mail->SMTPDebug = 0;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = '10.110.36.103';  // Specify main and backup SMTP servers
+    $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'jesusrlv@zacatecas.gob.mx';                     // SMTP username
-    $mail->Password   = 'libra21';                               // SMTP password
-    $mail->SMTPSecure = 'TLS';                                  // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 25;                                    // TCP port to connect to
+    $mail->Username   = 'premioestatalinjuventud2021';                     // SMTP username
+    $mail->Password   = 'premiozac2203';                               // SMTP password
+    $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('jesusrlv@zacatecas.gob.mx', 'TI INJUVENTUD');
+    $mail->setFrom('premioestatalinjuventud2021@gmail.com', 'PEJ21 - INJUVENTUD');
     $mail->addAddress($email, $nombre);     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
-    $mail->addCC('tecnologias.injuventud@gmail.com');
+    // $mail->addCC('tecnologias.injuventud@gmail.com');
     // $mail->addBCC('bcc@example.com');
 
     // Attachments
@@ -101,7 +105,7 @@ try {
         'Usuario ya registrado',
         'Se envió a tu correo electrónico tu usuario y contraseña',
         'warning'
-      ).then(function(){window.location='../../index.html';});</script>";
+      ).then(function(){window.location='../../index.php';});</script>";
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

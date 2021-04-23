@@ -16,4 +16,12 @@ define('DB_SERVER_PASSWORD', '');
 define('DB_DATABASE', 'PEJ21');
 
 $conn = new mysqli(DB_SERVER, DB_SERVER_USERNAME, DB_SERVER_PASSWORD, DB_DATABASE);
+
+$sql = "SELECT * FROM usr WHERE id ='16'";
+$resultado= $conn->query($sql);
+$row=$resultado->fetch_assoc();
+
+
+echo password_hash($row['pwd'], PASSWORD_DEFAULT);
+
 ?>

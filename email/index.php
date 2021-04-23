@@ -70,13 +70,14 @@ background-size: cover;">
 
 
 <!-- <form class="form-signin" action="dashboard.html" method="POST" name="envio"> -->
-<form class="form-signin" action="prcd/envio_correo_credenciales.php" name="envio" method="POST">
+<form class="form-signin" action="prcd/curp_proceso.php" name="envio" method="POST">
   <img class="mb-4" src="../img/logo.png" alt="" width="100%" >
   <h3>PREMIO ESTATAL DE LA JUVENTUD 2021</h3>
   <hr>
   <h1 class="h4 mb-3 font-weight-normal"><i class="bi bi-key"></i> Recordar accesos</h1>
   <label for="inputEmail" class="sr-only">Usuario</label>
   <input type="text" id="inputEmail" class="form-control" placeholder="CURP" name="usuario" required autofocus>
+  <small>Los datos se enviarán al correo que registraste.</small>
   <!-- <label for="inputPassword" class="sr-only">Contraseña</label>
   <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="pwd" required> -->
   <div class="checkbox mb-3">
@@ -87,6 +88,9 @@ background-size: cover;">
   <button class="btn btn-lg btn-primary btn-block" name="Submit" type="submit"><i class="bi bi-envelope-fill"></i> Enviar datos de acceso</button>
   
     <hr>
+
+    <h6><a href="../index.php"><i class="bi bi-house-fill"></i> Página principal</a></h6>
+
   <p class="mt-5 mb-3 text-muted">&copy; 2021 | INJUVENTUD</p>
 </form>
 

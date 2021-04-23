@@ -1,4 +1,6 @@
 <?php
+
+
 // $id = $_SESSION['id'];
     // include('prcd/conn.php');
     $x = 0;
@@ -50,11 +52,24 @@ $query="SELECT * FROM docs WHERE id_ext='$id'";
 $resultado= $conn->query($query);
 $row=$resultado->fetch_assoc();
 
-
 $row_cnt = $resultado->num_rows;
 
     printf("Result set has %d rows.\n", $row_cnt);
 
+if ($row_cnt == 9){
+    $query_email="SELECT * FROM email WHERE id_ext='$id'";
+    $resultado_email= $conn->query($query_email);
+    // $row_email=$resultado_email->fetch_assoc();
+    $row_email = $resultado_email->num_rows;
+    if($row_email == 0){
+
+        echo "<script type=\"text/javascript\">location.href='prcd/envio_correo_expediente.php'</script>";
+
+    }
+
+    
+
+}// fin if 9 docs 
 
 
 

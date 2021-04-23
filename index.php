@@ -91,6 +91,7 @@ background-size: cover;">
   <!-- <button class="btn btn-lg btn-warning btn-block" name="Submit" type="submit"><i class="fas fa-user-plus"></i> Registrarse</button> -->
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Registrarse</button>
   <hr>
+  <h6><a href="email/index.php"> ¿Olvidaste tu contraseña?</a></h6>
   <p class="mt-5 mb-3 text-muted">&copy; 2021 | INJUVENTUD</p>
 </form>
 
