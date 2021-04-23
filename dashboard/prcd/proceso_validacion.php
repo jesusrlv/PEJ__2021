@@ -75,7 +75,7 @@ if ($resultado=mysqli_fetch_array($proceso)){
         'Advertencia',
         'Usuario no válido',
         'warning'
-      ).then(function(){window.location=history.go(-1);}
+      ).then(function(){window.location=../../index.php;}
     
       
     
