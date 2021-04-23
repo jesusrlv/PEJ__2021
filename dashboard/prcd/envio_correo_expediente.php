@@ -76,8 +76,12 @@ include('conn.php');
         $validacion = 1;
         $query_agregar_mail="INSERT INTO email(id_ext,validacion) VALUES('$id','$validacion')";
         $resultado_agregar_correo= $conn->query($query_agregar_mail);
-        echo "<script type=\"text/javascript\">location.href='../dashboard.php'</script>";
-
+        // echo "<script type=\"text/javascript\">location.href='../dashboard.php'</script>";
+        echo "<script type=\"text/javascript\">Swal.fire(
+            'Proceso terminado',
+            'Has terminado de cargar tu expediente al sistema.',
+            'success'
+          ).then(function(){window.location='../dashboard.php';});</script>";
 
         
     
