@@ -236,10 +236,15 @@ include('../dashboard/prcd/conn.php');
                 if (isset($_POST['busqueda'])) {
                   $busqueda="";
                   $busqueda=$_POST['busqueda'];
-                  $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
+                  $sql_busqueda = "SELECT * FROM datos WHERE nombre LIKE '%$busqueda%' OR apellido LIKE '%$busqueda%'";
                   $resultado_busqueda= $conn->query($sql_busqueda);
-                  $row_search=$resultado_busqueda->fetch_assoc();
-                    if ($row_search){
+                  // $row_search=$resultado_busqueda->fetch_assoc();
+                  if ($resultado_busqueda){
+
+                    while ($row_search=$resultado_busqueda->fetch_assoc()){
+                    
+                  
+                    
                       echo '<tr>';
                       echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
                       echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
@@ -247,6 +252,8 @@ include('../dashboard/prcd/conn.php');
                       echo '<td class="h3 text-primary align-middle"><a href="resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                       echo '</tr>';
                     }
+
+                  }
                     else{
                       echo "<script type=\"text/javascript\">Swal.fire(
                         'No se encontraron resultados',
