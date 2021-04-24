@@ -205,7 +205,7 @@ include('../dashboard/prcd/conn.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-          <p class="lead"> CATEGORÍA: <?php 
+          <p class="lead"><strong>CATEGORÍA:</strong> <?php 
           
           if($categoria==1){
             echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
@@ -257,6 +257,12 @@ include('../dashboard/prcd/conn.php');
         }
           
           ?></p>
+          <?php
+          $query_postulante = "SELECT * FROM datos WHERE id_ext='$postulante'";
+                $resultado_postulante= $conn->query($query_postulante);
+                $row_postulante=$resultado_postulante->fetch_assoc();
+          ?>
+          <p>Nombre: <strong><?php echo $row_postulante['apellido']?>, <?php echo $row_postulante['nombre']?></strong></p>
 
 
         

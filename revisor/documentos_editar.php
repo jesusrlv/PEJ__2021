@@ -291,6 +291,13 @@ include('../dashboard/prcd/conn.php');
           ?>
           </p>
 
+          <?php
+          $query_postulante = "SELECT * FROM datos WHERE id_ext='$postulante'";
+                $resultado_postulante= $conn->query($query_postulante);
+                $row_postulante=$resultado_postulante->fetch_assoc();
+          ?>
+          <p>Nombre: <strong><?php echo $row_postulante['apellido']?>, <?php echo $row_postulante['nombre']?></strong></p>
+
 
         
         <?php
