@@ -317,7 +317,7 @@ include('../dashboard/prcd/conn.php');
           $resultado_usr = $conn->query($sql_usr);
           $row_usr = $resultado_usr->fetch_assoc();
         ?>
-        <p><strong>NOMBRE:</strong> <?php echo $row_usr['apellido'].', '; echo $row_usr['nombre']; ?></p>
+        <p><strong>NOMBRE:</strong> <?php echo ($row_usr['apellido']).', '; echo $row_usr['nombre']; ?></p>
 
             <table class="table table-hover text-center table-striped ">
             <thead>

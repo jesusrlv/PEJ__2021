@@ -57,19 +57,6 @@ include('../dashboard/prcd/conn.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Gráfico -->
-
-
-<!-- FLOT CHARTS -->
-<script src="/bower_components/Flot/jquery.flot.js"></script>
-<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
-<script src="/bower_components/Flot/jquery.flot.resize.js"></script>
-<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
-<script src="/bower_components/Flot/jquery.flot.pie.js"></script>
-<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
-<script src="/bower_components/Flot/jquery.flot.categories.js"></script>
-<!-- Page script -->
-    <!-- <script src="prcd/grafico.js"></script> -->
 
     <style>
       .bd-placeholder-img {

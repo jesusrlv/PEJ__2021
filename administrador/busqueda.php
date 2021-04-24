@@ -247,8 +247,8 @@ include('../dashboard/prcd/conn.php');
                     
                       echo '<tr>';
                       echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
-                      echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
-                      echo '<td scope="row" class="align-middle">'.$row_search['nombre'].'</td>';
+                      echo '<td scope="row" class="align-middle">'.($row_search['apellido']).'</td>';
+                      echo '<td scope="row" class="align-middle">'.($row_search['nombre']).'</td>';
                       echo '<td class="h3 text-primary align-middle"><a href="../dashboard/resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                       echo '</tr>';
                     }
