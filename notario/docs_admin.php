@@ -26,6 +26,7 @@ session_start();
 // }
 
 include('../dashboard/prcd/conn.php');
+// include('../dashboard/prcd/qwery_admin.php');
 
 // variables de sesión
 
@@ -59,11 +60,6 @@ include('../dashboard/prcd/conn.php');
     <!-- Gráfico -->
 
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script src="sweetalert2.all.min.js"></script>
-        <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-        <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -78,7 +74,9 @@ include('../dashboard/prcd/conn.php');
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-        body{background-color:gray;}
+        body{background-color:gray;
+        
+        }
       }
     </style>
     <!-- Custom styles for this template -->
@@ -86,7 +84,7 @@ include('../dashboard/prcd/conn.php');
   </head>
   <body>
     <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
-    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-dark text-light">
+    <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-info text-light">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">
     <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>PEJ 2021</b></h5>
@@ -137,35 +135,24 @@ include('../dashboard/prcd/conn.php');
 <hr>
         <ul class="nav flex-column">
  
-           <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
+        <li class="nav-item">
+            <a class="nav-link active text-light" href="index.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Inicio <span class="sr-only">(current)</span>
+              Inicio<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
             </a>
           </li>
+
+          <li><a href="lista_ganadores.php" class="nav-link active text-light">
+          <i class="bi bi-list-stars"></i> Lista ganadores</a></li>
           <hr style="color: dimgrey;">
-          
-          
-          <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
-               
-            <i class="bi bi-search"></i> Búsqueda de usuario
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="revision_calificaciones.php">
-               
-            <i class="bi bi-card-checklist"></i> Calificaciones
-            </a>
-          </li>
          
         </ul>
 
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-info" style=" height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
         <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
         
@@ -192,99 +179,151 @@ include('../dashboard/prcd/conn.php');
     <div class="container-fluid ">
 
 
-      <div class="jumbotron jumbotron-fluid" style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
+      <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
         <div class="container-fluid">
-          <h1 class="h1">BIENVENIDO AL SISTEMA ADMINISTRADOR</h1>
-          <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | <strong>INJUVENTUD</strong></p>
+        <h1 class="h1 text-center">BIENVENIDO AL SISTEMA NOTARIO</h1>
+          <p class="lead text-center">PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
+          <p class="h1 text-center"><i class="bi bi-award"></i></p>
+
+          <p class="lead text-center"><strong>PERFIL DE NOTARIO PÚBLICO</strong></p>
           <hr class="my-4">
 
-        
-        <!-- búsqueda -->
-        <?php
-        
-          // $busqueda = $_POST['busqueda'];
-          // $sql_busqueda = "SELECT * FROM datos WHERE curp = '$busqueda'";
-          // $resultado_busqueda= $conn->query($sql_busqueda);
-          // $row_search=$resultado_busqueda->fetch_assoc();
-        
+        <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-1">
+
+        <?php 
+            $id_consulta = $_REQUEST['id'];
+
+            $sql_qwery = "SELECT * FROM calificacion WHERE id_ext1 = '$id_consulta'";
+            $resultado_consulta= $conn->query($sql_qwery);
+            // $row=$resultado_consulta->fetch_assoc();
         ?>
+
+        <div class="col mb-12">
+        <p class="h5">CATEGORIA: <?php 
+            $id_busqueda = $_REQUEST['id_cat'];
+            if($id_busqueda==1){
+                echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
+            }
+            elseif($id_busqueda==2){
+                echo 'LOGRO ACADÉMICO (20 - 29 AÑOS)';
+            }
+            elseif($id_busqueda==3){
+                echo 'DISCAPACIDAD E INTEGRACIÓN';
+            }
+            elseif($id_busqueda==4){
+                echo 'INGENIO EMPRENDEDOR';
+            }
+            elseif($id_busqueda==5){
+                echo 'RESPONSABILIDAD SOCIAL';
+            }
+            elseif($id_busqueda==6){
+                echo 'MÉRITO MIGRANTE';
+            }
+            elseif($id_busqueda==7){
+                echo 'MÉRITO CAMPESINO';
+            }
+            elseif($id_busqueda==8){
+                echo 'PROTECCIÓN AL MEDIO AMBIENTE';
+            }
+            elseif($id_busqueda==9){
+                echo 'CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA';
+            }
+            elseif($id_busqueda==10){
+                echo 'LITERATURA';
+            }
+            elseif($id_busqueda==11){
+                echo 'ARTES ESCÉNICAS (MÚSICA)';
+            }
+            elseif($id_busqueda==12){
+                echo 'ARTES ESCÉNICAS (TEATRO)';
+            }
+            elseif($id_busqueda==13){
+                echo 'ARTES ESCÉNICAS (DANZA)';
+            }
+            elseif($id_busqueda==14){
+                echo 'ARTES PLÁSTICAS, VISUALES Y POPULARES';
+            }
+            elseif($id_busqueda==15){
+                echo 'ARTE URBANO';
+            }
+            elseif($id_busqueda==16){
+                echo 'CIENCIA Y TECNOLOGÍA';
+            }
         
-        <form action="busqueda.php" method="POST">
-          <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Búsqueda de usuario" aria-label="Búsqueda de usuario" aria-describedby="button-addon2" name="busqueda">
-              <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i> Buscar</button>
-          </div>
-        </form>
+        ?></p>
 
-        <div class="container">
-           
-            <table class="table table-hover text-center table-striped table-bordered align-middle">
 
-            <thead class="thead-dark align-middle">
-                <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Apellido</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Archivos</th>
-                
-                </tr>
+        <?php
+          
+          $sql_usr = "SELECT * FROM datos WHERE id_ext = '$id_consulta'";
+          $resultado_usr = $conn->query($sql_usr);
+          $row_usr = $resultado_usr->fetch_assoc();
+        ?>
+        <p><strong>NOMBRE:</strong> <?php echo $row_usr['apellido'].', '; echo $row_usr['nombre']; ?></p>
+
+            <table class="table table-hover text-center table-striped ">
+            <thead class="bg-dark text-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jurado</th>
+                <th scope="col">Currículum<br>Vitae</th>
+                <th scope="col">Semblanza<br>de trayectoria</th>
+                <th scope="col">Material<br>bibliográfico</th>
+                <th scope="col">Video</th>
+                <th scope="col">Calificación</th>
+              </tr>
             </thead>
-
             <tbody>
-                
-                <?php
-                if (isset($_POST['busqueda'])) {
-                  $busqueda="";
-                  $busqueda=$_POST['busqueda'];
-                  $sql_busqueda = "SELECT * FROM datos WHERE nombre LIKE '%$busqueda%' OR apellido LIKE '%$busqueda%'";
-                  $resultado_busqueda= $conn->query($sql_busqueda);
-                  // $row_search=$resultado_busqueda->fetch_assoc();
-                  if ($resultado_busqueda){
 
-                    while ($row_search=$resultado_busqueda->fetch_assoc()){
-                    
-                  
-                    
-                      echo '<tr>';
-                      echo '<th scope="row" class="align-middle">'.$row_search['curp'].'</th>';
-                      echo '<td scope="row" class="align-middle">'.$row_search['apellido'].'</td>';
-                      echo '<td scope="row" class="align-middle">'.$row_search['nombre'].'</td>';
-                      echo '<td class="h3 text-primary align-middle"><a href="../dashboard/resultado_busqueda.php?id='.$row_search['id_ext'].'&id2='.$row_search['tematica'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
-                      echo '</tr>';
-                    }
+            <?php
+            
+            $y=0;
+          //  while($resultado_qwery = $resultado_consulta->fetch_assoc()){
+           while($row=$resultado_consulta->fetch_assoc()){
+             $y++;
+             echo '<tr>';
+             echo '<td>'.$y.'</td>';
+                $id_revisor = $row['id_ext2'];
+                $sql_revisor = "SELECT * FROM usr WHERE id = '$id_revisor' AND perfil = 3";
+                $resultado_revisor= $conn->query($sql_revisor);
+                $row_revisor=$resultado_revisor->fetch_assoc();
+              
+            echo '<td>'.$row_revisor['usuario'].'</td>';
+             
+             echo '<td>'.$row['doc1'].'</td>';
+             echo '<td>'.$row['doc2'].'</td>';
+             echo '<td>'.$row['doc3'].'</td>';
+             echo '<td>'.$row['doc4'].'</td>';
+             
+             $doc1 = $row['doc1'];
+             $doc2 = $row['doc2'];
+             $doc3 = $row['doc3'];
+             $doc4 = $row['doc4'];
+             $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
 
-                  }
-                    else{
-                      echo "<script type=\"text/javascript\">Swal.fire(
-                        'No se encontraron resultados',
-                        'Sin resultados',
-                        'warning'
-                      ).then(function(){location.href='busqueda.php';}
-                    
-                      
-                    
-                    );</script>";
-                    }
+             echo '<td>'.$promedio.'</td>';
+             
+             echo '</tr>';
+           }
+           
+            ?>
 
-                }
-
-                else{}
-
-                  ?>
-                                    
+              
             </tbody>
-                <hr>
-            </table>
-        </div>
-        <hr>
+              <hr>
+          </table>
+        
+</div>
+
       </div> <!-- container -->
       
-      
-      
-
+      <hr>
       
 
-      <!-- </div> -->
+      
+
+      </div>
 
 
     </main>

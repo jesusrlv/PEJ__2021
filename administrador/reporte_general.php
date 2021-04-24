@@ -44,8 +44,8 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['apellido'].'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.utf8_decode($row_usr['apellido']).'</td>';
+                echo '<td>'.utf8_decode($row_usr['nombre']).'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
 

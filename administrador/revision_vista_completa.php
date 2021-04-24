@@ -136,7 +136,7 @@ include('../dashboard/prcd/qwery_admin.php');
             <a class="nav-link active text-light" href="dashboard.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
+              Inicio <span class="sr-only">(current)</span>
             </a>
           </li>
           <hr style="color: dimgrey;">
@@ -170,7 +170,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <h1 class="h1 text-light">DASHBOARD</h1>
+        <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -187,7 +187,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
-                  echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
+                  // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
       <!-- <hr style="color: dimgrey;"> -->
@@ -238,8 +238,8 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['apellido'].'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.utf8_decode($row_usr['apellido']).'</td>';
+                echo '<td>'.utf8_decode($row_usr['nombre']).'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
 
