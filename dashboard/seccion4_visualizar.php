@@ -45,7 +45,7 @@ include('prcd/qwery.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>Dashboard | Premio Estatal de la Juventud 2021</title>
+    <title>PEJ 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -137,7 +137,7 @@ include('prcd/qwery.php');
             <a class="nav-link active" href="dashboard.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
+              Inicio <span class="sr-only">(current)</span>
             </a>
           </li>
           <hr style="color: dimgrey;">
@@ -176,7 +176,7 @@ include('prcd/qwery.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="background-color:#eaeef4; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <h1 class="h1">DASHBOARD</h1>
+        <!-- <h1 class="h1">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -193,7 +193,7 @@ include('prcd/qwery.php');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
-                  echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
+                  // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h4>
 
       <!-- <hr style="color: dimgrey;"> -->

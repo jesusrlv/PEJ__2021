@@ -343,7 +343,7 @@ include('../dashboard/prcd/conn.php');
           }
           
             //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
-             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+             echo '<td class="h4"><a href="../dashboard/'.$resultado_qwery['ruta'].'" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
              echo '</tr>';
            }
            

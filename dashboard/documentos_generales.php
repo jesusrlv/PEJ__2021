@@ -45,7 +45,7 @@ include('../dashboard/prcd/conn.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>PEJ 2021</title>
+    <title>Dashboard | PEJ 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -85,9 +85,7 @@ include('../dashboard/prcd/conn.php');
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
-        body{background-color:gray;
-        
-        }
+        body{background-color:gray;}
       }
     </style>
     <!-- Custom styles for this template -->
@@ -147,24 +145,31 @@ include('../dashboard/prcd/conn.php');
         <ul class="nav flex-column">
  
            <li class="nav-item">
-            <a class="nav-link active text-light" href="dashboard.php">
+            <a class="nav-link active text-light" href="../administrador/dashboard.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Inicio <span class="sr-only">(current)</span>
+              Dashboard <span class="sr-only">(current)</span>
             </a>
           </li>
           <hr style="color: dimgrey;">
           
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <span class="text-light">REVISIÓN</span>
+            <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
+              <span data-feather="plus-circle"></span>
+            </a>
+          </h6>
+
           
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="busqueda.php">
+            <a class="nav-link text-light" href="../administrador/busqueda.php">
                
             <i class="bi bi-search"></i> Búsqueda de usuario
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light" href="revision_calificaciones.php">
+            <a class="nav-link text-light" href="../administrador/revision_calificaciones.php">
                
             <i class="bi bi-card-checklist"></i> Calificaciones
             </a>
@@ -175,9 +180,9 @@ include('../dashboard/prcd/conn.php');
     
     </nav>
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style=" height:100%;">
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
+        <h1 class="h1 text-light">DASHBOARD</h1>
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -194,7 +199,7 @@ include('../dashboard/prcd/conn.php');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
-                  // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
+                  echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
       <!-- <hr style="color: dimgrey;"> -->
@@ -213,14 +218,14 @@ include('../dashboard/prcd/conn.php');
 
         <?php 
             $id_consulta = $_REQUEST['id'];
-
-            $sql_qwery = "SELECT * FROM calificacion WHERE id_ext1 = '$id_consulta'";
+            $sql_qwery = "SELECT * FROM docs WHERE id_ext = '$id_consulta'";
             $resultado_consulta= $conn->query($sql_qwery);
-            // $row=$resultado_consulta->fetch_assoc();
         ?>
 
         <div class="col mb-12">
-        <p class="h5">CATEGORIA: <?php 
+        <p class=" h4">CATEGORIA: <?php 
+           
+
             $id_busqueda = $_REQUEST['id_cat'];
             if($id_busqueda==1){
                 echo 'LOGRO ACADÉMICO (12 - 19 AÑOS)';
@@ -273,7 +278,6 @@ include('../dashboard/prcd/conn.php');
         
         ?></p>
 
-
         <?php
           
           $sql_usr = "SELECT * FROM datos WHERE id_ext = '$id_consulta'";
@@ -283,52 +287,113 @@ include('../dashboard/prcd/conn.php');
         <p><strong>NOMBRE:</strong> <?php echo $row_usr['apellido'].', '; echo $row_usr['nombre']; ?></p>
 
             <table class="table table-hover text-center table-striped ">
-            <thead class="bg-dark text-light">
+            <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Jurado</th>
-                <th scope="col">Currículum<br>Vitae</th>
-                <th scope="col">Semblanza<br>de trayectoria</th>
-                <th scope="col">Material<br>bibliográfico</th>
-                <th scope="col">Video</th>
-                <th scope="col">Calificación</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Archivo</th>
               </tr>
             </thead>
             <tbody>
 
             <?php
+            // $y = 0;
+            //     while($resultado_consulta = $conn->query($sql_qwery)){
+            //       $y++;  
+            //         echo '<tr>';
+            //         echo '<th scope="row">'.$y.'</th>';
+            //         echo '<td>'.$resultado_consulta['tipo_doc'].'</td>';
+                    // echo '<td><a href="../dashboard/'.$resultado_consulta['ruta'].'"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
+            //         echo '</tr>';
+                  
+            //     } 
             
             $y=0;
-          //  while($resultado_qwery = $resultado_consulta->fetch_assoc()){
-           while($row=$resultado_consulta->fetch_assoc()){
+           while($resultado_qwery = $resultado_consulta->fetch_assoc()){
              $y++;
              echo '<tr>';
              echo '<td>'.$y.'</td>';
-                $id_revisor = $row['id_ext2'];
-                $sql_revisor = "SELECT * FROM usr WHERE id = '$id_revisor' AND perfil = 3";
-                $resultado_revisor= $conn->query($sql_revisor);
-                $row_revisor=$resultado_revisor->fetch_assoc();
-              
-            echo '<td>'.$row_revisor['usuario'].'</td>';
              
-             echo '<td>'.$row['doc1'].'</td>';
-             echo '<td>'.$row['doc2'].'</td>';
-             echo '<td>'.$row['doc3'].'</td>';
-             echo '<td>'.$row['doc4'].'</td>';
-             
-             $doc1 = $row['doc1'];
-             $doc2 = $row['doc2'];
-             $doc3 = $row['doc3'];
-             $doc4 = $row['doc4'];
-             $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
-
-             echo '<td>'.$promedio.'</td>';
-             
+             if($resultado_qwery['tipo_doc']==1){
+              echo '<td>Carta Propuesta</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==2){
+              echo '<td>Currículum vitae</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==3){
+              echo '<td>Semblanza de trayectoria</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==4){
+              echo '<td>Acta de nacimiento</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==5){
+              echo '<td>Credencial de elector</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==6){
+              echo '<td>Comprobante de domicilio</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==7){
+              echo '<td>CURP</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==8){
+              echo '<td>Material bibliográfico</td>';
+          }
+          elseif($resultado_qwery['tipo_doc']==9){
+              echo '<td>Video</td>';
+          }
+          
+            //  echo '<td>'.$resultado_qwery['tipo_doc'].'</td>';
+             echo '<td class="h4"><a href="'.$resultado_qwery['ruta'].'" target="_blank"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
              echo '</tr>';
            }
            
             ?>
 
+              <!-- <tr>
+                <th scope="row">1</th>
+                <td>Carta Propuesta</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Currículum vitae</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Semblanza de trayectoria</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Acta de nacimiento</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Credencial de elector</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">6</th>
+                <td>Comprobante de domicilio</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">7</th>
+                <td>CURP</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">8</th>
+                <td>Material bibliográfico</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr>
+              <tr>
+                <th scope="row">9</th>
+                <td>Video</td>
+                <td><span class="h4 text-primary"><i class="bi bi-cloud-arrow-down-fill"></i></span></td>
+              </tr> -->
               
             </tbody>
               <hr>

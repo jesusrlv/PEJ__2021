@@ -45,7 +45,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="generator" content="">
-    <title>Dashboard | PEJ 2021</title>
+    <title>Notario Público | PEJ 2021</title>
 
     <link rel="icon" type="image/png" href="../img/icon.ico"/>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/dashboard/">
@@ -136,7 +136,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
             <a class="nav-link active text-light" href="index.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
+              Inicio<br><strong>Notario Público</strong> <span class="sr-only">(current)</span>
             </a>
           </li>
 
@@ -153,7 +153,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-info" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <h1 class="h1 text-light">DASHBOARD</h1>
+        <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -170,7 +170,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
-                  echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
+                  // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
       <!-- <hr style="color: dimgrey;"> -->
