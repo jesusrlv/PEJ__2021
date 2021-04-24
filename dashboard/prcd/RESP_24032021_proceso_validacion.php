@@ -73,9 +73,9 @@ if ($resultado=mysqli_fetch_array($proceso)){
     // echo "<script type=\"text/javascript\">alert('Usuario no válido');location.href='../../index.php';</script>";
     echo "<script type=\"text/javascript\">Swal.fire(
         'Advertencia',
-        'Usuario no válido',
+        'Contraseña no válida',
         'warning'
-      ).then(function(){window.location=history.go(-1);}
+      ).then(function(){window.location=../../index.php;}
     
       
     
