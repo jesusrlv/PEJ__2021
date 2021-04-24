@@ -326,28 +326,27 @@ include('prcd/conn.php');
       
       
       <hr>
-      <div class="container">
+      <!-- <div class="container">
         <div class="row row-cols-1 row-cols-md-1">
           <div class="col mb-12">
             <div class="card text-white bg-primary mb-12" style="width: 100%; ">
-              <!-- <div class="card-header">Tabla 1</div> -->
               <div class="card-body"><br>
                 <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> OBSERVACIONES</h1>
                 <p class="card-text">Las siguientes observaciones son sobre el expediente que se subió para participar en el Premio Estatal de la Juventud 2021 es el siguiente:</p>
-                <p class="card-text"><div class="alert alert-primary" role="alert">
+                <p class="card-text"><div class="alert alert-primary" role="alert"> -->
                 <?php
-                  $observaciones = "SELECT * FROM calificacion WHERE id_ext1 ='$id'";
-                  $resultado= $conn->query($observaciones);
-                  while ($row=$resultado->fetch_assoc()){
-                    echo $row['observaciones'].'<br>';
-                  }
+                  // $observaciones = "SELECT * FROM calificacion WHERE id_ext1 ='$id'";
+                  // $resultado= $conn->query($observaciones);
+                  // while ($row=$resultado->fetch_assoc()){
+                  //   echo $row['observaciones'].'<br>';
+                  // }
                 ?>
-               
+<!--                
               </div>
             </div>
           </div>
           </div>
-          </div>
+          </div> -->
         <!-- interno -->
 
 

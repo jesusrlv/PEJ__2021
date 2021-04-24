@@ -118,7 +118,7 @@ background-size: cover;">
         <form action="dashboard/prcd/agregar_usr.php" method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">Nombre completo</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" required>
+            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre completo" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
             <!-- <small id="emailHelp" class="form-text text-muted">Se generará un usuario para ingresar a la plataforma</small> -->
           </div>
           <div class="form-group">
