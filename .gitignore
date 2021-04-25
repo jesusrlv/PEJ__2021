@@ -3,5 +3,6 @@
 .DS_Store
 dashboard/archivos
 conn.php
+conn2.php
 dashboard/prcd/conn.php
 dashboard/prcd/conn2.php
