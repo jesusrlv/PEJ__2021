@@ -113,7 +113,7 @@ include('../dashboard/prcd/conn.php');
         
         <ul class="navbar-nav px-3 text-center">
             <li class="align-middle">
-                   <img src="../img/logo.png" width="81%" class="" alt="" loading="lazy">  
+                   <img src="../img/png_logo.png" width="81%" class="" alt="" loading="lazy">  
                    <!-- <img src="../img/logo.png" width="35%" class="" alt="" loading="lazy">   -->
       
             </li>
