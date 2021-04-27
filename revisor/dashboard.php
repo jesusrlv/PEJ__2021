@@ -280,7 +280,7 @@ include('../dashboard/prcd/conn.php');
                   <th scope="col">#</th>
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
-                  <th scope="col">Temática</th>
+                  <th scope="col">Categoría</th>
                   <th scope="col">Acción</th>
                   
                   <!-- <th scope="col">Acción</th> -->
@@ -312,7 +312,7 @@ include('../dashboard/prcd/conn.php');
                 $resultado_categoria= $conn->query($sql_tematica);
                 $row_categoria=$resultado_categoria->fetch_assoc();
                 
-                echo '<td>'.$row_categoria['nombre'].'</td>';
+                echo '<td>'.utf8_decode($row_categoria['nombre']).'</td>';
 
                 // echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 
