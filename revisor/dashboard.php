@@ -280,6 +280,7 @@ include('../dashboard/prcd/conn.php');
                   <th scope="col">#</th>
                   <th scope="col">Apellido</th>
                   <th scope="col">Nombre</th>
+                  <th scope="col">Temática</th>
                   <th scope="col">Acción</th>
                   
                   <!-- <th scope="col">Acción</th> -->
@@ -305,6 +306,14 @@ include('../dashboard/prcd/conn.php');
                 echo '<td>'.$x.'</td>';
                 echo '<td>'.$row_usr['apellido'].'</td>';
                 echo '<td>'.$row_usr['nombre'].'</td>';
+                
+                $dato_categoria = $row_usr['tematica'];
+                $sql_tematica = "SELECT * FROM categorias WHERE id ='$dato_categoria'";
+                $resultado_categoria= $conn->query($sql_tematica);
+                $row_categoria=$resultado_categoria->fetch_assoc();
+                
+                echo '<td>'.$row_categoria['nombre'].'</td>';
+
                 // echo '<td><a href="documentos.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 
                 $id_user=$row_usr['id_ext'];
