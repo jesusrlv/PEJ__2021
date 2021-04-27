@@ -1,4 +1,4 @@
-<?php
+<?php 
 header("Pragma: public");
 header("Expires: 0");
 $filename = "reporte_general_PEJ21.xls";
@@ -8,31 +8,6 @@ header("Pragma: no-cache");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 
 session_start();
-
-// if (isset($_SESSION['usr'])) {
-//     if($_SESSION['perfil']==1){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==2){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==3){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // else{
-        // header('Location:prcd/sort.php');
-    // }
-    // Si esta identificado, en otras palabras existe la variable, le saludamos
-    // echo 'Hola ' . $_SESSION['usr'];
-// } else {
-    // En caso contrario redirigimos el visitante a otra página
-
-    // echo 'Usuario no válido';
-    // header('Location: ../../autentificacion/');
-    // header('Location: prcd/sort.php');
-    // die();
-// }
-
 include('../dashboard/prcd/conn.php');
 include('../dashboard/prcd/qwery_admin.php');
 
@@ -46,11 +21,13 @@ include('../dashboard/prcd/qwery_admin.php');
 ?>
 
 
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)</p>
-
-            <table class="table table-hover text-center table-striped ">
-
-            <thead class="thead-dark">
+            <table>
+                <tr>
+                <th colspan="6">
+                    CATEGORIA: LOGRO ACADÉMICO (12 - 19 AÑOS)
+                    </th>
+                </tr>
+            
                 <tr>
                   <th scope="col">#</th>
                   <th scope="col">Apellido</th>
@@ -58,10 +35,7 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">CURP</th>
                   <th scope="col">Correo electrónico</th>
                   <th scope="col">Estatus</th>
-                  <th scope="col">Acción</th>
                 </tr>
-            </thead>
-            <tbody>
            
               <?php
                $x=0;
@@ -70,8 +44,8 @@ include('../dashboard/prcd/qwery_admin.php');
                 $x++;
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
-                echo '<td>'.$row_usr['apellido'].'</td>';
-                echo '<td>'.$row_usr['nombre'].'</td>';
+                echo '<td>'.utf8_decode($row_usr['apellido']).'</td>';
+                echo '<td>'.utf8_decode($row_usr['nombre']).'</td>';
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
 
@@ -82,25 +56,28 @@ include('../dashboard/prcd/qwery_admin.php');
                 $row=$resultado->fetch_assoc();
                 $row_cnt = $resultado->num_rows;
                 if($row_cnt == 9){
-                    echo '<td><span class="badge bg-info text-light">Completo</span></td>';
+                    echo '<td>Completo</td>';
                 }
                 else{
-                    echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
+                    echo '<td>Incompleto</td>';
                 }
 
-                echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
                 
                 // } 
               }
               ?>
-            </tbody>
-                <hr>
+
             </table>
-        <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20 - 29 AÑOS)</p>
+
+        <!-- <p class=" h4">CATEGORIA: LOGRO ACADÉMICO (20 - 29 AÑOS)</p> -->
 
             <table class="table table-hover text-center table-striped">
-
+            <tr>
+            <th colspan="6">
+                    LOGRO ACADÉMICO (20 - 29 AÑOS)
+                    </th>
+                </tr>
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
@@ -109,7 +86,6 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">CURP</th>
                   <th scope="col">Correo electrónico</th>
                   <th scope="col">Estatus</th>
-                  <th scope="col">Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -135,7 +111,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 else{
                     echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
                 }
-                echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr2['id_ext'].'&id_cat=2" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -143,10 +118,14 @@ include('../dashboard/prcd/qwery_admin.php');
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p>
+        <!-- <p class=" h4">CATEGORIA: DISCAPACIDAD E INTEGRACIÓN</p> -->
 
             <table class="table table-hover text-center table-striped">
-
+            <tr>
+            <th colspan="6">
+                    CATEGORIA: DISCAPACIDAD E INTEGRACIÓN
+                    </th>
+                </tr>
             <thead class="thead-dark">
                 <tr>
                 <th scope="col">#</th>
@@ -155,7 +134,6 @@ include('../dashboard/prcd/qwery_admin.php');
                   <th scope="col">CURP</th>
                   <th scope="col">Correo electrónico</th>
                   <th scope="col">Estatus</th>
-                  <th scope="col">Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -181,7 +159,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 else{
                     echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
                 }
-                echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr3['id_ext'].'&id_cat=3" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
               }
               ?>
@@ -189,10 +166,14 @@ include('../dashboard/prcd/qwery_admin.php');
             </tbody>
                 <hr>
             </table>
-        <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p>
+        <!-- <p class=" h4">CATEGORIA: INGENIO EMPRENDEDOR</p> -->
 
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: INGENIO EMPRENDEDOR
+                    </th>
+                </tr>
           <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -201,7 +182,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -227,7 +207,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr4['id_ext'].'&id_cat=4" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -235,10 +214,14 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p>
+        <!-- <p class=" h4">CATEGORIA: RESPONSABILIDAD SOCIAL</p> -->
         
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: RESPONSABILIDAD SOCIAL
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -247,7 +230,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -273,7 +255,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr5['id_ext'].'&id_cat=5" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -281,9 +262,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p>
+        <!-- <p class=" h4">CATEGORIA: MÉRITO MIGRANTE</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: MÉRITO MIGRANTE
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -292,7 +277,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -318,7 +302,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr6['id_ext'].'&id_cat=6" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -326,9 +309,11 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p>
+        <!-- <p class=" h4">CATEGORIA: MÉRITO CAMPESINO</p> -->
         <table class="table table-hover text-center table-striped">
-        
+        <tr>
+        <th colspan="6">CATEGORÍA: MÉRITO CAMPESINO</th>
+        </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -337,7 +322,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -363,7 +347,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr7['id_ext'].'&id_cat=7" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -371,9 +354,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: PROTECCIÓN AL MEDIO AMBIENTE</p>
+        <!-- <p class=" h4">CATEGORIA: PROTECCIÓN AL MEDIO AMBIENTE</p> -->
         <table class="table table-hover text-center table-striped">
-        
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: PROTECCIÓN AL MEDIO AMBIENTE
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -382,7 +369,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -408,7 +394,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr8['id_ext'].'&id_cat=8" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -416,9 +401,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p>
+        <!-- <p class=" h4">CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORÍA: CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -427,7 +416,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -453,7 +441,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr9['id_ext'].'&id_cat=9" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -461,9 +448,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: LITERATURA</p>
+        <!-- <p class=" h4">CATEGORIA: LITERATURA</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: LITERATURA
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -472,7 +463,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Estatus</th>
                 <th scope="col">Correo electrónico</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -498,7 +488,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr10['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -506,9 +495,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (MÚSICA)</p>
+        <!-- <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (MÚSICA)</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: ARTES ESCÉNICAS (MÚSICA)
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -517,7 +510,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -543,7 +535,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr11['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -551,9 +542,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (TEATRO)</p>
+        <!-- <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (TEATRO)</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: ARTES ESCÉNICAS (TEATRO)
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -562,7 +557,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -588,7 +582,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr12['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -596,9 +589,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (DANZA)</p>
+        <!-- <p class=" h4">CATEGORIA: ARTES ESCÉNICAS (DANZA)</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: ARTES ESCÉNICAS (DANZA)
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -607,7 +604,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -624,7 +620,7 @@ include('../dashboard/prcd/qwery_admin.php');
               // validacion de 9 docs
               $id_validacion13 = $row_usr13['id_ext'];
               $query13 = "SELECT * FROM docs WHERE id_ext='$id_validacion13'";
-              $resultado13= $conn->query($query13);
+              $resultado13= $conn->query($query);
               $row13=$resultado13->fetch_assoc();
               $row_cnt13 = $resultado13->num_rows;
               if($row_cnt13 == 9){
@@ -633,7 +629,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr13['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -641,10 +636,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-
-        <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p>
+        <!-- <p class=" h4">CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+        <th colspan="6">
+                    CATEGORIA: ARTES PLÁSTICAS, VISUALES Y POPULARES
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -653,7 +651,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -669,7 +666,7 @@ include('../dashboard/prcd/qwery_admin.php');
               echo '<td>'.$row_usr14['email'].'</td>';
               // validacion de 9 docs
               $id_validacion14 = $row_usr14['id_ext'];
-              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion14'";
+              $query14 = "SELECT * FROM docs WHERE id_ext='$id_validacion'";
               $resultado14= $conn->query($query14);
               $row14=$resultado14->fetch_assoc();
               $row_cnt14 = $resultado14->num_rows;
@@ -679,7 +676,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr14['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -687,9 +683,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: ARTE URBANO</p>
+        <!-- <p class=" h4">CATEGORIA: ARTE URBANO</p> -->
         <table class="table table-hover text-center table-striped">
-
+            <tr>
+            <th colspan="6">
+            CATEGORIA: ARTE URBANO
+            </th>
+            </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -698,7 +698,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -724,7 +723,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr15['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -732,9 +730,13 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
-        <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p>
+        <!-- <p class=" h4">CATEGORIA: CIENCIA Y TECNOLOGÍA</p> -->
         <table class="table table-hover text-center table-striped">
-
+        <tr>
+                    <th colspan="6">
+                    CATEGORIA: CIENCIA Y TECNOLOGÍA
+                    </th>
+                </tr>
         <thead class="thead-dark">
               <tr>
               <th scope="col">#</th>
@@ -743,7 +745,6 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">CURP</th>
                 <th scope="col">Correo electrónico</th>
                 <th scope="col">Estatus</th>
-                <th scope="col">Acción</th>
               </tr>
           </thead>
           <tbody>
@@ -769,7 +770,6 @@ include('../dashboard/prcd/qwery_admin.php');
               else{
                   echo '<td><span class="badge bg-danger text-light">Incompleto</span></td>';
               }
-              echo '<td><a href="../dashboard/documentos_generales.php?id='.$row_usr16['id_ext'].'&id_cat=10" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
               echo '</tr>';
             }
             ?>
@@ -777,4 +777,6 @@ include('../dashboard/prcd/qwery_admin.php');
           </tbody>
               <hr>
           </table>
+        
+
 
