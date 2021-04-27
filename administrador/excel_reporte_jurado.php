@@ -84,7 +84,7 @@ include('../dashboard/prcd/conn.php');
             $postulante = "SELECT datos.id_ext,datos.nombre,datos.apellido FROM datos WHERE id_ext ='$id_ext'";
             $resultado_postulante= $conn->query($postulante);
             $row_postulante=$resultado_postulante->fetch_assoc();
-             echo '<td>'.utf8_encode($row_postulante['apellido']).' '.$row_postulante['nombre'].'</td>';
+             echo '<td>'.$row_postulante['apellido'].' '.$row_postulante['nombre'].'</td>';
 
              echo '<td>'.$row_usr['doc1'].'</td>';
              echo '<td>'.$row_usr['doc2'].'</td>';
@@ -98,7 +98,7 @@ include('../dashboard/prcd/conn.php');
              $promedio = ($doc1 + $doc2 + $doc3 + $doc4)/4;
 
              echo '<td><strong>'.$promedio.'</strong></td>';
-             echo '<td>'.utf8_encode($row_usr['observaciones']).'</td>';
+             echo '<td>'.$row_usr['observaciones'].'</td>';
 
              echo '</tr>';
         //    }
