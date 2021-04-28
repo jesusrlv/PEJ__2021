@@ -50,8 +50,8 @@ include('prcd/qwery_ganadores.php');
                 $resultado_consulta1= $conn->query($consulta1);
                 $row_consulta1=$resultado_consulta1->fetch_assoc();
                 echo '</tr>';
-                echo '<td>'.$row_consulta1['apellido'].'</td>';
-                echo '<td>'.$row_consulta1['nombre'].'</td>';
+                echo '<td>'.utf8_decode($row_consulta1['apellido']).'</td>';
+                echo '<td>'.utf8_decode($row_consulta1['nombre']).'</td>';
                 echo '<td>'.$row_consulta1['edad'].'</td>';
                 
                 // echo '<td>'.$row_consulta1['grado'].'</td>';
