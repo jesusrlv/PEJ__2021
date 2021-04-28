@@ -9,6 +9,11 @@ header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
 
 session_start();
 
+echo "
+    <html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns=\"http://www.w3.org/TR/REC-html40\">
+    <html>
+    <head><meta http-equiv=\"Content-type\" content=\"text/html;charset=utf-8\" /></head>";
+
 // if (isset($_SESSION['usr'])) {
 //     if($_SESSION['perfil']==1){
         // header('Location: javascript: history.go(-1)');

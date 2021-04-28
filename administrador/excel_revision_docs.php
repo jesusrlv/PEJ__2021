@@ -14,6 +14,11 @@ session_start();
 include('../dashboard/prcd/conn.php');
 include('../dashboard/prcd/qwery_admin.php');
 
+echo "
+    <html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:x=\"urn:schemas-microsoft-com:office:excel\" xmlns=\"http://www.w3.org/TR/REC-html40\">
+    <html>
+    <head><meta http-equiv=\"Content-type\" content=\"text/html;charset=utf-8\" /></head>";
+
 // variables de sesión
 
     $usuario = $_SESSION['usr'];
