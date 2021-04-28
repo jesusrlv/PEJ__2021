@@ -260,7 +260,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $grado = "SELECT * FROM grado WHERE id ='$id_grado'";
                 $resultado_grado= $conn->query($grado);
                 $row_grado=$resultado_grado->fetch_assoc();
-                echo '<td>'.$row_grado['grado'].'</td>';
+                echo '<td>'.utf8_encode($row_grado['grado']).'</td>';
 
                 echo '<td>'.$row_usr['telefono'].'</td>';
                 // echo '<td>'.$row_usr['municipio'].'</td>';
@@ -268,7 +268,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $municipio = "SELECT * FROM municipio WHERE id ='$id_municipio'";
                 $resultado_municipio= $conn->query($municipio);
                 $row_municipio=$resultado_municipio->fetch_assoc();
-                echo '<td>'.$row_municipio['municipio'].'</td>';
+                echo '<td>'.utf8_encode($row_municipio['municipio']).'</td>';
 
                 echo '<td>'.$row_usr['curp'].'</td>';
                 echo '<td>'.$row_usr['email'].'</td>';
