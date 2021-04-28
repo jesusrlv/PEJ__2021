@@ -6,10 +6,7 @@ header("Content-type: application/x-msdownload");
 header("Content-Disposition: attachment; filename=$filename");
 header("Pragma: no-cache");
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0");
-
-header('Content-Encoding: UTF-8');
-header('Content-type: text/csv; charset=UTF-8');
-
+header("Content-type: text/html; charset=utf8");
 session_start();
 
 include('../dashboard/prcd/conn.php');
