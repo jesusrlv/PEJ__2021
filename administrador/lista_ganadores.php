@@ -573,7 +573,7 @@ include('prcd/qwery_ganadores.php');
                 $grado12 = "SELECT * FROM grado WHERE id ='$id_grado12'";
                 $resultado_grado12= $conn->query($grado12);
                 $row_grado12=$resultado_grado12->fetch_assoc();
-                echo '<td>'.($row_grado12['grado']).'</td>';
+                echo '<td>'.utf8_encode($row_grado12['grado']).'</td>';
 
                 echo '<td>'.$row_consulta12['telefono'].'</td>';
                 // echo '<td>'.$row_consulta12['municipio'].'</td>';
@@ -581,7 +581,7 @@ include('prcd/qwery_ganadores.php');
                 $municipio12 = "SELECT * FROM municipio WHERE id ='$id_municipio12'";
                 $resultado_municipio12= $conn->query($municipio12);
                 $row_municipio12=$resultado_municipio12->fetch_assoc();
-                echo '<td>'.($row_municipio12['municipio']).'</td>';
+                echo '<td>'.utf8_encode($row_municipio12['municipio']).'</td>';
 
                 echo '<td>'.$row_consulta12['curp'].'</td>';
                 echo '<td>'.$row_consulta12['email'].'</td>';
