@@ -284,14 +284,14 @@ include('prcd/conn.php');
           
                 <div class="col-md-4 mb-3">
                     <label for="firstName">Apellido(s)</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="apellido" name="apellido" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
                     <div class="invalid-feedback">
                     Valid first name is required.
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
                     <label for="lastName">Nombre(s)</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" required>
                     <div class="invalid-feedback">
                     Valid last name is required.
                     </div>
