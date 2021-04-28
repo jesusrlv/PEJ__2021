@@ -277,7 +277,7 @@ include('../dashboard/prcd/qwery_admin.php');
                 $tematica = "SELECT * FROM categorias WHERE id ='$id_tematica'";
                 $resultado_tematica= $conn->query($tematica);
                 $row_tematica=$resultado_tematica->fetch_assoc();
-                echo '<td>'.$row_tematica['nombre'].'</td>';
+                echo '<td>'.utf8_encode($row_tematica['nombre']).'</td>';
 
                 // echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext'].'&id_cat=1" class="h3"><i class="bi bi-cloud-arrow-down-fill"></i></a></td>';
                 echo '</tr>';
