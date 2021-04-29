@@ -92,7 +92,8 @@ background-size: cover;">
   <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Registrarse</button>
   <hr>
   <h6><a href="email/index.php"> ¿Olvidaste tu contraseña?</a></h6>
-  <p class="mt-5 mb-3 text-muted">&copy; 2021 | INJUVENTUD</p>
+  <p class="mt-5 mb-3 text-muted"> Desarrollado en Colaboración con <strong>LABSOL | INJUVENTUD</strong><br>Licenciado bajo GPL License 3.0</p>
+   
 </form>
 
 
