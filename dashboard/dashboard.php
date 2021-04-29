@@ -150,25 +150,11 @@ include('prcd/conn.php');
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank">
                
-            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales
+            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales y Documentos
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-            <i class="bi bi-play-circle-fill"></i> Subir documentos 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-            <i class="bi bi-play-circle-fill"></i> Observaciones
-            </a>
-          </li>
-          
-         
           
         </ul>
 
@@ -378,12 +364,9 @@ include('prcd/conn.php');
                 <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Listado de video tutoriales</h5>
               </div>
               <div class="modal-body">
-                <ul>
-                  <li>Video #1</li>
-                  <li>Video #2</li>
-                  <li>Video #3</li>
-                  <li>Video #4</li>
-                </ul>
+                
+                  <p><a href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank"><i class="bi bi-play-circle-fill"></i> Subir datos personales y documentos</a></p>
+                
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

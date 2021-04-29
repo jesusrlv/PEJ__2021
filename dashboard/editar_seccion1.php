@@ -149,21 +149,9 @@ include('prcd/conn.php');
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank">
                
-            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-            <i class="bi bi-play-circle-fill"></i> Subir documentos 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-               
-            <i class="bi bi-play-circle-fill"></i> Observaciones
+            <i class="bi bi-play-circle-fill"></i> Subir Datos Personales y Documentos
             </a>
           </li>
          

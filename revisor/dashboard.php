@@ -152,19 +152,10 @@ include('../dashboard/prcd/conn.php');
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link text-light" href="#">
-               
-            <i class="bi bi-play-btn-fill"></i> Calificar
+            <a class="nav-link text-light" href="#"> 
+              <i class="bi bi-play-btn-fill"></i> Jurado
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-light" href="#">
-               
-            <i class="bi bi-play-btn-fill"></i> Editar
-            </a>
-          </li>
-          
-         
           
         </ul>
 
@@ -383,11 +374,7 @@ include('../dashboard/prcd/conn.php');
                 <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-film"></i> Listado de video tutoriales</h5>
               </div>
               <div class="modal-body">
-                <ul>
-                  <li>Calificar</li>
-                  <li>Editar</li>
-                  
-                </ul>
+                <p><a href="https://www.youtube.com/watch?v=YZhWkhhx4PQ" target="_blank"><i class="bi bi-play-circle-fill"></i> Tutorial jurado</a></p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
