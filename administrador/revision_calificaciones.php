@@ -388,7 +388,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta3['apellido'].'</td>';
                 echo '<td>'.$row_consulta3['nombre'].'</td>';
                 echo '<td>'.$row_consulta3['curp'].'</td>';
-                echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td>'.$row_usr3['promedio'].'</td>';
                 echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
@@ -813,16 +813,16 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
 
-                $id_consulta=$row_usr['id_ext1'];
-                $consulta = "SELECT * FROM datos WHERE id_ext ='$id_consulta'";
-                $resultado_consulta= $conn->query($consulta);
-                $row_consulta=$resultado_consulta->fetch_assoc();
+                $id_consulta11=$row_usr11['id_ext1'];
+                $consulta11 = "SELECT * FROM datos WHERE id_ext ='$id_consulta11'";
+                $resultado_consulta11= $conn->query($consulta11);
+                $row_consulta11=$resultado_consulta11->fetch_assoc();
 
-                echo '<td>'.$row_consulta['apellido'].'</td>';
-                echo '<td>'.$row_consulta['nombre'].'</td>';
-                echo '<td>'.$row_consulta['curp'].'</td>';
-                echo '<td>'.$row_usr['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td>'.$row_consulta11['apellido'].'</td>';
+                echo '<td>'.$row_consulta11['nombre'].'</td>';
+                echo '<td>'.$row_consulta11['curp'].'</td>';
+                echo '<td>'.$row_usr11['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -929,6 +929,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta13['nombre'].'</td>';
                 echo '<td>'.$row_consulta13['curp'].'</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -973,7 +974,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<tr>';
                 echo '<td>'.$x.'</td>';
 
-                $id_consulta14=$row_usr13['id_ext1'];
+                $id_consulta14=$row_usr14['id_ext1'];
                 $consulta14 = "SELECT * FROM datos WHERE id_ext ='$id_consulta14'";
                 $resultado_consulta14= $conn->query($consulta14);
                 $row_consulta14=$resultado_consulta14->fetch_assoc();
@@ -981,7 +982,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta14['apellido'].'</td>';
                 echo '<td>'.$row_consulta14['nombre'].'</td>';
                 echo '<td>'.$row_consulta14['curp'].'</td>';
-                echo '<td>'.$row_usr['promedio'].'</td>';
+                echo '<td>'.$row_usr14['promedio'].'</td>';
                 echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
