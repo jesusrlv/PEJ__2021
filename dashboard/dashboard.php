@@ -155,6 +155,12 @@ include('prcd/conn.php');
             <i class="bi bi-play-circle-fill"></i> Subir Datos Personales y Documentos
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/watch?v=PAGe953Wvjo" target="_blank">
+               
+            <i class="bi bi-play-circle-fill"></i> Elaboración de video semblanza
+            </a>
+          </li>
           
         </ul>
 
@@ -366,7 +372,7 @@ include('prcd/conn.php');
               <div class="modal-body">
                 
                   <p><a href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank"><i class="bi bi-play-circle-fill"></i> Subir datos personales y documentos</a></p>
-                
+                  <p><a href="https://www.youtube.com/watch?v=PAGe953Wvjo" target="_blank"><i class="bi bi-play-circle-fill"></i> Elaboración video semblanza</a></p>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

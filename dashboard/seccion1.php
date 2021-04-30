@@ -154,6 +154,12 @@ include('prcd/conn.php');
             <i class="bi bi-play-circle-fill"></i> Subir Datos Personales y Documentos
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/watch?v=PAGe953Wvjo" target="_blank">
+               
+            <i class="bi bi-play-circle-fill"></i> Elaboración de video semblanza
+            </a>
+          </li>
           
         </ul>
 

@@ -334,7 +334,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta2['nombre'].'</td>';
                 echo '<td>'.$row_consulta2['curp'].'</td>';
                 echo '<td>'.$row_usr2['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr2['id_ext1'].'&id_cat=2" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -389,7 +389,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta3['nombre'].'</td>';
                 echo '<td>'.$row_consulta3['curp'].'</td>';
                 echo '<td>'.$row_usr3['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr3['id_ext1'].'&id_cat=3" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -443,7 +443,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta4['nombre'].'</td>';
                 echo '<td>'.$row_consulta4['curp'].'</td>';
                 echo '<td>'.$row_usr4['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr4['id_ext1'].'&id_cat=4" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -496,7 +496,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta5['nombre'].'</td>';
                 echo '<td>'.$row_consulta5['curp'].'</td>';
                 echo '<td>'.$row_usr5['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr5['id_ext1'].'&id_cat=5" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -549,7 +549,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta6['nombre'].'</td>';
                 echo '<td>'.$row_consulta6['curp'].'</td>';
                 echo '<td>'.$row_usr6['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr6['id_ext1'].'&id_cat=6" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 } 
               }
@@ -602,7 +602,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta7['nombre'].'</td>';
                 echo '<td>'.$row_consulta7['curp'].'</td>';
                 echo '<td>'.$row_usr7['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr7['id_ext1'].'&id_cat=7" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -656,7 +656,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta8['nombre'].'</td>';
                 echo '<td>'.$row_consulta8['curp'].'</td>';
                 echo '<td>'.$row_usr8['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr8['id_ext1'].'&id_cat=8" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -711,7 +711,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta9['nombre'].'</td>';
                 echo '<td>'.$row_consulta9['curp'].'</td>';
                 echo '<td>'.$row_usr9['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr9['id_ext1'].'&id_cat=9" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -767,7 +767,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta10['nombre'].'</td>';
                 echo '<td>'.$row_consulta10['curp'].'</td>';
                 echo '<td>'.$row_usr10['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr10['id_ext1'].'&id_cat=10" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -822,7 +822,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta11['nombre'].'</td>';
                 echo '<td>'.$row_consulta11['curp'].'</td>';
                 echo '<td>'.$row_usr11['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr11['id_ext1'].'&id_cat=11" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -875,7 +875,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta12['nombre'].'</td>';
                 echo '<td>'.$row_consulta12['curp'].'</td>';
                 echo '<td>'.$row_usr12['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr12['id_ext1'].'&id_cat=12" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -929,7 +929,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta13['nombre'].'</td>';
                 echo '<td>'.$row_consulta13['curp'].'</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr13['id_ext1'].'&id_cat=13" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -983,7 +983,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta14['nombre'].'</td>';
                 echo '<td>'.$row_consulta14['curp'].'</td>';
                 echo '<td>'.$row_usr14['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr14['id_ext1'].'&id_cat=14" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -1036,7 +1036,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta15['nombre'].'</td>';
                 echo '<td>'.$row_consulta15['curp'].'</td>';
                 echo '<td>'.$row_usr15['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr15['id_ext1'].'&id_cat=15" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
@@ -1090,7 +1090,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
                 echo '<td>'.$row_consulta16['nombre'].'</td>';
                 echo '<td>'.$row_consulta16['curp'].'</td>';
                 echo '<td>'.$row_usr16['promedio'].'</td>';
-                echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext1'].'&id_cat=1" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
+                echo '<td><a href="docs_admin.php?id='.$row_usr16['id_ext1'].'&id_cat=16" class="h3"><i class="bi bi-card-checklist"></i></a></td>';
                 echo '</tr>';
                 
                 } 
