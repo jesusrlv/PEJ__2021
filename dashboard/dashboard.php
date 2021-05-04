@@ -241,6 +241,11 @@ include('prcd/conn.php');
                 <?php
                   if($a == 0){
                     echo '<a href="seccion1.php" class="card-link"><i class="bi bi-plus-circle-fill"></i> Agregar</a>';
+
+                    echo '<script type="text/javascript">';
+                    echo 'cargar()';
+                    echo '</script>';
+
                   }
                   elseif($a > 0){
                     echo '<a href="" ></a>
@@ -382,6 +387,33 @@ include('prcd/conn.php');
         </div>
 
 </html>
+
+<!-- modal img -->
+
+<script>
+// $(function cargar() {
+$(function cargar() {
+    $('#myModal').modal('show');
+});
+    </script>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger"><i class="bi bi-exclamation-triangle-fill"></i> ¡Atención!</h5>
+      </div>
+      <div class="modal-body">
+        <p><img src="img/pej21.jpg" width="100%" alt=""></p>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <!-- 
 
