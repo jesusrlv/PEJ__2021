@@ -211,7 +211,7 @@ include('../dashboard/prcd/conn.php');
         
         <form action="busqueda.php" method="POST">
           <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Búsqueda de usuario" aria-label="Búsqueda de usuario" aria-describedby="button-addon2" name="busqueda">
+              <input type="text" class="form-control" placeholder="Búsqueda de usuario" aria-label="Búsqueda de usuario" aria-describedby="button-addon2" name="busqueda" REQUIRED>
               <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i> Buscar</button>
           </div>
         </form>
