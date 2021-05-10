@@ -5,6 +5,10 @@ if (isset($_SESSION['usr'])) {
   if($_SESSION['perfil']==5){
 
   }
+  else{
+    header('Location: prcd_admin/sort.php');
+    die();
+  }
   
 } else {
   // En caso contrario redirigimos el visitante a otra página

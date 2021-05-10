@@ -6,7 +6,7 @@ if (isset($_SESSION['usr'])) {
 
   }
   else{
-    header('Location: prcd/sort.php');
+    header('Location: prcd_admin/sort.php');
     die();
   }
   

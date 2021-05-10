@@ -2,15 +2,19 @@
 session_start();
 
 if (isset($_SESSION['usr'])) {
-    if($_SESSION['perfil']==5){
+  if($_SESSION['perfil']==5){
 
-    }
-    
-} else {
-    // En caso contrario redirigimos el visitante a otra página
-
-    header('Location: prcd/sort.php');
+  }
+  else{
+    header('Location: prcd_admin/sort.php');
     die();
+  }
+  
+} else {
+  // En caso contrario redirigimos el visitante a otra página
+
+  header('Location: prcd/sort.php');
+  die();
 }
 
 include('../dashboard/prcd/conn.php');
