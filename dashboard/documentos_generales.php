@@ -124,7 +124,7 @@ include('../dashboard/prcd/conn.php');
         
         <ul class="navbar-nav px-3 text-center">
             <li class="align-middle">
-                   <img src="../img/logo.png" width="81%" class="" alt="" loading="lazy">  
+                   <img src="../img/png_logo.png" width="81%" class="" alt="" loading="lazy">  
                    <!-- <img src="../img/logo.png" width="35%" class="" alt="" loading="lazy">   -->
       
             </li>
@@ -148,7 +148,7 @@ include('../dashboard/prcd/conn.php');
             <a class="nav-link active text-light" href="../administrador/dashboard.php">
               <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
-              Dashboard <span class="sr-only">(current)</span>
+              Inicio <span class="sr-only">(current)</span>
             </a>
           </li>
           <hr style="color: dimgrey;">
@@ -182,7 +182,7 @@ include('../dashboard/prcd/conn.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <h1 class="h1 text-light">DASHBOARD</h1>
+        <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
@@ -199,7 +199,7 @@ include('../dashboard/prcd/conn.php');
                   $fecha_actual=strftime("%Y-%m-%d");
                   $hora_actual=strftime("%H:%M:%S");
 
-                  echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
+                  // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
       <!-- <hr style="color: dimgrey;"> -->
