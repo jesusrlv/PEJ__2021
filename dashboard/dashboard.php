@@ -75,19 +75,14 @@ include('prcd/conn.php');
    
   </head>
   <body>
-    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
     <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-light text-dark">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center text-white" href="#">
-    <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center text-dark display-7" style="margin-left:3px;"><b>INJUVENTUD</b></h5>
     </a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- <a href="" class="text-left">Inicio ></a> -->
-  <!-- <input class="form-control form-control-dark w-10" type="text" placeholder="Search" aria-label="Search" style="width:30%"> -->
   
- 
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       
@@ -127,7 +122,6 @@ include('prcd/conn.php');
  
            <li class="nav-item">
             <a class="nav-link active" href="dashboard.php">
-              <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
               Inicio <span class="sr-only">(current)</span>
             </a>
@@ -160,13 +154,10 @@ include('prcd/conn.php');
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="background-color:#eaeef4; height:100%;">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <!-- <h1 class="h1">DASHBOARD</h1> -->
-        
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">        
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Reporte PDF</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Reporte EXCEL</button> -->
+           
           </div>
          
         </div>
@@ -181,7 +172,6 @@ include('prcd/conn.php');
                   // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
-      <!-- <hr style="color: dimgrey;"> -->
       <h2></h2>
     <div class="container-fluid ">
 
@@ -201,20 +191,7 @@ include('prcd/conn.php');
               <canvas id="myChart" width="400" height="150"></canvas>
               <hr>
            
-            <!-- /.box-body-->
-          <!-- /.box -->
-       
-     
-   
-    <!-- /.content -->
-          <!-- <p>Cargar documentos</p>
-          <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
-
           
-        <!-- interno -->
-
-
-        <!-- consulta de validación -->
         
         <?php
         include('prcd/qwery_validacion_dashboard.php');
@@ -266,10 +243,6 @@ include('prcd/conn.php');
               </div>
             </div>
           </div>
-          
-          
-
-          
 
           <div class="col mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: 18rem; box-shadow: 4px -1px 0px -1px #005eff;">
@@ -315,30 +288,6 @@ include('prcd/conn.php');
       
       
       <hr>
-      <!-- <div class="container">
-        <div class="row row-cols-1 row-cols-md-1">
-          <div class="col mb-12">
-            <div class="card text-white bg-primary mb-12" style="width: 100%; ">
-              <div class="card-body"><br>
-                <h1 class="card-title"><i class="bi bi-exclamation-circle"></i> OBSERVACIONES</h1>
-                <p class="card-text">Las siguientes observaciones son sobre el expediente que se subió para participar en el Premio Estatal de la Juventud 2021 es el siguiente:</p>
-                <p class="card-text"><div class="alert alert-primary" role="alert"> -->
-                <?php
-                  // $observaciones = "SELECT * FROM calificacion WHERE id_ext1 ='$id'";
-                  // $resultado= $conn->query($observaciones);
-                  // while ($row=$resultado->fetch_assoc()){
-                  //   echo $row['observaciones'].'<br>';
-                  // }
-                ?>
-<!--                
-              </div>
-            </div>
-          </div>
-          </div>
-          </div> -->
-        <!-- interno -->
-
-
         </div>
       </div>
 
@@ -352,13 +301,8 @@ include('prcd/conn.php');
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="css/bootstrap.bundle.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script> -->
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha512-OD9Gn6cAUQezuljS6411uRFr84pkrCtw23Hl5TYzmGyD0YcunJIPSBDzrV8EeCiFxGWWvtJOfVo5pOgB++Jsag==" crossorigin="anonymous"></script>
-
         <script src="css/dashboard.js"></script></body>
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -383,7 +327,6 @@ include('prcd/conn.php');
 <!-- modal img -->
 
 <script>
-// $(function cargar() {
 $(function cargar() {
     $('#myModal').modal('show');
 });
@@ -407,12 +350,6 @@ $(function cargar() {
   </div>
 </div>
 
-<!-- 
-
-https://startbootstrap.com/theme/sb-admin-pro-angular
-
-https://startbootstrap.com/themes/admin-dashboard
- -->
 
 <?php
  $v1 = $row_cnt;
@@ -439,13 +376,7 @@ https://startbootstrap.com/themes/admin-dashboard
       }]
     },
     options:{
-      // scales:{
-        // yAxes:[{
-        //   ticks:{
-        //     BeginAtZero:true
-        //   }
-        // }]
-      // }
+      
     }
   }
   );

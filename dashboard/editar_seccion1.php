@@ -1,30 +1,6 @@
 <?php
 session_start();
 
-// if (isset($_SESSION['usr'])) {
-//     if($_SESSION['perfil']==1){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==2){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==3){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // else{
-        // header('Location:prcd/sort.php');
-    // }
-    // Si esta identificado, en otras palabras existe la variable, le saludamos
-    // echo 'Hola ' . $_SESSION['usr'];
-// } else {
-    // En caso contrario redirigimos el visitante a otra página
-
-    // echo 'Usuario no válido';
-    // header('Location: ../../autentificacion/');
-    // header('Location: prcd/sort.php');
-    // die();
-// }
-
 include('prcd/conn.php');
 
 // variables de sesión
@@ -82,18 +58,13 @@ include('prcd/conn.php');
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
-    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
     <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-light text-dark">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center text-white" href="#">
-    <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center text-dark display-7" style="margin-left:3px;"><b>INJUVENTUD</b></h5>
     </a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- <a href="" class="text-left">Inicio ></a> -->
-  <!-- <input class="form-control form-control-dark w-10" type="text" placeholder="Search" aria-label="Search" style="width:30%"> -->
-  
  
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
@@ -134,7 +105,6 @@ include('prcd/conn.php');
  
            <li class="nav-item">
             <a class="nav-link active" href="dashboard.php">
-              <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
               Inicio <span class="sr-only">(current)</span>
             </a>
@@ -168,12 +138,10 @@ include('prcd/conn.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4" style="background-color:#eaeef4; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <!-- <h1 class="h1">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Reporte PDF</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Reporte EXCEL</button> -->
+           
           </div>
          
         </div>
@@ -188,7 +156,6 @@ include('prcd/conn.php');
                   // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h4>
 
-      <!-- <hr style="color: dimgrey;"> -->
       <h2></h2>
     <div class="container-fluid ">
 
@@ -197,7 +164,6 @@ include('prcd/conn.php');
                 $query="SELECT * FROM datos WHERE id_ext='$id'";
                 $resultado= $conn->query($query);
                 $row=$resultado->fetch_assoc();
-                    // $a = $row['validacion'];
             ?>
 
       <div class="jumbotron jumbotron-fluid " style="background-color:#f8f9fa; width:100%;border-radius:5px;  margin-top:25px; padding-top:45px;">
@@ -205,97 +171,45 @@ include('prcd/conn.php');
           <h1 class="h1">SECCIÓN</h1>
           <p class="lead">Editar Datos</p>
           <hr class="my-4">
-          <!-- <p>Cargar documentos</p>
-          <a class="btn btn-primary btn-lg" href="agregar_bitacora.php" role="button"> <i class="fas fa-file-pdf"></i> Subir a bitácora -></a> -->
-
-          
+        
         <!-- interno -->
         <div class="row">
                 <div class="col-md-12 order-md-1">
             <h4 class="mb-3">Datos de postulación</h4>
             <form action="prcd/proceso_editar_seccion_1.php" class="needs-validation" method="POST">
                 <div class="row">
-                <!--
-                <div class="col-md-12 mb-3 validate-input" data-validate="Selecciona una temática">
-                <label for="tematica">Temática</label>
-                   <select name="tematica" id="tematica" class="form-control" required>
-                      <option value="">Seleccionar...</option>
-                      
-                      <optgroup label="Por trayectoria">
-                      <option value="1">Logro académico</option>
-                      <option value="2">Discapacidad e integración</option>
-                      <option value="3">Ingenio emprendedor</option>
-                      <option value="4">Responsabilidad social</option>
-                      <option value="5">Mérito migrante</option>
-                      <option value="6">Mérito campesino</option>
-                      </optgroup>
-                      <optgroup label="Talento joven">
-                      <option value="7">Literatura</option>
-                      <option value="8">Artes plásticas, visuales y populares</option>
-                      <option value="9">Arte urbano</option>
-                      <option value="10">Ciencia y tecnología</option>
-                      </optgroup>
-                      
-                  </select> 
-                  <hr>	
-					</div>
-                -->
+                
 
-                <div class="col-md-6 mb-3">
-                    <label for="firstName">Apellido(s)</label>
-                    <input type="text" class="form-control" id="apellido" name="apellido" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="" value="<?php echo $row['apellido'] ?>" required>
-                    <div class="invalid-feedback">
-                    Valid first name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Nombre(s)</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="" value="<?php echo $row['nombre'] ?>" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">Teléfono</label>
-                    <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="<?php echo $row['telefono'] ?>" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
-                <!-- <div class="col-md-6 mb-3">
-                    <label for="lastName">Correo electrónico</label>
-                    <input type="email" class="form-control" id="correo" name="correo" placeholder="" value="<?php echo $row['email'] ?>" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div> -->
+                  <div class="col-md-6 mb-3">
+                      <label for="firstName">Apellido(s)</label>
+                      <input type="text" class="form-control" id="apellido" name="apellido" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="" value="<?php echo $row['apellido'] ?>" required>
+                      <div class="invalid-feedback">
+                      Valid first name is required.
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="lastName">Nombre(s)</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre" onkeyup="javascript:this.value=this.value.toUpperCase();" placeholder="" value="<?php echo $row['nombre'] ?>" required>
+                      <div class="invalid-feedback">
+                      Valid last name is required.
+                      </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                      <label for="lastName">Teléfono</label>
+                      <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="<?php echo $row['telefono'] ?>" required>
+                      <div class="invalid-feedback">
+                      Valid last name is required.
+                      </div>
+                  </div>
+                
 
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">CURP</label>
-                    <input type="email" class="form-control" id="curp" name="curp" placeholder="" value="<?php echo $row['curp'] ?>" readonly>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div>
-
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
-
-                <!-- <div class="col-md-6 mb-3">
-                    <label for="firstName">CURP</label>
-                    <input type="text" class="form-control" id="curp" name="curp" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this)" required>
-                    <div class="invalid-feedback">
-                    Valid first name is required.
-                    </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="lastName">RFC</label>
-                    <input type="text" class="form-control" id="rfc" name="rfc" placeholder="" value="" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="ValidaRfc(this.value)" required>
-                    <div class="invalid-feedback">
-                    Valid last name is required.
-                    </div>
-                </div> -->
-
-                <!-- PARA ENVIAR A SISTEMA DE PROVEEDORES -->
+                  <div class="col-md-6 mb-3">
+                      <label for="lastName">CURP</label>
+                      <input type="email" class="form-control" id="curp" name="curp" placeholder="" value="<?php echo $row['curp'] ?>" readonly>
+                      <div class="invalid-feedback">
+                      Valid last name is required.
+                      </div>
+                  </div>
 
                 </div>
 
@@ -322,13 +236,6 @@ include('prcd/conn.php');
 
         </div>
       </div>
-
-      <!-- card -->
-      
-      <!-- card -->
-
-      
-
       </div>
 
 
@@ -356,15 +263,13 @@ function ValidaRfc(rfcStr) {
 	var validRfc=new RegExp(valid);
 	var matchArray=strCorrecta.match(validRfc);
 	if (matchArray==null) {
-		// alert('Cadena incorrectas');
-    // $('#result-rfc')
+	
     document.getElementById('result-rfc').innerHTML='<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena RFC incorrecta.</div><style>#boton_submit{display:none;}</style>';
 
 		return false;
 	}
 	else
 	{
-		// alert('Cadena correcta:' + strCorrecta);
     document.getElementById('result-rfc').innerHTML='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena RFC correcta.</div>';
 		return true;
 	}
@@ -378,13 +283,11 @@ function validarInput(input) {
         
     if (curpValida(curp)) {
     	valido = "Válido";
-        // resultado.classList.add("ok");
         resultado.innerHTML ='<div class="alert alert-success"><strong><i class="bi bi-info-circle-fill"></i> CORRECTO. </strong> Cadena CURP correcta.</div>';
     } else {
         resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
     }
         
-    // resultado.innerHTML = '<div class="alert alert-danger"><strong><i class="bi bi-exclamation-triangle-fill"></i> ERROR. </strong> Cadena CURP incorrecta.</div><style>#boton_submit{display:none;}</style>';
 }
 
 function curpValida(curp) {
@@ -416,12 +319,6 @@ function curpValida(curp) {
 </script>
 
 <!-- 
-
-https://startbootstrap.com/theme/sb-admin-pro-angular
-
-https://startbootstrap.com/themes/admin-dashboard
-
-
 Para validación de CURP
 https://jsfiddle.net/marianom/rddbnhcc/3/
  -->

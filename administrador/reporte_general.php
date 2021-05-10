@@ -14,30 +14,6 @@ echo "
     <html>
     <head><meta http-equiv=\"Content-type\" content=\"text/html;charset=utf-8\" /></head>";
 
-// if (isset($_SESSION['usr'])) {
-//     if($_SESSION['perfil']==1){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==2){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==3){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // else{
-        // header('Location:prcd/sort.php');
-    // }
-    // Si esta identificado, en otras palabras existe la variable, le saludamos
-    // echo 'Hola ' . $_SESSION['usr'];
-// } else {
-    // En caso contrario redirigimos el visitante a otra página
-
-    // echo 'Usuario no válido';
-    // header('Location: ../../autentificacion/');
-    // header('Location: prcd/sort.php');
-    // die();
-// }
-
 include('../dashboard/prcd/conn.php');
 include('../dashboard/prcd/qwery_admin.php');
 

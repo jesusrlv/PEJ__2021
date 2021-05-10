@@ -288,11 +288,3 @@ include('../dashboard/prcd/conn.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="css/dashboard.js"></script></body>
 </html>
-
-<!-- 
-
-https://startbootstrap.com/theme/sb-admin-pro-angular
-
-https://startbootstrap.com/themes/admin-dashboard
- -->
-

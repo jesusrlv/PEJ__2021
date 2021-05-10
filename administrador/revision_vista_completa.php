@@ -72,19 +72,13 @@ include('../dashboard/prcd/qwery_admin.php');
     <link href="css/dashboard.css" rel="stylesheet">
   </head>
   <body>
-    <!-- <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow"> -->
     <nav class="navbar navbar-light sticky-top flex-md-nowrap p-0 bg-dark text-light">
         <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3 text-center" href="#">
-    <!-- <img src="../img/logo.png" width="45" height="45" class="d-inline-block align-top" alt="" loading="lazy">   -->
     <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>PEJ 2021</b></h5>
-    <!-- <h5 class="text-center display-7 text-light" style="margin-left:3px;"><b>INJUVENTUD</b></h5> -->
     </a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <!-- <a href="" class="text-left">Inicio ></a> -->
-  <!-- <input class="form-control form-control-dark w-10" type="text" placeholder="Search" aria-label="Search" style="width:30%"> -->
-  
  
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
@@ -104,9 +98,7 @@ include('../dashboard/prcd/qwery_admin.php');
         
         <ul class="navbar-nav px-3 text-center">
             <li class="align-middle">
-                   <img src="../img/png_logo.png" width="81%" class="" alt="" loading="lazy">  
-                   <!-- <img src="../img/logo.png" width="35%" class="" alt="" loading="lazy">   -->
-      
+                   <img src="../img/png_logo.png" width="81%" class="" alt="" loading="lazy">        
             </li>
         </ul>
 
@@ -126,7 +118,6 @@ include('../dashboard/prcd/qwery_admin.php');
  
            <li class="nav-item">
             <a class="nav-link active text-light" href="dashboard.php">
-              <!-- <span data-feather="home"></span> -->
               <i class="fas fa-laptop-house"></i> 
               Inicio <span class="sr-only">(current)</span>
             </a>
@@ -162,12 +153,10 @@ include('../dashboard/prcd/qwery_admin.php');
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4 bg-secondary bg-gradient" style="background-color:; height:100%;">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 mb-3 ">
-        <!-- <h1 class="h1 text-light">DASHBOARD</h1> -->
         
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Reporte PDF</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary">Reporte EXCEL</button> -->
+           
           </div>
          
         </div>
@@ -182,7 +171,6 @@ include('../dashboard/prcd/qwery_admin.php');
                   // echo 'Zacatecas, Zac., '.$hora_actual.', '. $fecha_actual;
               ?></h5>
 
-      <!-- <hr style="color: dimgrey;"> -->
       <h2></h2>
     <div class="container-fluid ">
 
@@ -193,14 +181,6 @@ include('../dashboard/prcd/qwery_admin.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <p class="lead text-center"><strong>REPORTE COMPLETOS E INCOMPLETOS</strong></p>
           <p class="align-items-right text-right"><a href="reporte_general.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
-          <!-- <hr class="my-4"> -->
-
-        
-        <?php
-        // include('prcd/qwery_validacion_dashboard.php');
-        ?>
-        <!-- consulta de validación -->
-
 
         <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-1">
@@ -943,12 +923,8 @@ include('../dashboard/prcd/qwery_admin.php');
       </div> <!-- container -->
       
       <hr>
-      
-
-      
 
       </div>
-
 
     </main>
   </div>
@@ -959,11 +935,3 @@ include('../dashboard/prcd/qwery_admin.php');
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
         <script src="css/dashboard.js"></script></body>
 </html>
-
-<!-- 
-
-https://startbootstrap.com/theme/sb-admin-pro-angular
-
-https://startbootstrap.com/themes/admin-dashboard
- -->
-
