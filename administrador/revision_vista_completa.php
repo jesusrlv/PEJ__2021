@@ -638,8 +638,8 @@ include('../dashboard/prcd/qwery_admin.php');
                 <th scope="col">Apellido</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">CURP</th>
-                <th scope="col">Estatus</th>
                 <th scope="col">Correo electrónico</th>
+                <th scope="col">Estatus</th>
                 <th scope="col">Acción</th>
               </tr>
           </thead>
