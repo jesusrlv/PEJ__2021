@@ -1,29 +1,21 @@
 <?php
 session_start();
 
-// if (isset($_SESSION['usr'])) {
-//     if($_SESSION['perfil']==1){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==2){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // elseif($_SESSION['perfil']==3){
-        // header('Location: javascript: history.go(-1)');
-    // }
-    // else{
-        // header('Location:prcd/sort.php');
-    // }
-    // Si esta identificado, en otras palabras existe la variable, le saludamos
-    // echo 'Hola ' . $_SESSION['usr'];
-// } else {
-    // En caso contrario redirigimos el visitante a otra página
+if (isset($_SESSION['usr'])) {
+  if($_SESSION['perfil']==2){
 
-    // echo 'Usuario no válido';
-    // header('Location: ../../autentificacion/');
-    // header('Location: prcd/sort.php');
-    // die();
-// }
+  }
+  else{
+    header('Location: prcd/sort.php');
+    die();
+  }
+  
+} else {
+  // En caso contrario redirigimos el visitante a otra página
+
+  header('Location: prcd/sort.php');
+  die();
+}
 
 include('../dashboard/prcd/conn.php');
 include('../dashboard/prcd/qwery_admin2.php');
