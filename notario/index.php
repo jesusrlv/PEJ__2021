@@ -49,8 +49,6 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
     <!-- Bootstrap core CSS -->
     <link href="../dashboard/css/bootstrap.css" rel="stylesheet">
 
-    
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
