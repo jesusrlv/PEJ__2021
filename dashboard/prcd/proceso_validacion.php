@@ -40,7 +40,8 @@ if ($resultado=mysqli_fetch_array($proceso)){
 
       if($resultado['perfil']==1){
         
-        echo "<script type=\"text/javascript\">location.href='../dashboard.php';</script>";
+        // echo "<script type=\"text/javascript\">location.href='../dashboard.php';</script>";
+        echo "<script type=\"text/javascript\">location.href='../../convocatoria_cerrada.html';</script>";
         }
     
     elseif($resultado['perfil']==2){
