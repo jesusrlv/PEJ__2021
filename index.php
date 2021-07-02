@@ -86,9 +86,9 @@ background-size: cover;">
   </div>
   <button class="btn btn-lg btn-primary btn-block" name="Submit" type="submit"><i class="fas fa-user-lock"></i> Acceder</button>
   
-  <hr>
+  <!-- <hr>
   <h1 class="h4 mb-3 font-weight-normal">Registro</h1>
-  <!-- <button class="btn btn-lg btn-warning btn-block" name="Submit" type="submit"><i class="fas fa-user-plus"></i> Registrarse</button> -->
+  <button class="btn btn-lg btn-warning btn-block" name="Submit" type="submit"><i class="fas fa-user-plus"></i> Registrarse</button> -->
   <!-- <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-user-plus"></i> Registrarse</button> --><!-- convocatoria cerrada -->
   <hr>
   <!-- <h6><a href="email/index.php"> ¿Olvidaste tu contraseña?</a></h6>  --><!-- convocatoria cerrada -->
