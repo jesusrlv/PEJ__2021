@@ -497,7 +497,7 @@ include('prcd/qwery_ganadores.php');
                 $grado10 = "SELECT * FROM grado WHERE id ='$id_grado10'";
                 $resultado_grado10= $conn->query($grado10);
                 $row_grado10=$resultado_grado10->fetch_assoc();
-                echo '<td>'.($row_grado10['grado']).'</td>';
+                echo '<td>'.utf8_decode($row_grado10['grado']).'</td>';
 
                 echo '<td>'.$row_consulta10['telefono'].'</td>';
                 // echo '<td>'.$row_consulta10['municipio'].'</td>';
