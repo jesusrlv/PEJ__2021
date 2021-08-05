@@ -651,7 +651,7 @@ include('prcd/qwery_ganadores.php');
 
                 echo '<td>'.$row_consulta15['telefono'].'</td>';
                 // echo '<td>'.$row_consulta15['municipio'].'</td>';
-                $id_municipio1=$row_consulta15['municipio'];
+                $id_municipio15=$row_consulta15['municipio'];
                 $municipio15 = "SELECT * FROM municipio WHERE id ='$id_municipio15'";
                 $resultado_municipio15= $conn->query($municipio15);
                 $row_municipio15=$resultado_municipio15->fetch_assoc();
