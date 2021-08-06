@@ -207,6 +207,7 @@ include('../dashboard/prcd/conn.php');
                 <p class="card-text">Realiza la búsqueda de un postulante al PEJ.</p>
                 <hr>
                 <a href="revision_calificaciones.php" class="card-link btn btn-outline-primary"><i class="bi bi-card-checklist"></i> Visualizar</a>
+                <a href="lista_ganadores_expedientes.php" class="card-link btn btn-outline-primary"><i class="bi bi-folder"></i> Expedientes</a>
                 <a href="lista_ganadores.php" class="card-link btn btn-outline-primary"><i class="bi bi-star"></i> Ganadores</a>
               </div>
             </div>
