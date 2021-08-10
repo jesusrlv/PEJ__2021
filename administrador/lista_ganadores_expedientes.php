@@ -227,7 +227,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta1['tematica'].'</td>';
                 echo '<td>LOGRO ACADÉMICO (12 - 19 AÑOS)</td>';
                 echo '<td>'.$row_usr1['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr1['id_ext'].'&id_cat=1"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr1['id_ext'].'&id_cat=1"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
 
                 $id_consulta2=$row_usr2['id_ext1'];
@@ -259,7 +259,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta2['tematica'].'</td>';
                 echo '<td>LOGRO ACADÉMICO (20 - 29 AÑOS)</td>';
                 echo '<td>'.$row_usr2['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr2['id_ext'].'&id_cat=2"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr2['id_ext'].'&id_cat=2"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
 
                 $id_consulta3=$row_usr3['id_ext1'];
@@ -291,7 +291,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta3['tematica'].'</td>';
                 echo '<td>DISCAPACIDAD E INTEGRACIÓN</td>';
                 echo '<td>'.$row_usr3['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr3['id_ext'].'&id_cat=3"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr3['id_ext'].'&id_cat=3"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta4=$row_usr4['id_ext1'];
@@ -322,7 +322,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta4['tematica'].'</td>';
                 echo '<td>INGENIO EMPRENDEDOR</td>';
                 echo '<td>'.$row_usr4['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr4['id_ext'].'&id_cat=4"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr4['id_ext'].'&id_cat=4"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta5=$row_usr5['id_ext1'];
@@ -353,7 +353,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta5['tematica'].'</td>';
                 echo '<td>RESPONSABILIDAD SOCIAL</td>';
                 echo '<td>'.$row_usr5['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr5['id_ext'].'&id_cat=5"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr5['id_ext'].'&id_cat=5"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta6=$row_usr6['id_ext1'];
@@ -384,7 +384,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta6['tematica'].'</td>';
                 echo '<td>MÉRITO MIGRANTE</td>';
                 echo '<td>'.$row_usr6['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr6['id_ext'].'&id_cat=6"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr6['id_ext'].'&id_cat=6"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta7=$row_usr7['id_ext1'];
@@ -415,7 +415,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta7['tematica'].'</td>';
                 echo '<td>MÉRITO CAMPESINO</td>';
                 echo '<td>'.$row_usr7['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr7['id_ext'].'&id_cat=7"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr7['id_ext'].'&id_cat=7"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta8=$row_usr8['id_ext1'];
@@ -446,7 +446,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta8['tematica'].'</td>';
                 echo '<td>PROTECCIÓN AL MEDIO AMBIENTE</td>';
                 echo '<td>'.$row_usr8['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr8['id_ext'].'&id_cat=8"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr8['id_ext'].'&id_cat=8"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta9=$row_usr9['id_ext1'];
@@ -477,7 +477,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta9['tematica'].'</td>';
                 echo '<td>CULTURA CÍVICA, POLÍTICA Y DEMOCRACIA</td>';
                 echo '<td>'.$row_usr9['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr9['id_ext'].'&id_cat=9"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr9['id_ext'].'&id_cat=9"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta10=$row_usr10['id_ext1'];
@@ -508,7 +508,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta10['tematica'].'</td>';
                 echo '<td>LITERATURA</td>';
                 echo '<td>'.$row_usr10['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr10['id_ext'].'&id_cat=10"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr10['id_ext'].'&id_cat=10"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta11=$row_usr11['id_ext1'];
@@ -539,7 +539,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta11['tematica'].'</td>';
                 echo '<td>ARTES ESCÉNICAS (MÚSICA)</td>';
                 echo '<td>'.$row_usr11['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr11['id_ext'].'&id_cat=11"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr11['id_ext'].'&id_cat=11"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta12=$row_usr12['id_ext1'];
@@ -570,7 +570,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta12['tematica'].'</td>';
                 echo '<td>ARTES ESCÉNICAS (TEATRO)</td>';
                 echo '<td>'.$row_usr12['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr12['id_ext'].'&id_cat=12"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr12['id_ext'].'&id_cat=12"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta13=$row_usr13['id_ext1'];
@@ -601,7 +601,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta13['tematica'].'</td>';
                 echo '<td>ARTES ESCÉNICAS (DANZA)</td>';
                 echo '<td>'.$row_usr13['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr13['id_ext'].'&id_cat=13"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr13['id_ext'].'&id_cat=13"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta14=$row_usr14['id_ext1'];
@@ -632,7 +632,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta14['tematica'].'</td>';
                 echo '<td>ARTES PLÁSTICAS, VISUALES Y POPULARES</td>';
                 echo '<td>'.$row_usr14['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr14['id_ext'].'&id_cat=14"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr14['id_ext'].'&id_cat=14"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta15=$row_usr15['id_ext1'];
@@ -663,7 +663,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta15['tematica'].'</td>';
                 echo '<td>ARTE URBANO</td>';
                 echo '<td>'.$row_usr15['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr15['id_ext'].'&id_cat=15"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr15['id_ext'].'&id_cat=15"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
                 $id_consulta16=$row_usr16['id_ext1'];
@@ -694,7 +694,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta16['tematica'].'</td>';
                 echo '<td>CIENCIA Y TECNOLOGÍA</td>';
                 echo '<td>'.$row_usr16['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr16['id_ext'].'&id_cat=16"></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_usr16['id_ext'].'&id_cat=16"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
         
               ?>
