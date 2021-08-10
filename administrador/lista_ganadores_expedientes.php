@@ -227,7 +227,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta1['tematica'].'</td>';
                 echo '<td>LOGRO ACADÉMICO (12 - 19 AÑOS)</td>';
                 echo '<td>'.$row_usr1['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr1['id_ext'].'&id_cat=1"><i class="bi bi-folder"></i></a></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_consulta1['id_ext'].'&id_cat=1"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
 
                 $id_consulta2=$row_usr2['id_ext1'];
@@ -259,7 +259,7 @@ include('prcd/qwery_ganadores.php');
                 // echo '<td>'.$row_consulta2['tematica'].'</td>';
                 echo '<td>LOGRO ACADÉMICO (20 - 29 AÑOS)</td>';
                 echo '<td>'.$row_usr2['promedio'].'</td>';
-                echo '<td><a href="documentos_generales.php?id='.$row_usr2['id_ext'].'&id_cat=2"><i class="bi bi-folder"></i></a></td>';
+                echo '<td><a href="documentos_generales.php?id='.$row_consulta2['id_ext'].'&id_cat=2"><i class="bi bi-folder"></i></a></td>';
                 echo '</tr>';
 
                 $id_consulta3=$row_usr3['id_ext1'];
