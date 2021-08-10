@@ -182,7 +182,7 @@ include('../dashboard/prcd/qwery_admin.php');
           <p class="lead text-center"><strong>REPORTE COMPLETOS E INCOMPLETOS</strong></p>
           <p class="align-items-right text-right"><a href="reporte_general.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
