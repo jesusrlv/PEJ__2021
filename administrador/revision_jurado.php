@@ -177,7 +177,7 @@ include('../dashboard/prcd/qwery_admin2.php');
           <p class="lead"><i class="bi bi-award"></i> PREMIO ESTATAL DE LA JUVENTUD 2021 | INJUVENTUD</p>
           <hr class="my-4">
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">

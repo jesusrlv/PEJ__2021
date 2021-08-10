@@ -184,7 +184,7 @@ include('../dashboard/prcd/qwery_admin.php');
 
           <hr class="my-4">
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">

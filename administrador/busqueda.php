@@ -208,7 +208,7 @@ include('../dashboard/prcd/conn.php');
           </div>
         </form>
 
-        <div class="container">
+        <div class="container table-responsive">
            
             <table class="table table-hover text-center table-striped table-bordered align-middle">
 

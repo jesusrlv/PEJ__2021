@@ -182,7 +182,7 @@ include('../dashboard/prcd/PROTOTIPO_qwery_admin.php');
           <p class="lead text-center"><strong>REPORTE CALIFICACIONES</strong></p>
           <p class="align-items-right text-right"><a href="excel_revision_calificaciones.php" type="button" class="btn btn-outline-info "><i class="bi bi-file-earmark-post-fill"></i> Excel</a></p>
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">
