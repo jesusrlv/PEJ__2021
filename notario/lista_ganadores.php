@@ -185,7 +185,7 @@ include('prcd/qwery_ganadores.php');
         <!-- consulta de validación -->
 
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
           
         <div class="col mb-12">

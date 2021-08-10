@@ -180,7 +180,7 @@ include('../dashboard/prcd/conn.php');
           <p class="lead text-center"><strong>PERFIL DE NOTARIO PÚBLICO</strong></p>
           <hr class="my-4">
 
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
         <div class="row row-cols-1 row-cols-md-1">
 
         <?php 
