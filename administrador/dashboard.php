@@ -176,7 +176,7 @@ include('../dashboard/prcd/conn.php');
 
 
         <div class="container-fluid">
-        <div class="row row-cols-2 row-cols-md-1">
+        <div class="row row-cols-1 row-cols-md-1">
           
           <div class="col mb-12">
             <div class="card text-dark bg-light mb-12" style="box-shadow: 4px -1px 0px -1px #005eff;">
