@@ -96,7 +96,7 @@ include('prcd/conn.php');
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-secondary sidebar collapse">
       <div class="sidebar-sticky pt-3">
         
         <ul class="navbar-nav px-3 text-center">
@@ -108,7 +108,7 @@ include('prcd/conn.php');
 
         <h6 class="sidebar-heading d-flex justify-content-center text-center align-items-center px-3 mt-4 mb-1 text-muted">
 
-          <span class="">
+          <span class="text-light">
           bienvenido<br><i class="fas fa-user"></i> 
             <?php
             
@@ -121,14 +121,14 @@ include('prcd/conn.php');
         <ul class="nav flex-column">
  
            <li class="nav-item">
-            <a class="nav-link active" href="dashboard.php">
+            <a class="nav-link active text-light" href="dashboard.php">
               <i class="fas fa-laptop-house"></i> 
               Inicio <span class="sr-only">(current)</span>
             </a>
           </li>
           <hr style="color: dimgrey;">
           
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted text-light">
             <span><i class="bi bi-camera-reels-fill"></i> Tutoriales</span>
             <a class="d-flex align-items-center text-muted" href="dashboard.php" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
@@ -136,13 +136,13 @@ include('prcd/conn.php');
           </h6>
 
           <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank">
+            <a class="nav-link text-light" href="https://www.youtube.com/watch?v=HLHInBqq3WA" target="_blank">
                
             <i class="bi bi-play-circle-fill"></i> Subir Datos Personales y Documentos
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://www.youtube.com/watch?v=PAGe953Wvjo" target="_blank">
+            <a class="nav-link text-light" href="https://www.youtube.com/watch?v=PAGe953Wvjo" target="_blank">
                
             <i class="bi bi-play-circle-fill"></i> Elaboración de video semblanza
             </a>
@@ -201,8 +201,8 @@ include('prcd/conn.php');
 
         <div class="container-fluid">
         <!-- <div class="row row-cols-1 row-cols-md-2 row-sm-2"> -->
-        <div class="row g-2">
-          <div class="col-sm-6 mb-6">
+        <div class="row g-1">
+          <div class="col-sm-6 mb-3">
             <div class="card text-dark bg-light mb-5" style="max-width: 36rem; height: auto; box-shadow: 4px -1px 0px -1px #005eff;">
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-credit-card-2-front-fill"></i> DATOS PERSONALES</h5>
@@ -245,7 +245,7 @@ include('prcd/conn.php');
             </div>
           </div>
 
-          <div class="col-sm-6 mb-6">
+          <div class="col-sm-6 mb-3">
             <div class="card text-dark bg-light mb-5" style="max-width: 36rem; height: auto; box-shadow: 4px -1px 0px -1px #005eff;">
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-file-earmark-plus-fill"></i> DOCUMENTOS</h5>
