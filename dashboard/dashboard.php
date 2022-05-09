@@ -201,7 +201,7 @@ include('prcd/conn.php');
 
         <div class="container-fluid">
         <!-- <div class="row row-cols-1 row-cols-md-2 row-sm-2"> -->
-        <div class="row">
+        <div class="row g-2">
           <div class="col-sm-6 mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: auto; box-shadow: 4px -1px 0px -1px #005eff;">
               <div class="card-body">
@@ -245,7 +245,7 @@ include('prcd/conn.php');
             </div>
           </div>
 
-          <div class="col-sm-6 mb-6 g-2">
+          <div class="col-sm-6 mb-6">
             <div class="card text-dark bg-light mb-6" style="max-width: 36rem; height: auto; box-shadow: 4px -1px 0px -1px #005eff;">
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bi bi-file-earmark-plus-fill"></i> DOCUMENTOS</h5>
