@@ -94,7 +94,7 @@ background-size: cover;">
   <hr>
   <h6><a href="email/index.php"> ¿Olvidaste tu contraseña?</a></h6> <!-- convocatoria cerrada -->
   <!-- convocatoria cerrada -->
-  <p class="mt-5 mb-3 text-muted"> Desarrollado en Colaboración con <strong>LABSOL | INJUVENTUD</strong><br>Licenciado bajo GPL License 3.0</p>
+  <p class="mt-5 mb-3 text-muted"> Desarrollado <strong>INJUVENTUD</strong><br>Gobierno del estado de Zacatecas | 2021 - 2027</p>
    
 </form>
 
