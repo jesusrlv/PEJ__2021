@@ -72,7 +72,8 @@ background-size: cover;">
 <!-- <form class="form-signin" action="dashboard.html" method="POST" name="envio"> -->
 <form class="form-signin" action="dashboard/prcd/proceso_validacion.php" name="envio" method="POST">
   <img class="mb-4" src="img/logo.png" alt="" width="100%" >
-  <h3>PREMIO ESTATAL DE LA JUVENTUD 2021</h3>
+  <!-- <h3>PREMIO ESTATAL DE LA JUVENTUD 2021</h3> -->
+  <h3></h3>
   <hr>
   <h1 class="h4 mb-3 font-weight-normal">Ingresar</h1>
   <label for="inputEmail" class="sr-only">Usuario</label>
