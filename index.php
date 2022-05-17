@@ -6,7 +6,7 @@
     ?>
   
 
-  <title>PREMIO ESTATAL DE LA JUVENTUD 2021</title>
+  <title>PREMIO ESTATAL DE LA JUVENTUD 2022</title>
   <link rel="icon" type="image/png" href="img/icon.ico"/>
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -72,7 +72,6 @@ background-size: cover;">
 <!-- <form class="form-signin" action="dashboard.html" method="POST" name="envio"> -->
 <form class="form-signin" action="dashboard/prcd/proceso_validacion.php" name="envio" method="POST">
   <img class="mb-4" src="img/logo.png" alt="" width="100%" >
-  <!-- <h3>PREMIO ESTATAL DE LA JUVENTUD 2021</h3> -->
   <h3></h3>
   <hr>
   <h1 class="h4 mb-3 font-weight-normal">Ingresar</h1>
@@ -94,7 +93,7 @@ background-size: cover;">
   <hr>
   <h6><a href="email/index.php"> ¿Olvidaste tu contraseña?</a></h6> <!-- convocatoria cerrada -->
   <!-- convocatoria cerrada -->
-  <p class="mt-5 mb-3 text-muted"> Desarrollo: <strong>INJUVENTUD</strong><br>Gobierno del estado de Zacatecas 2021 - 2027</p>
+  <p class="mt-5 mb-3 text-muted"> Desarrollo: <strong>INJUVENTUD</strong><br>Gobierno del estado de Zacatecas<br>2021 - 2027</p>
    
 </form>
 
