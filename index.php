@@ -7,7 +7,8 @@
   
 
   <title>PREMIO ESTATAL DE LA JUVENTUD 2022</title>
-  <link rel="icon" type="image/png" href="img/icon.ico"/>
+  <!-- <link rel="icon" type="image/png" href="img/icon.ico"/> -->
+  <link rel="icon" type="image/png" href="assets/brand/img/logo_injuventud_0.ico" sizes="22x21">
 	<meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/signin.css">
