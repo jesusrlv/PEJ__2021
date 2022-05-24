@@ -78,11 +78,11 @@ try {
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'injuventud@zacatecas.gob.mx';                     // SMTP username
     $mail->Password   = 'ONvJ1Nc4Rp';                               // SMTP password
-    $mail->SMTPSecure = 'SSL';                                  // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 993;                                    // TCP port to connect to
+    $mail->SMTPSecure = 'TLS';                                  // Enable TLS encryption, `ssl` also accepted
+    $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('premioestatalinjuventud2021@gmail.com', 'PEJ21 - INJUVENTUD');
+    $mail->setFrom('injuventud@zacatecas.gob.mx', 'PEJ2022 - INJUVENTUD');
     $mail->addAddress($email, $nombre);     // Add a recipient
     // $mail->addAddress('ellen@example.com');               // Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
